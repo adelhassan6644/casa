@@ -1,4 +1,3 @@
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/features/profile/page/profile.dart';
 import 'package:casa/main_page/provider/main_page_provider.dart';
@@ -13,8 +12,7 @@ import '../../features/maps/page/map_page.dart';
 import '../widget/nav_bar.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({Key? key, required this.controller}) : super(key: key);
-  final ZoomDrawerController controller;
+  const DashBoard({Key? key}) : super(key: key);
   @override
   State<DashBoard> createState() => _DashBoardState();
 }
@@ -46,9 +44,7 @@ class _DashBoardState extends State<DashBoard> {
     return Consumer<MainPageProvider>(builder: (_, provider, child) {
       return Scaffold(
         backgroundColor: ColorResources.BACKGROUND_COLOR,
-        bottomNavigationBar: NavBar(
-          controller: widget.controller,
-        ),
+        bottomNavigationBar: const NavBar(),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: provider.selectedIndex == 2
             ? FloatingActionButton(

@@ -45,7 +45,7 @@ class _MainPageState extends State<MainPage> {
                   menuBackgroundColor: ColorResources.WHITE_COLOR,
                   controller: _drawerController,
                   menuScreen: More(controller: _drawerController),
-                  mainScreen: DashBoard(controller: _drawerController),
+                  mainScreen: const DashBoard(),
                 ),
               ),
               Consumer<MainPageProvider>(builder: (_, provider, child) {

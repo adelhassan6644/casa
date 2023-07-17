@@ -3,8 +3,8 @@ import 'package:casa/features/auth/pages/reset_password.dart';
 import 'package:casa/features/category_details/page/category_details.dart';
 import 'package:casa/features/setting/pages/terms.dart';
 import 'package:casa/main_models/base_model.dart';
+import 'package:casa/main_page/pages/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'package:casa/main_page/pages/main_page.dart';
 import '../features/auth/pages/forget_password.dart';
 import '../features/auth/pages/login.dart';
 import '../features/auth/pages/register.dart';
@@ -35,6 +35,8 @@ abstract class CustomNavigator {
         return _pageRoute(const Splash());
       case Routes.ON_BOARDING:
         return _pageRoute(const OnBoarding());
+      case Routes.DASHBOARD:
+        return _pageRoute(const DashBoard());
       case Routes.LOGIN:
         return _pageRoute(Login(
           fromMain:
@@ -51,9 +53,6 @@ abstract class CustomNavigator {
       case Routes.VERIFICATION:
         return _pageRoute(
             Verification(fromRegister: settings.arguments as bool));
-
-      case Routes.MAIN_PAGE:
-        return _pageRoute(const MainPage());
 
       case Routes.NEWS:
         return _pageRoute(const News());

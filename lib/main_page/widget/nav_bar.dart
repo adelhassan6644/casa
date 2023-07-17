@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:provider/provider.dart';
 
@@ -9,8 +8,7 @@ import '../provider/main_page_provider.dart';
 import 'nav_bar_item.dart';
 
 class NavBar extends StatelessWidget {
-  const NavBar({Key? key, required this.controller}) : super(key: key);
-  final ZoomDrawerController controller;
+  const NavBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +76,6 @@ class NavBar extends StatelessWidget {
                       isSelected: provider.selectedIndex == 4,
                       withIconColor: false,
                       onTap: () {
-                        controller.toggle!();
                         provider.updateIsOpen(true);
                       },
                     ),
