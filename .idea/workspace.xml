@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="update social media" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Concept" />
+        <option value="Dart File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="production" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2S87WyYmcOxfCMelFkxpZmyrlot" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/user/SoftweareCloud2/casa",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "flutter.settings",
+    "show.migrate.to.gradle.popup": "false"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/svgs" />
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="C:\Users\adelh\Documents\GitHub\casa\assets\svgs" />
+      <recent name="C:\Users\adelh\Documents\GitHub\casa\assets" />
+      <recent name="C:\Users\adelh\Documents\GitHub\casa\lib\components" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/lib/features/setting/pages" />
+      <recent name="$PROJECT_DIR$/lib/features/setting/repo" />
+      <recent name="$PROJECT_DIR$/lib/features/setting/provider" />
+      <recent name="$PROJECT_DIR$/lib/features/setting" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+      <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter.main.dart" />
+        <item itemvalue="Flutter.main.dart" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task id="LOCAL-00001" summary="add(on boarding)">
+      <created>1688498941640</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1688498941641</updated>
+    </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="add file picker" />
+      <created>1688516389160</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1688516389160</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add(on boarding)">
+      <created>1688517392092</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1688517392092</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add(dashboard):&#10;-add dashboard ui">
+      <created>1688602938596</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1688602938596</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(terms):&#10;-add terms">
+      <created>1688636307886</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1688636307886</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add file picker">
+      <created>1689071646243</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689071646243</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add file picker">
+      <created>1689200715648</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689200715648</updated>
+    </task>
+    <task id="LOCAL-00007" summary="add file picker">
+      <created>1689200828614</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1689200828614</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add file picker">
+      <created>1689252897124</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689252897124</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add file picker">
+      <created>1689252960287</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1689252960287</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add file picker">
+      <created>1689252971981</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1689252971981</updated>
+    </task>
+    <task id="LOCAL-00011" summary="add about us page">
+      <created>1689254950444</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1689254950444</updated>
+    </task>
+    <task id="LOCAL-00012" summary="updates">
+      <created>1689255905575</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1689255905575</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updates">
+      <created>1689255943072</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1689255943072</updated>
+    </task>
+    <task id="LOCAL-00014" summary="update about us">
+      <created>1689259681145</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1689259681145</updated>
+    </task>
+    <task id="LOCAL-00015" summary="update favourite button">
+      <created>1689259770922</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1689259770922</updated>
+    </task>
+    <task id="LOCAL-00016" summary="update change password">
+      <created>1689260949715</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1689260949715</updated>
+    </task>
+    <task id="LOCAL-00017" summary="design updates">
+      <created>1689344278934</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1689344278934</updated>
+    </task>
+    <task id="LOCAL-00018" summary="design updates">
+      <created>1689352400410</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1689352400410</updated>
+    </task>
+    <task id="LOCAL-00019" summary="update social media">
+      <created>1689535272860</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1689535272861</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add(on boarding)" />
+    <MESSAGE value="add(dashboard):&#10;-add dashboard ui" />
+    <MESSAGE value="add(profile):&#10;-add profile ui" />
+    <MESSAGE value="update(profile):&#10;-update profile ui" />
+    <MESSAGE value="update auth&#10;update home" />
+    <MESSAGE value="feat(terms):&#10;-add terms" />
+    <MESSAGE value="add file picker" />
+    <MESSAGE value="add about us page" />
+    <MESSAGE value="updates" />
+    <MESSAGE value="update about us" />
+    <MESSAGE value="update favourite button" />
+    <MESSAGE value="update change password" />
+    <MESSAGE value="design updates" />
+    <MESSAGE value="update social media" />
+    <option name="LAST_COMMIT_MESSAGE" value="update social media" />
+  </component>
+</project>
