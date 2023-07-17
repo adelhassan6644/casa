@@ -24,11 +24,11 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
   void initState() {
     Future.delayed(Duration.zero, () {
       sl<HomeProvider>().scroll(controller);
-      sl<HomeProvider>().getBanners();
-      sl<HomeProvider>().getPlaces();
-      sl<HomeProvider>().getCategories();
-      sl<HomeProvider>().getOffers();
-      sl<HomeProvider>().getNews();
+      // sl<HomeProvider>().getBanners();
+      // sl<HomeProvider>().getPlaces();
+      // sl<HomeProvider>().getCategories();
+      // sl<HomeProvider>().getOffers();
+      // sl<HomeProvider>().getNews();
     });
 
     super.initState();
@@ -70,6 +70,6 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
   }
 
   @override
-  // TODO: implement wantKeepAlive
-  bool get wantKeepAlive => throw UnimplementedError();
+  bool get wantKeepAlive => true;
+
 }

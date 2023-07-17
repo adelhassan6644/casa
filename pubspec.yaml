@@ -23,7 +23,6 @@ dependencies:
   shared_preferences:
   get_it:
   http:
-  firebase_messaging: ^14.4.1
   firebase_core:
   provider:
   flutter_staggered_animations:
@@ -36,7 +35,6 @@ dependencies:
   url_launcher: ^6.1.11
   readmore:
   flutter_svg:
-  flutter_local_notifications: ^9.8.0+1
   flutter_form_builder:
   equatable:
   pin_code_fields:
@@ -64,10 +62,12 @@ dependencies:
   app_settings: ^4.2.0
   substring_highlight: ^1.0.33
   motion_toast: ^2.6.8
-  flutter_inappwebview: ^5.7.2+3
+  flutter_inappwebview: ^6.0.0-beta.24+1
   flutter_zoom_drawer: ^3.1.1
   flutter_widget_from_html: ^0.8.0
   file_picker: ^4.6.1
+  flutter_local_notifications: ^9.8.0+1
+  firebase_messaging: ^14.6.5
 
 
 

@@ -24,7 +24,7 @@ import '../../features/setting/repo/setting_repo.dart';
 import '../../main_page/provider/main_page_provider.dart';
 import '../../main_providers/map_provider.dart';
 import '../api/end_points.dart';
-import '../network/netwok_info.dart';
+import '../network/network_info.dart';
 import '../dio/dio_client.dart';
 import '../dio/logging_interceptor.dart';
 import '../../features/auth/repo/auth_repo.dart';

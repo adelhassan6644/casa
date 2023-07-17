@@ -2,7 +2,7 @@ import '../../../features/maps/models/location_model.dart';
 import '../../../main_models/weak_model.dart';
 
 class AppStrings {
-  static const String appName = 'casa';
+  static const String appName = 'Casa';
   static const String googleApiKey = 'AIzaSyBxi2NcKA8JE90J07U9M2D90tHgaSg3Xjg';
   static const String defaultAddress = 'المملكة العربية السعودية ، الرياض';
   static const String defaultLat = '24.67401824245781';

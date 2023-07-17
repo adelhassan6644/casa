@@ -1,7 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:casa/firebase_options.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:casa/main_page/pages/main_page.dart';
 import 'package:provider/provider.dart';
 import 'app/core/utils/app_storage_keys.dart';
 import 'app/core/utils/un_focus.dart';
@@ -15,8 +14,6 @@ import 'data/config/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app/core/utils/app_strings.dart';
-import 'features/home/page/home.dart';
-import 'features/place_details/page/place_details.dart';
 import 'navigation/custom_navigation.dart';
 import 'navigation/routes.dart';
 import 'package:casa/data/config/di.dart' as di;

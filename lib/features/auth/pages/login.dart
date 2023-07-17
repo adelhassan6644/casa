@@ -249,7 +249,7 @@ class _LoginState extends State<Login> {
                                                   InkWell(
                                                     onTap: () {
                                                       CustomNavigator.push(
-                                                          Routes.MAIN_PAGE,
+                                                          Routes.DASHBOARD,
                                                           clean: true);
                                                     },
                                                     child: Padding(
