@@ -49,7 +49,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                         height: context.height,
                         fit: BoxFit.fitWidth,
                         radius: 0),
-                    const Column(
+                     Column(
                       children: [
                         CustomAppBar(),
                         Expanded(child: SizedBox()),

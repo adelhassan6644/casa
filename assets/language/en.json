@@ -75,6 +75,8 @@
   "share": "Share",
   "location": "Location",
   "register_with_us": "Register with us",
-  "and_enjoy_all_the_features_available_in_the_application": "and enjoy all the features available in the application"
+  "and_enjoy_all_the_features_available_in_the_application": "and enjoy all the features available in the application",
+  "your_password_reset_successfully": "Your password reset successfully",
+  "invalid_credentials": "Invalid Credentials"
 
 }

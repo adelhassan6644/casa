@@ -68,7 +68,8 @@ class AuthProvider extends ChangeNotifier {
       response.fold((fail) {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
-                message: fail.error,
+                message: getTranslated("invalid_credentials",
+                    CustomNavigator.navigatorState.currentContext!),
                 isFloating: true,
                 backgroundColor: ColorResources.IN_ACTIVE,
                 borderColor: Colors.transparent));
@@ -129,6 +130,13 @@ class AuthProvider extends ChangeNotifier {
         notifyListeners();
       }, (success) {
         CustomNavigator.push(Routes.LOGIN, clean: true);
+        CustomSnackBar.showSnackBar(
+            notification: AppNotification(
+                message: getTranslated("your_password_changed_successfully",
+                    CustomNavigator.navigatorState.currentContext!),
+                isFloating: true,
+                backgroundColor: ColorResources.ACTIVE,
+                borderColor: Colors.transparent));
         clear();
       });
       _isReset = false;
