@@ -49,7 +49,7 @@ abstract class CupertinoPopUpHelper {
                   getTranslated(
                       "cancel", CustomNavigator.navigatorState.currentContext!),
                   style: AppTextStyles.regular.copyWith(
-                      fontSize: 17, color: ColorResources.SYSTEM_COLOR),
+                      fontSize: 17, color: Styles.SYSTEM_COLOR),
                 )),
             CupertinoDialogAction(
                 onPressed: onSend,
@@ -57,7 +57,7 @@ abstract class CupertinoPopUpHelper {
                   getTranslated(
                       "send", CustomNavigator.navigatorState.currentContext!),
                   style: AppTextStyles.semiBold.copyWith(
-                      fontSize: 17, color: ColorResources.SYSTEM_COLOR),
+                      fontSize: 17, color: Styles.SYSTEM_COLOR),
                 )),
           ],
         );

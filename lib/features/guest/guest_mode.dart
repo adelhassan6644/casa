@@ -32,7 +32,7 @@ class GuestMode extends StatelessWidget {
                   getTranslated("register_with_us", context),
                   style: AppTextStyles.bold.copyWith(
                     fontSize: 32,
-                    color: ColorResources.PRIMARY_COLOR,
+                    color: Styles.PRIMARY_COLOR,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -42,7 +42,7 @@ class GuestMode extends StatelessWidget {
                       context),
                   style: AppTextStyles.medium.copyWith(
                       fontSize: 18,
-                      color: ColorResources.SECOUND_PRIMARY_COLOR),
+                      color: Styles.SECOUND_PRIMARY_COLOR),
                   textAlign: TextAlign.center,
                 ),
                 Padding(

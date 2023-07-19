@@ -18,7 +18,7 @@ class News extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorResources.BACKGROUND_COLOR,
+      backgroundColor: Styles.BACKGROUND_COLOR,
       body: SafeArea(
         bottom: true,
         top: true,
@@ -33,7 +33,7 @@ class News extends StatelessWidget {
                       horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                   child: Text("الأخبار",
                       style: AppTextStyles.semiBold.copyWith(
-                          fontSize: 24, color: ColorResources.HEADER)),
+                          fontSize: 24, color: Styles.HEADER)),
                 ),
                 Expanded(
                     child: Padding(
@@ -52,7 +52,7 @@ class News extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(
                                     horizontal: 10.w, vertical: 16.h),
                                 decoration: BoxDecoration(
-                                    color: ColorResources.WHITE_COLOR,
+                                    color: Styles.WHITE_COLOR,
                                     borderRadius: BorderRadius.circular(20),
                                     boxShadow: [
                                       BoxShadow(
@@ -69,7 +69,7 @@ class News extends StatelessWidget {
                                           "",
                                       style: AppTextStyles.medium.copyWith(
                                         fontSize: 22,
-                                        color: ColorResources.TITLE,
+                                        color: Styles.TITLE,
                                       ),
                                     ),
                                     SizedBox(
@@ -81,7 +81,7 @@ class News extends StatelessWidget {
                                             "",
                                         style: AppTextStyles.medium.copyWith(
                                           fontSize: 16,
-                                          color: ColorResources.DETAILS_COLOR,
+                                          color: Styles.DETAILS_COLOR,
                                         )),
                                     SizedBox(
                                       height: 18.h,
@@ -92,7 +92,7 @@ class News extends StatelessWidget {
                                             imageName: SvgImages.location,
                                             height: 20,
                                             width: 20,
-                                            color: ColorResources.TITLE),
+                                            color: Styles.TITLE),
                                         SizedBox(
                                           width: 8.w,
                                         ),
@@ -108,7 +108,7 @@ class News extends StatelessWidget {
                                                     overflow:
                                                         TextOverflow.ellipsis,
                                                     color:
-                                                        ColorResources.TITLE),
+                                                        Styles.TITLE),
                                           ),
                                         ),
                                       ],

@@ -20,7 +20,7 @@ class HomeHeader extends StatelessWidget {
           Text(
             "هلا في حي الحمدانية",
             style: AppTextStyles.bold.copyWith(
-                fontSize: 26, color: ColorResources.SECOUND_PRIMARY_COLOR),
+                fontSize: 26, color: Styles.SECOUND_PRIMARY_COLOR),
           ),
           SizedBox(
             height: 8.h,
@@ -28,7 +28,7 @@ class HomeHeader extends StatelessWidget {
           Text(
             "إذا كنت جديد هنا, خلنا نعرفك ع الحي",
             style: AppTextStyles.semiBold
-                .copyWith(fontSize: 20, color: ColorResources.TITLE),
+                .copyWith(fontSize: 20, color: Styles.TITLE),
           ),
         ],
       ),

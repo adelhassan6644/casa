@@ -93,7 +93,7 @@ class _MapPageState extends State<MapPage> {
                   ? const Icon(
                       Icons.location_on_rounded,
                       size: 50,
-                      color: ColorResources.PRIMARY_COLOR,
+                      color: Styles.PRIMARY_COLOR,
                     )
                   : const CupertinoActivityIndicator()),
 

@@ -41,9 +41,9 @@ class BottomNavBarItem extends StatelessWidget {
                 ? customImageIconSVG(
                     imageName: svgIcon!,
                     color: isSelected
-                        ? ColorResources.SECOUND_PRIMARY_COLOR
+                        ? Styles.SECOUND_PRIMARY_COLOR
                         : withIconColor
-                            ? ColorResources.DISABLED
+                            ? Styles.DISABLED
                             : null,
                     width: width,
                   )
@@ -51,8 +51,8 @@ class BottomNavBarItem extends StatelessWidget {
                     imageName: imageIcon!,
                     height: height,
                     color: isSelected
-                        ? ColorResources.PRIMARY_COLOR
-                        : ColorResources.DISABLED,
+                        ? Styles.PRIMARY_COLOR
+                        : Styles.DISABLED,
                     width: width,
                   ),
             name != null
@@ -63,8 +63,8 @@ class BottomNavBarItem extends StatelessWidget {
                       fontWeight:
                           isSelected ? FontWeight.w600 : FontWeight.w400,
                       color: isSelected
-                          ? ColorResources.PRIMARY_COLOR
-                          : ColorResources.DISABLED,
+                          ? Styles.PRIMARY_COLOR
+                          : Styles.DISABLED,
                       overflow: TextOverflow.ellipsis,
                       fontSize: 11,
                     ),

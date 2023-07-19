@@ -38,7 +38,7 @@ class FileContainer extends StatelessWidget {
                           width: 48,
                           padding: const EdgeInsets.all(14),
                           decoration: BoxDecoration(
-                              color: ColorResources.WHITE_COLOR,
+                              color: Styles.WHITE_COLOR,
                               borderRadius: BorderRadius.circular(12)),
                           child: customImageIconSVG(
                             imageName: SvgImages.documentFile,
@@ -58,7 +58,7 @@ class FileContainer extends StatelessWidget {
                               FilePickerHelper.getName(
                                   attachments![index].path),
                               style: AppTextStyles.medium.copyWith(
-                                  color: ColorResources.HEADER, fontSize: 12),
+                                  color: Styles.HEADER, fontSize: 12),
                             ),
                             SizedBox(
                               height: 8.h,
@@ -71,7 +71,7 @@ class FileContainer extends StatelessWidget {
                                 return Text(
                                   snapshot.hasData ? "${snapshot.data}" : "",
                                   style: AppTextStyles.medium.copyWith(
-                                      color: ColorResources.HEADER
+                                      color: Styles.HEADER
                                           .withOpacity(0.4),
                                       fontSize: 10),
                                 );

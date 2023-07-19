@@ -45,7 +45,7 @@ class DeveloperSocialMedia extends StatelessWidget {
                       width: 50.0,
                       radius: 100,
                       withShadow: true,
-                      color: ColorResources.WHITE_COLOR,
+                      color: Styles.WHITE_COLOR,
                       onTap: () async {
                         await launch(
                             'fb://facewebmodal/f?href=https://${provider.model?.data?.facebook ?? ""}');
@@ -59,7 +59,7 @@ class DeveloperSocialMedia extends StatelessWidget {
                       width: 50.0,
                       radius: 100,
                       withShadow: true,
-                      color: ColorResources.WHITE_COLOR,
+                      color: Styles.WHITE_COLOR,
                       onTap: () async {
                         await launch(
                             'in://${provider.model?.data?.instagram ?? ""}');
@@ -73,7 +73,7 @@ class DeveloperSocialMedia extends StatelessWidget {
                       width: 50.0,
                       radius: 100,
                       withShadow: true,
-                      color: ColorResources.WHITE_COLOR,
+                      color: Styles.WHITE_COLOR,
                       onTap: () async {
                         await launch(
                             "whatsapp://send?phone=${provider.model?.data?.twitter ?? ""}");
@@ -87,7 +87,7 @@ class DeveloperSocialMedia extends StatelessWidget {
                       width: 50.0,
                       radius: 100,
                       withShadow: true,
-                      color: ColorResources.WHITE_COLOR),
+                      color: Styles.WHITE_COLOR),
                 ],
         ),
       );

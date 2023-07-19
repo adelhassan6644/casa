@@ -44,7 +44,7 @@ class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
               Text(
                 title ?? "",
                 style: AppTextStyles.semiBold
-                    .copyWith(color: ColorResources.WHITE_COLOR, fontSize: 14),
+                    .copyWith(color: Styles.WHITE_COLOR, fontSize: 14),
               ),
               const Expanded(child: SizedBox()),
               withBack
@@ -64,7 +64,7 @@ class AuthAppBar extends StatelessWidget implements PreferredSizeWidget {
                             Icon(
                               Icons.arrow_forward_ios,
                               size: 18,
-                              color: ColorResources.WHITE_COLOR,
+                              color: Styles.WHITE_COLOR,
                             ),
                           ],
                         ),

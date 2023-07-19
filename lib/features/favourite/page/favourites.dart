@@ -47,7 +47,7 @@ class _FavouritesState extends State<Favourites> {
                 ),
                 Text("الأماكن المفضلة",
                     style: AppTextStyles.semiBold
-                        .copyWith(fontSize: 24, color: ColorResources.HEADER)),
+                        .copyWith(fontSize: 24, color: Styles.HEADER)),
                 provider.isLogin
                     ? Expanded(
                         child: provider.isLoading
@@ -91,7 +91,7 @@ class _FavouritesState extends State<Favourites> {
                                     ),
                                   )
                                 : RefreshIndicator(
-                                    color: ColorResources.PRIMARY_COLOR,
+                                    color: Styles.PRIMARY_COLOR,
                                     onRefresh: () async {
                                       provider.getFavourites();
                                     },

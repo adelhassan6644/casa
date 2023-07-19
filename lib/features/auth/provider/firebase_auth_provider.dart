@@ -84,7 +84,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
     }
   }
@@ -100,13 +100,13 @@ class FirebaseAuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: getTranslated("invalid_phone",
                   CustomNavigator.navigatorState.currentContext!),
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
     } else {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: authException.message.toString(),
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
     }
     log("======>Fail when Auth with Firebase : ${authException.message}");
@@ -164,7 +164,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
                   message: getTranslated("invalid_code",
                       CustomNavigator.navigatorState.currentContext!),
                   isFloating: true,
-                  backgroundColor: ColorResources.IN_ACTIVE,
+                  backgroundColor: Styles.IN_ACTIVE,
                   borderColor: Colors.transparent));
           _isSubmit = false;
           notifyListeners();
@@ -177,7 +177,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: "has error in firebaseVerificationId",
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
         notifyListeners();
       }
@@ -188,7 +188,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: e.toString(),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isSubmit = false;
       notifyListeners();
@@ -207,7 +207,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: ApiErrorHandler.getMessage(fail),
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
       }, (success) async {
         firebaseAuthRepo.setLoggedIn();
@@ -232,7 +232,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
                 message: getTranslated("successfully_login",
                     CustomNavigator.navigatorState.currentContext!),
                 isFloating: true,
-                backgroundColor: ColorResources.ACTIVE,
+                backgroundColor: Styles.ACTIVE,
                 borderColor: Colors.transparent));
       });
     } catch (e) {
@@ -240,7 +240,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: e.toString(),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
     }
   }
@@ -258,7 +258,7 @@ class FirebaseAuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: e.toString(),
               isFloating: true,
-              backgroundColor: ColorResources.ACTIVE,
+              backgroundColor: Styles.ACTIVE,
               borderColor: Colors.transparent));
       notifyListeners();
     }

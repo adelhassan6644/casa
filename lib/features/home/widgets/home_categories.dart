@@ -120,7 +120,7 @@ class _CategoryItem extends StatelessWidget {
             title ?? "",
             style: AppTextStyles.medium.copyWith(
                 fontSize: 14,
-                color: textColor?.toColor ?? ColorResources.HEADER),
+                color: textColor?.toColor ?? Styles.HEADER),
           ),
         ],
       ),

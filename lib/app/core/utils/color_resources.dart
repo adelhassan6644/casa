@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-abstract class ColorResources {
-  static const Color BORDER_COLOR = Color(0xFF9C6FBF);
+abstract class Styles {
+  static const Color BORDER_COLOR = Color(0xFF8C4E3E66);
   static const Color SECOUND_PRIMARY_COLOR = Color(0xFFB48DD2);
-  static const Color PRIMARY_COLOR = Color(0xffFF4F65);
+  static const Color PRIMARY_COLOR = Color(0xff8C4E3E);
   static const Color APP_BAR_BACKGROUND_COLOR = Color(0xffFFF9F9);
   static const Color BACKGROUND_COLOR = Color(0xFFFAFAFA);
   static const Color CONTAINER_BACKGROUND_COLOR = Color(0xffF3F3F3);
@@ -27,13 +27,13 @@ abstract class ColorResources {
   static const Color GREY_BORDER = Color(0xFFF5F5F5);
   static const Color LIGHT_BORDER_COLOR = Color(0xffE8ECF4);
   static const Color ALERT_COLOR = Color(0xffDBAB02);
-  static const Color FAILED_COLOR = Colors.red;
-  static const Color ERORR_COLOR = Color(0xFFFF4F65);
+  static const Color FAILED_COLOR = Colors.black;
+  static const Color ERORR_COLOR = Colors.black;
   static const Color RED_COLOR = Color(0xffFF3B30);
-   static const Color HEADER = Color(0xFF530B8B);
-  static const Color TITLE = Color(0xFF151416);
+   static const Color HEADER = Color(0xFF000000);
+  static const Color TITLE = Color(0xFF875A4F);
   static const Color SUBTITLE = Color(0xff373737);
-  static const Color DETAILS_COLOR = Color(0xff737373);
+  static const Color DETAILS_COLOR = Color(0xff9D9D9D);
   static const Color HINT_COLOR = Color(0xffA5B7B8);
 
 

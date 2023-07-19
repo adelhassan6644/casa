@@ -57,8 +57,8 @@ class _CountDownState extends State<CountDown> {
             getTranslated("resend_code", context),
             style: AppTextStyles.medium.copyWith(
               color: _count == 0
-                  ? ColorResources.HEADER
-                  : ColorResources.DISABLED,
+                  ? Colors.white
+                  : Styles.DISABLED,
               fontSize: 14,
             ),
           ),
@@ -67,7 +67,7 @@ class _CountDownState extends State<CountDown> {
           Text(
               " (${Duration(seconds: _count).inMinutes.remainder(60).toString().padLeft(2, '0')}:${Duration(seconds: _count).inSeconds.remainder(60).toString().padLeft(2, '0')})",
               style: AppTextStyles.medium
-                  .copyWith(color: Colors.black, fontSize: 14)),
+                  .copyWith(color: Colors.white, fontSize: 14)),
       ],
     );
   }

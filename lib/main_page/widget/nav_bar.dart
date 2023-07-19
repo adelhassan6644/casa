@@ -20,7 +20,7 @@ class NavBar extends StatelessWidget {
             height: 60,
             width: context.width,
             decoration:
-                BoxDecoration(color: ColorResources.WHITE_COLOR, boxShadow: [
+                BoxDecoration(color: Styles.WHITE_COLOR, boxShadow: [
               BoxShadow(
                   color: Colors.black.withOpacity(0.1),
                   offset: const Offset(0, -3),

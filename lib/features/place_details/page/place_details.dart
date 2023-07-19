@@ -34,7 +34,7 @@ class _PlaceDetailsState extends State<PlaceDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorResources.BACKGROUND_COLOR,
+      backgroundColor: Styles.BACKGROUND_COLOR,
       body: SafeArea(
         top: false,
         child:
@@ -83,12 +83,12 @@ class _PlaceDetailsState extends State<PlaceDetails> {
                                   margin: EdgeInsets.symmetric(horizontal: 2.w),
                                   decoration: BoxDecoration(
                                       color: index == provider.placesIndex
-                                          ? ColorResources.SECOUND_PRIMARY_COLOR
-                                          : ColorResources.WHITE_COLOR,
+                                          ? Styles.SECOUND_PRIMARY_COLOR
+                                          : Styles.WHITE_COLOR,
                                       borderRadius:
                                           BorderRadius.circular(100.w),
                                       border: Border.all(
-                                          color: ColorResources
+                                          color: Styles
                                               .SECOUND_PRIMARY_COLOR,
                                           width: 1)),
                                 );

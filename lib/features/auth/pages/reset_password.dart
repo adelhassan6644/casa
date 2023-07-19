@@ -33,7 +33,7 @@ class _ResetPasswordState extends State<ResetPassword> {
         decoration: const BoxDecoration(
             image: DecorationImage(
           image: AssetImage(
-            Images.loginImage,
+            Images.authImage,
           ),
           fit: BoxFit.fitWidth,
         )),
@@ -97,7 +97,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                                                 style: AppTextStyles.semiBold
                                                     .copyWith(
                                                         fontSize: 22,
-                                                        color: ColorResources
+                                                        color: Styles
                                                             .HEADER),
                                               ),
                                             ),

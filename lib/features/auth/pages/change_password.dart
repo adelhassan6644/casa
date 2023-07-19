@@ -61,9 +61,9 @@ class _ChangePasswordState extends State<ChangePassword> {
                     ),
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(18),
-                        color: ColorResources.WHITE_COLOR,
+                        color: Styles.WHITE_COLOR,
                         border: Border.all(
-                            color: ColorResources.LIGHT_BORDER_COLOR)),
+                            color: Styles.LIGHT_BORDER_COLOR)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -77,7 +77,7 @@ class _ChangePasswordState extends State<ChangePassword> {
                             textAlign: TextAlign.center,
                             style: AppTextStyles.semiBold.copyWith(
                                 fontSize: 22,
-                                color: ColorResources.PRIMARY_COLOR),
+                                color: Styles.PRIMARY_COLOR),
                           ),
                         ),
                         Form(

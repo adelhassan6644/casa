@@ -5,7 +5,102 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="updates">
+      <change afterPath="$PROJECT_DIR$/assets/images/auth_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/login_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/signup_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/app_snack_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/app_snack_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/auth_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/auth_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/bottom_sheet_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/bottom_sheet_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/checkbox_list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/checkbox_list_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/confirmation_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/confirmation_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/count_down.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/count_down.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_address_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_address_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_check_box_list_tile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_check_box_list_tile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_drop_down_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_drop_down_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_image_picker_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_image_picker_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_pin_code_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_pin_code_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_text_form_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_text_form_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/dynamic_drop_down_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/dynamic_drop_down_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/empty_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/empty_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/error_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/error_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/expansion_tile_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/expansion_tile_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/file_container.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/file_container.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/image_pop_up_viewer.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/image_pop_up_viewer.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/images_slider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/images_slider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/loading_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/loading_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/price_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/price_text_field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/show_rate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/show_rate.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/tab_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/tab_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/api/end_points.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/change_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/change_password.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/forget_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/forget_password.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/login.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/register.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/register.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/reset_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/reset_password.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/verification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/verification.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/provider/firebase_auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/provider/firebase_auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/category_details/page/category_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/category_details/page/category_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/category_details/provider/category_details_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/category_details/provider/category_details_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/contact_with_us/provider/contact_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/contact_with_us/provider/contact_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/favourite/page/favourites.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/favourite/page/favourites.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/favourite/provider/favourite_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/favourite/provider/favourite_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/guest/guest_mode.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/guest/guest_mode.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/page/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/page/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/page/news.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/page/news.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/provider/home_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/provider/home_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_banners.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_banners.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_categories.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_categories.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_news.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_news.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_offers.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_offers.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/maps/page/map_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/maps/page/map_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/maps/provider/location_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/maps/provider/location_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/maps/widget/serach_location_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/maps/widget/serach_location_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/widgets/logout_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/widgets/logout_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/widgets/more_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/widgets/more_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/widgets/profile_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/widgets/profile_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/on_boarding/pages/on_boarding.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/on_boarding/pages/on_boarding.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/on_boarding/widgets/step_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/on_boarding/widgets/step_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/place_details/page/place_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/place_details/page/place_details.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/place_details/provider/place_details_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/place_details/provider/place_details_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/place_details/widgets/place_details_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/place_details/widgets/place_details_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/provider/profile_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/provider/profile_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/widgets/change_password_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/widgets/change_password_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/widgets/profile_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/widgets/profile_body.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/widgets/profile_image_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/widgets/profile_image_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/setting/pages/about_us.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/pages/about_us.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/setting/pages/terms.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/pages/terms.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/setting/provider/setting_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/provider/setting_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/setting/widgets/developer_description.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/widgets/developer_description.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/setting/widgets/developer_image.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/widgets/developer_image.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/setting/widgets/developer_information.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/widgets/developer_information.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/setting/widgets/developer_social_media.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/widgets/developer_social_media.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/splash/page/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/splash/page/splash.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/helpers/cupertino_pop_up_helper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/helpers/cupertino_pop_up_helper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/helpers/date_time_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/helpers/date_time_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_page/pages/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/pages/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_page/widget/nav_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/widget/nav_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_page/widget/nav_bar_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/widget/nav_bar_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_providers/map_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_providers/map_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_widgets/place_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_widgets/place_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,26 +137,26 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/user/SoftweareCloud2/casa",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "flutter.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/SoftweareCloud2/casa/assets/images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/assets/svgs" />
       <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/assets/svgs" />
       <recent name="C:\Users\adelh\Documents\GitHub\casa\assets\svgs" />
       <recent name="C:\Users\adelh\Documents\GitHub\casa\assets" />
       <recent name="C:\Users\adelh\Documents\GitHub\casa\lib\components" />
@@ -251,7 +346,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689625664559</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="updates">
+      <created>1689627634044</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1689627634044</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

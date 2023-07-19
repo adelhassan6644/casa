@@ -17,8 +17,8 @@ class StepWidget extends StatelessWidget {
           width: currentIndex == 0 ? 24 : 16,
           decoration: BoxDecoration(
               color: currentIndex == 0
-                  ? ColorResources.PRIMARY_COLOR
-                  : ColorResources.SECOUND_PRIMARY_COLOR,
+                  ? Styles.PRIMARY_COLOR
+                  : Styles.SECOUND_PRIMARY_COLOR,
               borderRadius: BorderRadius.circular(6)),
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeInOutSine,
@@ -31,8 +31,8 @@ class StepWidget extends StatelessWidget {
           width: currentIndex == 1 ? 24 : 16,
           decoration: BoxDecoration(
               color: currentIndex == 1
-                  ? ColorResources.PRIMARY_COLOR
-                  : ColorResources.SECOUND_PRIMARY_COLOR,
+                  ? Styles.PRIMARY_COLOR
+                  : Styles.SECOUND_PRIMARY_COLOR,
               borderRadius: BorderRadius.circular(6)),
           duration: const Duration(milliseconds: 200),
           curve: Curves.easeInOutSine,

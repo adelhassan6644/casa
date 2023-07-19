@@ -70,7 +70,7 @@ class AuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: fail.error,
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
       }, (success) {
         if (_isRememberMe) {
@@ -78,7 +78,7 @@ class AuthProvider extends ChangeNotifier {
         } else {
           authRepo.forget();
         }
-        if (success.data['data']["email_verification_code"] != null) {
+        if (success.data['data']["email_verified_at"] != null) {
           authRepo.saveUserId(success.data['data']["id"]);
           authRepo.saveUserToken(success.data['data']["api_token"]);
           authRepo.setLoggedIn();
@@ -103,7 +103,7 @@ class AuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isLogin = false;
       notifyListeners();
@@ -124,7 +124,7 @@ class AuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: fail.error,
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
@@ -138,7 +138,7 @@ class AuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isReset = false;
       notifyListeners();
@@ -158,7 +158,7 @@ class AuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: fail.error,
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
@@ -167,7 +167,7 @@ class AuthProvider extends ChangeNotifier {
                 message: getTranslated("your_password_changed_successfully",
                     CustomNavigator.navigatorState.currentContext!),
                 isFloating: true,
-                backgroundColor: ColorResources.ACTIVE,
+                backgroundColor: Styles.ACTIVE,
                 borderColor: Colors.transparent));
         clear();
         notifyListeners();
@@ -179,7 +179,7 @@ class AuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isChange = false;
       notifyListeners();
@@ -204,7 +204,7 @@ class AuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: fail.error,
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
@@ -222,7 +222,7 @@ class AuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isRegister = false;
       notifyListeners();
@@ -251,7 +251,7 @@ class AuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: fail.error,
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
@@ -265,7 +265,7 @@ class AuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isForget = false;
       notifyListeners();
@@ -289,7 +289,7 @@ class AuthProvider extends ChangeNotifier {
             notification: AppNotification(
                 message: fail.error,
                 isFloating: true,
-                backgroundColor: ColorResources.IN_ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
@@ -324,7 +324,7 @@ class AuthProvider extends ChangeNotifier {
           notification: AppNotification(
               message: ApiErrorHandler.getMessage(e),
               isFloating: true,
-              backgroundColor: ColorResources.IN_ACTIVE,
+              backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
       _isVerify = false;
       notifyListeners();
@@ -343,7 +343,7 @@ class AuthProvider extends ChangeNotifier {
             message: getTranslated("your_logged_out_successfully",
                 CustomNavigator.navigatorState.currentContext!),
             isFloating: true,
-            backgroundColor: ColorResources.ACTIVE,
+            backgroundColor: Styles.ACTIVE,
             borderColor: Colors.transparent));
     notifyListeners();
   }

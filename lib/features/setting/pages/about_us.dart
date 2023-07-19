@@ -12,7 +12,7 @@ class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-        backgroundColor: ColorResources.BACKGROUND_COLOR,
+        backgroundColor: Styles.BACKGROUND_COLOR,
         body: SafeArea(
           bottom: true,
           top: false,

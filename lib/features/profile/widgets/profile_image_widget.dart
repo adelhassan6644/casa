@@ -62,7 +62,7 @@ class ProfileImageWidget extends StatelessWidget {
                           ),
                         )
                       : CustomNetworkImage.circleNewWorkImage(
-                          color: ColorResources.HINT_COLOR,
+                          color: Styles.HINT_COLOR,
                           image: provider.profileModel?.image ?? "",
                           radius: radius),
                   if (withEdit)
@@ -83,7 +83,7 @@ class ProfileImageWidget extends StatelessWidget {
                           padding: const EdgeInsets.all(8),
                           decoration: BoxDecoration(
                               boxShadow: kElevationToShadow[1],
-                              color: ColorResources.WHITE_COLOR,
+                              color: Styles.WHITE_COLOR,
                               borderRadius: BorderRadius.circular(100)),
                           child: customImageIconSVG(
                             imageName: SvgImages.cameraIcon,

@@ -1,6 +1,6 @@
 class EndPoints {
   static const String baseUrl =
-      'https://casa-elhemdania.softwarecloud2.com/api/';
+      'https://live-elhemdania.softwarecloud2.com/api/';
   static const String googleMapsBaseUrl = 'https://maps.googleapis.com';
   static const String imageUrl =
       'https://casa-elhemdania.softwarecloud2.com/api/';

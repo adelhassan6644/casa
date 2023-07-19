@@ -95,7 +95,7 @@ class ProfileProvider extends ChangeNotifier {
               notification: AppNotification(
                   message: ApiErrorHandler.getMessage(fail),
                   isFloating: true,
-                  backgroundColor: ColorResources.IN_ACTIVE,
+                  backgroundColor: Styles.IN_ACTIVE,
                   borderColor: Colors.red));
 
           // showToast(ApiErrorHandler.getMessage(fail));
@@ -108,7 +108,7 @@ class ProfileProvider extends ChangeNotifier {
                   message: getTranslated("your_profile_successfully_updated",
                       CustomNavigator.navigatorState.currentContext!),
                   isFloating: true,
-                  backgroundColor: ColorResources.ACTIVE,
+                  backgroundColor: Styles.ACTIVE,
                   borderColor: Colors.transparent));
           isUpdate = false;
           notifyListeners();
@@ -118,8 +118,8 @@ class ProfileProvider extends ChangeNotifier {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
                 message: e.toString(),
-                backgroundColor: ColorResources.IN_ACTIVE,
-                borderColor: ColorResources.RED_COLOR,
+                backgroundColor: Styles.IN_ACTIVE,
+                borderColor: Styles.RED_COLOR,
                 isFloating: true));
         notifyListeners();
       }
@@ -129,8 +129,8 @@ class ProfileProvider extends ChangeNotifier {
           notification: AppNotification(
               message: getTranslated("you_must_change_something",
                   CustomNavigator.navigatorState.currentContext!),
-              backgroundColor: ColorResources.IN_ACTIVE,
-              borderColor: ColorResources.RED_COLOR,
+              backgroundColor: Styles.IN_ACTIVE,
+              borderColor: Styles.RED_COLOR,
               isFloating: true));
       notifyListeners();
     }
@@ -159,8 +159,8 @@ class ProfileProvider extends ChangeNotifier {
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: e.toString(),
-              backgroundColor: ColorResources.IN_ACTIVE,
-              borderColor: ColorResources.RED_COLOR,
+              backgroundColor: Styles.IN_ACTIVE,
+              borderColor: Styles.RED_COLOR,
               isFloating: true));
       notifyListeners();
     }

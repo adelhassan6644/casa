@@ -36,7 +36,7 @@ class ImagePopUpViewer extends StatelessWidget {
               height: 35.h,
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                  color: ColorResources.WHITE_COLOR,
+                  color: Styles.WHITE_COLOR,
                   borderRadius: BorderRadius.circular(40)),
               child: Center(
                 child: Icon(
@@ -59,7 +59,7 @@ class ImagePopUpViewer extends StatelessWidget {
                 style: AppTextStyles.semiBold.copyWith(
                     fontSize: 12,
                     overflow: TextOverflow.ellipsis,
-                    color: ColorResources.WHITE_COLOR),
+                    color: Styles.WHITE_COLOR),
               ),
               isFromInternet
                   ? Center(

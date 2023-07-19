@@ -18,13 +18,13 @@ class ExpansionTileWidget extends StatelessWidget {
       title: Text(
         title,
         style: AppTextStyles.semiBold.copyWith(
-            fontSize: 14, color: ColorResources.SECOUND_PRIMARY_COLOR),
+            fontSize: 14, color: Styles.SECOUND_PRIMARY_COLOR),
       ),
       tilePadding: const EdgeInsets.all(0),
       childrenPadding:  EdgeInsets.all(childrenPadding??0),
-      collapsedIconColor: ColorResources.SECOUND_PRIMARY_COLOR,
+      collapsedIconColor: Styles.SECOUND_PRIMARY_COLOR,
       initiallyExpanded: true,
-      iconColor: iconColor??ColorResources.SYSTEM_COLOR,
+      iconColor: iconColor??Styles.SYSTEM_COLOR,
       shape: Border.all(color: Colors.transparent, width: 0, style: BorderStyle.none),
       collapsedShape: Border.all(color: Colors.transparent, width: 0, style: BorderStyle.none),
       expandedCrossAxisAlignment: CrossAxisAlignment.start,

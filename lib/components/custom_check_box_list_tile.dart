@@ -16,31 +16,31 @@ class CustomCheckBoxListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return CheckboxListTile(
       side:  const BorderSide(
-        color: ColorResources.BORDER_COLOR,
+        color: Styles.BORDER_COLOR,
         width: 9,
       ),
       controlAffinity: ListTileControlAffinity.leading,
-      checkColor: ColorResources.WHITE_COLOR,
+      checkColor: Styles.WHITE_COLOR,
       contentPadding: EdgeInsets.zero,
       checkboxShape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5),
       ),
-      activeColor: ColorResources.PRIMARY_COLOR,
+      activeColor: Styles.PRIMARY_COLOR,
       title: Text(
         title,
         style:   TextStyle(
-            color:value ? ColorResources.PRIMARY_COLOR:ColorResources.HINT_COLOR,
+            color:value ? Styles.PRIMARY_COLOR:Styles.HINT_COLOR,
             fontSize: 13,
             fontWeight: FontWeight.w700) ,
       ),
       subtitle:subTitle != null? Text(
         "(${subTitle??""})",
         style: value ? const TextStyle(
-            color: ColorResources.PRIMARY_COLOR,
+            color: Styles.PRIMARY_COLOR,
             fontSize: 11,
             fontWeight: FontWeight.w600)
             :  const TextStyle(
-            color: ColorResources.HINT_COLOR,
+            color: Styles.HINT_COLOR,
             fontSize: 11,
             fontWeight: FontWeight.w600),
       ):null,

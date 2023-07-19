@@ -44,7 +44,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
           const HomeHeader(),
           Expanded(
             child: RefreshIndicator(
-              color: ColorResources.PRIMARY_COLOR,
+              color: Styles.PRIMARY_COLOR,
               onRefresh: () async {
                 // sl<HomeProvider>().show = false;
                 sl<HomeProvider>().getPlaces();

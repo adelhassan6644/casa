@@ -82,7 +82,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
     borderRadius: BorderRadius.circular(30),
     borderSide: const BorderSide(
       style: BorderStyle.solid,
-      color: ColorResources.BORDER_COLOR,
+      color: Styles.PRIMARY_COLOR,
       width: 1,
     ),
   );
@@ -117,8 +117,8 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
             ? [FilteringTextInputFormatter.allow(RegExp('[0-9]'))]
             : widget.formatter,
         style: AppTextStyles.medium
-            .copyWith(color: ColorResources.TITLE, fontSize: 14),
-        cursorColor: ColorResources.TITLE,
+            .copyWith(color: Styles.TITLE, fontSize: 14),
+        cursorColor: Styles.TITLE,
         onChanged: widget.onChanged,
         obscureText: widget.isPassword == true ? _isHidden : false,
         decoration: InputDecoration(
@@ -149,7 +149,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                 height: 100,
                 width: 1,
                 decoration: BoxDecoration(
-                    color: ColorResources.DISABLED,
+                    color: Styles.DISABLED,
                     borderRadius: BorderRadius.circular(100)),
                 child: const SizedBox(),
               ),
@@ -189,7 +189,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                                         imageName: SvgImages.eyeIcon,
                                         height: 16.55.h,
                                         width: 19.59.w,
-                                        color: ColorResources.PRIMARY_COLOR,
+                                        color: Styles.PRIMARY_COLOR,
                                       ),
                               )
                             : null),
@@ -198,30 +198,30 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               borderSide: widget.addBorder
                   ? BorderSide(
                       color: widget.read == true
-                          ? ColorResources.DISABLED
-                          : ColorResources.BORDER_COLOR)
+                          ? Styles.DISABLED
+                          : Styles.BORDER_COLOR)
                   : null),
           disabledBorder: _borders.copyWith(
               borderSide: widget.addBorder
-                  ? const BorderSide(color: ColorResources.DISABLED)
+                  ? const BorderSide(color: Styles.BORDER_COLOR)
                   : null),
           focusedBorder: _borders.copyWith(
               borderSide: widget.addBorder
                   ? BorderSide(
                       color: widget.read == true
-                          ? ColorResources.DISABLED
-                          : ColorResources.PRIMARY_COLOR)
+                          ? Styles.DISABLED
+                          : Styles.PRIMARY_COLOR)
                   : null),
           errorBorder: _borders.copyWith(
               borderSide: widget.addBorder
-                  ? const BorderSide(color: ColorResources.FAILED_COLOR)
+                  ? const BorderSide(color: Styles.FAILED_COLOR)
                   : null),
           border: _borders.copyWith(
               borderSide: widget.addBorder
                   ? BorderSide(
                       color: widget.read == true
-                          ? ColorResources.DISABLED
-                          : ColorResources.BORDER_COLOR)
+                          ? Styles.DISABLED
+                          : Styles.BORDER_COLOR)
                   : null),
           contentPadding:
               EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
@@ -229,16 +229,16 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
           alignLabelWithHint: true,
           hintText: widget.hint,
           labelStyle: AppTextStyles.regular
-              .copyWith(color: ColorResources.DISABLED, fontSize: 14),
+              .copyWith(color: Styles.DISABLED, fontSize: 14),
           hintStyle: AppTextStyles.regular
-              .copyWith(color: ColorResources.DISABLED, fontSize: 12),
+              .copyWith(color: Styles.DISABLED, fontSize: 12),
           labelText: widget.label ? widget.hint : null,
-          fillColor: ColorResources.FILL_COLOR,
+          fillColor: Styles.FILL_COLOR,
           floatingLabelStyle: AppTextStyles.regular
-              .copyWith(color: ColorResources.TITLE, fontSize: 12),
+              .copyWith(color: Styles.TITLE, fontSize: 12),
           filled: true,
           errorStyle: AppTextStyles.regular.copyWith(
-            color: ColorResources.FAILED_COLOR,
+            color: Styles.FAILED_COLOR,
             fontSize: 11,
           ),
           errorMaxLines: 2,

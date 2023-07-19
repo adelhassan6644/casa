@@ -29,7 +29,7 @@ loadingDialog() {
               "please wait",
               style: AppTextStyles.bold.copyWith(
                 fontSize: 18.0,
-                color: ColorResources.DISABLED,
+                color: Styles.DISABLED,
               ),
             ),
           ),
@@ -53,7 +53,7 @@ spinKitDialog() {
           child: const Center(
             child: Center(
               child: SpinKitFadingCircle(
-                color: ColorResources.WHITE_COLOR,
+                color: Styles.WHITE_COLOR,
                 size: 50,
               ),
             ),

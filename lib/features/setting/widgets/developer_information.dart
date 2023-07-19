@@ -37,15 +37,15 @@ class DeveloperInformation extends StatelessWidget {
                   vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
-                  color: ColorResources.WHITE_COLOR,
-                  border: Border.all(color: ColorResources.LIGHT_BORDER_COLOR)),
+                  color: Styles.WHITE_COLOR,
+                  border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     getTranslated("contact_with_us_any_time", context),
                     style: AppTextStyles.medium.copyWith(
-                        color: ColorResources.HEADER,
+                        color: Styles.HEADER,
                         fontSize: 16,
                         overflow: TextOverflow.ellipsis),
                   ),

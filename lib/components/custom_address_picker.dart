@@ -38,8 +38,8 @@ class CustomAddressPicker extends StatelessWidget {
                   location?.address ?? hint,
                   style: AppTextStyles.regular.copyWith(
                       color: location?.address == null
-                          ? ColorResources.DISABLED
-                          : ColorResources.SECOUND_PRIMARY_COLOR,
+                          ? Styles.DISABLED
+                          : Styles.SECOUND_PRIMARY_COLOR,
                       fontSize: 14,
                       overflow: TextOverflow.ellipsis),
                 ),

@@ -24,7 +24,7 @@ class PlaceDetailsWidget extends StatelessWidget {
           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
           vertical: Dimensions.PADDING_SIZE_SMALL.h),
       decoration: const BoxDecoration(
-          color: ColorResources.WHITE_COLOR,
+          color: Styles.WHITE_COLOR,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(35), topRight: Radius.circular(35))),
       child: Column(
@@ -49,7 +49,7 @@ class PlaceDetailsWidget extends StatelessWidget {
                     style: AppTextStyles.medium.copyWith(
                         fontSize: 22,
                         overflow: TextOverflow.ellipsis,
-                        color: ColorResources.TITLE),
+                        color: Styles.TITLE),
                     maxLines: 1,
                   ),
                 ),
@@ -60,9 +60,9 @@ class PlaceDetailsWidget extends StatelessWidget {
                   withBorderColor: false,
                   withShadow: true,
                   iconSize: 15,
-                  textColor: ColorResources.SECOUND_PRIMARY_COLOR,
+                  textColor: Styles.SECOUND_PRIMARY_COLOR,
                   svgIcon: SvgImages.share,
-                  backgroundColor: ColorResources.WHITE_COLOR,
+                  backgroundColor: Styles.WHITE_COLOR,
                   textSize: 14,
                 )
               ],
@@ -147,7 +147,7 @@ class PlaceDetailsWidget extends StatelessWidget {
                           style: AppTextStyles.medium.copyWith(
                             fontSize: 16,
                             overflow: TextOverflow.ellipsis,
-                            color: ColorResources.DETAILS_COLOR,
+                            color: Styles.DETAILS_COLOR,
                           ),
                           maxLines: 10,
                         ),
@@ -162,12 +162,12 @@ class PlaceDetailsWidget extends StatelessWidget {
                   children: [
                     customContainerSvgIcon(
                         imageName: SvgImages.faceBook,
-                        imageColor: ColorResources.HEADER,
+                        imageColor: Styles.HEADER,
                         height: 42.0,
                         width: 42.0,
                         radius: 100,
                         withShadow: true,
-                        color: ColorResources.WHITE_COLOR,
+                        color: Styles.WHITE_COLOR,
                         onTap: () async {
                           await launch(
                               'fb://facewebmodal/f?href=https://${placeItem.facebook!}');
@@ -177,12 +177,12 @@ class PlaceDetailsWidget extends StatelessWidget {
                     ),
                     customContainerSvgIcon(
                         imageName: SvgImages.instagram,
-                        imageColor: ColorResources.HEADER,
+                        imageColor: Styles.HEADER,
                         height: 42.0,
                         width: 42.0,
                         radius: 100,
                         withShadow: true,
-                        color: ColorResources.WHITE_COLOR,
+                        color: Styles.WHITE_COLOR,
                         onTap: () async {
                           await launch('in://${placeItem.instagram!}');
                         }),
@@ -191,12 +191,12 @@ class PlaceDetailsWidget extends StatelessWidget {
                     ),
                     customContainerSvgIcon(
                         imageName: SvgImages.twitter,
-                        imageColor: ColorResources.HEADER,
+                        imageColor: Styles.HEADER,
                         height: 42.0,
                         width: 42.0,
                         radius: 100,
                         withShadow: true,
-                        color: ColorResources.WHITE_COLOR,
+                        color: Styles.WHITE_COLOR,
                         onTap: () async {
                           await launch('tw://${placeItem.twitter!}');
                         }),
@@ -205,23 +205,23 @@ class PlaceDetailsWidget extends StatelessWidget {
                     ),
                     customContainerSvgIcon(
                         imageName: SvgImages.tiktok,
-                        imageColor: ColorResources.HEADER,
+                        imageColor: Styles.HEADER,
                         height: 42.0,
                         width: 42.0,
                         radius: 100,
                         withShadow: true,
-                        color: ColorResources.WHITE_COLOR),
+                        color: Styles.WHITE_COLOR),
                     const SizedBox(
                       width: 16,
                     ),
                     customContainerSvgIcon(
                         imageName: SvgImages.whatsApp,
-                        imageColor: ColorResources.HEADER,
+                        imageColor: Styles.HEADER,
                         height: 42.0,
                         width: 42.0,
                         radius: 100,
                         withShadow: true,
-                        color: ColorResources.WHITE_COLOR,
+                        color: Styles.WHITE_COLOR,
                         onTap: () async {
                           await launch(
                               "whatsapp://send?phone=${placeItem.whatsapp}");
@@ -257,7 +257,7 @@ class PlaceDetailsWidgetShimmer extends StatelessWidget {
           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
           vertical: Dimensions.PADDING_SIZE_SMALL.h),
       decoration: const BoxDecoration(
-          color: ColorResources.WHITE_COLOR,
+          color: Styles.WHITE_COLOR,
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(35), topRight: Radius.circular(35))),
       child: Column(

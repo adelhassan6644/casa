@@ -87,7 +87,7 @@ class HomeBanner extends StatelessWidget {
                                             style:
                                                 AppTextStyles.medium.copyWith(
                                               fontSize: 18,
-                                              color: ColorResources.DISABLED,
+                                              color: Styles.DISABLED,
                                             ),
                                           ),
                                           Row(
@@ -98,7 +98,7 @@ class HomeBanner extends StatelessWidget {
                                                 imageName: SvgImages.location,
                                                 height: 20,
                                                 width: 20,
-                                                color: ColorResources.DISABLED,
+                                                color: Styles.DISABLED,
                                               ),
                                               SizedBox(
                                                 width: 4.w,
@@ -116,7 +116,7 @@ class HomeBanner extends StatelessWidget {
                                                           fontSize: 18,
                                                           overflow: TextOverflow
                                                               .ellipsis,
-                                                          color: ColorResources
+                                                          color: Styles
                                                               .DISABLED),
                                                   maxLines: 1,
                                                 ),
@@ -168,11 +168,11 @@ class HomeBanner extends StatelessWidget {
                                 margin: EdgeInsets.symmetric(horizontal: 2.w),
                                 decoration: BoxDecoration(
                                     color: index == provider.bannerIndex
-                                        ? ColorResources.SECOUND_PRIMARY_COLOR
-                                        : ColorResources.WHITE_COLOR,
+                                        ? Styles.SECOUND_PRIMARY_COLOR
+                                        : Styles.WHITE_COLOR,
                                     borderRadius: BorderRadius.circular(100.w),
                                     border: Border.all(
-                                        color: ColorResources
+                                        color: Styles
                                             .SECOUND_PRIMARY_COLOR,
                                         width: 1)),
                               );
@@ -208,7 +208,7 @@ class _BannerShimmer extends StatelessWidget {
             height: 245.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              color: ColorResources.WHITE_COLOR,
+              color: Styles.WHITE_COLOR,
             )),
       ),
     );
