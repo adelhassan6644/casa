@@ -1,6 +1,20 @@
-[![Version](https://img.shields.io/cocoapods/v/Firebase.svg?style=flat)](https://cocoapods.org/pods/Firebase)
-[![License](https://img.shields.io/cocoapods/l/Firebase.svg?style=flat)](https://cocoapods.org/pods/Firebase)
-[![Platform](https://img.shields.io/cocoapods/p/Firebase.svg?style=flat)](https://cocoapods.org/pods/Firebase)
+<p align="center">
+  <a href="https://cocoapods.org/pods/Firebase">
+    <img src="https://img.shields.io/github/v/release/Firebase/firebase-ios-sdk?style=flat&label=CocoaPods"/>
+  </a>
+  <a href="https://swiftpackageindex.com/firebase/firebase-ios-sdk">
+    <img src="https://img.shields.io/github/v/release/Firebase/firebase-ios-sdk?style=flat&label=Swift%20Package%20Index&color=red"/>
+  </a>
+  <a href="https://cocoapods.org/pods/Firebase">
+    <img src="https://img.shields.io/github/license/Firebase/firebase-ios-sdk?style=flat"/>
+  </a><br/>
+  <a href="https://swiftpackageindex.com/firebase/firebase-ios-sdk">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Ffirebase%2Ffirebase-ios-sdk%2Fbadge%3Ftype%3Dplatforms"/>
+  </a>
+  <a href="https://swiftpackageindex.com/firebase/firebase-ios-sdk">
+    <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Ffirebase%2Ffirebase-ios-sdk%2Fbadge%3Ftype%3Dswift-versions"/>
+  </a>
+</p>
 
 # Firebase Apple Open Source Development
 
@@ -73,7 +87,7 @@ Instructions for the experimental Carthage distribution are at
 To develop Firebase software in this repository, ensure that you have at least
 the following software:
 
-  * Xcode 13.3.1 (or later)
+  * Xcode 14.1 (or later)
 
 CocoaPods is still the canonical way to develop, but much of the repo now supports
 development with Swift Package Manager.
@@ -140,7 +154,7 @@ GitHub Actions will verify that any code changes are done in a style compliant
 way. Install `clang-format` and `mint`:
 
 ```console
-brew install clang-format@15
+brew install clang-format@16
 brew install mint
 ```
 
@@ -199,7 +213,7 @@ To run the Storage Integration tests, follow the instructions in
 
 #### Push Notifications
 
-Push notifications can only be decasared to specially provisioned App IDs in the developer portal.
+Push notifications can only be delivered to specially provisioned App IDs in the developer portal.
 In order to actually test receiving push notifications, you will need to:
 
 1. Change the bundle identifier of the sample app to something you own in your Apple Developer

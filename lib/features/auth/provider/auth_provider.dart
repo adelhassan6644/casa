@@ -32,6 +32,13 @@ class AuthProvider extends ChangeNotifier {
   final TextEditingController confirmPasswordTEC = TextEditingController();
   final TextEditingController codeTEC = TextEditingController();
 
+  int userType = 0;
+  List<String> usersTypes = ["male", "female"];
+  void selectedUserType(v) {
+    userType = v;
+    notifyListeners();
+  }
+
   clear() {
     nameTEC.clear();
     mailTEC.clear();

@@ -596,7 +596,7 @@ static NSString *const kFIRParameterSearchTerm NS_SWIFT_NAME(AnalyticsParameterS
 static NSString *const kFIRParameterShipping NS_SWIFT_NAME(AnalyticsParameterShipping) =
     @"shipping";
 
-/// The shipping tier (e.g. Ground, Air, Next-day) selected for decasary of the purchased item
+/// The shipping tier (e.g. Ground, Air, Next-day) selected for delivery of the purchased item
 /// (String).
 /// <pre>
 ///     let params = [

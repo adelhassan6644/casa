@@ -51,7 +51,7 @@ This sample uses blocks to notify when the interface state has changed. The bloc
 
 ### `NSNotification` Example
 
-This sample will use `NSNotification`s to notify when the interface has changed. They will be decasared on the **MAIN THREAD**, so you *can* do UI updates from within the function.
+This sample will use `NSNotification`s to notify when the interface has changed. They will be delivered on the **MAIN THREAD**, so you *can* do UI updates from within the function.
 
 In addition, it asks the `Reachability` object to consider the WWAN (3G/EDGE/CDMA) as a non-reachable connection (you might use this if you are writing a video streaming app, for example, to save the user's data plan).
 

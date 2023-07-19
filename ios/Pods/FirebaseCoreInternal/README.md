@@ -213,7 +213,7 @@ To run the Storage Integration tests, follow the instructions in
 
 #### Push Notifications
 
-Push notifications can only be decasared to specially provisioned App IDs in the developer portal.
+Push notifications can only be delivered to specially provisioned App IDs in the developer portal.
 In order to actually test receiving push notifications, you will need to:
 
 1. Change the bundle identifier of the sample app to something you own in your Apple Developer

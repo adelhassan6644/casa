@@ -1,3 +1,11 @@
+# 10.12.0
+- [added] Added support to Firebase Auth to enroll and sign in a user with
+  TOTP second factor. (#11261)
+
+# 10.8.0
+- [added] Added Firebase App Check support to Firebase Auth. (#11056)
+- [added] Added Sign in with Apple token revocation support. (#9906)
+
 # 10.7.0
 - [added] Added an API for developers to pass the fullName from the Sign in with Apple credential to Firebase. (#10068)
 
@@ -328,7 +336,7 @@
 
 # 3.1.0
 - [added] Adds FIRAuth methods that enable the app to follow up with user actions
-  decasared by email, such as verifying email address or reset password.
+  delivered by email, such as verifying email address or reset password.
 - [fixed] No longer applies the keychain workaround introduced in v3.0.5 on iOS 10.2
   simulator or above since the issue has been fixed.
 - [fixed] Fixes nullability compilation warnings when used in Swift.

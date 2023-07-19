@@ -13,6 +13,7 @@
 #import "FLTAuthStateChannelStreamHandler.h"
 #import "FLTIdTokenChannelStreamHandler.h"
 #import "FLTPhoneNumberVerificationStreamHandler.h"
+#import "PigeonParser.h"
 #import "CustomPigeonHeader.h"
 #import "FLTFirebaseAuthPlugin.h"
 #import "messages.g.h"

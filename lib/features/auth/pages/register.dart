@@ -10,6 +10,7 @@ import 'dart:ui' as ui;
 import '../../../app/core/utils/text_styles.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_button.dart';
+import '../../../components/custom_radio_button.dart';
 import '../../../components/custom_text_form_field.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
@@ -49,13 +50,13 @@ class _RegisterState extends State<Register> {
                         clipBehavior: Clip.antiAlias,
                         borderRadius: BorderRadius.circular(25),
                         child: BackdropFilter(
-                          filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                          filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                           child: Container(
                             padding: EdgeInsets.symmetric(
                                 horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
                                 vertical: 30.h),
                             decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.06),
+                                color: Colors.black.withOpacity(0.1),
                                 borderRadius: const BorderRadius.only(
                                     topRight: Radius.circular(30),
                                     topLeft: Radius.circular(30))),
@@ -84,13 +85,31 @@ class _RegisterState extends State<Register> {
                                             valid: Validations.name,
                                             pSvgIcon: SvgImages.userIcon,
                                           ),
-                                          CustomTextFormField(
-                                            controller: provider.phoneTEC,
-                                            hint: getTranslated(
-                                                "phone_number", context),
-                                            inputType: TextInputType.phone,
-                                            valid: Validations.phone,
-                                            pSvgIcon: SvgImages.phoneIcon,
+                                          Padding(
+                                            padding:  EdgeInsets.symmetric(vertical: 6.h,horizontal: 12.w),
+                                            child: Row(
+                                              children: [
+                                                Text(
+                                                  getTranslated("gender", context),
+                                                  style: AppTextStyles.medium.copyWith(
+                                                          fontSize: 18,
+                                                          color: Styles
+                                                              .PRIMARY_COLOR),
+                                                ),
+                                                SizedBox(width: 24.w,),
+                                                ...List.generate(2, (index) => Expanded(
+                                                  child: CustomRadioButton(
+                                                    check: provider.userType==index,
+                                                    title: getTranslated(provider.usersTypes[index], context),
+                                                    onChange: (v){
+                                                      if(v){
+                                                        provider.selectedUserType(index);
+                                                      }
+                                                    },
+                                                  ),
+                                                ))
+                                              ],
+                                            ),
                                           ),
                                           CustomTextFormField(
                                             controller: provider.mailTEC,
@@ -100,6 +119,14 @@ class _RegisterState extends State<Register> {
                                                 TextInputType.emailAddress,
                                             valid: Validations.mail,
                                             pSvgIcon: SvgImages.mailIcon,
+                                          ),
+                                          CustomTextFormField(
+                                            controller: provider.phoneTEC,
+                                            hint: getTranslated(
+                                                "phone_number", context),
+                                            inputType: TextInputType.phone,
+                                            valid: Validations.phone,
+                                            pSvgIcon: SvgImages.phoneIcon,
                                           ),
                                           CustomTextFormField(
                                             keyboardAction:

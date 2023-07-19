@@ -54,15 +54,14 @@ class _LoginState extends State<Login> {
                         clipBehavior: Clip.antiAlias,
                         borderRadius: BorderRadius.circular(25),
                         child: BackdropFilter(
-                          filter: ui.ImageFilter.blur(
-                              sigmaX: 5.0, sigmaY: 5.0),
+                          filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                           child: Container(
                             padding: EdgeInsets.symmetric(
                                 horizontal:
                                 Dimensions.PADDING_SIZE_DEFAULT.w,
                                 vertical: 30.h),
                             decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.06),
+                                color: Colors.black.withOpacity(0.1),
                                 borderRadius:
                                 const BorderRadius.only(topRight: Radius.circular(30),
                                     topLeft: Radius.circular(30))),
@@ -95,8 +94,8 @@ class _LoginState extends State<Login> {
                                                 hint: getTranslated(
                                                     "mail", context),
                                                 inputType: TextInputType
-                                                    .phone,
-                                                valid: Validations.phone,
+                                                    .emailAddress,
+                                                valid: Validations.mail,
                                                 pSvgIcon:
                                                 SvgImages.phoneIcon,
                                               ),

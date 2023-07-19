@@ -11,7 +11,6 @@ import 'dart:ui' as ui;
 import '../../../app/core/utils/text_styles.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_button.dart';
-import '../../../components/custom_images.dart';
 import '../../../components/custom_text_form_field.dart';
 import '../provider/auth_provider.dart';
 
@@ -50,13 +49,13 @@ class _ResetPasswordState extends State<ResetPassword> {
                       clipBehavior: Clip.antiAlias,
                       borderRadius: BorderRadius.circular(25),
                       child: BackdropFilter(
-                        filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                        filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                         child: Container(
                           padding: EdgeInsets.symmetric(
                               horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
                               vertical: 30.h),
                           decoration: BoxDecoration(
-                              color: Colors.black.withOpacity(0.06),
+                              color: Colors.black.withOpacity(0.1),
                               borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(30),
                                   topLeft: Radius.circular(30))),

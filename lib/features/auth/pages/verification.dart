@@ -46,15 +46,15 @@ class _VerificationState extends State<Verification> {
                     children: [
                       ClipRRect(
                         clipBehavior: Clip.antiAlias,
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(30),
                         child: BackdropFilter(
-                          filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                          filter: ui.ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                           child: Container(
                             padding: EdgeInsets.symmetric(
                                 horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
                                 vertical: 30.h),
                             decoration: BoxDecoration(
-                                color: Colors.black.withOpacity(0.06),
+                                color: Colors.black.withOpacity(0.1),
                                 borderRadius: const BorderRadius.only(
                                     topRight: Radius.circular(30),
                                     topLeft: Radius.circular(30))),

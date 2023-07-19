@@ -78,7 +78,9 @@
   "and_enjoy_all_the_features_available_in_the_application": "and enjoy all the features available in the application",
   "your_password_reset_successfully": "Your password reset successfully",
   "invalid_credentials": "Invalid Credentials",
-  "register_successfully": "Account has been successfully registered"
-
+  "register_successfully": "Account has been successfully registered",
+  "male": "Male",
+  "female": "Female",
+  "gender": "Gender"
 
 }

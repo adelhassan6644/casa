@@ -34,7 +34,7 @@ dependencies:
   flutter_animate:
   url_launcher: ^6.1.11
   readmore:
-  flutter_svg:
+  flutter_svg: ^2.0.7
   flutter_form_builder:
   equatable:
   pin_code_fields:
@@ -45,11 +45,10 @@ dependencies:
   carousel_slider:
   firebase_auth: ^4.4.0
   whatsapp_unilink: ^2.1.0
-  flutter_html: ^2.2.1
   firebase_dynamic_links: ^5.1.0
   firebase_analytics: ^10.2.1
   flutter_native_splash: ^2.2.0+1
-  syncfusion_flutter_charts: ^21.1.41
+  syncfusion_flutter_charts: ^22.1.39
   flutter_typeahead:
   geolocator_platform_interface:
   geolocator: ^9.0.2
@@ -59,17 +58,17 @@ dependencies:
   country_picker: ^2.0.20
   flag:
   flutter_spinkit:
-  app_settings: ^4.2.0
+  app_settings: ^5.0.0
   substring_highlight: ^1.0.33
   motion_toast: ^2.6.8
   flutter_inappwebview: ^6.0.0-beta.24+1
   flutter_zoom_drawer: ^3.1.1
-  flutter_widget_from_html: ^0.8.0
-  file_picker: ^4.6.1
-  flutter_local_notifications: ^9.8.0+1
-  firebase_messaging: ^14.6.5
+  flutter_widget_from_html: ^0.10.3
+  file_picker: ^5.2.9
   permission_handler: ^10.4.3
   path_provider: ^2.0.15
+  flutter_local_notifications: ^15.1.0+1
+  firebase_messaging: ^14.6.5
 
 
 
@@ -77,6 +76,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
 
 flutter:
   uses-material-design: true
