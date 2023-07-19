@@ -37,7 +37,7 @@ class TabWidget extends StatelessWidget {
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(6),
             color: isSelected
-                ? backGroundColor ?? ColorResources.SECOUND_PRIMARY_COLOR
+                ? backGroundColor ?? Styles.SECOUND_PRIMARY_COLOR
                 : null),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -46,8 +46,8 @@ class TabWidget extends StatelessWidget {
               customImageIconSVG(
                   imageName: svgIcon!,
                   color: isSelected
-                      ? ColorResources.WHITE_COLOR
-                      : iconColor ?? ColorResources.SECOUND_PRIMARY_COLOR,
+                      ? Styles.WHITE_COLOR
+                      : iconColor ?? Styles.SECOUND_PRIMARY_COLOR,
                   height: iconSize?.h,
                   width: iconSize?.w),
             if (svgIcon != null) SizedBox(width: 4.w),
@@ -61,8 +61,8 @@ class TabWidget extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   fontWeight: isSelected ? FontWeight.w500 : FontWeight.w400,
                   color: isSelected
-                      ? ColorResources.WHITE_COLOR
-                      : ColorResources.SECOUND_PRIMARY_COLOR,
+                      ? Styles.WHITE_COLOR
+                      : Styles.SECOUND_PRIMARY_COLOR,
                 ),
               ),
             ),

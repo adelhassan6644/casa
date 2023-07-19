@@ -28,7 +28,7 @@ class ProfileCard extends StatelessWidget {
           Text(
             provider.isLogin ? provider.nameTEC.text.trim() : "Guest",
             style: AppTextStyles.bold.copyWith(
-                color: ColorResources.SPLASH_BACKGROUND_COLOR,
+                color: Styles.SPLASH_BACKGROUND_COLOR,
                 fontSize: 16,
                 height: 1),
           ),
@@ -37,7 +37,7 @@ class ProfileCard extends StatelessWidget {
                 ? provider.emailTEC.text.trim()
                 : "elhemdanih@casa.com",
             style: AppTextStyles.regular.copyWith(
-                color: ColorResources.SPLASH_BACKGROUND_COLOR, fontSize: 12),
+                color: Styles.SPLASH_BACKGROUND_COLOR, fontSize: 12),
           ),
           const SizedBox(
             height: 24,

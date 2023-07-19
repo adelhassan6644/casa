@@ -43,7 +43,7 @@ class EmptyState extends StatelessWidget {
                     imageName: img ?? SvgImages.appLogo,
                     width: imgWidth ?? 200,
                     height: imgHeight ?? 150,
-                    color: ColorResources.PRIMARY_COLOR),
+                    color: Styles.PRIMARY_COLOR),
             SizedBox(
               height: spaceBtw ?? 12.h,
             ),
@@ -52,14 +52,14 @@ class EmptyState extends StatelessWidget {
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
-                  color: ColorResources.PRIMARY_COLOR,
+                  color: Styles.PRIMARY_COLOR,
                 )),
             SizedBox(height: 8.h),
             Text(subText ?? "",
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     fontSize: 14,
-                    color: ColorResources.PRIMARY_COLOR,
+                    color: Styles.PRIMARY_COLOR,
                     fontWeight: FontWeight.w400))
           ],
         ),

@@ -94,7 +94,7 @@ class MapProvider extends ChangeNotifier {
     // with an id, an RGB color and the list of LatLng pairs
     Polyline polyline = Polyline(
       polylineId: PolylineId("poly"),
-      color: ColorResources.PRIMARY_COLOR,
+      color: Styles.PRIMARY_COLOR,
       points: polylineCoordinates,
       width: 3,
     );

@@ -27,7 +27,7 @@ class Terms extends StatelessWidget {
                     horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                 child: Text(getTranslated("terms_conditions", context),
                     style: AppTextStyles.semiBold
-                        .copyWith(fontSize: 24, color: ColorResources.HEADER)),
+                        .copyWith(fontSize: 24, color: Styles.HEADER)),
               ),
               Consumer<SettingProvider>(builder: (_, provider, child) {
                 return !provider.isLoading
@@ -52,7 +52,7 @@ class Terms extends StatelessWidget {
                     : const Expanded(
                         child: Center(
                           child: CircularProgressIndicator(
-                            color: ColorResources.PRIMARY_COLOR,
+                            color: Styles.PRIMARY_COLOR,
                           ),
                         ),
                       );

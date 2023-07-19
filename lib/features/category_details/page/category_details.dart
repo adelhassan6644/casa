@@ -35,7 +35,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorResources.BACKGROUND_COLOR,
+      backgroundColor: Styles.BACKGROUND_COLOR,
       body: SafeArea(
         bottom: true,
         top: true,
@@ -117,7 +117,7 @@ class _CategoryDetailsState extends State<CategoryDetails> {
                           )
                         : Expanded(
                             child: RefreshIndicator(
-                              color: ColorResources.PRIMARY_COLOR,
+                              color: Styles.PRIMARY_COLOR,
                               onRefresh: () async {
                                 provider.getCategoryDetails(widget.id);
                               },

@@ -41,7 +41,7 @@ class CustomButton extends StatelessWidget {
       this.withBorderColor = false,
       this.withShadow = false,
       required this.text,
-      this.backgroundColor = ColorResources.PRIMARY_COLOR,
+      this.backgroundColor = Styles.PRIMARY_COLOR,
       this.isError = false})
       : super(key: key);
 
@@ -63,7 +63,7 @@ class CustomButton extends StatelessWidget {
             boxShadow: withShadow
                 ? [
                     BoxShadow(
-                        color: Colors.black.withOpacity(0.1),
+                        color: Colors.black.withOpacity(0.06),
                         spreadRadius: 2,
                         blurRadius: 2,
                         offset: const Offset(1, 1))
@@ -71,7 +71,7 @@ class CustomButton extends StatelessWidget {
                 : null,
             border: Border.all(
                 color: withBorderColor
-                    ? borderColor ?? ColorResources.PRIMARY_COLOR
+                    ? borderColor ?? Styles.PRIMARY_COLOR
                     : Colors.transparent),
             borderRadius: BorderRadius.circular(radius ?? 30),
           ),
@@ -84,7 +84,7 @@ class CustomButton extends StatelessWidget {
                 ? Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: CircularProgressIndicator(
-                      color: textColor ?? ColorResources.WHITE_COLOR,
+                      color: textColor ?? Styles.WHITE_COLOR,
                     ),
                   )
                 : Row(
@@ -96,7 +96,7 @@ class CustomButton extends StatelessWidget {
                         style: AppTextStyles.medium.copyWith(
                           fontSize: textSize ?? 16,
                           overflow: TextOverflow.ellipsis,
-                          color: textColor ?? ColorResources.WHITE_COLOR,
+                          color: textColor ?? Styles.WHITE_COLOR,
                         ),
                       ),
                       if (assetIcon != null || svgIcon != null)

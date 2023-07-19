@@ -30,7 +30,7 @@ class PlaceCard extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(14),
-              color: ColorResources.GREY_BORDER,
+              color: Styles.GREY_BORDER,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,7 +40,7 @@ class PlaceCard extends StatelessWidget {
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: AppTextStyles.light.copyWith(
-                        fontSize: 14, color: ColorResources.DETAILS_COLOR)),
+                        fontSize: 14, color: Styles.DETAILS_COLOR)),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 4.h),
                   child: Text("${place.name}",
@@ -49,7 +49,7 @@ class PlaceCard extends StatelessWidget {
                       style: AppTextStyles.medium.copyWith(
                           fontSize: 14,
                           color: place.nameColor?.toColor ??
-                              ColorResources.PENDING)),
+                              Styles.PENDING)),
                 ),
                 Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -58,7 +58,7 @@ class PlaceCard extends StatelessWidget {
                         imageName: SvgImages.location,
                         height: 20,
                         width: 20,
-                        color: ColorResources.TITLE),
+                        color: Styles.TITLE),
                     SizedBox(
                       width: 4.w,
                     ),
@@ -68,7 +68,7 @@ class PlaceCard extends StatelessWidget {
                         style: AppTextStyles.medium.copyWith(
                             fontSize: 14,
                             overflow: TextOverflow.ellipsis,
-                            color: ColorResources.TITLE),
+                            color: Styles.TITLE),
                         maxLines: 1,
                       ),
                     ),

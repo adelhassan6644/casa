@@ -33,7 +33,7 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: ColorResources.SPLASH_BACKGROUND_COLOR,
+        backgroundColor: Styles.SPLASH_BACKGROUND_COLOR,
         body: Stack(
           alignment: Alignment.center,
           children: [
@@ -42,7 +42,7 @@ class _SplashState extends State<Splash> with WidgetsBindingObserver {
                 width: context.width,
                 alignment: Alignment.center,
                 decoration: const BoxDecoration(
-                    color: ColorResources.SPLASH_BACKGROUND_COLOR),
+                    color: Styles.SPLASH_BACKGROUND_COLOR),
                 child: const SizedBox()),
             Image.asset(
               Images.logo,

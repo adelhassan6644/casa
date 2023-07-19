@@ -24,8 +24,8 @@ class ChangePasswordButton extends StatelessWidget {
             horizontal: Dimensions.PADDING_SIZE_DEFAULT.w, vertical: 16.h),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
-            color: ColorResources.WHITE_COLOR,
-            border: Border.all(color: ColorResources.LIGHT_BORDER_COLOR)),
+            color: Styles.WHITE_COLOR,
+            border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -33,7 +33,7 @@ class ChangePasswordButton extends StatelessWidget {
               imageName: SvgImages.lockIcon,
               height: 20,
               width: 20,
-              color: ColorResources.HEADER,
+              color: Styles.HEADER,
             ),
             const SizedBox(
               width: 16,
@@ -47,12 +47,12 @@ class ChangePasswordButton extends StatelessWidget {
                         style: AppTextStyles.regular.copyWith(
                             fontSize: 18,
                             overflow: TextOverflow.ellipsis,
-                            color: ColorResources.HEADER)),
+                            color: Styles.HEADER)),
                   ),
                   const Icon(
                     Icons.arrow_forward_ios_rounded,
                     size: 18,
-                    color: ColorResources.HEADER,
+                    color: Styles.HEADER,
                   )
                 ],
               ),

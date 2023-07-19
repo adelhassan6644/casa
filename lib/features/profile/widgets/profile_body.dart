@@ -25,8 +25,8 @@ class ProfileBody extends StatelessWidget {
             vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
-            color: ColorResources.WHITE_COLOR,
-            border: Border.all(color: ColorResources.LIGHT_BORDER_COLOR)),
+            color: Styles.WHITE_COLOR,
+            border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
         child: Column(
           children: [
             Row(
@@ -35,7 +35,7 @@ class ProfileBody extends StatelessWidget {
                   child: Text(
                     getTranslated("personal_information", context),
                     style: AppTextStyles.medium.copyWith(
-                        color: ColorResources.HEADER,
+                        color: Styles.HEADER,
                         fontSize: 16,
                         overflow: TextOverflow.ellipsis),
                   ),
@@ -47,9 +47,9 @@ class ProfileBody extends StatelessWidget {
                   withBorderColor: false,
                   withShadow: true,
                   iconSize: 15,
-                  textColor: ColorResources.SECOUND_PRIMARY_COLOR,
+                  textColor: Styles.SECOUND_PRIMARY_COLOR,
                   svgIcon: SvgImages.edit,
-                  backgroundColor: ColorResources.WHITE_COLOR,
+                  backgroundColor: Styles.WHITE_COLOR,
                   textSize: 14,
                   onTap: () => provider.updateProfile(),
                   isLoading: provider.isUpdate,

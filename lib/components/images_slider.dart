@@ -44,7 +44,7 @@ class _ImagesSliderState extends State<ImagesSlider> {
               height: 35.h,
               padding: const EdgeInsets.all(4),
               decoration: BoxDecoration(
-                  color: ColorResources.WHITE_COLOR,
+                  color: Styles.WHITE_COLOR,
                   borderRadius: BorderRadius.circular(40)),
               child: Center(
                 child: Icon(
@@ -66,7 +66,7 @@ class _ImagesSliderState extends State<ImagesSlider> {
               style: AppTextStyles.semiBold.copyWith(
                   fontSize: 16,
                   overflow: TextOverflow.ellipsis,
-                  color: ColorResources.WHITE_COLOR),
+                  color: Styles.WHITE_COLOR),
             ),
             CarouselSlider.builder(
               itemCount: widget.images!.length,
@@ -132,7 +132,7 @@ class _ImagesSliderState extends State<ImagesSlider> {
       padding: EdgeInsets.symmetric(horizontal: 4.w),
       decoration: BoxDecoration(
         color:
-            isActive ? ColorResources.PRIMARY_COLOR : const Color(0xFFDDE5EB),
+            isActive ? Styles.PRIMARY_COLOR : const Color(0xFFDDE5EB),
         borderRadius: BorderRadius.circular(6.0),
       ),
     );

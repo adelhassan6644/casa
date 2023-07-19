@@ -27,7 +27,7 @@ class MoreButton extends StatelessWidget {
                 imageName: icon,
                 height: 20,
                 width: 20,
-                color: ColorResources.SPLASH_BACKGROUND_COLOR),
+                color: Styles.SPLASH_BACKGROUND_COLOR),
             const SizedBox(
               width: 16,
             ),
@@ -40,7 +40,7 @@ class MoreButton extends StatelessWidget {
                         style: AppTextStyles.medium.copyWith(
                             fontSize: 18,
                             overflow: TextOverflow.ellipsis,
-                            color: ColorResources.SPLASH_BACKGROUND_COLOR)),
+                            color: Styles.SPLASH_BACKGROUND_COLOR)),
                   ),
                 ],
               ),

@@ -60,7 +60,7 @@ class BottomSheetAppBar extends StatelessWidget {
                     textBtn,
                     textAlign: TextAlign.end,
                     style: AppTextStyles.regular.copyWith(
-                        fontSize: 14, color: ColorResources.PRIMARY_COLOR),
+                        fontSize: 14, color: Styles.PRIMARY_COLOR),
                   ),
                 ),
               ),
@@ -72,7 +72,7 @@ class BottomSheetAppBar extends StatelessWidget {
           child: Container(
             height: 1,
             width: context.width,
-            color: ColorResources.GREY_BORDER,
+            color: Styles.GREY_BORDER,
             child: const SizedBox(),
           ),
         ),

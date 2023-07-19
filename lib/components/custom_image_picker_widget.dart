@@ -36,7 +36,7 @@ class CustomButtonImagePicker extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 9),
               decoration: BoxDecoration(
                   border: Border.all(
-                      color: ColorResources.LIGHT_BORDER_COLOR, width: 1),
+                      color: Styles.LIGHT_BORDER_COLOR, width: 1),
                   borderRadius: BorderRadius.circular(8)),
               child: Row(
                 children: [
@@ -45,7 +45,7 @@ class CustomButtonImagePicker extends StatelessWidget {
                       child: Text(
                         title,
                         style: AppTextStyles.regular.copyWith(
-                            color: ColorResources.DISABLED,
+                            color: Styles.DISABLED,
                             fontSize: 14,
                             overflow: TextOverflow.ellipsis),
                       ),
@@ -63,7 +63,7 @@ class CustomButtonImagePicker extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
                 border: Border.all(
-                    color: ColorResources.LIGHT_BORDER_COLOR, width: 1),
+                    color: Styles.LIGHT_BORDER_COLOR, width: 1),
                 borderRadius: BorderRadius.circular(8)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -123,7 +123,7 @@ class CustomButtonImagePicker extends StatelessWidget {
                         style: AppTextStyles.regular.copyWith(
                             fontSize: 10,
                             overflow: TextOverflow.ellipsis,
-                            color: ColorResources.SYSTEM_COLOR)),
+                            color: Styles.SYSTEM_COLOR)),
                   ),
                 ),
               ],

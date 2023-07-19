@@ -30,7 +30,7 @@ class HomeNews extends StatelessWidget {
           child: Text(
             "أخر الأخبار ",
             style: AppTextStyles.semiBold
-                .copyWith(fontSize: 24, color: ColorResources.HEADER),
+                .copyWith(fontSize: 24, color: Styles.HEADER),
           ),
         ),
         SizedBox(
@@ -56,7 +56,7 @@ class HomeNews extends StatelessWidget {
                                       padding: EdgeInsets.symmetric(
                                           horizontal: 10.w, vertical: 16.h),
                                       decoration: BoxDecoration(
-                                          color: ColorResources.WHITE_COLOR,
+                                          color: Styles.WHITE_COLOR,
                                           borderRadius:
                                               BorderRadius.circular(20),
                                           boxShadow: [
@@ -78,7 +78,7 @@ class HomeNews extends StatelessWidget {
                                             style:
                                                 AppTextStyles.medium.copyWith(
                                               fontSize: 22,
-                                              color: ColorResources.TITLE,
+                                              color: Styles.TITLE,
                                             ),
                                           ),
                                           SizedBox(
@@ -91,7 +91,7 @@ class HomeNews extends StatelessWidget {
                                               style:
                                                   AppTextStyles.medium.copyWith(
                                                 fontSize: 16,
-                                                color: ColorResources
+                                                color: Styles
                                                     .DETAILS_COLOR,
                                               )),
                                           SizedBox(
@@ -103,7 +103,7 @@ class HomeNews extends StatelessWidget {
                                                   imageName: SvgImages.location,
                                                   height: 20,
                                                   width: 20,
-                                                  color: ColorResources.TITLE),
+                                                  color: Styles.TITLE),
                                               SizedBox(
                                                 width: 8.w,
                                               ),
@@ -120,7 +120,7 @@ class HomeNews extends StatelessWidget {
                                                           fontSize: 16,
                                                           overflow: TextOverflow
                                                               .ellipsis,
-                                                          color: ColorResources
+                                                          color: Styles
                                                               .TITLE),
                                                 ),
                                               ),
@@ -160,13 +160,13 @@ class HomeNews extends StatelessWidget {
                                               style: AppTextStyles.medium
                                                   .copyWith(
                                                       fontSize: 16,
-                                                      color: ColorResources
+                                                      color: Styles
                                                           .DETAILS_COLOR),
                                             ),
                                             customImageIconSVG(
                                                 imageName:
                                                     SvgImages.arrowRightIcon,
-                                                color: ColorResources
+                                                color: Styles
                                                     .DETAILS_COLOR),
                                           ],
                                         ),

@@ -33,7 +33,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         decoration: const BoxDecoration(
             image: DecorationImage(
           image: AssetImage(
-            Images.loginImage,
+            Images.authImage,
           ),
           fit: BoxFit.fitWidth,
         )),
@@ -94,7 +94,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                                                 .copyWith(
                                                     fontSize: 22,
                                                     color:
-                                                        ColorResources.HEADER),
+                                                        Styles.HEADER),
                                           ),
                                           Form(
                                               key: _formKey,

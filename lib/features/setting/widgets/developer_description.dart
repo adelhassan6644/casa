@@ -34,8 +34,8 @@ class DeveloperDescription extends StatelessWidget {
                   vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(18),
-                  color: ColorResources.WHITE_COLOR,
-                  border: Border.all(color: ColorResources.LIGHT_BORDER_COLOR)),
+                  color: Styles.WHITE_COLOR,
+                  border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
               child: Column(
                 children: [
                   Row(
@@ -43,7 +43,7 @@ class DeveloperDescription extends StatelessWidget {
                       Text(
                         getTranslated("about_us", context).replaceAll("ا", " "),
                         style: AppTextStyles.medium.copyWith(
-                            color: ColorResources.HEADER,
+                            color: Styles.HEADER,
                             fontSize: 16,
                             overflow: TextOverflow.ellipsis),
                       ),
@@ -62,7 +62,7 @@ class DeveloperDescription extends StatelessWidget {
                   Text(
                     provider.model?.data?.aboutUs ?? "",
                     style: AppTextStyles.light.copyWith(
-                        color: ColorResources.DETAILS_COLOR,
+                        color: Styles.DETAILS_COLOR,
                         fontSize: 14,
                         overflow: TextOverflow.ellipsis),
                     maxLines: 10,
