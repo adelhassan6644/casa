@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:casa/app/core/utils/color_resources.dart';
+import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/svg_images.dart';
 import 'package:casa/components/custom_images.dart';

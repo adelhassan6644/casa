@@ -2,7 +2,7 @@ import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import '../../app/core/utils/text_styles.dart';
 import '../../navigation/custom_navigation.dart';
-import '../app/core/utils/color_resources.dart';
+import '../app/core/utils/styles.dart';
 import '../app/core/utils/svg_images.dart';
 import 'custom_button.dart';
 import 'custom_images.dart';

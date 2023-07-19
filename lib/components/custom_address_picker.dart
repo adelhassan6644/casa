@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../app/core/utils/color_resources.dart';
+import '../app/core/utils/styles.dart';
 import '../app/core/utils/svg_images.dart';
 import '../app/core/utils/text_styles.dart';
 import '../features/maps/models/location_model.dart';

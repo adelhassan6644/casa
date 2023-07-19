@@ -1,4 +1,4 @@
-import 'package:casa/app/core/utils/color_resources.dart';
+import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/app/core/utils/images.dart';

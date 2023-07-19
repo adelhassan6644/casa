@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 
 class StepWidget extends StatelessWidget {
   const StepWidget({Key? key, required this.currentIndex}) : super(key: key);

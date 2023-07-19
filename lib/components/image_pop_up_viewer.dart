@@ -3,7 +3,7 @@ import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/components/custom_network_image.dart';
 import 'package:flutter/material.dart';
 
-import '../app/core/utils/color_resources.dart';
+import '../app/core/utils/styles.dart';
 import '../app/core/utils/text_styles.dart';
 import '../navigation/custom_navigation.dart';
 

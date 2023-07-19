@@ -77,5 +77,7 @@
   "register_with_us": "سجل معنا",
   "and_enjoy_all_the_features_available_in_the_application": "واستمتع بجميع الميزات المتوفرة في التطبيق",
   "your_password_reset_successfully": "تم اعادة ضبط كلمة المرور بنجاح",
-  "invalid_credentials": "بيانات الدخول غير صحيحة"
+  "invalid_credentials": "بيانات الدخول غير صحيحة",
+  "register_successfully": "تم تسجيل الحساب بنجاح"
+
 }

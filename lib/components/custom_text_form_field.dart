@@ -3,7 +3,7 @@ import 'package:casa/app/core/utils/svg_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:casa/app/core/utils/text_styles.dart';
-import '../../app/core/utils/color_resources.dart';
+import '../../app/core/utils/styles.dart';
 import 'custom_images.dart';
 
 class CustomTextFormField extends StatefulWidget {
@@ -97,7 +97,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: widget.withPadding ? 5.h : 0),
+      padding: EdgeInsets.symmetric(vertical: widget.withPadding ? 6.h : 0),
       child: TextFormField(
         onFieldSubmitted: widget.onSaved,
         textAlign: widget.textAlign ?? TextAlign.start,

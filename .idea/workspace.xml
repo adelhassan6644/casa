@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="updates">
-      <change afterPath="$PROJECT_DIR$/assets/images/auth_bg.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
@@ -14,13 +13,10 @@
       <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/login_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/images/signup_image.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/core/utils/app_snack_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/app_snack_bar.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/color_resources.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/styles.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/light_theme.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/auth_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/auth_app_bar.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/bottom_sheet_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/bottom_sheet_app_bar.dart" afterDir="false" />
@@ -47,7 +43,6 @@
       <change beforePath="$PROJECT_DIR$/lib/components/price_text_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/price_text_field.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/show_rate.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/show_rate.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/components/tab_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/tab_widget.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/api/end_points.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/change_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/change_password.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/forget_password.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/forget_password.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/login.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/login.dart" afterDir="false" />
@@ -56,6 +51,7 @@
       <change beforePath="$PROJECT_DIR$/lib/features/auth/pages/verification.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/pages/verification.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/auth/provider/firebase_auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/provider/firebase_auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/repo/auth_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/repo/auth_repo.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/category_details/page/category_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/category_details/page/category_details.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/category_details/provider/category_details_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/category_details/provider/category_details_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/contact_with_us/provider/contact_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/contact_with_us/provider/contact_provider.dart" afterDir="false" />
@@ -80,6 +76,7 @@
       <change beforePath="$PROJECT_DIR$/lib/features/on_boarding/widgets/step_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/on_boarding/widgets/step_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/place_details/page/place_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/place_details/page/place_details.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/place_details/provider/place_details_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/place_details/provider/place_details_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/place_details/widgets/place_details_images_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/place_details/widgets/place_details_images_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/place_details/widgets/place_details_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/place_details/widgets/place_details_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/profile/provider/profile_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/provider/profile_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/profile/widgets/change_password_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/widgets/change_password_button.dart" afterDir="false" />

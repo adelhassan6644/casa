@@ -2,7 +2,7 @@ import 'package:casa/app/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/svg_images.dart';
 import 'package:casa/components/custom_images.dart';
-import '../../app/core/utils/color_resources.dart';
+import '../../app/core/utils/styles.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../navigation/custom_navigation.dart';
 import '../app/core/utils/text_styles.dart';
@@ -64,10 +64,10 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                         decoration: BoxDecoration(
                             color: Styles.WHITE_COLOR,
                             shape: BoxShape.circle,
-                            border: Border.all(color: const Color(0XFFFAFAFA))),
+                            border: Border.all(color: Styles.PRIMARY_COLOR)),
                         child: Center(
                             child: customImageIconSVG(
-                                imageName: SvgImages.backArrow)),
+                                imageName: SvgImages.backArrow,color: Styles.PRIMARY_COLOR)),
                       ))
                   : SizedBox(
                       width: actionWidth ?? 40,

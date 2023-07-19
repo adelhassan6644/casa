@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:casa/data/error/api_error_handler.dart';
 import 'package:casa/features/home/models/banner_model.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
 import '../models/categories_model.dart';
 import '../models/news_model.dart';

@@ -1,7 +1,7 @@
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
-import '../../app/core/utils/color_resources.dart';
+import '../../app/core/utils/styles.dart';
 import '../app/core/utils/text_styles.dart';
 import 'custom_images.dart';
 

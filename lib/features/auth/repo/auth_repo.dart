@@ -113,7 +113,7 @@ class AuthRepo {
       {required String password, required String email}) async {
     try {
       Response response =
-          await dioClient.post(uri: EndPoints.resetPassword, data: {
+      await dioClient.post(uri: EndPoints.resetPassword, data: {
         "email": email,
         "newPassword": password,
         // "fcm_token": await saveDeviceToken()
@@ -132,7 +132,7 @@ class AuthRepo {
   Future<Either<ServerFailure, Response>> change(
       {required String password}) async {
     try {
-      Response response = await dioClient.post(
+      Response response = await dioClient.patch(
           uri: EndPoints.changePassword(
               sharedPreferences.getString(AppStorageKey.userId)),
           data: {
@@ -154,7 +154,7 @@ class AuthRepo {
       {required String mail}) async {
     try {
       Response response =
-          await dioClient.post(uri: EndPoints.forgetPassword, data: {
+      await dioClient.post(uri: EndPoints.forgetPassword, data: {
         "email": mail,
         // "fcm_token": await saveDeviceToken()
       });
@@ -171,9 +171,9 @@ class AuthRepo {
 
   Future<Either<ServerFailure, Response>> register(
       {required String phone,
-      required String name,
-      required String mail,
-      required String password}) async {
+        required String name,
+        required String mail,
+        required String password}) async {
     try {
       Response response = await dioClient.post(uri: EndPoints.register, data: {
         "name": name,
@@ -214,9 +214,9 @@ class AuthRepo {
 
   Future<Either<ServerFailure, Response>> verifyMail(
       {required String mail,
-      required String code,
-      required bool fromRegister,
-      bool updateHeader = false}) async {
+        required String code,
+        required bool fromRegister,
+        bool updateHeader = false}) async {
     try {
       Response response = await dioClient.post(
           uri: fromRegister

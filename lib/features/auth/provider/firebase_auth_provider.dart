@@ -6,7 +6,7 @@ import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../components/loading_dialog.dart';
 import '../../../data/config/di.dart';
 import '../../../data/error/api_error_handler.dart';

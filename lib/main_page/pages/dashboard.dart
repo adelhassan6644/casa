@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:casa/features/profile/page/profile.dart';
 import 'package:casa/main_page/provider/main_page_provider.dart';
 import 'package:provider/provider.dart';
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../data/network/network_info.dart';
 import '../../features/favourite/page/favourites.dart';
 import '../../features/home/page/home.dart';

@@ -1,4 +1,4 @@
-import 'package:casa/app/core/utils/color_resources.dart';
+import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';

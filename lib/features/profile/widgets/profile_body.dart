@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:casa/features/profile/provider/profile_provider.dart';
 import 'package:provider/provider.dart';
 
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';

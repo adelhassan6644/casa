@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:casa/app/core/utils/color_resources.dart';
+import 'package:casa/app/core/utils/styles.dart';
 import '../../../components/animated_widget.dart';
 import '../widgets/developer_description.dart';
 import '../widgets/developer_image.dart';
@@ -11,7 +11,7 @@ class AboutUs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
         backgroundColor: Styles.BACKGROUND_COLOR,
         body: SafeArea(
           bottom: true,

@@ -2,16 +2,16 @@ import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:casa/features/profile/provider/profile_provider.dart';
 import 'package:provider/provider.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../data/error/api_error_handler.dart';
 import '../../../data/error/failures.dart';
 import '../../favourite/provider/favourite_provider.dart';
+import '../../profile/provider/profile_provider.dart';
 import '../repo/auth_repo.dart';
 import '../../../../navigation/custom_navigation.dart';
 import '../../../../navigation/routes.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
-import '../../../app/core/utils/color_resources.dart';
 import '../../../app/localization/localization/language_constant.dart';
 
 class AuthProvider extends ChangeNotifier {
@@ -79,19 +79,19 @@ class AuthProvider extends ChangeNotifier {
         } else {
           authRepo.forget();
         }
+        authRepo.saveUserId(success.data['data']["id"]);
+        authRepo.saveUserToken(success.data['data']["api_token"]);
         if (success.data['data']["email_verified_at"] != null) {
-          authRepo.saveUserId(success.data['data']["id"]);
-          authRepo.saveUserToken(success.data['data']["api_token"]);
           authRepo.setLoggedIn();
           Provider.of<ProfileProvider>(
-                  CustomNavigator.navigatorState.currentContext!,
-                  listen: false)
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
               .getProfile();
           Provider.of<FavouriteProvider>(
-                  CustomNavigator.navigatorState.currentContext!,
-                  listen: false)
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
               .getFavourites();
-          CustomNavigator.push(Routes.DASHBOARD, clean: true);
+          CustomNavigator.push(Routes.MAIN_PAGE, clean: true);
           clear();
         } else {
           CustomNavigator.push(Routes.VERIFICATION, arguments: true);
@@ -132,10 +132,10 @@ class AuthProvider extends ChangeNotifier {
         CustomNavigator.push(Routes.LOGIN, clean: true);
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
-                message: getTranslated("your_password_changed_successfully",
+                message: getTranslated("your_password_reset_successfully",
                     CustomNavigator.navigatorState.currentContext!),
                 isFloating: true,
-                backgroundColor: ColorResources.ACTIVE,
+                backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
         clear();
       });
@@ -160,7 +160,7 @@ class AuthProvider extends ChangeNotifier {
       _isChange = true;
       notifyListeners();
       Either<ServerFailure, Response> response =
-          await authRepo.change(password: passwordTEC.text.trim());
+      await authRepo.change(password: passwordTEC.text.trim());
       response.fold((fail) {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
@@ -178,6 +178,7 @@ class AuthProvider extends ChangeNotifier {
                 backgroundColor: Styles.ACTIVE,
                 borderColor: Colors.transparent));
         clear();
+        CustomNavigator.pop();
         notifyListeners();
       });
       _isChange = false;
@@ -221,6 +222,8 @@ class AuthProvider extends ChangeNotifier {
         } else {
           authRepo.forget();
         }
+        authRepo.saveUserId(success.data['data']["id"]);
+        authRepo.saveUserToken(success.data['data']["api_token"]);
         CustomNavigator.push(Routes.VERIFICATION, arguments: true);
       });
       _isRegister = false;
@@ -303,20 +306,25 @@ class AuthProvider extends ChangeNotifier {
       }, (success) {
         if (fromRegister) {
           Provider.of<ProfileProvider>(
-                  CustomNavigator.navigatorState.currentContext!,
-                  listen: false)
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
               .getProfile();
           Provider.of<FavouriteProvider>(
-                  CustomNavigator.navigatorState.currentContext!,
-                  listen: false)
+              CustomNavigator.navigatorState.currentContext!,
+              listen: false)
               .getFavourites();
-          authRepo.saveUserId(success.data['data']["id"]);
-          authRepo.saveUserToken(success.data['data']["api_token"]);
           authRepo.setLoggedIn();
           CustomNavigator.push(
-            Routes.DASHBOARD,
+            Routes.MAIN_PAGE,
             clean: true,
           );
+          CustomSnackBar.showSnackBar(
+              notification: AppNotification(
+                  message: getTranslated("register_successfully",
+                      CustomNavigator.navigatorState.currentContext!),
+                  isFloating: true,
+                  backgroundColor: Styles.ACTIVE,
+                  borderColor: Colors.transparent));
         } else {
           CustomNavigator.push(
             Routes.RESET_PASSWORD,
@@ -340,11 +348,11 @@ class AuthProvider extends ChangeNotifier {
   }
 
   logOut() async {
-    CustomNavigator.push(Routes.LOGIN, clean: true);
+    CustomNavigator.push(Routes.SPLASH, clean: true);
     await authRepo.clearSharedData();
     clear();
     Provider.of<ProfileProvider>(CustomNavigator.navigatorState.currentContext!,
-            listen: false)
+        listen: false)
         .clear();
     CustomSnackBar.showSnackBar(
         notification: AppNotification(

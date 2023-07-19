@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:provider/provider.dart';
 
-import '../../app/core/utils/color_resources.dart';
+import '../../app/core/utils/styles.dart';
 import '../../app/core/utils/svg_images.dart';
 import '../provider/main_page_provider.dart';
 import 'nav_bar_item.dart';

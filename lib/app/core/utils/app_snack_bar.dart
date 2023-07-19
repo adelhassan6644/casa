@@ -8,7 +8,7 @@ import 'package:motion_toast/motion_toast.dart';
 import 'package:motion_toast/resources/arrays.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../localization/localization/language_constant.dart';
-import 'color_resources.dart';
+import 'styles.dart';
 
 class AppNotification {
   final String message;

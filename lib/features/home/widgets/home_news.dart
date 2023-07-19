@@ -6,7 +6,7 @@ import 'package:casa/components/custom_images.dart';
 import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:provider/provider.dart';
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_network_image.dart';
 import '../../../components/empty_widget.dart';

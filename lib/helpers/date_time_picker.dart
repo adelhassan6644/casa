@@ -1,7 +1,7 @@
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:flutter/cupertino.dart';
 import '../../navigation/custom_navigation.dart';
-import '../app/core/utils/color_resources.dart';
+import '../app/core/utils/styles.dart';
 import '../app/localization/localization/language_constant.dart';
 import '../components/custom_button.dart';
 

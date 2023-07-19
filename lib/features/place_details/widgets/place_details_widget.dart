@@ -4,7 +4,7 @@ import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:casa/features/home/models/places_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';

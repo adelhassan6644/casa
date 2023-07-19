@@ -1,6 +1,6 @@
 import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
-import 'package:casa/app/core/utils/color_resources.dart';
+import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
@@ -23,7 +23,7 @@ class CustomPinCodeField extends StatelessWidget {
     return PinCodeTextField(
       validator: validation,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      cursorColor: Colors.white,
+      cursorColor: Styles.PRIMARY_COLOR,
       backgroundColor: Colors.transparent,
       autoDisposeControllers: false,
       autoDismissKeyboard: true,
@@ -32,9 +32,8 @@ class CustomPinCodeField extends StatelessWidget {
       enablePinAutofill: true,
       keyboardType: TextInputType.number,
       inputFormatters: [FilteringTextInputFormatter.allow(RegExp('[0-9]'))],
-      textStyle: AppTextStyles.semiBold.copyWith(color: Styles.HEADER),
-      pastedTextStyle:
-          AppTextStyles.semiBold.copyWith(color: Styles.HEADER),
+      textStyle: AppTextStyles.semiBold.copyWith(color: Styles.PRIMARY_COLOR),
+      pastedTextStyle: AppTextStyles.semiBold.copyWith(color: Styles.HEADER),
       textInputAction: TextInputAction.done,
       pinTheme: PinTheme(
         borderWidth: 1,
@@ -43,11 +42,11 @@ class CustomPinCodeField extends StatelessWidget {
         fieldHeight: 60.h,
         fieldWidth: 60.w,
         fieldOuterPadding: EdgeInsets.symmetric(horizontal: 5.w),
-        activeFillColor: Colors.transparent,
+        activeFillColor: Styles.WHITE_COLOR,
         activeColor: Styles.WHITE_COLOR,
         inactiveColor: Styles.BORDER_COLOR,
-        inactiveFillColor: Colors.transparent,
-        selectedFillColor: Colors.transparent,
+        inactiveFillColor: Styles.WHITE_COLOR,
+        selectedFillColor: Styles.WHITE_COLOR,
         selectedColor: Styles.PRIMARY_COLOR,
         disabledColor: Styles.LIGHT_BORDER_COLOR,
         errorBorderColor: Styles.FAILED_COLOR,

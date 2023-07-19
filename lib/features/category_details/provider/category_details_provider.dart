@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:casa/data/error/api_error_handler.dart';
 import 'package:casa/features/category_details/repo/category_details_repo.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
 import '../model/category_details_model.dart';
 

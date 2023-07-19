@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:casa/app/core/utils/color_resources.dart';
+import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/features/profile/provider/profile_provider.dart';
 import 'package:provider/provider.dart';
 

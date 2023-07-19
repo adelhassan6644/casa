@@ -7,7 +7,7 @@ import 'package:casa/app/core/utils/app_snack_bar.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/features/profile/model/profile_model.dart';
 import 'package:casa/navigation/custom_navigation.dart';
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../../data/error/api_error_handler.dart';
 import '../../../data/error/failures.dart';
 import '../repo/profile_repo.dart';

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../../app/core/utils/color_resources.dart';
+import '../../../app/core/utils/styles.dart';
 import '../../components/custom_images.dart';
 
 class BottomNavBarItem extends StatelessWidget {
