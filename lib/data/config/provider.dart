@@ -6,11 +6,10 @@ import 'package:casa/data/config/di.dart' as di;
 import '../../app/localization/provider/localization_provider.dart';
 import '../../app/theme/theme_provider/theme_provider.dart';
 import '../../features/auth/provider/auth_provider.dart';
-import '../../features/category_details/provider/category_details_provider.dart';
 import '../../features/contact_with_us/provider/contact_provider.dart';
 import '../../features/favourite/provider/favourite_provider.dart';
 import '../../features/home/provider/home_provider.dart';
-import '../../features/place_details/provider/place_details_provider.dart';
+import '../../features/product_details/provider/product_details_provider.dart';
 import '../../features/profile/provider/profile_provider.dart';
 import '../../features/splash/provider/splash_provider.dart';
 import '../../features/setting/provider/setting_provider.dart';
@@ -29,8 +28,7 @@ abstract class ProviderList {
     ChangeNotifierProvider(create: (_) => di.sl<ProfileProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<HomeProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
-    ChangeNotifierProvider(create: (_) => di.sl<CategoryDetailsProvider>()),
-    ChangeNotifierProvider(create: (_) => di.sl<PlaceDetailsProvider>()),
+    ChangeNotifierProvider(create: (_) => di.sl<ProductDetailsProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<CalenderProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<LocationProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ContactProvider>()),

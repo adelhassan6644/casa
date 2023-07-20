@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
-import 'package:casa/main_widgets/place_card.dart';
+import 'package:casa/features/home/widgets/product_card.dart';
 import 'package:provider/provider.dart';
 
 import '../../../components/shimmer/custom_shimmer.dart';
@@ -56,8 +56,8 @@ class MapPlaces extends StatelessWidget {
                           child: ListView.separated(
                               scrollDirection: Axis.horizontal,
                               physics: const BouncingScrollPhysics(),
-                              itemBuilder: (_, index) => PlaceCard(
-                                  place: provider.placesModel!.data![index]),
+                              itemBuilder: (_, index) => ProductCard(
+                                  product: provider.placesModel!.data![index]),
                               separatorBuilder: (_, index) => SizedBox(
                                     width: 12.w,
                                   ),

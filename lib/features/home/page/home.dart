@@ -3,12 +3,9 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import '../../../data/config/di.dart';
-import '../widgets/home_categories.dart';
 import '../widgets/home_header.dart';
-import '../widgets/home_news.dart';
-import '../widgets/home_offers.dart';
 import '../widgets/home_banners.dart';
-import '../widgets/home_places.dart';
+import '../widgets/home_products.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -24,11 +21,8 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
   void initState() {
     Future.delayed(Duration.zero, () {
       sl<HomeProvider>().scroll(controller);
-      // sl<HomeProvider>().getBanners();
+      sl<HomeProvider>().getBanners();
       // sl<HomeProvider>().getPlaces();
-      // sl<HomeProvider>().getCategories();
-      // sl<HomeProvider>().getOffers();
-      // sl<HomeProvider>().getNews();
     });
 
     super.initState();
@@ -39,6 +33,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
     super.build(context);
     return SafeArea(
       top: true,
+      bottom: false,
       child: Column(
         children: [
           const HomeHeader(),
@@ -46,20 +41,21 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
             child: RefreshIndicator(
               color: Styles.PRIMARY_COLOR,
               onRefresh: () async {
-                // sl<HomeProvider>().show = false;
-                sl<HomeProvider>().getPlaces();
-                sl<HomeProvider>().getCategories();
-                sl<HomeProvider>().getOffers();
-                sl<HomeProvider>().getNews();
+                sl<HomeProvider>().getBanners();
+                sl<HomeProvider>().getProducts();
+
               },
-              child: ListAnimator(
-                controller: controller,
-                data: const [
-                  HomeBanner(),
-                  HomeCategories(),
-                  HomePlaces(),
-                  HomeOffers(),
-                  HomeNews(),
+              child: Column(
+                children: [
+                  Expanded(
+                    child: ListAnimator(
+                      controller: controller,
+                      data: const [
+                        HomeBanner(),
+                        HomeProducts()
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

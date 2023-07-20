@@ -1,15 +1,15 @@
-class PlacesModel {
+class ProductsModel {
   String? message;
-  List<PlaceItem>? data;
+  List<ProductItem>? data;
 
-  PlacesModel({this.message, this.data});
+  ProductsModel({this.message, this.data});
 
-  PlacesModel.fromJson(Map<String, dynamic> json) {
+  ProductsModel.fromJson(Map<String, dynamic> json) {
     message = json['message'];
     if (json['data'] != null) {
       data = [];
       json['data'].forEach((v) {
-        data!.add(PlaceItem.fromJson(v));
+        data!.add(ProductItem.fromJson(v));
       });
     }
   }
@@ -24,7 +24,7 @@ class PlacesModel {
   }
 }
 
-class PlaceItem {
+class ProductItem {
   int? id;
   String? category;
   String? name;
@@ -34,7 +34,7 @@ class PlaceItem {
   String? description;
   double? lat;
   double? long;
-  int? status;
+  int? price;
   int? agentId;
   int? categoryId;
   List<String>? images;
@@ -47,7 +47,7 @@ class PlaceItem {
   String? createdAt;
   String? updatedAt;
 
-  PlaceItem(
+  ProductItem(
       {this.id,
       this.category,
       this.name,
@@ -57,7 +57,7 @@ class PlaceItem {
       this.description,
       this.lat,
       this.long,
-      this.status,
+      this.price,
       this.agentId,
       this.categoryId,
       this.image,
@@ -70,7 +70,7 @@ class PlaceItem {
       this.createdAt,
       this.updatedAt});
 
-  PlaceItem.fromJson(Map<String, dynamic> json) {
+  ProductItem.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     category = json['category'];
     name = json['name'];
@@ -80,7 +80,7 @@ class PlaceItem {
     description = json['description'];
     lat = json['lat'] != null ? double.parse(json['lat'].toString()) : null;
     long = json['long'] != null ? double.parse(json['long'].toString()) : null;
-    status = json['status'];
+    price = json['status'];
     agentId = json['agent_id'];
     categoryId = json['category_id'];
     image = json['image'];
@@ -104,7 +104,7 @@ class PlaceItem {
     data['description'] = description;
     data['lat'] = lat;
     data['long'] = long;
-    data['status'] = status;
+    data['status'] = price;
     data['agent_id'] = agentId;
     data['category_id'] = categoryId;
     data['image'] = image;

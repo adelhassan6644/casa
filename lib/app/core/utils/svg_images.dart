@@ -10,6 +10,7 @@ class SvgImages {
   static const String location = 'assets/svgs/location.svg';
   static const String moreIcon = 'assets/svgs/more.svg';
   static const String search = 'assets/svgs/search.svg';
+  static const String tasks = 'assets/svgs/tasks.svg';
   static const String profileIcon = 'assets/svgs/profile.svg';
   static const String file = 'assets/svgs/file.svg';
   static const String documentFile = 'assets/svgs/document_text.svg';
@@ -27,7 +28,7 @@ class SvgImages {
   static const String alarm = 'assets/svgs/alarm.svg';
   static const String emptyStar = 'assets/svgs/empty_star.svg';
   static const String fillStar = 'assets/svgs/fill_star.svg';
-  static const String backArrow = 'assets/svgs/arrow.svg';
+  static const String arrowRight = 'assets/svgs/arrow_right.svg';
   static const String maleIcon = 'assets/svgs/male.svg';
   static const String femaleIcon = 'assets/svgs/female.svg';
   static const String editor = 'assets/svgs/editor.svg';
@@ -35,7 +36,7 @@ class SvgImages {
   static const String down = 'assets/svgs/down.svg';
   static const String userIcon = 'assets/svgs/user.svg';
   static const String userNumber = 'assets/svgs/user_number.svg';
-  static const String notifications = 'assets/svgs/alert.svg';
+  static const String notifications = 'assets/svgs/notifications.svg';
   static const String card = 'assets/svgs/card.svg';
   static const String rate = 'assets/svgs/rate.svg';
   static const String call = 'assets/svgs/call.svg';
@@ -57,7 +58,7 @@ class SvgImages {
   static const String hiddenEyeIcon = 'assets/svgs/hidden_eye.svg';
   static const String phoneIcon = 'assets/svgs/phone.svg';
   static const String phoneCallIcon = 'assets/svgs/phone_call.svg';
-  static const String arrowRightIcon = 'assets/svgs/arrow_right.svg';
+  static const String arrowLeftIcon = 'assets/svgs/arrow_left.svg';
   static const String backIcon = 'assets/svgs/back_icon.svg';
   static const String cityIcon = 'assets/svgs/city.svg';
   static const String tickCircleIcon = 'assets/svgs/tick_circle.svg';

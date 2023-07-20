@@ -1,3 +1,4 @@
+import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../components/custom_images.dart';
@@ -6,7 +7,7 @@ class BottomNavBarItem extends StatelessWidget {
   final String? imageIcon;
   final String? svgIcon;
   final VoidCallback onTap;
-  final bool isSelected, withIconColor;
+  final bool isSelected, withIconColor,withDot;
   final String? name;
   final double? width;
   final double? height;
@@ -16,11 +17,12 @@ class BottomNavBarItem extends StatelessWidget {
     this.imageIcon,
     this.svgIcon,
     this.name,
+    this.withDot = false,
     this.isSelected = false,
     this.withIconColor = true,
     required this.onTap,
-    this.width = 20,
-    this.height = 20,
+    this.width = 24,
+    this.height = 24,
   });
 
   @override
@@ -41,11 +43,12 @@ class BottomNavBarItem extends StatelessWidget {
                 ? customImageIconSVG(
                     imageName: svgIcon!,
                     color: isSelected
-                        ? Styles.SECOUND_PRIMARY_COLOR
+                        ? Styles.PRIMARY_COLOR
                         : withIconColor
                             ? Styles.DISABLED
                             : null,
                     width: width,
+              height: height
                   )
                 : customImageIcon(
                     imageName: imageIcon!,
@@ -56,37 +59,43 @@ class BottomNavBarItem extends StatelessWidget {
                     width: width,
                   ),
             name != null
-                ? Text(
-                    name!,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontWeight:
-                          isSelected ? FontWeight.w600 : FontWeight.w400,
-                      color: isSelected
-                          ? Styles.PRIMARY_COLOR
-                          : Styles.DISABLED,
-                      overflow: TextOverflow.ellipsis,
-                      fontSize: 11,
+                ? Padding(
+                  padding:  EdgeInsets.only(top: 6.h),
+                  child: Text(
+                      name!,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        fontWeight:
+                            isSelected ? FontWeight.w700 : FontWeight.w400,
+                        color: isSelected
+                            ? Styles.PRIMARY_COLOR
+                            : Styles.DISABLED,
+                        overflow: TextOverflow.ellipsis,
+                        fontSize: 11,
+                      ),
                     ),
-                  )
+                )
                 : const SizedBox.shrink(),
-            AnimatedCrossFade(
-                crossFadeState: isSelected
-                    ? CrossFadeState.showFirst
-                    : CrossFadeState.showSecond,
-                duration: const Duration(milliseconds: 200),
-                firstChild: Center(
-                    child: Container(
-                  width: 8,
-                  height: 8,
-                  margin: const EdgeInsets.only(top: 6),
-                  decoration: const BoxDecoration(
-                      color: Color(0xFFB48DD2), shape: BoxShape.circle),
-                  child: const SizedBox(),
-                )),
-                secondChild: const SizedBox(
-                  height: 6,
-                )),
+            Visibility(
+              visible: withDot,
+              child: AnimatedCrossFade(
+                  crossFadeState: isSelected
+                      ? CrossFadeState.showFirst
+                      : CrossFadeState.showSecond,
+                  duration: const Duration(milliseconds: 200),
+                  firstChild: Center(
+                      child: Container(
+                    width: 8,
+                    height: 8,
+                    margin: const EdgeInsets.only(top: 6),
+                    decoration: const BoxDecoration(
+                        color: Color(0xFFB48DD2), shape: BoxShape.circle),
+                    child: const SizedBox(),
+                  )),
+                  secondChild: const SizedBox(
+                    height: 6,
+                  )),
+            ),
           ],
         ),
       ),

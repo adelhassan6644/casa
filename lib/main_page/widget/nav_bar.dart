@@ -1,3 +1,5 @@
+import 'package:casa/app/core/utils/dimensions.dart';
+import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:provider/provider.dart';
@@ -13,75 +15,61 @@ class NavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<MainPageProvider>(builder: (_, provider, child) {
-      return SafeArea(
-        bottom: true,
-        top: false,
-        child: Container(
-            height: 60,
-            width: context.width,
-            decoration:
-                BoxDecoration(color: Styles.WHITE_COLOR, boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  offset: const Offset(0, -3),
-                  spreadRadius: 3,
-                  blurRadius: 20)
-            ]),
-            padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: BottomNavBarItem(
-                      svgIcon: SvgImages.homeIcon,
-                      isSelected: provider.selectedIndex == 0,
-                      onTap: () => provider.updateDashboardIndex(0),
-                    ),
+      return Container(
+          width: context.width,
+          decoration: BoxDecoration(
+            color: Styles.WHITE_COLOR,
+              boxShadow: [
+            BoxShadow(
+                color: Colors.black.withOpacity(0.06),
+                offset: const Offset(0, -2),
+                spreadRadius: 2,
+                blurRadius: 20)
+          ],
+            borderRadius: const BorderRadius.only(topRight: Radius.circular(25),topLeft:Radius.circular(25) )
+          ),
+          padding:  EdgeInsets.fromLTRB(12.w, 12.h,12.w,24.h),
+          child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Expanded(
+                  child: BottomNavBarItem(
+                    svgIcon: SvgImages.homeIcon,
+                    isSelected: provider.selectedIndex == 0,
+                    onTap: () => provider.updateDashboardIndex(0),
+                    name: getTranslated("home", context),
                   ),
-                  Expanded(
-                    child: BottomNavBarItem(
-                      svgIcon: SvgImages.userIcon,
-                      isSelected: provider.selectedIndex == 1,
-                      onTap: () => provider.updateDashboardIndex(1),
-                      height: 18,
-                      width: 18,
-                    ),
+                ),
+                Expanded(
+                  child: BottomNavBarItem(
+                    svgIcon: SvgImages.tasks,
+                    isSelected: provider.selectedIndex == 1,
+                    onTap: () => provider.updateDashboardIndex(1),
+                    name: getTranslated("my_appointments", context),
+
                   ),
-                  Expanded(
-                    child: AnimatedCrossFade(
-                        crossFadeState: provider.selectedIndex != 2
-                            ? CrossFadeState.showFirst
-                            : CrossFadeState.showSecond,
-                        duration: const Duration(milliseconds: 200),
-                        firstChild: Center(
-                          child: BottomNavBarItem(
-                            svgIcon: SvgImages.casaLocationIcon,
-                            isSelected: provider.selectedIndex == 2,
-                            onTap: () => provider.updateDashboardIndex(2),
-                          ),
-                        ),
-                        secondChild: const SizedBox()),
+                ),
+                Expanded(
+                  child: BottomNavBarItem(
+                    svgIcon: SvgImages.profileIcon,
+                    isSelected: provider.selectedIndex == 2,
+                    onTap: () => provider.updateDashboardIndex(2),
+                    name: getTranslated("profile", context),
+
                   ),
-                  Expanded(
-                    child: BottomNavBarItem(
-                      svgIcon: SvgImages.heartIcon,
-                      isSelected: provider.selectedIndex == 3,
-                      onTap: () => provider.updateDashboardIndex(3),
-                    ),
+                ),
+                Expanded(
+                  child: BottomNavBarItem(
+                    svgIcon: SvgImages.moreIcon,
+                    isSelected: provider.selectedIndex == 3,
+                    withIconColor: false,
+                    onTap: () => provider.updateDashboardIndex(3),
+                    name: getTranslated("more", context),
+
                   ),
-                  Expanded(
-                    child: BottomNavBarItem(
-                      svgIcon: SvgImages.moreIcon,
-                      isSelected: provider.selectedIndex == 4,
-                      withIconColor: false,
-                      onTap: () {
-                        provider.updateIsOpen(true);
-                      },
-                    ),
-                  ),
-                ])),
-      );
+                ),
+              ]));
     });
   }
 }

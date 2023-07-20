@@ -94,7 +94,7 @@ Widget customContainerSvgIcon(
           borderRadius: BorderRadius.circular(radius ?? 12)),
       child: SvgPicture.asset(
         imageName,
-        color: imageColor,
+        color: imageColor??Styles.PRIMARY_COLOR,
       ),
     ),
   );

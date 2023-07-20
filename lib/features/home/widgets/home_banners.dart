@@ -4,11 +4,10 @@ import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/components/custom_button.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
-import 'package:casa/navigation/custom_navigation.dart';
-import 'package:casa/navigation/routes.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
+import '../../../app/core/utils/images.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';
@@ -42,12 +41,12 @@ class HomeBanner extends StatelessWidget {
                             options: CarouselOptions(
                               viewportFraction: 1,
                               autoPlay: false,
-                              height: 245.h,
+                              height: 210.h,
                               enlargeCenterPage: false,
                               disableCenter: true,
                               pageSnapping: true,
                               onPageChanged: (index, reason) {
-                                provider.setPlacesIndex(index);
+                                provider.setBannerIndex(index);
                               },
                             ),
                             disableGesture: true,
@@ -55,95 +54,67 @@ class HomeBanner extends StatelessWidget {
                             itemBuilder: (context, index, _) {
                               return InkWell(
                                 onTap: () {
-                                  CustomNavigator.push(Routes.PLACE_DETAILS,
-                                      arguments: provider.bannerModel
-                                              ?.data?[index].place?.id ??
-                                          0);
+                                  // CustomNavigator.push(Routes.PLACE_DETAILS,
+                                  //     arguments: provider.bannerModel
+                                  //             ?.data?[index].place?.id ??
+                                  //         0);
                                 },
                                 child: Stack(
-                                  alignment: Alignment.bottomCenter,
+                                  alignment: Alignment.centerRight,
                                   children: [
                                     CustomNetworkImage.containerNewWorkImage(
                                         image: provider.bannerModel
                                                 ?.data?[index].image ??
                                             "",
                                         width: context.width,
-                                        height: 245.h,
+                                        height: 210.h,
                                         fit: BoxFit.cover,
-                                        radius: 20),
+                                        radius: 18),
                                     Padding(
                                       padding: EdgeInsets.symmetric(
-                                          horizontal: 14.w, vertical: 12.h),
+                                          horizontal: Dimensions.PADDING_SIZE_SMALL.w,
+                                          vertical: Dimensions.PADDING_SIZE_SMALL.h),
                                       child: Column(
                                         crossAxisAlignment:
-                                            CrossAxisAlignment.start,
+                                        CrossAxisAlignment.start,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.end,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(
-                                            provider.bannerModel?.data?[index]
-                                                    .place?.name ??
-                                                "",
+                                          customImageIcon(imageName: Images.logo,height: 50,width: 75),
+                                          Text("العناية بالبشرة",
                                             style:
-                                                AppTextStyles.medium.copyWith(
-                                              fontSize: 18,
-                                              color: Styles.DISABLED,
+                                            AppTextStyles.bold.copyWith(
+                                              fontSize: 25,
+                                              color: Styles.WHITE_COLOR,
                                             ),
                                           ),
-                                          Row(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.center,
-                                            children: [
-                                              customImageIconSVG(
-                                                imageName: SvgImages.location,
-                                                height: 20,
-                                                width: 20,
-                                                color: Styles.DISABLED,
-                                              ),
-                                              SizedBox(
-                                                width: 4.w,
-                                              ),
-                                              Expanded(
-                                                child: Text(
-                                                  provider
-                                                          .bannerModel
-                                                          ?.data?[index]
-                                                          .place
-                                                          ?.address ??
-                                                      "",
-                                                  style: AppTextStyles.medium
-                                                      .copyWith(
-                                                          fontSize: 18,
-                                                          overflow: TextOverflow
-                                                              .ellipsis,
-                                                          color: Styles
-                                                              .DISABLED),
-                                                  maxLines: 1,
-                                                ),
-                                              ),
-                                              SizedBox(
-                                                width: 8.w,
-                                              ),
-                                              Visibility(
-                                                visible: index ==
-                                                    provider.bannerIndex,
-                                                child: CustomButton(
-                                                  width: 110.w,
-                                                  height: 35.h,
-                                                  text: "المزيد",
-                                                  svgIcon:
-                                                      SvgImages.arrowRightIcon,
-                                                  onTap: () {
-                                                    provider.bannerController
-                                                        .nextPage();
-                                                  },
-                                                ),
-                                              )
-                                            ],
+                                          Text("عندنا غير",
+                                            style:
+                                            AppTextStyles.regular.copyWith(
+                                              fontSize: 18,
+                                              color: Styles.WHITE_COLOR,
+                                            ),
                                           ),
+                                          Visibility(
+                                            visible: index ==
+                                                provider.bannerIndex,
+                                            child: CustomButton(
+                                              width: 100.w,
+                                              height: 35.h,
+                                              text: "المزيد",
+                                              svgIcon:
+                                              SvgImages.arrowLeftIcon,
+                                              iconColor: Styles.WHITE_COLOR,
+                                              onTap: () {
+                                                provider.bannerController
+                                                    .nextPage();
+                                              },
+                                            ),
+                                          )
                                         ],
                                       ),
                                     ),
+
                                   ],
                                 ),
                               );
@@ -160,21 +131,16 @@ class HomeBanner extends StatelessWidget {
                               int index =
                                   provider.bannerModel!.data!.indexOf(banner);
                               return AnimatedContainer(
-                                width: index == provider.bannerIndex ? 25 : 8,
-                                height: 8,
+                                width: index == provider.bannerIndex ? 10 : 7,
+                                height: index == provider.bannerIndex ? 10 : 7,
                                 duration: const Duration(
                                   milliseconds: 200,
                                 ),
                                 margin: EdgeInsets.symmetric(horizontal: 2.w),
                                 decoration: BoxDecoration(
-                                    color: index == provider.bannerIndex
-                                        ? Styles.SECOUND_PRIMARY_COLOR
-                                        : Styles.WHITE_COLOR,
-                                    borderRadius: BorderRadius.circular(100.w),
-                                    border: Border.all(
-                                        color: Styles
-                                            .SECOUND_PRIMARY_COLOR,
-                                        width: 1)),
+                                  color: Styles.PRIMARY_COLOR.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(100.w),
+                                ),
                               );
                             }).toList(),
                           ),
@@ -205,7 +171,7 @@ class _BannerShimmer extends StatelessWidget {
         enabled: true,
         child: Container(
             width: context.width,
-            height: 245.h,
+            height: 210.h,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               color: Styles.WHITE_COLOR,

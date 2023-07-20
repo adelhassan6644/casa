@@ -10,7 +10,7 @@ import 'package:casa/features/guest/guest_mode.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/grid_list_animator.dart';
-import '../../../main_widgets/place_card.dart';
+import '../../home/widgets/product_card.dart';
 
 class Favourites extends StatefulWidget {
   const Favourites({Key? key}) : super(key: key);
@@ -82,8 +82,8 @@ class _FavouritesState extends State<Favourites> {
                                                     milliseconds: 375),
                                                 child: ScaleAnimation(
                                                     child: FadeInAnimation(
-                                                        child: PlaceCard(
-                                                  place: provider
+                                                        child: ProductCard(
+                                                  product: provider
                                                       .favouriteModel!
                                                       .data![index],
                                                 ))));

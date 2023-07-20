@@ -172,7 +172,7 @@ class LocationProvider extends ChangeNotifier {
   }
 
 
-  PlacesModel? placesModel;
+  ProductsModel? placesModel;
   bool isGetPlaces = false;
   getPlaces(position) async {
     try {
@@ -189,7 +189,7 @@ class LocationProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
-        placesModel = PlacesModel.fromJson(success.data);
+        placesModel = ProductsModel.fromJson(success.data);
         isGetPlaces = false;
         notifyListeners();
       });

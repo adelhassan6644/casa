@@ -1,4 +1,7 @@
 {
+  "home": "Home",
+  "my_appointments": "My appointments",
+  "more": "More",
   "login_header" : "We are glad to have you back",
   "on_boarding_header": "Your guide is now on your mobile",
   "on_boarding_description": "This text is an example of text that can be replaced in the same space. This text has been generated",
@@ -6,7 +9,7 @@
   "reset_password_header": "Reset Password",
   "change_password_header": "Change Password",
   "signup_header" : "We are glad to serve you",
-  "welcome_description": "Complete your data so that the percentages of your trip are compatible\nDaily with Min Captains!",
+  "welcome_description": "Welcome, we're glad you're back",
   "mail": "E-mail",
   "your_profile_successfully_updated": "Your profile successfully updated",
   "you_must_change_something": "Oops! you must change something",
@@ -63,8 +66,6 @@
   "choose_your_city": "choose your city",
   "choose_your_new_city": "choose your new city",
   "city": "city",
-  "decasary_to": "Decasary to",
-  "sections": "Sections",
   "profile": "Profile",
   "dashboard": "Dashboard",
   "favourites": "Favourites",
@@ -81,6 +82,9 @@
   "register_successfully": "Account has been successfully registered",
   "male": "Male",
   "female": "Female",
-  "gender": "Gender"
+  "gender": "Gender",
+  "all": "All",
+  "pedicure": "Pedicure",
+  "massage": "Massage"
 
 }

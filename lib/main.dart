@@ -14,6 +14,8 @@ import 'data/config/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app/core/utils/app_strings.dart';
+import 'features/product_details/page/product_details.dart';
+import 'main_page/pages/dashboard.dart';
 import 'navigation/custom_navigation.dart';
 import 'navigation/routes.dart';
 import 'package:casa/data/config/di.dart' as di;
@@ -62,9 +64,10 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) => MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
           child: UnFocus(child: child!)),
-      initialRoute: Routes.SPLASH,
+      // initialRoute: Routes.SPLASH,
       navigatorKey: CustomNavigator.navigatorState,
-      onGenerateRoute: CustomNavigator.onCreateRoute,
+      // onGenerateRoute: CustomNavigator.onCreateRoute,
+      home: const ProductDetails(id: 5,),
       navigatorObservers: [CustomNavigator.routeObserver],
       title: AppStrings.appName,
       scaffoldMessengerKey: CustomNavigator.scaffoldState,

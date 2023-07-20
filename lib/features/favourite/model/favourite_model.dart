@@ -2,16 +2,16 @@ import '../../home/models/places_model.dart';
 
 class FavouriteModel {
   String? message;
-  List<PlaceItem>? data;
+  List<ProductItem>? data;
 
   FavouriteModel({this.message, this.data});
 
   FavouriteModel.fromJson(Map<String, dynamic> json) {
     message = json['message'];
     if (json['data'] != null) {
-      data = <PlaceItem>[];
+      data = <ProductItem>[];
       json['data'].forEach((v) {
-        data!.add(PlaceItem.fromJson(v));
+        data!.add(ProductItem.fromJson(v));
       });
     }
   }

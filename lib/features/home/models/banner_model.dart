@@ -30,7 +30,7 @@ class Data {
   int? id;
   String? image;
   String? title;
-  PlaceItem? place;
+  ProductItem? place;
 
   Data({this.id, this.image, this.title, this.place});
 
@@ -38,7 +38,7 @@ class Data {
     id = json['id'];
     image = json['image'];
     title = json['title'];
-    place = json['place'] != null ? PlaceItem.fromJson(json['place']) : null;
+    place = json['place'] != null ? ProductItem.fromJson(json['place']) : null;
   }
 
   Map<String, dynamic> toJson() {

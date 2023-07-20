@@ -47,7 +47,7 @@ class HomeRepo {
 
 
 
-  Future<Either<ServerFailure, Response>> getHomePlaces() async {
+  Future<Either<ServerFailure, Response>> getHomeProducts() async {
     try {
       Response response = await dioClient.get(uri: EndPoints.place);
       if (response.statusCode == 200) {

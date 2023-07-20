@@ -1,11 +1,12 @@
 import 'package:casa/app/core/utils/extensions.dart';
+import 'package:casa/components/custom_images.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/svg_images.dart';
-import 'package:casa/components/custom_images.dart';
 import '../../app/core/utils/styles.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../navigation/custom_navigation.dart';
 import '../app/core/utils/text_styles.dart';
+import 'dart:ui' as ui;
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
@@ -57,18 +58,24 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       onTap: () {
                         CustomNavigator.pop();
                       },
-                      child: Container(
-                        height: actionWidth ?? 40,
-                        width: actionWidth ?? 40,
-                        padding: const EdgeInsets.fromLTRB(17, 10, 14, 10),
-                        decoration: BoxDecoration(
-                            color: Styles.WHITE_COLOR,
-                            shape: BoxShape.circle,
-                            border: Border.all(color: Styles.PRIMARY_COLOR)),
-                        child: Center(
+                      child: ClipRRect(
+                        clipBehavior: Clip.antiAlias,
+                        borderRadius: BorderRadius.circular(25),
+                        child: BackdropFilter(
+                          filter:
+                              ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          child: Container(
+                            padding: const EdgeInsets.all(8),
+                            decoration: BoxDecoration(
+                                color: Colors.black.withOpacity(0.3),
+                                borderRadius: BorderRadius.circular(100)),
                             child: customImageIconSVG(
-                                imageName: SvgImages.backArrow,color: Styles.PRIMARY_COLOR)),
-                      ))
+                                imageName: SvgImages.arrowRight,
+                            color: Styles.WHITE_COLOR),
+                          ),
+                        ),
+                      ),
+                    )
                   : SizedBox(
                       width: actionWidth ?? 40,
                     ),

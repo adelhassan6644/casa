@@ -1,4 +1,7 @@
 {
+  "home": "الرئيسية",
+  "my_appointments": "مواعيدي",
+  "more": "المزيد",
   "login_header" : "مرحبا بك في كاسا",
   "forget_password_header" : "نسيت كلمة المرور",
   "on_boarding_header" : "إنضم إلينا في كاسا سبا",
@@ -6,7 +9,7 @@
   "reset_password_header" : "إعادة تعيين كلمة المرور",
   "change_password_header" : "تغيير كلمة المرور",
   "signup_header" : "مرحبا بك في كاسا",
-  "welcome_description": "اكمل بياناتك حتى تكون نسب توافق مشوارك\nاليومي مع الكباتن دقيقة!",
+  "welcome_description": "مرحبا, تسعدنا عودتك ",
   "mail": "البريد الإلكتروني",
   "change_password": "تغير كلمة المرور",
   "you_must_change_something": "عفوًا! يجب عليك تغيير شيء",
@@ -65,7 +68,7 @@
   "change_city": "تغيير المدينة",
   "decasary_to": "تسليم إلي",
   "sections": "الأقسام",
-  "profile": "الصفحة الشخصية",
+  "profile": "الملف الشخصي",
   "dashboard": "الرئيسية",
   "favourites": "المفضلة",
   "contact_with_us": "تواصل معنا",
@@ -81,6 +84,8 @@
   "register_successfully": "تم تسجيل الحساب بنجاح",
   "male": "ذكر",
   "female": "أنثي",
-  "gender": "النوع"
-
+  "gender": "النوع",
+  "all": "الكل",
+  "pedicure": "باديكير",
+  "massage": "مساج"
 }

@@ -31,20 +31,20 @@ class HomeProvider extends ChangeNotifier {
     });
   }
 
-  bool get isLogin => homeRepo.isLoggedIn();
-
-  CarouselController bannerController = CarouselController();
-  late int _placesIndex = 0;
-  int get bannerIndex => _placesIndex;
-  void setPlacesIndex(int index) {
-    _placesIndex = index;
+  List<String> tabs = ["all","pedicure","massage"];
+  late int currentTab = 0;
+  void selectTab(index) {
+    currentTab = index;
     notifyListeners();
   }
 
-  late int _offersIndex = 0;
-  int get offersIndex => _offersIndex;
-  void setOffersIndex(int index) {
-    _offersIndex = index;
+  bool get isLogin => homeRepo.isLoggedIn();
+
+  CarouselController bannerController = CarouselController();
+  late int _bannerIndex = 0;
+  int get bannerIndex => _bannerIndex;
+  void setBannerIndex(int index) {
+    _bannerIndex = index;
     notifyListeners();
   }
 
@@ -81,15 +81,15 @@ class HomeProvider extends ChangeNotifier {
     }
   }
 
-  PlacesModel? placesModel;
-  bool isGetPlaces = false;
-  getPlaces() async {
+  ProductsModel? productsModel;
+  bool isGetProducts = false;
+  getProducts() async {
     try {
-      isGetPlaces = true;
+      isGetProducts = true;
       notifyListeners();
-      Either<ServerFailure, Response> response = await homeRepo.getHomePlaces();
+      Either<ServerFailure, Response> response = await homeRepo.getHomeProducts();
       response.fold((fail) {
-        isGetPlaces = false;
+        isGetProducts = false;
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
                 message: ApiErrorHandler.getMessage(fail),
@@ -98,12 +98,12 @@ class HomeProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
-        placesModel = PlacesModel.fromJson(success.data);
-        isGetPlaces = false;
+        productsModel = ProductsModel.fromJson(success.data);
+        isGetProducts = false;
         notifyListeners();
       });
     } catch (e) {
-      isGetPlaces = false;
+      isGetProducts = false;
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: e.toString(),
@@ -114,109 +114,4 @@ class HomeProvider extends ChangeNotifier {
     }
   }
 
-  CategoriesModel? categoriesModel;
-  bool isGetCategories = false;
-  getCategories() async {
-    try {
-      isGetCategories = true;
-      notifyListeners();
-      Either<ServerFailure, Response> response =
-          await homeRepo.getHomeCategories();
-      response.fold((fail) {
-        isGetCategories = false;
-        CustomSnackBar.showSnackBar(
-            notification: AppNotification(
-                message: ApiErrorHandler.getMessage(fail),
-                isFloating: true,
-                backgroundColor: Styles.IN_ACTIVE,
-                borderColor: Colors.transparent));
-        notifyListeners();
-      }, (success) {
-        categoriesModel = CategoriesModel.fromJson(success.data);
-        isGetCategories = false;
-        notifyListeners();
-      });
-    } catch (e) {
-      isGetCategories = false;
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
-              message: e.toString(),
-              isFloating: true,
-              backgroundColor: Styles.IN_ACTIVE,
-              borderColor: Colors.transparent));
-      notifyListeners();
-    }
-  }
-
-  // bool show = false;
-  // showAllNews() {
-  //   show = true;
-  //   notifyListeners();
-  // }
-
-  NewsModel? newsModel;
-  bool isExploring = false;
-  getNews() async {
-    try {
-      isExploring = true;
-      notifyListeners();
-      Either<ServerFailure, Response> response = await homeRepo.getHomeNews();
-      response.fold((fail) {
-        isExploring = false;
-        CustomSnackBar.showSnackBar(
-            notification: AppNotification(
-                message: ApiErrorHandler.getMessage(fail),
-                isFloating: true,
-                backgroundColor: Styles.IN_ACTIVE,
-                borderColor: Colors.transparent));
-        notifyListeners();
-      }, (success) {
-        newsModel = NewsModel.fromJson(success.data);
-        isExploring = false;
-        notifyListeners();
-      });
-    } catch (e) {
-      isExploring = false;
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
-              message: e.toString(),
-              isFloating: true,
-              backgroundColor: Styles.IN_ACTIVE,
-              borderColor: Colors.transparent));
-      notifyListeners();
-    }
-  }
-
-  OffersModel? offersModel;
-  bool isGetOffers = false;
-  getOffers() async {
-    try {
-      isGetOffers = true;
-      notifyListeners();
-      Either<ServerFailure, Response> response = await homeRepo.getHomeOffers();
-      response.fold((fail) {
-        isGetOffers = false;
-        CustomSnackBar.showSnackBar(
-            notification: AppNotification(
-                message: ApiErrorHandler.getMessage(fail),
-                isFloating: true,
-                backgroundColor: Styles.IN_ACTIVE,
-                borderColor: Colors.transparent));
-        notifyListeners();
-      }, (success) {
-        offersModel = OffersModel.fromJson(success.data);
-        isGetOffers = false;
-        notifyListeners();
-      });
-    } catch (e) {
-      isGetOffers = false;
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
-              message: e.toString(),
-              isFloating: true,
-              backgroundColor: Styles.IN_ACTIVE,
-              borderColor: Colors.transparent));
-      notifyListeners();
-    }
-  }
 }

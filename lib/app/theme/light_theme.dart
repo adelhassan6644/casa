@@ -14,7 +14,7 @@ ThemeData light = ThemeData(
       primary: Styles.PRIMARY_COLOR,
       secondary: Styles.PRIMARY_COLOR),
 
-  scaffoldBackgroundColor: Styles.BACKGROUND_COLOR,
+  scaffoldBackgroundColor: Styles.SCAFFOLD_BG,
   focusColor: const Color(0xFFADC4C8),
   hintColor: Styles.HINT_COLOR,
   disabledColor: Styles.DISABLED,
