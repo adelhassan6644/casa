@@ -2,6 +2,7 @@ import 'package:casa/app/core/utils/svg_images.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/custom_images.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
+import 'package:casa/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
@@ -9,6 +10,7 @@ import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:provider/provider.dart';
 
 import '../../../components/tab_widget.dart';
+import '../../../navigation/routes.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -48,7 +50,8 @@ class HomeHeader extends StatelessWidget {
                       imageName: SvgImages.notifications,
                       radius: 100,
                       height: 45,
-                      width: 45)
+                      width: 45,
+                      onTap: () => CustomNavigator.push(Routes.NOTIFICATIONS))
                 ],
               ),
               Padding(

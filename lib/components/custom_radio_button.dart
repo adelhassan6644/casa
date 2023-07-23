@@ -7,10 +7,11 @@ class CustomRadioButton extends StatefulWidget {
   final void Function(bool)? onChange;
   final bool check;
   final String title;
+  final Color? selectedColor;
 
   const CustomRadioButton(
       {super.key, required this.check,
-      this.onChange, required this.title});
+      this.onChange, this.selectedColor, required this.title});
   @override
   State<CustomRadioButton> createState() => _CustomRadioButtonState();
 }
@@ -55,8 +56,8 @@ class _CustomRadioButtonState extends State<CustomRadioButton> {
             style:TextStyle(
               fontSize: 14,
               overflow: TextOverflow.ellipsis,
-              fontWeight:widget.check? FontWeight.w400:FontWeight.w600,
-              color: widget.check? Styles.WHITE_COLOR:Styles.HINT_COLOR,
+              fontWeight:widget.check? FontWeight.w600:FontWeight.w400,
+              color: widget.check? widget.selectedColor?? Styles.WHITE_COLOR:Styles.HINT_COLOR,
             ),
           ),
         ),

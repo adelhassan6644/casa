@@ -6,6 +6,7 @@ import 'package:casa/navigation/custom_navigation.dart';
 import 'package:casa/navigation/routes.dart';
 import 'package:provider/provider.dart';
 
+import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_images.dart';
 import '../../auth/provider/auth_provider.dart';
@@ -17,17 +18,9 @@ class LogoutButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<AuthProvider>(builder: (_, provider, child) {
-      return Container(
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 20),
-        decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black.withOpacity(0.1),
-                  spreadRadius: 2,
-                  blurRadius: 10)
-            ],
-            borderRadius: BorderRadius.circular(100),
-            color: Styles.WHITE_COLOR),
+      return Padding(
+        padding:
+            EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_SMALL.h),
         child: InkWell(
           onTap: () {
             onTap();
@@ -44,9 +37,7 @@ class LogoutButton extends StatelessWidget {
                   imageName: SvgImages.logout,
                   height: 20,
                   width: 20,
-                  color: provider.isLogin
-                      ? Styles.ERORR_COLOR
-                      : Styles.ACTIVE),
+                  color: provider.isLogin ? Styles.ERORR_COLOR : Styles.ACTIVE),
               const SizedBox(
                 width: 16,
               ),

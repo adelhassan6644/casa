@@ -4,6 +4,7 @@ class ProfileModel {
   String? email;
   String? phone;
   String? image;
+  int? gender;
   DateTime? createdAt;
 
   ProfileModel(
@@ -12,6 +13,7 @@ class ProfileModel {
       this.email,
       this.phone,
       this.image,
+      this.gender,
       this.createdAt});
 
   factory ProfileModel.fromJson(Map<String, dynamic> json) => ProfileModel(
@@ -20,6 +22,8 @@ class ProfileModel {
         phone: json["phone"],
         email: json["email"],
         image: json["image"],
+        gender:
+            json["gender"] != null ? int.parse(json["gender"].toString()) : 0,
         createdAt: json["created_at"] == null
             ? null
             : DateTime.parse(json["created_at"]),
@@ -31,6 +35,7 @@ class ProfileModel {
         "email": email,
         "phone": phone,
         "image": image,
+        "gender": gender,
         "created_at": createdAt?.toIso8601String(),
       };
 }

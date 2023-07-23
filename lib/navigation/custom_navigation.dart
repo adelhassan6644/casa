@@ -1,5 +1,6 @@
 import 'package:casa/features/auth/pages/change_password.dart';
 import 'package:casa/features/auth/pages/reset_password.dart';
+import 'package:casa/features/notifications/page/notifications_page.dart';
 import 'package:casa/features/product_details/page/product_details.dart';
 import 'package:casa/features/setting/pages/terms.dart';
 import 'package:casa/main_models/base_model.dart';
@@ -48,6 +49,9 @@ abstract class CustomNavigator {
         return _pageRoute(const Register());
       case Routes.CHANGE_PASSWORD:
         return _pageRoute(const ChangePassword());
+
+      case Routes.NOTIFICATIONS:
+        return _pageRoute(const NotificationsPage());
       case Routes.VERIFICATION:
         return _pageRoute(
             Verification(fromRegister: settings.arguments as bool));

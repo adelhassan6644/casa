@@ -71,7 +71,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                                 borderRadius: BorderRadius.circular(100)),
                             child: customImageIconSVG(
                                 imageName: SvgImages.arrowRight,
-                            color: Styles.WHITE_COLOR),
+                                color: Styles.WHITE_COLOR),
                           ),
                         ),
                       ),
@@ -79,13 +79,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   : SizedBox(
                       width: actionWidth ?? 40,
                     ),
-              const Expanded(child: SizedBox()),
-              Text(
-                title ?? "",
-                style: AppTextStyles.semiBold
-                    .copyWith(color: Colors.black, fontSize: 13),
+              SizedBox(
+                width: 16.w,
               ),
-              const Expanded(child: SizedBox()),
+              Expanded(
+                child: Text(
+                  title ?? "",
+                  style: AppTextStyles.semiBold
+                      .copyWith(color: Styles.PRIMARY_COLOR, fontSize: 16),
+                ),
+              ),
+              // const Expanded(child: SizedBox()),
               actionChild ??
                   const SizedBox(
                     width: 40,

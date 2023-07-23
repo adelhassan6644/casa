@@ -9,6 +9,7 @@ import '../../../app/core/utils/text_styles.dart';
 import '../../../app/core/utils/validation.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_button.dart';
+import '../../../components/custom_radio_button.dart';
 import '../../../components/custom_text_form_field.dart';
 
 class ProfileBody extends StatelessWidget {
@@ -17,70 +18,105 @@ class ProfileBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ProfileProvider>(builder: (_, provider, child) {
-      return Container(
-        margin:
+      return Padding(
+        padding:
             EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-        padding: EdgeInsets.symmetric(
-            horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
-            vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(18),
-            color: Styles.WHITE_COLOR,
-            border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    getTranslated("personal_information", context),
-                    style: AppTextStyles.medium.copyWith(
-                        color: Styles.HEADER,
-                        fontSize: 16,
-                        overflow: TextOverflow.ellipsis),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 12.h),
+              child: Text(
+                getTranslated("personal_information", context),
+                style: AppTextStyles.medium.copyWith(
+                    color: Styles.DETAILS_COLOR,
+                    fontSize: 16,
+                    overflow: TextOverflow.ellipsis),
+              ),
+            ),
+            Container(
+              padding: EdgeInsets.symmetric(
+                  horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                  vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(18),
+                  color: Styles.WHITE_COLOR,
+                  border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
+              child: Column(
+                children: [
+                  ///Name
+                  CustomTextFormField(
+                    controller: provider.nameTEC,
+                    hint: getTranslated("name", context),
+                    inputType: TextInputType.name,
+                    valid: Validations.name,
+                    pSvgIcon: SvgImages.userIcon,
                   ),
-                ),
-                CustomButton(
-                  text: getTranslated("edit", context),
-                  width: 100,
-                  height: 35,
-                  withBorderColor: false,
-                  withShadow: true,
-                  iconSize: 15,
-                  textColor: Styles.SECOUND_PRIMARY_COLOR,
-                  svgIcon: SvgImages.edit,
-                  backgroundColor: Styles.WHITE_COLOR,
-                  textSize: 14,
-                  onTap: () => provider.updateProfile(),
-                  isLoading: provider.isUpdate,
-                )
-              ],
-            ),
-            SizedBox(
-              height: 18.h,
-            ),
-            CustomTextFormField(
-              controller: provider.nameTEC,
-              hint: getTranslated("name", context),
-              inputType: TextInputType.name,
-              valid: Validations.name,
-              pSvgIcon: SvgImages.userIcon,
-            ),
-            CustomTextFormField(
-              controller: provider.phoneTEC,
-              hint: getTranslated("phone_number", context),
-              inputType: TextInputType.phone,
-              valid: Validations.phone,
-              pSvgIcon: SvgImages.phoneIcon,
-            ),
-            CustomTextFormField(
-              controller: provider.emailTEC,
-              hint: getTranslated("mail", context),
-              inputType: TextInputType.emailAddress,
-              valid: Validations.mail,
-              pSvgIcon: SvgImages.mailIcon,
-              read: true,
-              addBorder: true,
+
+                  ///Gender
+                  Padding(
+                    padding:
+                        EdgeInsets.symmetric(vertical: 6.h, horizontal: 12.w),
+                    child: Row(
+                      children: [
+                        Text(
+                          getTranslated("gender", context),
+                          style: AppTextStyles.medium.copyWith(
+                              fontSize: 18, color: Styles.PRIMARY_COLOR),
+                        ),
+                        SizedBox(
+                          width: 24.w,
+                        ),
+                        ...List.generate(
+                            2,
+                            (index) => Expanded(
+                                  child: CustomRadioButton(
+                                    selectedColor: Styles.PRIMARY_COLOR,
+                                    check: provider.userType == index,
+                                    title: getTranslated(
+                                        provider.usersTypes[index], context),
+                                    onChange: (v) {
+                                      if (v) {
+                                        provider.selectedUserType(index);
+                                      }
+                                    },
+                                  ),
+                                ))
+                      ],
+                    ),
+                  ),
+
+                  ///Phone
+                  CustomTextFormField(
+                    controller: provider.phoneTEC,
+                    hint: getTranslated("phone_number", context),
+                    inputType: TextInputType.phone,
+                    valid: Validations.phone,
+                    pSvgIcon: SvgImages.phoneIcon,
+                  ),
+
+                  ///Mail
+                  CustomTextFormField(
+                    controller: provider.emailTEC,
+                    hint: getTranslated("mail", context),
+                    inputType: TextInputType.emailAddress,
+                    valid: Validations.mail,
+                    pSvgIcon: SvgImages.mailIcon,
+                    read: true,
+                    addBorder: true,
+                  ),
+
+                  ///To save Changes
+                  SizedBox(
+                    height: 24.h,
+                  ),
+                  CustomButton(
+                    text: getTranslated("save_changes", context),
+                    onTap: () => provider.updateProfile(),
+                    isLoading: provider.isUpdate,
+                  )
+                ],
+              ),
             ),
           ],
         ),

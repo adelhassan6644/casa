@@ -44,7 +44,7 @@ class _MainPageState extends State<MainPage> {
                   slideWidth: context.width * (0.75),
                   menuBackgroundColor: Styles.WHITE_COLOR,
                   controller: _drawerController,
-                  menuScreen: More(controller: _drawerController),
+                  menuScreen: More(),
                   mainScreen: const DashBoard(),
                 ),
               ),

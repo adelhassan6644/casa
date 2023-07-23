@@ -1,19 +1,29 @@
 import 'package:casa/app/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_images.dart';
 
 class MoreButton extends StatelessWidget {
   const MoreButton(
-      {required this.title, required this.icon, this.onTap, Key? key})
+      {required this.title, required this.icon, this.withBorder = true,
+  this.onTap, Key? key})
       : super(key: key);
   final String title, icon;
   final void Function()? onTap;
+  final bool withBorder;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 15),
+    return Container(
+      padding: EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_SMALL.h),
+      decoration: BoxDecoration(
+          border: withBorder
+              ? const Border(
+              bottom: BorderSide(color: Styles.BORDER_COLOR, width: 1))
+              : null),
+
       child: InkWell(
         onTap: () {
           if (onTap != null) {
@@ -27,7 +37,7 @@ class MoreButton extends StatelessWidget {
                 imageName: icon,
                 height: 20,
                 width: 20,
-                color: Styles.SPLASH_BACKGROUND_COLOR),
+                color: Styles.PRIMARY_COLOR),
             const SizedBox(
               width: 16,
             ),
@@ -40,7 +50,7 @@ class MoreButton extends StatelessWidget {
                         style: AppTextStyles.medium.copyWith(
                             fontSize: 18,
                             overflow: TextOverflow.ellipsis,
-                            color: Styles.SPLASH_BACKGROUND_COLOR)),
+                            color: Styles.PRIMARY_COLOR)),
                   ),
                 ],
               ),

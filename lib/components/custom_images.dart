@@ -79,7 +79,7 @@ Widget customContainerSvgIcon(
     child: Container(
       height: height ?? 50,
       width: width ?? 50,
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           boxShadow: withShadow
               ? [

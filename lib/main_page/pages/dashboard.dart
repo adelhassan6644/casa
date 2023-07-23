@@ -7,6 +7,7 @@ import '../../data/network/network_info.dart';
 import '../../features/favourite/page/favourites.dart';
 import '../../features/home/page/home.dart';
 import '../../features/maps/page/map_page.dart';
+import '../../features/more/page/more.dart';
 import '../widget/nav_bar.dart';
 
 class DashBoard extends StatefulWidget {
@@ -29,9 +30,9 @@ class _DashBoardState extends State<DashBoard> {
       case 1:
         return const Profile();
       case 2:
-        return const MapPage();
+        return const Profile();
       case 3:
-        return const Favourites();
+        return const  More();
       default:
         return Container();
     }

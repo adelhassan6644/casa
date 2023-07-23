@@ -37,7 +37,7 @@ abstract class Styles {
   static const Color HINT_COLOR = Color(0xffA5B7B8);
 
 
-  static const Color SPLASH_BACKGROUND_COLOR = Color(0xff530B8B);
+  static const Color SPLASH_BACKGROUND_COLOR = Color(0xff);
 
 
   static tripStatus(status) {

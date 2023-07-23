@@ -18,6 +18,9 @@ class EndPoints {
   static getProfile(id) => 'client/$id';
   static updateProfile(id) => 'client/$id';
   static getFavourites(id) => 'favorites/$id';
+  static getNotifications(id) => 'notification/$id';
+  static readNotification(id) => 'notification/read/$id';
+  static deleteNotification(id) => 'notification/delete/$id';
   static const String postFavourite = 'favorite';
   static const String banners = 'banner';
   static const String news = 'news';
@@ -26,9 +29,6 @@ class EndPoints {
   static const String offers = 'offer';
   static const String aboutUs = 'about_us';
   static const String setting = 'contact';
-  static const String notifications = 'notification/notification';
-  static const String readNotification = 'notification/read';
-  static const String deleteNotification = 'notification/delete';
 
   /// maps
   static const String GEOCODE_URI = '/maps/api/geocode/';

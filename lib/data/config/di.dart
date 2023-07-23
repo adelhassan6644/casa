@@ -1,3 +1,4 @@
+import 'package:casa/features/notifications/repo/notifications_repo.dart';
 import 'package:dio/dio.dart';
 import 'package:casa/features/home/repo/home_repo.dart';
 import 'package:casa/features/maps/provider/location_provider.dart';
@@ -13,6 +14,7 @@ import '../../features/favourite/provider/favourite_provider.dart';
 import '../../features/favourite/repo/favourite_repo.dart';
 import '../../features/home/provider/home_provider.dart';
 import '../../features/maps/repo/maps_repo.dart';
+import '../../features/notifications/provider/notifications_provider.dart';
 import '../../features/product_details/provider/product_details_provider.dart';
 import '../../features/product_details/repo/product_details_repo.dart';
 import '../../features/profile/provider/profile_provider.dart';
@@ -49,11 +51,14 @@ Future<void> init() async {
       () => ProfileRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => HomeRepo(sharedPreferences: sl(), dioClient: sl()));
+
+  sl.registerLazySingleton(
+      () => NotificationsRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => FavouriteRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => MapsRepo(sharedPreferences: sl(), dioClient: sl()));
-   sl.registerLazySingleton(
+  sl.registerLazySingleton(
       () => ProductDetailsRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => SettingRepo(sharedPreferences: sl(), dioClient: sl()));
@@ -70,6 +75,8 @@ Future<void> init() async {
   sl.registerLazySingleton(() => FavouriteProvider(favouriteRepo: sl()));
   sl.registerLazySingleton(() => ProductDetailsProvider(repo: sl()));
   sl.registerLazySingleton(() => HomeProvider(homeRepo: sl()));
+  sl.registerLazySingleton(
+      () => NotificationsProvider(notificationsRepo: sl()));
   sl.registerLazySingleton(() => ProfileProvider(profileRepo: sl()));
   sl.registerLazySingleton(() => MapProvider());
   sl.registerLazySingleton(() => LocationProvider(locationRepo: sl()));

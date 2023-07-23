@@ -27,6 +27,13 @@ class ProfileProvider extends ChangeNotifier {
   TextEditingController emailTEC = TextEditingController();
   TextEditingController phoneTEC = TextEditingController();
 
+  int userType = 0;
+  List<String> usersTypes = ["male", "female"];
+  void selectedUserType(v) {
+    userType = v;
+    notifyListeners();
+  }
+
   File? profileImage;
   onSelectImage(File? file) {
     profileImage = file;
@@ -61,6 +68,7 @@ class ProfileProvider extends ChangeNotifier {
 
   bool checkData(Map<String, dynamic> body) {
     return _boolCheckString(nameTEC.text.trim(), "name", body) ||
+        _boolCheckString(userType, "gender", body) ||
         _boolCheckString(phoneTEC.text.trim(), "phone", body);
   }
 
@@ -71,6 +79,7 @@ class ProfileProvider extends ChangeNotifier {
       "name": profileModel?.name,
       "phone": profileModel?.phone,
       "email": profileModel?.email,
+      "gender": profileModel?.gender,
     };
 
     if (checkData(body) || hasImage()) {
@@ -84,6 +93,9 @@ class ProfileProvider extends ChangeNotifier {
       }
       if (_boolCheckString(nameTEC.text.trim(), "name", body)) {
         body["name"] = nameTEC.text.trim();
+      }
+      if (_boolCheckString(userType, "gender", body)) {
+        body["gender"] = nameTEC.text.trim();
       }
 
       try {
@@ -102,7 +114,7 @@ class ProfileProvider extends ChangeNotifier {
           isUpdate = false;
           notifyListeners();
         }, (response) {
-          // getProfile();
+          getProfile();
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
                   message: getTranslated("your_profile_successfully_updated",
@@ -170,5 +182,6 @@ class ProfileProvider extends ChangeNotifier {
     nameTEC.text = profileModel?.name ?? "";
     emailTEC.text = profileModel?.email ?? "";
     phoneTEC.text = profileModel?.phone ?? "";
+    userType=profileModel?.gender??0;
   }
 }

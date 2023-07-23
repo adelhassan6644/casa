@@ -5,7 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="updates">
-      <change beforePath="$PROJECT_DIR$/lib/main_page/widget/nav_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/widget/nav_bar.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/splash_bg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/notifications/model/notifications_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/notifications/page/notifications_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/notifications/provider/notifications_provider.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/notifications/repo/notifications_repo.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/notifications/widgets/notification_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/images/profile_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/profile_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/live_location.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/styles.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/styles.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_radio_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_radio_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/api/end_points.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/config/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/di.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/config/provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/page/more.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/page/more.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/widgets/logout_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/widgets/logout_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/widgets/more_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/widgets/more_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/widgets/profile_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/widgets/profile_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/model/profile_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/model/profile_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/page/profile.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/page/profile.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/provider/profile_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/provider/profile_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/widgets/profile_body.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/widgets/profile_body.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/profile/widgets/profile_image_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/profile/widgets/profile_image_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/splash/page/splash.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/splash/page/splash.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main_page/pages/main_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/pages/main_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/navigation/routes.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/routes.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,28 +78,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/SoftweareCloud2/casa/assets/svgs&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;flutter.settings&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "io.flutter.reload.alreadyRun": "true",
+    "last_opened_file_path": "/Users/user/SoftweareCloud2/casa/assets/images",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "flutter.settings",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/assets/svgs" />
       <recent name="$PROJECT_DIR$/android/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/lib/components" />
-      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="C:\Users\adelh\Documents\GitHub\casa\assets\svgs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -287,7 +321,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690126873370</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="updates">
+      <created>1690126918825</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1690126918825</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

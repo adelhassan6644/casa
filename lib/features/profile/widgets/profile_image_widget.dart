@@ -1,3 +1,4 @@
+import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/features/profile/provider/profile_provider.dart';
 import 'package:provider/provider.dart';
@@ -10,15 +11,19 @@ import '../../../components/image_pop_up_viewer.dart';
 import '../../../helpers/image_picker_helper.dart';
 
 class ProfileImageWidget extends StatelessWidget {
-  const ProfileImageWidget({required this.withEdit, this.radius = 68, Key? key})
+  const ProfileImageWidget({required this.withEdit,this.withPadding=true, this.radius = 60, Key? key})
       : super(key: key);
   final bool withEdit;
   final double radius;
+  final bool withPadding;
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Consumer<ProfileProvider>(builder: (_, provider, child) {
-        return Column(
+    return Consumer<ProfileProvider>(builder: (_, provider, child) {
+      return Padding(
+        padding:  EdgeInsets.symmetric(horizontal:withPadding? Dimensions.PADDING_SIZE_DEFAULT.w:0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             GestureDetector(
               onTap: () {
@@ -40,7 +45,7 @@ class ProfileImageWidget extends StatelessWidget {
                 }
               },
               child: Stack(
-                alignment: Alignment.bottomRight,
+                alignment: Alignment.bottomLeft,
                 children: [
                   provider.profileImage != null
                       ? ClipRRect(
@@ -66,35 +71,23 @@ class ProfileImageWidget extends StatelessWidget {
                           image: provider.profileModel?.image ?? "",
                           radius: radius),
                   if (withEdit)
-                    InkWell(
-                      highlightColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      splashColor: Colors.transparent,
-                      onTap: () {
-                        if (withEdit) {
-                          ImagePickerHelper.showOptionSheet(
-                              onGet: provider.onSelectImage);
-                        }
-                      },
-                      child: Container(
-                          height: 35,
-                          width: 35,
-                          padding: const EdgeInsets.all(8),
-                          decoration: BoxDecoration(
-                              boxShadow: kElevationToShadow[1],
-                              color: Styles.WHITE_COLOR,
-                              borderRadius: BorderRadius.circular(100)),
-                          child: customImageIconSVG(
-                            imageName: SvgImages.cameraIcon,
-                          )),
-                    ),
+                    customContainerSvgIcon(
+                      radius: 100,
+                        height: 35,width: 35,
+                        imageName: SvgImages.cameraIcon,
+                        color: Styles.WHITE_COLOR,
+                        onTap: () {
+                          if (withEdit) {
+                            ImagePickerHelper.showOptionSheet(
+                                onGet: provider.onSelectImage);
+                          }
+                        }),
                 ],
               ),
             ),
           ],
-        );
-      }),
-    );
+        ),
+      );
+    });
   }
 }

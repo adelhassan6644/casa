@@ -15,10 +15,11 @@ class ProfileCard extends StatelessWidget {
       return Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-           Row(
+           const Row(
             children: [
               ProfileImageWidget(
                 withEdit: false,
+                withPadding: false,
                 radius: 28.5,
               ),
               Expanded(child: SizedBox()),
@@ -27,8 +28,8 @@ class ProfileCard extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             provider.isLogin ? provider.nameTEC.text.trim() : "Guest",
-            style: AppTextStyles.bold.copyWith(
-                color: Styles.SPLASH_BACKGROUND_COLOR,
+            style: AppTextStyles.medium.copyWith(
+                color: Styles.PRIMARY_COLOR,
                 fontSize: 16,
                 height: 1),
           ),
@@ -37,7 +38,7 @@ class ProfileCard extends StatelessWidget {
                 ? provider.emailTEC.text.trim()
                 : "elhemdanih@casa.com",
             style: AppTextStyles.regular.copyWith(
-                color: Styles.SPLASH_BACKGROUND_COLOR, fontSize: 12),
+                color: Styles.PRIMARY_COLOR, fontSize: 14),
           ),
           const SizedBox(
             height: 24,
