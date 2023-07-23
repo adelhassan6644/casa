@@ -44,7 +44,6 @@ class _ProductDetailsState extends State<ProductDetails> {
             children: [
               Stack(
                 children: [
-                  const CustomAppBar(),
                   provider.isLoading
                       ? CustomShimmerContainer(
                           height: 300.h,
@@ -59,6 +58,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                             height: 300.h,
                             radius: 0),
                       ),
+                  const CustomAppBar(),
                 ],
               ),
               provider.isLoading
@@ -76,7 +76,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                   child: CustomButton(
                     text: "حجز موعد",
-                    svgIcon: SvgImages.arrowLeftIcon,
+                    svgIcon: SvgImages.arrowLeft,
                     iconColor: Styles.WHITE_COLOR,
                     onTap: () {},
                   ),

@@ -58,12 +58,8 @@ class SvgImages {
   static const String hiddenEyeIcon = 'assets/svgs/hidden_eye.svg';
   static const String phoneIcon = 'assets/svgs/phone.svg';
   static const String phoneCallIcon = 'assets/svgs/phone_call.svg';
-  static const String arrowLeftIcon = 'assets/svgs/arrow_left.svg';
-  static const String backIcon = 'assets/svgs/back_icon.svg';
-  static const String cityIcon = 'assets/svgs/city.svg';
+  static const String arrowLeft = 'assets/svgs/arrow_left.svg';
   static const String tickCircleIcon = 'assets/svgs/tick_circle.svg';
-  static const String cartIcon = 'assets/svgs/cart.svg';
-  static const String stackCartIcon = 'assets/svgs/stack_cart.svg';
   static const String homeSearchIcon = 'assets/svgs/home_search.svg';
   static const String deliciousIcon = 'assets/svgs/delicious.svg';
   static const String report = 'assets/svgs/report.svg';
@@ -76,4 +72,5 @@ class SvgImages {
   static const String login = 'assets/svgs/login.svg';
   static const String send = 'assets/svgs/send.svg';
   static const String trash = 'assets/svgs/trash.svg';
+  static const String cancel = 'assets/svgs/cancel.svg';
 }

@@ -5,11 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="updates">
+      <change afterPath="$PROJECT_DIR$/assets/svgs/cancel.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_dates.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/arrow-down.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/arrow-up-2.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/arrow-up-3.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/arrow-up.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/arrow.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/back_icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/car.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/car_color.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/car_model.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/car_plate.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/card.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/cart.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/city.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/completed.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/svgs/delivered.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/svg_images.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_app_bar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_app_bar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/page/home.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/page/home.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_banners.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_banners.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_products.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_products.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/product_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/product_card.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/product_details/page/product_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_details/page/product_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/product_details/provider/product_details_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_details/provider/product_details_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/product_details/widgets/product_details_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_details/widgets/product_details_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,13 +108,12 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" temporary="true" nameIsGenerated="true">
+    <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" nameIsGenerated="true">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter.main.dart" />
         <item itemvalue="Flutter.main.dart" />
@@ -278,7 +304,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689876793942</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="updates">
+      <created>1689940286570</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1689940286570</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -315,8 +348,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/lib/features/home/page/home.dart</url>
-          <line>22</line>
+          <line>23</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/features/home/widgets/product_card.dart</url>
+          <line>66</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

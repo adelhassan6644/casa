@@ -7,7 +7,7 @@ import '../../../components/custom_network_image.dart';
 
 class ProductDetailsWidget extends StatelessWidget {
   final ProductItem productItem;
-  const ProductDetailsWidget({Key? key,  required this.productItem})
+  const ProductDetailsWidget({Key? key, required this.productItem})
       : super(key: key);
 
   @override
@@ -61,11 +61,11 @@ class ProductDetailsWidget extends StatelessWidget {
                   padding:
                       EdgeInsets.only(right: index == 0 ? 24.w : 0, left: 12.w),
                   child: CustomNetworkImage.containerNewWorkImage(
-                      image: productItem.images?[index] ?? "",
+                      image: productItem.image ?? "",
                       width: 100.w,
-                      fit: BoxFit.fitWidth,
+                      fit: BoxFit.cover,
                       height: 150.h,
-                      radius: 0),
+                      radius: 8),
                 ),
               ),
             ),
@@ -75,4 +75,3 @@ class ProductDetailsWidget extends StatelessWidget {
     );
   }
 }
-

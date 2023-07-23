@@ -103,7 +103,7 @@ class HomeBanner extends StatelessWidget {
                                               height: 35.h,
                                               text: "المزيد",
                                               svgIcon:
-                                              SvgImages.arrowLeftIcon,
+                                              SvgImages.arrowLeft,
                                               iconColor: Styles.WHITE_COLOR,
                                               onTap: () {
                                                 provider.bannerController

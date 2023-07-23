@@ -98,7 +98,7 @@ class AuthProvider extends ChangeNotifier {
               CustomNavigator.navigatorState.currentContext!,
               listen: false)
               .getFavourites();
-          CustomNavigator.push(Routes.MAIN_PAGE, clean: true);
+          CustomNavigator.push(Routes.DASHBOARD, clean: true);
           clear();
         } else {
           CustomNavigator.push(Routes.VERIFICATION, arguments: true);
@@ -322,7 +322,7 @@ class AuthProvider extends ChangeNotifier {
               .getFavourites();
           authRepo.setLoggedIn();
           CustomNavigator.push(
-            Routes.MAIN_PAGE,
+            Routes.DASHBOARD,
             clean: true,
           );
           CustomSnackBar.showSnackBar(

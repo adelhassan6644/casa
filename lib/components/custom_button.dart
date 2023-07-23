@@ -94,6 +94,7 @@ class CustomButton extends StatelessWidget {
                         text,
                         textAlign: TextAlign.center,
                         style: AppTextStyles.medium.copyWith(
+                          height: 1,
                           fontSize: textSize ?? 16,
                           overflow: TextOverflow.ellipsis,
                           color: textColor ?? Styles.WHITE_COLOR,

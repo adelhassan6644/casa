@@ -3,6 +3,7 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import '../../../data/config/di.dart';
+import '../widgets/home_dates.dart';
 import '../widgets/home_header.dart';
 import '../widgets/home_banners.dart';
 import '../widgets/home_products.dart';
@@ -52,6 +53,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
                       controller: controller,
                       data: const [
                         HomeBanner(),
+                        HomeDates(),
                         HomeProducts()
                       ],
                     ),

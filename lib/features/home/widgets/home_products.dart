@@ -19,83 +19,77 @@ class HomeProducts extends StatelessWidget {
     return Consumer<HomeProvider>(
       builder: (_,provider,child) {
         return provider.isGetProducts
-            ? Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-            child: GridListAnimatorWidget(
-              items: List.generate(
-                8,
-                    (int index) {
-                  return AnimationConfiguration.staggeredGrid(
-                    columnCount: 2,
-                    position: index,
-                    duration: const Duration(milliseconds: 375),
-                    child: const ScaleAnimation(
-                      child: FadeInAnimation(
-                        child: CustomShimmerContainer(),
+            ? Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+              child: GridListAnimatorWidget(
+                items: List.generate(
+                  8,
+                      (int index) {
+                    return AnimationConfiguration.staggeredGrid(
+                      columnCount: 2,
+                      position: index,
+                      duration: const Duration(milliseconds: 375),
+                      child: const ScaleAnimation(
+                        child: FadeInAnimation(
+                          child: CustomShimmerContainer(),
+                        ),
                       ),
-                    ),
-                  );
-                },
+                    );
+                  },
+                ),
               ),
-            ),
-          ),
-        )
+            )
             : provider.productsModel != null &&
             provider.productsModel!.data != null &&
             provider.productsModel!.data!.isNotEmpty
-            ? Expanded(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal:
-                Dimensions.PADDING_SIZE_DEFAULT.w),
-            child: GridListAnimatorWidget(
-              items: List.generate(
-                provider.productsModel!.data!.length,
-                    (int index) {
-                  return AnimationConfiguration.staggeredGrid(
-                    columnCount: 2,
-                    position: index,
-                    duration:
-                    const Duration(milliseconds: 375),
-                    child: ScaleAnimation(
-                      child: FadeInAnimation(
-                        child: ProductCard(
-                          product: provider.productsModel!.data![index],
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ),
-        )
-            : Expanded(
-          child: RefreshIndicator(
-            color: Styles.PRIMARY_COLOR,
-            onRefresh: () async {
-              provider.getProducts();
-            },
-            child: Padding(
+            ? Padding(
               padding: EdgeInsets.symmetric(
                   horizontal:
                   Dimensions.PADDING_SIZE_DEFAULT.w),
-              child: ListAnimator(
-                data: [
-                  EmptyState(
-                    imgWidth: 215.w,
-                    imgHeight: 220.h,
-                    spaceBtw: 12,
-                    txt: "لا يوجد خدمات الان",
-                    subText: "تابعنا حتي تستفاد بخدمتنا الجديدة",
-                  ),
-                ],
+              child: GridListAnimatorWidget(
+                items: List.generate(
+                  provider.productsModel!.data!.length,
+                      (int index) {
+                    return AnimationConfiguration.staggeredGrid(
+                      columnCount: 2,
+                      position: index,
+                      duration:
+                      const Duration(milliseconds: 375),
+                      child: ScaleAnimation(
+                        child: FadeInAnimation(
+                          child: ProductCard(
+                            product: provider.productsModel!.data![index],
+                          ),
+                        ),
+                      ),
+                    );
+                  },
+                ),
               ),
-            ),
-          ),
-        );
+            )
+            : RefreshIndicator(
+              color: Styles.PRIMARY_COLOR,
+              onRefresh: () async {
+                provider.getProducts();
+              },
+              child: Padding(
+                padding: EdgeInsets.symmetric(
+                    horizontal:
+                    Dimensions.PADDING_SIZE_DEFAULT.w),
+                child: ListAnimator(
+                  data: [
+                    EmptyState(
+                      imgWidth: 215.w,
+                      imgHeight: 220.h,
+                      spaceBtw: 12,
+                      txt: "لا يوجد خدمات الان",
+                      subText: "تابعنا حتي تستفاد بخدمتنا الجديدة",
+                    ),
+                  ],
+                ),
+              ),
+            );
       }
     );
   }

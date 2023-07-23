@@ -60,7 +60,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       },
                       child: ClipRRect(
                         clipBehavior: Clip.antiAlias,
-                        borderRadius: BorderRadius.circular(25),
+                        borderRadius: BorderRadius.circular(100),
                         child: BackdropFilter(
                           filter:
                               ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),

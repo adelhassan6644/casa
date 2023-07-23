@@ -64,19 +64,17 @@ class _MyAppState extends State<MyApp> {
       builder: (context, child) => MediaQuery(
           data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
           child: UnFocus(child: child!)),
-      // initialRoute: Routes.SPLASH,
+      initialRoute: Routes.SPLASH,
       navigatorKey: CustomNavigator.navigatorState,
-      // onGenerateRoute: CustomNavigator.onCreateRoute,
-      home: const ProductDetails(id: 5,),
+      onGenerateRoute: CustomNavigator.onCreateRoute,
+      // home: const ProductDetails(id: 5,),
       navigatorObservers: [CustomNavigator.routeObserver],
       title: AppStrings.appName,
       scaffoldMessengerKey: CustomNavigator.scaffoldState,
       debugShowCheckedModeBanner: false,
       theme: Provider.of<ThemeProvider>(
         context,
-      ).darkTheme
-          ? dark
-          : light,
+      ).darkTheme ? dark : light,
       supportedLocales: locals,
       locale: Provider.of<LocalizationProvider>(
         context,
