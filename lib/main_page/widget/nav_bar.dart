@@ -63,7 +63,6 @@ class NavBar extends StatelessWidget {
                   child: BottomNavBarItem(
                     svgIcon: SvgImages.moreIcon,
                     isSelected: provider.selectedIndex == 3,
-                    withIconColor: false,
                     onTap: () => provider.updateDashboardIndex(3),
                     name: getTranslated("more", context),
 
