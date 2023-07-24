@@ -96,7 +96,7 @@ class _LoginState extends State<Login> {
                                                     .emailAddress,
                                                 valid: Validations.mail,
                                                 pSvgIcon:
-                                                SvgImages.phoneIcon,
+                                                SvgImages.mailIcon,
                                               ),
                                               CustomTextFormField(
                                                 keyboardAction:
@@ -166,7 +166,7 @@ class _LoginState extends State<Login> {
                                                       }
                                                     },
                                                     isLoading:
-                                                    provider.isLogin),
+                                                    provider.isLoading),
                                               ),
                                               Row(
                                                 mainAxisAlignment:

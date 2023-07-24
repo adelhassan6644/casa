@@ -70,7 +70,7 @@
   "sections": "الأقسام",
   "profile": "الملف الشخصي",
   "dashboard": "الرئيسية",
-  "favourites": "المفضلة",
+  "favourite": "المفضلة",
   "contact_with_us": "تواصل معنا",
   "contact_with_us_any_time": "تواصل معنا وقتما تريد",
   "about_us": "نبذة عنا",
@@ -91,5 +91,17 @@
   "your_upcoming_dates": "مواعيدك القادمة",
   "notifications": "الأشعارات",
   "save_changes": "حفظ التغيرات",
-  "addresses": "العناوين"
+  "addresses": "العناوين",
+  "add_address": "أضف عنوان",
+  "pick_address": "تحديد العنوان",
+  "confirm_location": "تأكيد الموقع",
+  "address": "العنوان",
+  "house": "منزل",
+  "other_address": "عنوان آخر",
+  "address_type": "نوع العنوان",
+  "something_went_wrong": "عفوًا! حدث خطأ ما",
+  "terms_description": "عند إنشاء حسابك فأنت توافق على شروط وأحكام أستخدام كاسا سبا",
+  "contact_with_us_description": "تواصل معنا متى شئت",
+  "customer_service_number": "رقم خدمة العملاء",
+  "pleased_to_contact_with_us": "يسعدنا تواصلك معانا وقتما تحب"
 }

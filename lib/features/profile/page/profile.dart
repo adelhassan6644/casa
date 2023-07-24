@@ -31,7 +31,7 @@ class Profile extends StatelessWidget {
                         Container(
                           height: 160 + context.toPadding,
                           width: context.width,
-                          margin: const EdgeInsets.only(bottom: 60),
+                          margin: const EdgeInsets.only(bottom: 50),
                           decoration: const BoxDecoration(
                               image: DecorationImage(
                                   image: AssetImage(Images.profileBGImage),

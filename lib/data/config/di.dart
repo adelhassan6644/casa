@@ -7,6 +7,8 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../app/localization/provider/language_provider.dart';
 import '../../app/localization/provider/localization_provider.dart';
 import '../../app/theme/theme_provider/theme_provider.dart';
+import '../../features/address/provider/addresses_provider.dart';
+import '../../features/address/repo/addresses_repo.dart';
 import '../../features/auth/provider/auth_provider.dart';
 import '../../features/contact_with_us/provider/contact_provider.dart';
 import '../../features/contact_with_us/repo/contact_repo.dart';
@@ -64,6 +66,8 @@ Future<void> init() async {
       () => SettingRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => ContactRepo(sharedPreferences: sl(), dioClient: sl()));
+  sl.registerLazySingleton(
+      () => AddressesRepo(sharedPreferences: sl(), dioClient: sl()));
 
   //provider
   sl.registerLazySingleton(() => LocalizationProvider(sharedPreferences: sl()));
@@ -80,6 +84,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ProfileProvider(profileRepo: sl()));
   sl.registerLazySingleton(() => MapProvider());
   sl.registerLazySingleton(() => LocationProvider(locationRepo: sl()));
+  sl.registerLazySingleton(() => AddressesProvider(repo: sl()));
   sl.registerLazySingleton(() => SettingProvider(repo: sl()));
   sl.registerLazySingleton(() => ContactProvider(contactRepo: sl()));
 

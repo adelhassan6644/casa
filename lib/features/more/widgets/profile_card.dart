@@ -20,7 +20,7 @@ class ProfileCard extends StatelessWidget {
               ProfileImageWidget(
                 withEdit: false,
                 withPadding: false,
-                radius: 28.5,
+                radius: 35,
               ),
               Expanded(child: SizedBox()),
             ],

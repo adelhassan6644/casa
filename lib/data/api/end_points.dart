@@ -19,6 +19,7 @@ class EndPoints {
   static updateProfile(id) => 'client/$id';
   static getFavourites(id) => 'favorites/$id';
   static getNotifications(id) => 'notification/$id';
+  static getAddresses(id) => 'addresses/$id';
   static readNotification(id) => 'notification/read/$id';
   static deleteNotification(id) => 'notification/delete/$id';
   static const String postFavourite = 'favorite';

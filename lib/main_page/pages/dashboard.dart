@@ -4,7 +4,7 @@ import 'package:casa/main_page/provider/main_page_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../data/network/network_info.dart';
-import '../../features/favourite/page/favourites.dart';
+import '../../features/favourite/page/favourite_page.dart';
 import '../../features/home/page/home.dart';
 import '../../features/maps/page/map_page.dart';
 import '../../features/more/page/more.dart';

@@ -139,7 +139,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                       : widget.pSvgIcon != null
                           ? customImageIconSVG(
                               imageName: widget.pSvgIcon!,
-                              color: widget.pIconColor,
+                              color: widget.pIconColor??Styles.DETAILS_COLOR,
                               height: 16.h,
                               width: 16.w,
                             )
@@ -183,7 +183,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                                         imageName: SvgImages.hiddenEyeIcon,
                                         height: 16.55.h,
                                         width: 19.59.w,
-                                        color: const Color(0xFF8B97A3),
+                                        color: Styles.DETAILS_COLOR
                                       )
                                     : customImageIconSVG(
                                         imageName: SvgImages.eyeIcon,

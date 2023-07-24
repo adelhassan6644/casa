@@ -1,13 +1,14 @@
 import 'package:casa/app/core/utils/styles.dart';
+import 'package:casa/app/localization/localization/language_constant.dart';
+import 'package:casa/components/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/app_strings.dart';
-import '../../../app/core/utils/dimensions.dart';
 import '../../../main_models/base_model.dart';
 import '../provider/location_provider.dart';
-import '../widget/map_places.dart';
+import '../widget/location_widget.dart';
 
 class MapPage extends StatefulWidget {
   const MapPage({this.baseModel, Key? key}) : super(key: key);
@@ -46,7 +47,7 @@ class _MapPageState extends State<MapPage> {
           double.parse(
               widget.baseModel?.object.longitude ?? AppStrings.defaultLong));
       _mapController!.animateCamera(CameraUpdate.newCameraPosition(
-        CameraPosition(target: _initialPosition, zoom: 100),
+        CameraPosition(target: _initialPosition, zoom: 192),
       ));
       Provider.of<LocationProvider>(context, listen: false)
           .getPlaces(_initialPosition);
@@ -56,9 +57,10 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child: Center(child:
-          Consumer<LocationProvider>(builder: (c, locationController, _) {
-        return Stack(alignment: Alignment.bottomCenter, children: [
+      body: Center(child:
+          Consumer<LocationProvider>(builder: (_, locationProvider, child) {
+        return Stack(children: [
+          ///Map
           GoogleMap(
             initialCameraPosition: CameraPosition(
               bearing: 192,
@@ -73,7 +75,7 @@ class _MapPageState extends State<MapPage> {
             onMapCreated: (GoogleMapController mapController) {
               _mapController = mapController;
               if (widget.baseModel?.object == null) {
-                locationController.getLocation(false,
+                locationProvider.getLocation(false,
                     mapController: _mapController!);
               }
             },
@@ -83,40 +85,36 @@ class _MapPageState extends State<MapPage> {
               _cameraPosition = cameraPosition;
             },
             onCameraIdle: () {
-              locationController.updatePosition(
+              locationProvider.updatePosition(
                 _cameraPosition,
               );
             },
           ),
-          Center(
-              child: !locationController.isLoading
-                  ? const Icon(
-                      Icons.location_on_rounded,
-                      size: 50,
-                      color: Styles.PRIMARY_COLOR,
-                    )
-                  : const CupertinoActivityIndicator()),
 
-          ////  prediction section
-
-          /*   Positioned(
-            top: Dimensions.PADDING_SIZE_LARGE,
-            left: Dimensions.PADDING_SIZE_SMALL,
-            right: Dimensions.PADDING_SIZE_SMALL,
-            child: SearchLocationWidget(
-                mapController: _mapController,
-
-                pickedAddress: locationController.pickAddress,
-                isEnabled: true),
+          ///Confirm Location
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              CustomAppBar(
+                title: getTranslated("pick_address", context),
+                colorBG: Styles.WHITE_COLOR,
+              ),
+              const LocationCard(),
+            ],
           ),
-*/
 
-          Padding(
-            padding: EdgeInsets.only(bottom: 25.h),
-            child: const MapPlaces(),
-          )
+          ///Select Location
+          Center(
+            child: !locationProvider.isLoading
+                ? const Icon(
+                    Icons.location_on_rounded,
+                    size: 40,
+                    color: Styles.PRIMARY_COLOR,
+                  )
+                : const CupertinoActivityIndicator(),
+          ),
         ]);
-      }))),
+      })),
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'package:casa/app/core/utils/images.dart';
+import 'package:casa/components/custom_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_widget_from_html/flutter_widget_from_html.dart';
 import 'package:provider/provider.dart';
@@ -16,28 +18,42 @@ class Terms extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Styles.SCAFFOLD_BG,
       body: SafeArea(
           top: false,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppBar(),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                child: Text(getTranslated("terms_conditions", context),
-                    style: AppTextStyles.semiBold
-                        .copyWith(fontSize: 24, color: Styles.HEADER)),
-              ),
+              CustomAppBar(title: getTranslated("terms_conditions", context)),
               Consumer<SettingProvider>(builder: (_, provider, child) {
                 return !provider.isLoading
                     ? Expanded(
-                        child: Padding(
+                        child: Container(
+                          margin: EdgeInsets.symmetric(
+                            horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                            vertical: Dimensions.PADDING_SIZE_SMALL.h,
+                          ),
                           padding: EdgeInsets.symmetric(
-                              horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
-                              vertical: 12.h),
+                            horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                            vertical: Dimensions.PADDING_SIZE_SMALL.h,
+                          ),
+                          decoration: BoxDecoration(
+                              color: Styles.WHITE_COLOR,
+                              borderRadius: BorderRadius.circular(20)),
                           child: ListAnimator(
                             data: [
+                              Center(
+                                child: customImageIcon(
+                                    imageName: Images.check,
+                                    height: 115,
+                                    width: 115),
+                              ),
+                              Text(getTranslated("terms_description", context),
+                                  textAlign: TextAlign.center,
+                                  style: AppTextStyles.medium.copyWith(
+                                      fontSize: 22,
+                                      color: Styles.PRIMARY_COLOR)),
+                              SizedBox(height: 24.h,),
                               provider.model != null
                                   ? HtmlWidget(
                                       provider.model?.data?.terms ?? "")

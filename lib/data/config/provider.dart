@@ -5,6 +5,7 @@ import 'package:casa/data/config/di.dart' as di;
 
 import '../../app/localization/provider/localization_provider.dart';
 import '../../app/theme/theme_provider/theme_provider.dart';
+import '../../features/address/provider/addresses_provider.dart';
 import '../../features/auth/provider/auth_provider.dart';
 import '../../features/contact_with_us/provider/contact_provider.dart';
 import '../../features/favourite/provider/favourite_provider.dart';
@@ -33,6 +34,7 @@ abstract class ProviderList {
     ChangeNotifierProvider(create: (_) => di.sl<ProductDetailsProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<CalenderProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<LocationProvider>()),
+    ChangeNotifierProvider(create: (_) => di.sl<AddressesProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ContactProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<SettingProvider>()),
   ];

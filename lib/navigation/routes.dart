@@ -15,8 +15,10 @@ class Routes {
   static const MAP = "PICK_LOCATION";
   static const PRODUCT_DETAILS = "PRODUCT_DETAILS";
   static const NOTIFICATIONS = "NOTIFICATIONS";
+  static const FAVOURITE = "FAVOURITE";
   static const CONTACT_WITH_US = "CONTACT_WITH_US";
   static const ABOUT_US = "ABOUT_US";
+  static const ADDRESS = "ADDRESS";
   static const TERMS = "TERMS";
 
 }

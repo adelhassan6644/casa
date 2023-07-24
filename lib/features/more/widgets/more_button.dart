@@ -35,8 +35,8 @@ class MoreButton extends StatelessWidget {
           children: [
             customImageIconSVG(
                 imageName: icon,
-                height: 20,
-                width: 20,
+                height: 24,
+                width: 24,
                 color: Styles.PRIMARY_COLOR),
             const SizedBox(
               width: 16,

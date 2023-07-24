@@ -68,7 +68,7 @@
   "city": "city",
   "profile": "Profile",
   "dashboard": "Dashboard",
-  "favourites": "Favourites",
+  "favourite": "Favourite",
   "contact_with_us": "Contact with us",
   "contact_with_us_any_time": "Contact with us anytime",
   "about_us": "About us",
@@ -89,6 +89,18 @@
   "your_upcoming_dates": "your upcoming dates",
   "notifications": "Notifications",
   "save_changes": "Save Changes",
-  "addresses": "Addresses"
+  "addresses": "Addresses",
+  "add_address": "Add Address",
+  "confirm_location": "Confirm Location",
+  "pick_address": "Pick Address",
+  "address": "Address",
+  "house": "House",
+  "other_address": "Other Address",
+  "address_type":"Address Type",
+  "something_went_wrong": "Oops! something went wrong",
+  "terms_description": "By creating your account, you agree to the terms and conditions of using Casa Spa",
+  "contact_with_us_description": "Contact with us anytime",
+  "customer_service_number": "Customer service number",
+  "pleased_to_contact_with_us": "We are pleased to contact you whenever you like",
 
 }

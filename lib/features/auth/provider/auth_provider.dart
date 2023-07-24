@@ -22,6 +22,10 @@ class AuthProvider extends ChangeNotifier {
     _mailTEC = TextEditingController(
         text: kDebugMode ? "adel@gmail.com" : authRepo.getMail());
   }
+
+
+  bool get isLogin => authRepo.isLoggedIn();
+
   late final TextEditingController _mailTEC;
   TextEditingController get mailTEC => _mailTEC;
 
@@ -63,12 +67,12 @@ class AuthProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool _isLogin = false;
-  bool get isLogin => _isLogin;
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
 
   logIn() async {
     try {
-      _isLogin = true;
+      _isLoading = true;
       notifyListeners();
       Either<ServerFailure, Response> response = await authRepo.logIn(
           mail: _mailTEC.text.trim(), password: passwordTEC.text.trim());
@@ -104,7 +108,7 @@ class AuthProvider extends ChangeNotifier {
           CustomNavigator.push(Routes.VERIFICATION, arguments: true);
         }
       });
-      _isLogin = false;
+      _isLoading = false;
       notifyListeners();
     } catch (e) {
       CustomSnackBar.showSnackBar(
@@ -113,7 +117,7 @@ class AuthProvider extends ChangeNotifier {
               isFloating: true,
               backgroundColor: Styles.IN_ACTIVE,
               borderColor: Colors.transparent));
-      _isLogin = false;
+      _isLoading = false;
       notifyListeners();
     }
   }

@@ -18,6 +18,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool withBackGround;
   final bool isOffer;
   final double? actionWidth;
+  final Color? colorBG;
 
   const CustomAppBar(
       {Key? key,
@@ -29,6 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       this.withBack = true,
       this.isOffer = true,
       this.actionWidth,
+      this.colorBG,
       this.actionChild})
       : super(key: key);
 
@@ -38,6 +40,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       width: context.width,
       padding:
           EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+      decoration: BoxDecoration(color: colorBG),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [

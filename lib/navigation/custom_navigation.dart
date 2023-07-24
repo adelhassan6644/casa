@@ -1,11 +1,13 @@
 import 'package:casa/features/auth/pages/change_password.dart';
 import 'package:casa/features/auth/pages/reset_password.dart';
+import 'package:casa/features/favourite/page/favourite_page.dart';
 import 'package:casa/features/notifications/page/notifications_page.dart';
 import 'package:casa/features/product_details/page/product_details.dart';
 import 'package:casa/features/setting/pages/terms.dart';
 import 'package:casa/main_models/base_model.dart';
 import 'package:casa/main_page/pages/dashboard.dart';
 import 'package:flutter/material.dart';
+import '../features/address/page/addresses_page.dart';
 import '../features/auth/pages/forget_password.dart';
 import '../features/auth/pages/login.dart';
 import '../features/auth/pages/register.dart';
@@ -65,6 +67,12 @@ abstract class CustomNavigator {
 
       case Routes.PRODUCT_DETAILS:
         return _pageRoute(ProductDetails(id: settings.arguments as int));
+
+      case Routes.ADDRESS:
+        return _pageRoute(const AddressPage());
+
+      case Routes.FAVOURITE:
+        return _pageRoute(const FavouritePage());
 
       case Routes.CONTACT_WITH_US:
         return _pageRoute(const ContactWithUs());
