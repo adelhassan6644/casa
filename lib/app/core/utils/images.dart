@@ -9,4 +9,5 @@ class Images {
   static const String cancelCircle = 'assets/images/cancel_circle.png';
   static const String whatsApp = 'assets/images/whatsapp.png';
   static const String megaPhone = 'assets/images/mega_phone.png';
+  static const String sad = 'assets/images/sad.png';
 }

@@ -8,6 +8,7 @@ import '../../features/favourite/page/favourite_page.dart';
 import '../../features/home/page/home.dart';
 import '../../features/maps/page/map_page.dart';
 import '../../features/more/page/more.dart';
+import '../../features/my_appointments/page/my_appointments.dart';
 import '../widget/nav_bar.dart';
 
 class DashBoard extends StatefulWidget {
@@ -28,7 +29,7 @@ class _DashBoardState extends State<DashBoard> {
       case 0:
         return const Home();
       case 1:
-        return const Profile();
+        return const MyAppointments();
       case 2:
         return const Profile();
       case 3:

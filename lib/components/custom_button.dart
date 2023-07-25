@@ -13,6 +13,8 @@ class CustomButton extends StatelessWidget {
   final Color? borderColor;
   final Color backgroundColor;
   final String? svgIcon;
+  final Widget? lIconWidget;
+  final Widget? fIconWidget;
   final String? assetIcon;
   final Color? iconColor;
   final double? width;
@@ -27,6 +29,8 @@ class CustomButton extends StatelessWidget {
   const CustomButton(
       {Key? key,
       this.onTap,
+      this.fIconWidget,
+      this.lIconWidget,
       this.radius,
       this.height,
       this.svgIcon,
@@ -90,6 +94,11 @@ class CustomButton extends StatelessWidget {
                 : Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
+                      if (fIconWidget != null) fIconWidget!,
+                      if (fIconWidget != null)
+                        SizedBox(
+                          width: 8.w,
+                        ),
                       Text(
                         text,
                         textAlign: TextAlign.center,
@@ -100,10 +109,13 @@ class CustomButton extends StatelessWidget {
                           color: textColor ?? Styles.WHITE_COLOR,
                         ),
                       ),
-                      if (assetIcon != null || svgIcon != null)
+                      if (assetIcon != null ||
+                          svgIcon != null ||
+                          lIconWidget != null)
                         SizedBox(
                           width: 8.w,
                         ),
+                      if (lIconWidget != null) lIconWidget!,
                       if (assetIcon != null)
                         customImageIcon(
                             imageName: assetIcon!,

@@ -56,8 +56,8 @@
   "verify_header": "الرجاء إدخال الرمز المرسل الي البريد الإلكتروني",
   "proceed_to_check_out": "انتقل الي الدفع",
   "required": "هذا الحقل مطلوب",
-  "current": "حالية",
-  "previous": "سابقة",
+  "current": "الحالية",
+  "previous": "السابقة",
   "please_enter_valid_number": "عفوًا! الرجاء إدخال رقم هاتف صحيح",
   "please_enter_valid_code": "عفوًا! الرجاء إدخال رمز صحيح",
   "please_enter_valid_name": "عفوًا! الرجاء إدخال أسم صحيح",
@@ -103,5 +103,17 @@
   "terms_description": "عند إنشاء حسابك فأنت توافق على شروط وأحكام أستخدام كاسا سبا",
   "contact_with_us_description": "تواصل معنا متى شئت",
   "customer_service_number": "رقم خدمة العملاء",
-  "pleased_to_contact_with_us": "يسعدنا تواصلك معانا وقتما تحب"
+  "pleased_to_contact_with_us": "يسعدنا تواصلك معانا وقتما تحب",
+  "available_for_reservation": "متاح للحجز",
+  "next": "القادمة",
+  "cancel": "إلغاء",
+  "again": "تكرار",
+  "are_you_want_to_cancel_your_appointment": "هل تريد إلغاء موعدك؟",
+  "confirm_cancel": "عند الضغط على \"أجل, أوافق\" فأنت توافق على شروط إلغاء الجلسات الخاصة بنا",
+  "cancellation_terms": "شروط إلغاء",
+  "yes_accept": "أجل, أوافق",
+  "no_back_off": "لا, العودة",
+  "back":"العودة",
+  "session_cancelled": "تم إلغاء جلستك"
+
 }

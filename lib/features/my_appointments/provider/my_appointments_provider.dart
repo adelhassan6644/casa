@@ -1,22 +1,20 @@
-import 'package:carousel_slider/carousel_controller.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/data/error/api_error_handler.dart';
-import 'package:casa/features/home/models/banner_model.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
-import '../models/places_model.dart';
-import '../repo/home_repo.dart';
 import 'package:flutter/rendering.dart';
 
-class HomeProvider extends ChangeNotifier {
-  HomeRepo homeRepo;
-  HomeProvider({required this.homeRepo});
+import '../repo/my_appointments_repo.dart';
+
+class MyAppointmentsProvider extends ChangeNotifier {
+  MyAppointmentsRepo repo;
+  MyAppointmentsProvider({required this.repo});
 
   bool goingDown = false;
-  scroll(controller) {
+  nextScroll(controller) {
     controller.addListener(() {
       if (controller.position.userScrollDirection == ScrollDirection.forward) {
         goingDown = false;
@@ -28,32 +26,36 @@ class HomeProvider extends ChangeNotifier {
     });
   }
 
-  List<String> tabs = ["all","pedicure","massage"];
+  previousScroll(controller) {
+    controller.addListener(() {
+      if (controller.position.userScrollDirection == ScrollDirection.forward) {
+        goingDown = false;
+        notifyListeners();
+      } else {
+        goingDown = true;
+        notifyListeners();
+      }
+    });
+  }
+
+  List<String> tabs = ["next", "previous"];
   late int currentTab = 0;
   void selectTab(index) {
     currentTab = index;
     notifyListeners();
   }
 
-  bool get isLogin => homeRepo.isLoggedIn();
+  bool get isLogin => repo.isLoggedIn();
 
-  CarouselController bannerController = CarouselController();
-  late int _bannerIndex = 0;
-  int get bannerIndex => _bannerIndex;
-  void setBannerIndex(int index) {
-    _bannerIndex = index;
-    notifyListeners();
-  }
-
-  BannerModel? bannerModel;
-  bool isGetBanners = false;
-  getBanners() async {
+  bool isGetting = false;
+  getNextAppointments() async {
     try {
-      isGetBanners = true;
+      isGetting = true;
       notifyListeners();
-      Either<ServerFailure, Response> response = await homeRepo.getHomeBanner();
+      Either<ServerFailure, Response> response =
+          await repo.getNextMyAppointments();
       response.fold((fail) {
-        isGetBanners = false;
+        isGetting = false;
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
                 message: ApiErrorHandler.getMessage(fail),
@@ -62,12 +64,11 @@ class HomeProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
-        bannerModel = BannerModel.fromJson(success.data);
-        isGetBanners = false;
+        isGetting = false;
         notifyListeners();
       });
     } catch (e) {
-      isGetBanners = false;
+      isGetting = false;
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: e.toString(),
@@ -78,15 +79,15 @@ class HomeProvider extends ChangeNotifier {
     }
   }
 
-  ProductsModel? productsModel;
-  bool isGetProducts = false;
-  getProducts() async {
+  bool isLoading = false;
+  getPreviousAppointments() async {
     try {
-      isGetProducts = true;
+      isLoading = true;
       notifyListeners();
-      Either<ServerFailure, Response> response = await homeRepo.getHomeProducts();
+      Either<ServerFailure, Response> response =
+          await repo.getPreviousMyAppointments();
       response.fold((fail) {
-        isGetProducts = false;
+        isLoading = false;
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
                 message: ApiErrorHandler.getMessage(fail),
@@ -95,12 +96,11 @@ class HomeProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
-        productsModel = ProductsModel.fromJson(success.data);
-        isGetProducts = false;
+        isLoading = false;
         notifyListeners();
       });
     } catch (e) {
-      isGetProducts = false;
+      isLoading = false;
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: e.toString(),
@@ -110,5 +110,4 @@ class HomeProvider extends ChangeNotifier {
       notifyListeners();
     }
   }
-
 }

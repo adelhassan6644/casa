@@ -1,9 +1,12 @@
+import 'package:casa/app/core/utils/text_styles.dart';
+import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/components/custom_network_image.dart';
 import 'package:casa/features/product_details/provider/product_details_provider.dart';
 import 'package:provider/provider.dart';
+import 'dart:ui' as ui;
 
 import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/styles.dart';
@@ -27,7 +30,8 @@ class _ProductDetailsState extends State<ProductDetails> {
   void initState() {
     Future.delayed(Duration.zero, () {
       Provider.of<ProductDetailsProvider>(context, listen: false).model = null;
-      Provider.of<ProductDetailsProvider>(context, listen: false).geDetails(widget.id);
+      Provider.of<ProductDetailsProvider>(context, listen: false)
+          .geDetails(widget.id);
     });
     super.initState();
   }
@@ -50,15 +54,37 @@ class _ProductDetailsState extends State<ProductDetails> {
                           width: context.width,
                         )
                       : Visibility(
-                    visible: !provider.isLoading && provider.model != null,
-                    child: CustomNetworkImage.containerNewWorkImage(
-                            image: provider.model?.image ?? "",
-                            width: context.width,
-                            fit: BoxFit.fitWidth,
-                            height: 300.h,
-                            radius: 0),
+                          visible:
+                              !provider.isLoading && provider.model != null,
+                          child: CustomNetworkImage.containerNewWorkImage(
+                              image: provider.model?.image ?? "",
+                              width: context.width,
+                              fit: BoxFit.fitWidth,
+                              height: 300.h,
+                              radius: 0),
+                        ),
+                  CustomAppBar(
+                    actionChild: ClipRRect(
+                      clipBehavior: Clip.antiAlias,
+                      borderRadius: BorderRadius.circular(100),
+                      child: BackdropFilter(
+                        filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                        child: Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 12.w, vertical: 8.h),
+                            decoration: BoxDecoration(
+                                border: Border.all(color: Styles.WHITE_COLOR),
+                                color: Colors.black.withOpacity(0.06),
+                                borderRadius: BorderRadius.circular(8)),
+                            child: Text(
+                              getTranslated(
+                                  "available_for_reservation", context),
+                              style: AppTextStyles.regular.copyWith(
+                                  color: Styles.PRIMARY_COLOR, fontSize: 12),
+                            )),
                       ),
-                  const CustomAppBar(),
+                    ),
+                  ),
                 ],
               ),
               provider.isLoading

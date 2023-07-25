@@ -102,5 +102,16 @@
   "contact_with_us_description": "Contact with us anytime",
   "customer_service_number": "Customer service number",
   "pleased_to_contact_with_us": "We are pleased to contact you whenever you like",
-
+  "available_for_reservation": "Available for reservation",
+  "previous": "Previous",
+  "next": "Next",
+  "cancel": "Cancel",
+  "again": "Again",
+  "are_you_want_to_cancel_your_appointment": "Are you want to cancel your appointment ?",
+  "confirm_cancel": "By clicking on “Yes, I accept”, you agree to our session cancellation terms.",
+  "cancellation_terms": "cancellation terms",
+  "yes_accept": "Yes, I accept",
+  "no_back_off": "No, Back off",
+  "back": "Back",
+  "session_cancelled": "Your session has been cancelled"
 }

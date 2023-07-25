@@ -22,6 +22,9 @@ class EndPoints {
   static getAddresses(id) => 'addresses/$id';
   static readNotification(id) => 'notification/read/$id';
   static deleteNotification(id) => 'notification/delete/$id';
+  static myNextAppointments(id) => 'notification/delete/$id';
+  static myPreviousAppointments(id) => 'notification/delete/$id';
+
   static const String postFavourite = 'favorite';
   static const String banners = 'banner';
   static const String news = 'news';

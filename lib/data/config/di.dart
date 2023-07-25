@@ -16,6 +16,8 @@ import '../../features/favourite/provider/favourite_provider.dart';
 import '../../features/favourite/repo/favourite_repo.dart';
 import '../../features/home/provider/home_provider.dart';
 import '../../features/maps/repo/maps_repo.dart';
+import '../../features/my_appointments/provider/my_appointments_provider.dart';
+import '../../features/my_appointments/repo/my_appointments_repo.dart';
 import '../../features/notifications/provider/notifications_provider.dart';
 import '../../features/product_details/provider/product_details_provider.dart';
 import '../../features/product_details/repo/product_details_repo.dart';
@@ -55,6 +57,9 @@ Future<void> init() async {
       () => HomeRepo(sharedPreferences: sl(), dioClient: sl()));
 
   sl.registerLazySingleton(
+      () => MyAppointmentsRepo(sharedPreferences: sl(), dioClient: sl()));
+
+  sl.registerLazySingleton(
       () => NotificationsRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => FavouriteRepo(sharedPreferences: sl(), dioClient: sl()));
@@ -79,6 +84,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => FavouriteProvider(favouriteRepo: sl()));
   sl.registerLazySingleton(() => ProductDetailsProvider(repo: sl()));
   sl.registerLazySingleton(() => HomeProvider(homeRepo: sl()));
+  sl.registerLazySingleton(() => MyAppointmentsProvider(repo: sl()));
   sl.registerLazySingleton(
       () => NotificationsProvider(notificationsRepo: sl()));
   sl.registerLazySingleton(() => ProfileProvider(profileRepo: sl()));
