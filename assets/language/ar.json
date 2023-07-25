@@ -114,6 +114,7 @@
   "yes_accept": "أجل, أوافق",
   "no_back_off": "لا, العودة",
   "back":"العودة",
-  "session_cancelled": "تم إلغاء جلستك"
+  "session_cancelled": "تم إلغاء جلستك",
+  "select_address":"اختر العنوان"
 
 }

@@ -2,6 +2,7 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../data/config/di.dart';
 import '../provider/my_appointments_provider.dart';
@@ -36,9 +37,13 @@ class _PreviousAppointmentsState extends State<PreviousAppointments> {
       child: Column(
         children: [
           Expanded(
-            child: ListAnimator(
-              controller: controller,
-              data: List.generate(10, (index) => const AppointmentCard(isNext: false,)),
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                  horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+              child: ListAnimator(
+                controller: controller,
+                data: List.generate(10, (index) => const AppointmentCard(isNext: false,)),
+              ),
             ),
           ),
         ],

@@ -9,8 +9,11 @@ import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:provider/provider.dart';
 
+import '../../../components/confirm_bottom_sheet.dart';
+import '../../../components/custom_show_model_bottom_sheet.dart';
 import '../../../components/tab_widget.dart';
 import '../../../navigation/routes.dart';
+import '../../address/widgets/address_card.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -57,23 +60,37 @@ class HomeHeader extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(
                     vertical: Dimensions.PADDING_SIZE_EXTRA_SMALL.h),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    customImageIconSVG(
-                        imageName: SvgImages.location,
-                        height: 20,
-                        width: 20,
-                        color: Styles.DETAILS_COLOR),
-                    SizedBox(
-                      width: 8.w,
-                    ),
-                    Text(
-                      "حي العزيزية",
-                      style: AppTextStyles.medium
-                          .copyWith(fontSize: 14, color: Styles.DETAILS_COLOR),
-                    ),
-                  ],
+                child: InkWell(
+                  onTap: () => CustomBottomSheet.show(
+                      buttonText: "select_address",
+                      label: getTranslated("pick_address", context),
+                      list: Column(
+                        children: List.generate(
+                            5,
+                            (index) => AddressCard(
+                                  isSelect: index == 2,
+                                  isHome: index != 2,
+                                )),
+                      ),
+                      onConfirm: () => CustomNavigator.pop()),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      customImageIconSVG(
+                          imageName: SvgImages.location,
+                          height: 20,
+                          width: 20,
+                          color: Styles.DETAILS_COLOR),
+                      SizedBox(
+                        width: 8.w,
+                      ),
+                      Text(
+                        "حي العزيزية",
+                        style: AppTextStyles.medium.copyWith(
+                            fontSize: 14, color: Styles.DETAILS_COLOR),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],

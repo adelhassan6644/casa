@@ -5,31 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="updates">
-      <change afterPath="$PROJECT_DIR$/assets/images/sad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/page/my_appointments.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/provider/my_appointments_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/repo/my_appointments_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/widgets/appointment_card.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/widgets/cancelation_dailog.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/widgets/my_appointment_header.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/widgets/next_appointments.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/my_appointments/widgets/previous_appointments.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/components/confirm_bottom_sheet.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/custom_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_button.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/components/custom_simple_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_simple_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/api/end_points.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/config/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/config/provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/provider/home_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/provider/home_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/repo/home_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/repo/home_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_dates.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_dates.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/product_details/page/product_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_details/page/product_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/bottom_sheet_app_bar.dart" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/custom_show_model_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/custom_show_model_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/widgets/next_appointments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/my_appointments/widgets/next_appointments.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/widgets/previous_appointments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/my_appointments/widgets/previous_appointments.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +61,7 @@
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/user/SoftweareCloud2/casa/assets/images",
+    "last_opened_file_path": "/Users/user/SoftweareCloud2/casa/lib/components",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -86,11 +71,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/components" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/assets/svgs" />
       <recent name="$PROJECT_DIR$/lib/features/setting/pages" />
       <recent name="$PROJECT_DIR$/android/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/lib/components" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/features/home/widgets" />
@@ -318,7 +303,21 @@
       <option name="project" value="LOCAL" />
       <updated>1690126918825</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="updates">
+      <created>1690319906179</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690319906180</updated>
+    </task>
+    <task id="LOCAL-00030" summary="updates">
+      <created>1690320229074</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1690320229074</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

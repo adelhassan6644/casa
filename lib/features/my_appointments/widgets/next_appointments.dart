@@ -47,31 +47,33 @@ class _NextAppointmentsState extends State<NextAppointments> {
               child: ListAnimator(
                 controller: controller,
                 data: List.generate(
-                    10,
-                    (index) => Dismissible(
-                        background: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            CustomButton(
-                              width: 85.w,
-                              height: 30.h,
-                              text: getTranslated("cancel", context),
-                              svgIcon: SvgImages.cancel,
-                              iconSize: 12,
-                              iconColor: Styles.IN_ACTIVE,
-                              textColor: Styles.IN_ACTIVE,
-                              backgroundColor:
-                                  Styles.IN_ACTIVE.withOpacity(0.12),
-                            ),
-                          ],
+                  2,
+                  (index) => Dismissible(
+                    background: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        CustomButton(
+                          width: 85.w,
+                          height: 30.h,
+                          text: getTranslated("cancel", context),
+                          svgIcon: SvgImages.cancel,
+                          iconSize: 12,
+                          iconColor: Styles.IN_ACTIVE,
+                          textColor: Styles.IN_ACTIVE,
+                          backgroundColor: Styles.IN_ACTIVE.withOpacity(0.12),
                         ),
-                        key: ValueKey(index),
-                        onDismissed: (DismissDirection direction) {
-                          CustomSimpleDialog.parentSimpleDialog(
-                            customListWidget: [const CancelDialog()],
-                          );
-                        },
-                        child: const AppointmentCard())),
+                      ],
+                    ),
+                    key: ValueKey(index),
+                    confirmDismiss: (DismissDirection direction) async {
+                      CustomSimpleDialog.parentSimpleDialog(
+                        customListWidget: [const CancelDialog()],
+                      );
+                      return false;
+                    },
+                    child: const AppointmentCard(),
+                  ),
+                ),
               ),
             ),
           ),

@@ -113,5 +113,6 @@
   "yes_accept": "Yes, I accept",
   "no_back_off": "No, Back off",
   "back": "Back",
-  "session_cancelled": "Your session has been cancelled"
+  "session_cancelled": "Your session has been cancelled",
+  "select_address": "Select Address"
 }
