@@ -53,7 +53,7 @@ class AddressPage extends StatelessWidget {
                                   (index) => AddressCard(
                                     onTap: ()=>provider.selectAddress(provider.model!.data![index]),
                                         addressItem: provider.model!.data![index],
-                                    isSelect: provider.selectedAddress?.id ==provider.model!.data![index].id ,
+                                    // isSelect: provider.selectedAddress?.id ==provider.model!.data![index].id ,
                                       )),
                             if (provider.model == null ||
                                 provider.model!.data!.isEmpty)
