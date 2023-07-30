@@ -35,9 +35,14 @@ class AddressCard extends StatelessWidget {
               horizontal: Dimensions.PADDING_SIZE_SMALL.w),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(12),
-              color: isSelect
-                  ? Styles.PRIMARY_COLOR.withOpacity(0.1)
-                  : Styles.WHITE_COLOR,
+              color: Styles.WHITE_COLOR,
+              boxShadow: isSelect? [
+                BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    offset: const Offset(1, 1),
+                    spreadRadius: 2,
+                    blurRadius: 10)
+              ] :null,
               border: Border.all(
                   color: isSelect ? Styles.PRIMARY_COLOR : Colors.transparent,
                   width: 1)),

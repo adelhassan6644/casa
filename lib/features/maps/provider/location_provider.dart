@@ -73,8 +73,8 @@ class LocationProvider extends ChangeNotifier {
         desiredAccuracy: LocationAccuracy.high);
 
     Either<ServerFailure, Response> response =
-        await locationRepo.getAddressFromGeocode(
-            LatLng(newLocalData.latitude, newLocalData.longitude));
+    await locationRepo.getAddressFromGeocode(
+        LatLng(newLocalData.latitude, newLocalData.longitude));
     response.fold((l) => null, (response) {
       pickAddress = response.data['results'][0]['formatted_address'].toString();
       currentLocation = LocationModel(

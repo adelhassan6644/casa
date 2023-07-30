@@ -10,15 +10,10 @@ import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:provider/provider.dart';
-
-import '../../../components/confirm_bottom_sheet.dart';
-import '../../../components/custom_show_model_bottom_sheet.dart';
-import '../../../components/empty_widget.dart';
-import '../../../components/shimmer/custom_shimmer.dart';
+import '../../../components/marquee_widget.dart';
 import '../../../components/tab_widget.dart';
 import '../../../navigation/routes.dart';
-import '../../address/provider/addresses_provider.dart';
-import '../../address/widgets/address_card.dart';
+import '../../maps/provider/location_provider.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -66,61 +61,61 @@ class HomeHeader extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                     vertical: Dimensions.PADDING_SIZE_EXTRA_SMALL.h),
                 child: InkWell(
-                  onTap: () => CustomBottomSheet.show(
-                      buttonText: "select_address",
-                      label: getTranslated("pick_address", context),
-                      list: Consumer<AddressesProvider>(
-                        builder: (_,provider,child) {
-                          return !provider.isLoading
-                              ?Column(
-                            children: [
-                              SizedBox(
-                                height: 8.h,
-                              ),
-                              if (provider.model != null &&
-                                  provider.model!.data!
-                                      .isNotEmpty)
-                                ...List.generate(
-                                    provider.model!.data!.length,
-                                        (index) => AddressCard(
-                                      onTap: ()=>provider.selectAddress(provider.model!.data![index]),
-                                      addressItem: provider.model!.data![index],
-                                      isSelect: provider.selectedAddress?.id ==provider.model!.data![index].id ,
-                                    )),
-                              if (provider.model == null ||
-                                  provider.model!.data!
-                                      .isEmpty)
-                                EmptyState(
-                                    txt: getTranslated(
-                                        "there_is_no_addresses",
-                                        context)),
-                            ],
-                          )
-                              :Column(
-                            children: [
-                              SizedBox(
-                                height: 8.h,
-                              ),
-                              ...List.generate(
-                                  10,
-                                      (index) => Container(
-                                    margin: EdgeInsets.only(bottom: Dimensions.PADDING_SIZE_SMALL.h),
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            bottom: BorderSide(
-                                                color: Styles.LIGHT_BORDER_COLOR,
-                                                width: 1.h))),
-                                    child: CustomShimmerContainer(
-                                      width: context.width,
-                                      height: 80.h,
-                                      radius: 15,
-                                    ),
-                                  ))
-                            ],
-                          );
-                        }
-                      ),
-                      onConfirm: () => CustomNavigator.pop()),
+                  // onTap: () => CustomBottomSheet.show(
+                  //     buttonText: "select_address",
+                  //     label: getTranslated("pick_address", context),
+                  //     list: Consumer<AddressesProvider>(
+                  //       builder: (_,provider,child) {
+                  //         return !provider.isLoading
+                  //             ?Column(
+                  //           children: [
+                  //             SizedBox(
+                  //               height: 8.h,
+                  //             ),
+                  //             if (provider.model != null &&
+                  //                 provider.model!.data!
+                  //                     .isNotEmpty)
+                  //               ...List.generate(
+                  //                   provider.model!.data!.length,
+                  //                       (index) => AddressCard(
+                  //                     onTap: ()=>provider.selectAddress(provider.model!.data![index]),
+                  //                     addressItem: provider.model!.data![index],
+                  //                     isSelect: provider.selectedAddress?.id ==provider.model!.data![index].id ,
+                  //                   )),
+                  //             if (provider.model == null ||
+                  //                 provider.model!.data!
+                  //                     .isEmpty)
+                  //               EmptyState(
+                  //                   txt: getTranslated(
+                  //                       "there_is_no_addresses",
+                  //                       context)),
+                  //           ],
+                  //         )
+                  //             :Column(
+                  //           children: [
+                  //             SizedBox(
+                  //               height: 8.h,
+                  //             ),
+                  //             ...List.generate(
+                  //                 10,
+                  //                     (index) => Container(
+                  //                   margin: EdgeInsets.only(bottom: Dimensions.PADDING_SIZE_SMALL.h),
+                  //                   decoration: BoxDecoration(
+                  //                       border: Border(
+                  //                           bottom: BorderSide(
+                  //                               color: Styles.LIGHT_BORDER_COLOR,
+                  //                               width: 1.h))),
+                  //                   child: CustomShimmerContainer(
+                  //                     width: context.width,
+                  //                     height: 80.h,
+                  //                     radius: 15,
+                  //                   ),
+                  //                 ))
+                  //           ],
+                  //         );
+                  //       }
+                  //     ),
+                  //     onConfirm: () => CustomNavigator.pop()),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -132,10 +127,20 @@ class HomeHeader extends StatelessWidget {
                       SizedBox(
                         width: 8.w,
                       ),
-                      Text(
-                        "حي العزيزية",
-                        style: AppTextStyles.medium.copyWith(
-                            fontSize: 14, color: Styles.DETAILS_COLOR),
+                      Expanded(
+                        child: Consumer<LocationProvider>(
+                            builder: (_, provider, child) {
+                          return MarqueeWidget(
+                            child: Text(
+                                provider.currentLocation?.address ??
+                                    "المملكة العربية السعودية",
+                                maxLines: 1,
+                                style: AppTextStyles.medium.copyWith(
+                                    overflow: TextOverflow.ellipsis,
+                                    fontSize: 14,
+                                    color: Styles.DETAILS_COLOR)),
+                          );
+                        }),
                       ),
                     ],
                   ),

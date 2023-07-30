@@ -3,6 +3,7 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import '../../../data/config/di.dart';
+import '../../maps/provider/location_provider.dart';
 import '../widgets/home_dates.dart';
 import '../widgets/home_header.dart';
 import '../widgets/home_banners.dart';
@@ -21,8 +22,10 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
   @override
   void initState() {
     Future.delayed(Duration.zero, () {
+      sl<LocationProvider>().getCurrentLocation()();
       sl<HomeProvider>().scroll(controller);
       sl<HomeProvider>().getBanners();
+
       // sl<HomeProvider>().getPlaces();
     });
 
