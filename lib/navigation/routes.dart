@@ -12,7 +12,7 @@ class Routes {
   static const NEWS = "NEWS";
   static const CHANGE_PASSWORD = "CHANGE_PASSWORD";
   static const EDIT_PROFILE = "EDIT_PROFILE";
-  static const MAP = "PICK_LOCATION";
+  static const PICK_LOCATION = "PICK_LOCATION";
   static const PRODUCT_DETAILS = "PRODUCT_DETAILS";
   static const NOTIFICATIONS = "NOTIFICATIONS";
   static const FAVOURITE = "FAVOURITE";

@@ -87,16 +87,25 @@ class _LoginState extends State<Login> {
                                           key: _formKey,
                                           child: Column(
                                             children: [
+                                              // CustomTextFormField(
+                                              //   controller:
+                                              //   provider.mailTEC,
+                                              //   hint: getTranslated(
+                                              //       "mail", context),
+                                              //   inputType: TextInputType
+                                              //       .emailAddress,
+                                              //   valid: Validations.mail,
+                                              //   pSvgIcon:
+                                              //   SvgImages.mailIcon,
+                                              // ),
+
                                               CustomTextFormField(
-                                                controller:
-                                                provider.mailTEC,
+                                                controller: provider.phoneTEC,
                                                 hint: getTranslated(
-                                                    "mail", context),
-                                                inputType: TextInputType
-                                                    .emailAddress,
-                                                valid: Validations.mail,
-                                                pSvgIcon:
-                                                SvgImages.mailIcon,
+                                                    "phone_number", context),
+                                                inputType: TextInputType.phone,
+                                                valid: Validations.phone,
+                                                pSvgIcon: SvgImages.phoneIcon,
                                               ),
                                               CustomTextFormField(
                                                 keyboardAction:

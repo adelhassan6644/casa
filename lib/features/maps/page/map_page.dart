@@ -25,7 +25,6 @@ class _MapPageState extends State<MapPage> {
 
   @override
   void initState() {
-    Provider.of<LocationProvider>(context, listen: false).isGetPlaces = true;
     if (widget.baseModel?.object != null) {
       Provider.of<LocationProvider>(context, listen: false).pickAddress =
           widget.baseModel?.object.address ?? "";
@@ -49,8 +48,6 @@ class _MapPageState extends State<MapPage> {
       _mapController!.animateCamera(CameraUpdate.newCameraPosition(
         CameraPosition(target: _initialPosition, zoom: 192),
       ));
-      Provider.of<LocationProvider>(context, listen: false)
-          .getPlaces(_initialPosition);
     }
   }
 
@@ -99,7 +96,7 @@ class _MapPageState extends State<MapPage> {
                 title: getTranslated("pick_address", context),
                 colorBG: Styles.WHITE_COLOR,
               ),
-              const LocationCard(),
+               LocationCard(valueChanged: widget.baseModel?.valueChanged,),
             ],
           ),
 

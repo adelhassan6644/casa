@@ -14,6 +14,7 @@ import 'data/config/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'app/core/utils/app_strings.dart';
+import 'features/address/page/addresses_page.dart';
 import 'features/product_details/page/product_details.dart';
 import 'main_page/pages/dashboard.dart';
 import 'navigation/custom_navigation.dart';
@@ -67,7 +68,7 @@ class _MyAppState extends State<MyApp> {
       initialRoute: Routes.SPLASH,
       navigatorKey: CustomNavigator.navigatorState,
       onGenerateRoute: CustomNavigator.onCreateRoute,
-      // home: const ProductDetails(id: 5,),
+      // home: const AddressPage(),
       navigatorObservers: [CustomNavigator.routeObserver],
       title: AppStrings.appName,
       scaffoldMessengerKey: CustomNavigator.scaffoldState,

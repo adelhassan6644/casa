@@ -7,6 +7,7 @@ import '../../../data/api/end_points.dart';
 import '../../../data/dio/dio_client.dart';
 import '../../../data/error/api_error_handler.dart';
 import '../../../data/error/failures.dart';
+import '../../maps/models/location_model.dart';
 
 class AddressesRepo {
   final DioClient dioClient;
@@ -33,12 +34,17 @@ class AddressesRepo {
     }
   }
 
-
-  Future<Either<ServerFailure, Response>> addAddress() async {
+  Future<Either<ServerFailure, Response>> addAddress(
+      {required LocationModel address, required int type}) async {
     try {
-      Response response = await dioClient.get(
-          uri: EndPoints.getAddresses(
-              sharedPreferences.getString(AppStorageKey.userId)));
+      Response response =
+          await dioClient.post(uri: EndPoints.addAddress, queryParameters: {
+        "client_id": sharedPreferences.getString(AppStorageKey.userId),
+        "lat": address.latitude,
+        "long": address.longitude,
+        "adress": address.address,
+        "type": type,
+      });
       if (response.statusCode == 200) {
         return Right(response);
       } else {

@@ -28,9 +28,9 @@ class AuthRepo {
     sharedPreferences.setString(AppStorageKey.userId, id.toString());
   }
 
-  saveUserToken(apiToken) {
-    sharedPreferences.setString(AppStorageKey.apiToken, apiToken.toString());
-  }
+  // saveUserToken(apiToken) {
+  //   sharedPreferences.setString(AppStorageKey.apiToken, apiToken.toString());
+  // }
 
   getMail() {
     if (sharedPreferences.containsKey(
@@ -62,7 +62,6 @@ class AuthRepo {
       log('--------Device Token---------- $_deviceToken');
     }
     return _deviceToken;
-    // return "RVmsmxd5dg8v3cS0d48q3nvoFFuaSXuCwZbMU3LCjEren7VWhq";
   }
 
   // Future<Either<ServerFailure, Response>> subscribeToTopic() async {
@@ -90,10 +89,11 @@ class AuthRepo {
   // }
 
   Future<Either<ServerFailure, Response>> logIn(
-      {required String mail, required String password}) async {
+      {required String phone, required String password}) async {
     try {
       Response response = await dioClient.post(uri: EndPoints.logIn, data: {
-        "email": mail,
+        // "email": mail,
+        "phone": phone,
         "password": password,
         // "fcm_token": await saveDeviceToken()
       });
@@ -173,12 +173,14 @@ class AuthRepo {
       {required String phone,
         required String name,
         required String mail,
+        required String gender,
         required String password}) async {
     try {
       Response response = await dioClient.post(uri: EndPoints.register, data: {
         "name": name,
         "phone": phone,
         "email": mail,
+        "gender": gender,
         "password": password,
         // "fcm_token": await saveDeviceToken()
       });

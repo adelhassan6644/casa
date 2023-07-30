@@ -45,7 +45,7 @@ class AuthProvider extends ChangeNotifier {
 
   clear() {
     nameTEC.clear();
-    mailTEC.clear();
+    _mailTEC.clear();
     phoneTEC.clear();
     passwordTEC.clear();
     currentPasswordTEC.clear();
@@ -75,7 +75,7 @@ class AuthProvider extends ChangeNotifier {
       _isLoading = true;
       notifyListeners();
       Either<ServerFailure, Response> response = await authRepo.logIn(
-          mail: _mailTEC.text.trim(), password: passwordTEC.text.trim());
+          phone: phoneTEC.text.trim(), password: passwordTEC.text.trim());
       response.fold((fail) {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
@@ -91,22 +91,24 @@ class AuthProvider extends ChangeNotifier {
           authRepo.forget();
         }
         authRepo.saveUserId(success.data['data']["id"]);
-        authRepo.saveUserToken(success.data['data']["api_token"]);
-        if (success.data['data']["email_verified_at"] != null) {
-          authRepo.setLoggedIn();
-          Provider.of<ProfileProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-              .getProfile();
-          Provider.of<FavouriteProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-              .getFavourites();
-          CustomNavigator.push(Routes.DASHBOARD, clean: true);
-          clear();
-        } else {
-          CustomNavigator.push(Routes.VERIFICATION, arguments: true);
-        }
+        authRepo.setLoggedIn();
+        CustomNavigator.push(Routes.DASHBOARD, clean: true,);
+        // authRepo.saveUserToken(success.data['data']["api_token"]);
+        // if (success.data['data']["email_verified_at"] != null) {
+        //   authRepo.setLoggedIn();
+        //   Provider.of<ProfileProvider>(
+        //       CustomNavigator.navigatorState.currentContext!,
+        //       listen: false)
+        //       .getProfile();
+        //   Provider.of<FavouriteProvider>(
+        //       CustomNavigator.navigatorState.currentContext!,
+        //       listen: false)
+        //       .getFavourites();
+        //   CustomNavigator.push(Routes.DASHBOARD, clean: true);
+        //   clear();
+        // } else {
+        //   CustomNavigator.push(Routes.VERIFICATION, arguments: true);
+        // }
       });
       _isLoading = false;
       notifyListeners();
@@ -218,6 +220,7 @@ class AuthProvider extends ChangeNotifier {
         mail: mailTEC.text.trim(),
         password: passwordTEC.text.trim(),
         phone: phoneTEC.text.trim(),
+        gender: userType.toString(),
       );
       response.fold((fail) {
         CustomSnackBar.showSnackBar(
@@ -234,8 +237,10 @@ class AuthProvider extends ChangeNotifier {
           authRepo.forget();
         }
         authRepo.saveUserId(success.data['data']["id"]);
-        authRepo.saveUserToken(success.data['data']["api_token"]);
-        CustomNavigator.push(Routes.VERIFICATION, arguments: true);
+        authRepo.setLoggedIn();
+        CustomNavigator.push(Routes.DASHBOARD, clean: true,);
+        // authRepo.saveUserToken(success.data['data']["api_token"]);
+        // CustomNavigator.push(Routes.VERIFICATION, arguments: true);
       });
       _isRegister = false;
       notifyListeners();
@@ -316,21 +321,11 @@ class AuthProvider extends ChangeNotifier {
         notifyListeners();
       }, (success) {
         if (fromRegister) {
-          Provider.of<ProfileProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-              .getProfile();
-          Provider.of<FavouriteProvider>(
-              CustomNavigator.navigatorState.currentContext!,
-              listen: false)
-              .getFavourites();
+          Provider.of<ProfileProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getProfile();
+          Provider.of<FavouriteProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getFavourites();
           authRepo.setLoggedIn();
-          CustomNavigator.push(
-            Routes.DASHBOARD,
-            clean: true,
-          );
-          CustomSnackBar.showSnackBar(
-              notification: AppNotification(
+          CustomNavigator.push(Routes.DASHBOARD, clean: true,);
+          CustomSnackBar.showSnackBar(notification: AppNotification(
                   message: getTranslated("register_successfully",
                       CustomNavigator.navigatorState.currentContext!),
                   isFloating: true,

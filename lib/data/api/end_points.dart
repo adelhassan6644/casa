@@ -1,25 +1,24 @@
 class EndPoints {
   static const String baseUrl =
-      'https://live-elhemdania.softwarecloud2.com/api/';
+      'https://massage-app.softwarecloud2.com/api/v1/';
   static const String googleMapsBaseUrl = 'https://maps.googleapis.com';
-  static const String imageUrl =
-      'https://live-elhemdania.softwarecloud2.com/';
-  static const String apiKey =
-      's7xrpFdw4G0F21rfLyD4TaBkjVJYgwGfI3y60OyRnjw9zOggruX30eToVWvs';
+  static const String imageUrl = 'https://massage-app.softwarecloud2.com/';
+  static const String apiKey = 's7xrpFdw4G0F21rfLyD4TaBkjVJYgwGfI3y60OyRnjw9zOggruX30e1as2d3';
   static const String topic = 'casa';
   static const String logIn = 'login';
-  static const String forgetPassword = 'resetPassword/email';
-  static const String checkMailForResetPassword = 'resetPassword/checkCode';
-  static const String resetPassword = 'resetPassword/newPassword';
-  static changePassword(id) => 'client/$id';
   static const String register = 'client';
+  static const String forgetPassword = 'client/resetPassword/email';
+  static const String checkMailForResetPassword = 'client/resetPassword/checkCode';
+  static const String resetPassword = 'client/resetPassword/newPassword';
+  static changePassword(id) => 'client/$id';
   static const String resend = 'email/verification';
   static const String verifyEmail = 'check/verificationCode';
   static getProfile(id) => 'client/$id';
   static updateProfile(id) => 'client/$id';
   static getFavourites(id) => 'favorites/$id';
   static getNotifications(id) => 'notification/$id';
-  static getAddresses(id) => 'addresses/$id';
+  static getAddresses(id) => 'address/$id';
+  static String addAddress ='address';
   static readNotification(id) => 'notification/read/$id';
   static deleteNotification(id) => 'notification/delete/$id';
   static myNextAppointments(id) => 'notification/delete/$id';

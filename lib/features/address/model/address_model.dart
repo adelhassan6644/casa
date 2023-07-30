@@ -1,4 +1,3 @@
-
 class AddressesModel {
   String? message;
   List<AddressItem>? data;
@@ -27,27 +26,28 @@ class AddressesModel {
 
 class AddressItem {
   int? id;
-  String? image;
-  String? title;
-  DateTime? createdAt;
+  String? address;
+  String? lat;
+  String? long;
+  int? type;
 
-  AddressItem({this.id, this.image, this.title, this.createdAt});
+  AddressItem({this.id, this.address, this.type, this.lat, this.long});
 
   AddressItem.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    image = json['image'];
-    title = json['title'];
-    createdAt = json['created_at'] != null ?DateTime.parse(json['created_at']) : DateTime.now();
+    address = json['address'];
+    type = json['type'];
+    lat = json['lat'];
+    long = json['long'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
-    data['image'] = image;
-    data['title'] = title;
-    if (createdAt != null) {
-      data['created_at'] = createdAt ;
-    }
+    data['address'] = address;
+    data['type'] = type;
+    data['lat'] = lat;
+    data['long'] = long;
     return data;
   }
 }

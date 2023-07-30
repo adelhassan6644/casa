@@ -115,6 +115,8 @@
   "no_back_off": "لا, العودة",
   "back":"العودة",
   "session_cancelled": "تم إلغاء جلستك",
-  "select_address":"اختر العنوان"
+  "select_address":"اختر العنوان",
+  "please_wait": "برجاء الإنتظار",
+  "there_is_no_addresses": "لا يوجد عنواين"
 
 }
