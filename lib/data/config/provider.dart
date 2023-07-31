@@ -1,4 +1,4 @@
-import 'package:casa/features/maps/provider/location_provider.dart';
+import 'package:casa/features/maps/provider/map_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 import 'package:casa/data/config/di.dart' as di;
@@ -18,7 +18,6 @@ import '../../features/splash/provider/splash_provider.dart';
 import '../../features/setting/provider/setting_provider.dart';
 import '../../main_page/provider/main_page_provider.dart';
 import '../../main_providers/calender_provider.dart';
-import '../../main_providers/map_provider.dart';
 
 abstract class ProviderList {
   static List<SingleChildWidget> providers = [
@@ -35,7 +34,7 @@ abstract class ProviderList {
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ProductDetailsProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<CalenderProvider>()),
-    ChangeNotifierProvider(create: (_) => di.sl<LocationProvider>()),
+    ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<AddressesProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ContactProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<SettingProvider>()),

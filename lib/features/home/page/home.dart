@@ -3,7 +3,7 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import '../../../data/config/di.dart';
-import '../../maps/provider/location_provider.dart';
+import '../../maps/provider/map_provider.dart';
 import '../widgets/home_dates.dart';
 import '../widgets/home_header.dart';
 import '../widgets/home_banners.dart';
@@ -22,11 +22,10 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
   @override
   void initState() {
     Future.delayed(Duration.zero, () {
-      sl<LocationProvider>().getCurrentLocation()();
+      sl<MapProvider>().getCurrentLocation();
       sl<HomeProvider>().scroll(controller);
-      sl<HomeProvider>().getBanners();
-
-      // sl<HomeProvider>().getPlaces();
+      sl<HomeProvider>().getProducts();
+      // sl<HomeProvider>().getBanners();
     });
 
     super.initState();
@@ -45,20 +44,16 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
             child: RefreshIndicator(
               color: Styles.PRIMARY_COLOR,
               onRefresh: () async {
-                sl<HomeProvider>().getBanners();
                 sl<HomeProvider>().getProducts();
-
               },
               child: Column(
                 children: [
                   Expanded(
-                    child: ListAnimator(
+                    child: ListView(
                       controller: controller,
-                      data: const [
-                        HomeBanner(),
-                        HomeDates(),
-                        HomeProducts()
-                      ],
+                      physics: const BouncingScrollPhysics(),
+                      padding: EdgeInsets.zero,
+                      children: const [HomeBanner(), HomeDates(), HomeProducts()],
                     ),
                   ),
                 ],
@@ -72,5 +67,4 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
 
   @override
   bool get wantKeepAlive => true;
-
 }

@@ -14,7 +14,7 @@ class ProductDetailsRepo {
 
   Future<Either<ServerFailure, Response>> getPlaceDetails(id) async {
     try {
-      Response response = await dioClient.get(uri: "${EndPoints.place}/$id");
+      Response response = await dioClient.get(uri: EndPoints.productDetails(id));
       if (response.statusCode == 200) {
         return Right(response);
       } else {

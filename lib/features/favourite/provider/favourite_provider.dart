@@ -11,19 +11,15 @@ import '../model/favourite_model.dart';
 
 class FavouriteProvider extends ChangeNotifier {
   final FavouriteRepo favouriteRepo;
-
   FavouriteProvider({
     required this.favouriteRepo,
   }) {
-    favouriteId.clear();
-    if (isLogin) {
-      getFavourites();
-    }
+    favouritesId.clear();
   }
 
   bool get isLogin => favouriteRepo.isLoggedIn();
 
-  List<int> favouriteId = [];
+  List<int> favouritesId = [];
 
   bool isLoading = false;
   FavouriteModel? favouriteModel;
@@ -44,11 +40,11 @@ class FavouriteProvider extends ChangeNotifier {
         notifyListeners();
       }, (response) {
         favouriteModel = FavouriteModel.fromJson(response.data);
-        favouriteId = [];
+        favouritesId = [];
         if (favouriteModel!.data != null && favouriteModel!.data!.isNotEmpty) {
           for (var e in favouriteModel!.data!) {
             if (e.id != null) {
-              favouriteId.add(e.id!);
+              favouritesId.add(e.id!);
             }
           }
         }
@@ -70,9 +66,9 @@ class FavouriteProvider extends ChangeNotifier {
   updateFavourites({required int id, bool isExist = false}) async {
     try {
       if (isExist) {
-        favouriteId.remove(id);
+        favouritesId.remove(id);
       } else {
-        favouriteId.add(id);
+        favouritesId.add(id);
       }
       notifyListeners();
 

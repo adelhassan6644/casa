@@ -91,7 +91,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                   ? const _ProductDetailsWidgetShimmer()
                   : provider.model != null
                       ? ProductDetailsWidget(
-                          productItem: provider.model!,
+                          item: provider.model!,
                         )
                       : const EmptyState(),
               Visibility(

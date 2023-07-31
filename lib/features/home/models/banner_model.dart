@@ -1,5 +1,3 @@
-import 'package:casa/features/home/models/places_model.dart';
-
 class BannerModel {
   String? message;
   List<Data>? data;
@@ -30,15 +28,17 @@ class Data {
   int? id;
   String? image;
   String? title;
-  ProductItem? place;
 
-  Data({this.id, this.image, this.title, this.place});
+  Data({
+    this.id,
+    this.image,
+    this.title,
+  });
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
     image = json['image'];
     title = json['title'];
-    place = json['place'] != null ? ProductItem.fromJson(json['place']) : null;
   }
 
   Map<String, dynamic> toJson() {
@@ -46,9 +46,6 @@ class Data {
     data['id'] = id;
     data['image'] = image;
     data['title'] = title;
-    if (place != null) {
-      data['place'] = place!.toJson();
-    }
     return data;
   }
 }

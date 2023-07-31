@@ -2,9 +2,9 @@ import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/app/core/utils/svg_images.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/custom_images.dart';
+import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:casa/navigation/custom_navigation.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
@@ -13,11 +13,16 @@ import 'package:provider/provider.dart';
 import '../../../components/marquee_widget.dart';
 import '../../../components/tab_widget.dart';
 import '../../../navigation/routes.dart';
-import '../../maps/provider/location_provider.dart';
+import '../../maps/provider/map_provider.dart';
 
-class HomeHeader extends StatelessWidget {
+class HomeHeader extends StatefulWidget {
   const HomeHeader({Key? key}) : super(key: key);
 
+  @override
+  State<HomeHeader> createState() => _HomeHeaderState();
+}
+
+class _HomeHeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -128,7 +133,7 @@ class HomeHeader extends StatelessWidget {
                         width: 8.w,
                       ),
                       Expanded(
-                        child: Consumer<LocationProvider>(
+                        child: Consumer<MapProvider>(
                             builder: (_, provider, child) {
                           return MarqueeWidget(
                             child: Text(
@@ -150,17 +155,59 @@ class HomeHeader extends StatelessWidget {
           ),
         ),
         Consumer<HomeProvider>(builder: (_, provider, child) {
-          return Row(
-              children: List.generate(
-                  provider.tabs.length,
-                  (index) => Expanded(
-                        child: TabWidget(
-                          title: provider.tabs[index],
-                          isSelected: provider.currentTab == index,
-                          onTab: () => provider.selectTab(index),
+          return AnimatedCrossFade(
+            crossFadeState: CrossFadeState.showFirst,
+            firstChild: Container(
+              width: context.width,
+              height: 35,
+              decoration: const BoxDecoration(
+                  border: Border(
+                      bottom:
+                          BorderSide(width: 1, color: Styles.BORDER_COLOR))),
+              alignment: Alignment.bottomCenter,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                physics: const BouncingScrollPhysics(),
+                child: Row(
+                  children: provider.isGetCategories
+                      ? List.generate(
+                          5,
+                          (index) {
+                            return Padding(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: Dimensions.PADDING_SIZE_SMALL.w),
+                              child: const CustomShimmerContainer(
+                                width: 80,
+                                height: 35,
+                              ),
+                            );
+                          },
+                        )
+                      : List.generate(
+                          provider.categories?.length ?? 0,
+                          (index) {
+                            return TabWidget(
+                              title: provider.categories?[index].title ?? "",
+                              width: 100,
+                              isSelected: provider.currentTab ==
+                                  provider.categories?[index].id,
+                              withBorder: false,
+                              onTab: () {
+                                if (provider.currentTab !=
+                                    provider.categories?[index].id) {
+                                  provider.selectTab(index);
+                                }
+                              },
+                            );
+                          },
                         ),
-                      )));
-        })
+                ),
+              ),
+            ),
+            secondChild: const SizedBox(),
+            duration: const Duration(milliseconds: 500),
+          );
+        }),
       ],
     );
   }

@@ -7,7 +7,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/app_strings.dart';
 import '../../../main_models/base_model.dart';
-import '../provider/location_provider.dart';
+import '../provider/map_provider.dart';
 import '../widget/location_widget.dart';
 
 class MapPage extends StatefulWidget {
@@ -26,10 +26,10 @@ class _MapPageState extends State<MapPage> {
   @override
   void initState() {
     if (widget.baseModel?.object != null) {
-      Provider.of<LocationProvider>(context, listen: false).pickAddress =
+      Provider.of<MapProvider>(context, listen: false).pickAddress =
           widget.baseModel?.object.address ?? "";
     } else {
-      Provider.of<LocationProvider>(context, listen: false).pickAddress =
+      Provider.of<MapProvider>(context, listen: false).pickAddress =
           AppStrings.defaultAddress;
     }
 
@@ -55,7 +55,7 @@ class _MapPageState extends State<MapPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(child:
-          Consumer<LocationProvider>(builder: (_, locationProvider, child) {
+          Consumer<MapProvider>(builder: (_, locationProvider, child) {
         return Stack(children: [
           ///Map
           GoogleMap(

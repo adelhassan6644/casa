@@ -6,7 +6,6 @@ import 'package:provider/provider.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../data/error/api_error_handler.dart';
 import '../../../data/error/failures.dart';
-import '../../favourite/provider/favourite_provider.dart';
 import '../../profile/provider/profile_provider.dart';
 import '../repo/auth_repo.dart';
 import '../../../../navigation/custom_navigation.dart';
@@ -22,7 +21,6 @@ class AuthProvider extends ChangeNotifier {
     _mailTEC = TextEditingController(
         text: kDebugMode ? "adel@gmail.com" : authRepo.getMail());
   }
-
 
   bool get isLogin => authRepo.isLoggedIn();
 
@@ -91,24 +89,15 @@ class AuthProvider extends ChangeNotifier {
           authRepo.forget();
         }
         authRepo.saveUserId(success.data['data']["id"]);
-        authRepo.setLoggedIn();
-        CustomNavigator.push(Routes.DASHBOARD, clean: true,);
-        // authRepo.saveUserToken(success.data['data']["api_token"]);
-        // if (success.data['data']["email_verified_at"] != null) {
-        //   authRepo.setLoggedIn();
-        //   Provider.of<ProfileProvider>(
-        //       CustomNavigator.navigatorState.currentContext!,
-        //       listen: false)
-        //       .getProfile();
-        //   Provider.of<FavouriteProvider>(
-        //       CustomNavigator.navigatorState.currentContext!,
-        //       listen: false)
-        //       .getFavourites();
-        //   CustomNavigator.push(Routes.DASHBOARD, clean: true);
-        //   clear();
-        // } else {
-        //   CustomNavigator.push(Routes.VERIFICATION, arguments: true);
-        // }
+        if (success.data['data']["email_verified_at"] != null) {
+          authRepo.setLoggedIn();
+          CustomNavigator.push(
+            Routes.DASHBOARD,
+            clean: true,
+          );
+        } else {
+          CustomNavigator.push(Routes.VERIFICATION, arguments: true);
+        }
       });
       _isLoading = false;
       notifyListeners();
@@ -173,7 +162,7 @@ class AuthProvider extends ChangeNotifier {
       _isChange = true;
       notifyListeners();
       Either<ServerFailure, Response> response =
-      await authRepo.change(password: passwordTEC.text.trim());
+          await authRepo.change(password: passwordTEC.text.trim());
       response.fold((fail) {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
@@ -237,10 +226,8 @@ class AuthProvider extends ChangeNotifier {
           authRepo.forget();
         }
         authRepo.saveUserId(success.data['data']["id"]);
-        authRepo.setLoggedIn();
-        CustomNavigator.push(Routes.DASHBOARD, clean: true,);
+        CustomNavigator.push(Routes.VERIFICATION, arguments: true);
         // authRepo.saveUserToken(success.data['data']["api_token"]);
-        // CustomNavigator.push(Routes.VERIFICATION, arguments: true);
       });
       _isRegister = false;
       notifyListeners();
@@ -321,11 +308,13 @@ class AuthProvider extends ChangeNotifier {
         notifyListeners();
       }, (success) {
         if (fromRegister) {
-          Provider.of<ProfileProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getProfile();
-          Provider.of<FavouriteProvider>(CustomNavigator.navigatorState.currentContext!, listen: false).getFavourites();
           authRepo.setLoggedIn();
-          CustomNavigator.push(Routes.DASHBOARD, clean: true,);
-          CustomSnackBar.showSnackBar(notification: AppNotification(
+          CustomNavigator.push(
+            Routes.DASHBOARD,
+            clean: true,
+          );
+          CustomSnackBar.showSnackBar(
+              notification: AppNotification(
                   message: getTranslated("register_successfully",
                       CustomNavigator.navigatorState.currentContext!),
                   isFloating: true,
@@ -358,7 +347,7 @@ class AuthProvider extends ChangeNotifier {
     await authRepo.clearSharedData();
     clear();
     Provider.of<ProfileProvider>(CustomNavigator.navigatorState.currentContext!,
-        listen: false)
+            listen: false)
         .clear();
     CustomSnackBar.showSnackBar(
         notification: AppNotification(

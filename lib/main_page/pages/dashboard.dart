@@ -1,12 +1,15 @@
+import 'package:casa/features/favourite/provider/favourite_provider.dart';
+import 'package:casa/features/home/provider/home_provider.dart';
+import 'package:casa/features/profile/provider/profile_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/features/profile/page/profile.dart';
 import 'package:casa/main_page/provider/main_page_provider.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/styles.dart';
+import '../../data/config/di.dart';
 import '../../data/network/network_info.dart';
-import '../../features/favourite/page/favourite_page.dart';
+import '../../features/address/provider/addresses_provider.dart';
 import '../../features/home/page/home.dart';
-import '../../features/maps/page/map_page.dart';
 import '../../features/more/page/more.dart';
 import '../../features/my_appointments/page/my_appointments.dart';
 import '../widget/nav_bar.dart';
@@ -21,6 +24,10 @@ class _DashBoardState extends State<DashBoard> {
   @override
   void initState() {
     NetworkInfo.checkConnectivity();
+    sl<HomeProvider>().getCategories();
+    sl<FavouriteProvider>().getFavourites();
+    sl<AddressesProvider>().getAddresses();
+    sl<ProfileProvider>().getProfile();
     super.initState();
   }
 
@@ -33,7 +40,7 @@ class _DashBoardState extends State<DashBoard> {
       case 2:
         return const Profile();
       case 3:
-        return const  More();
+        return const More();
       default:
         return Container();
     }

@@ -1,17 +1,17 @@
-import '../../home/models/places_model.dart';
+import 'package:casa/main_models/item_model.dart';
 
 class FavouriteModel {
   String? message;
-  List<ProductItem>? data;
+  List<ItemModel>? data;
 
   FavouriteModel({this.message, this.data});
 
   FavouriteModel.fromJson(Map<String, dynamic> json) {
     message = json['message'];
     if (json['data'] != null) {
-      data = <ProductItem>[];
+      data = [];
       json['data'].forEach((v) {
-        data!.add(ProductItem.fromJson(v));
+        data!.add(ItemModel.fromJson(v));
       });
     }
   }
@@ -20,9 +20,8 @@ class FavouriteModel {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['message'] = message;
     if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
+      data['data'] = this.data!.map((v) => v).toList();
     }
     return data;
   }
 }
-

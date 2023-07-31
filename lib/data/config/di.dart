@@ -1,7 +1,7 @@
 import 'package:casa/features/notifications/repo/notifications_repo.dart';
 import 'package:dio/dio.dart';
 import 'package:casa/features/home/repo/home_repo.dart';
-import 'package:casa/features/maps/provider/location_provider.dart';
+import 'package:casa/features/maps/provider/map_provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../app/localization/provider/language_provider.dart';
@@ -15,7 +15,7 @@ import '../../features/contact_with_us/repo/contact_repo.dart';
 import '../../features/favourite/provider/favourite_provider.dart';
 import '../../features/favourite/repo/favourite_repo.dart';
 import '../../features/home/provider/home_provider.dart';
-import '../../features/maps/repo/maps_repo.dart';
+import '../../features/maps/repo/map_repo.dart';
 import '../../features/my_appointments/provider/my_appointments_provider.dart';
 import '../../features/my_appointments/repo/my_appointments_repo.dart';
 import '../../features/notifications/provider/notifications_provider.dart';
@@ -26,7 +26,6 @@ import '../../features/profile/repo/profile_repo.dart';
 import '../../features/setting/provider/setting_provider.dart';
 import '../../features/setting/repo/setting_repo.dart';
 import '../../main_page/provider/main_page_provider.dart';
-import '../../main_providers/map_provider.dart';
 import '../api/end_points.dart';
 import '../network/network_info.dart';
 import '../dio/dio_client.dart';
@@ -64,7 +63,7 @@ Future<void> init() async {
   sl.registerLazySingleton(
       () => FavouriteRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
-      () => MapsRepo(sharedPreferences: sl(), dioClient: sl()));
+      () => MapRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => ProductDetailsRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
@@ -88,8 +87,7 @@ Future<void> init() async {
   sl.registerLazySingleton(
       () => NotificationsProvider(notificationsRepo: sl()));
   sl.registerLazySingleton(() => ProfileProvider(profileRepo: sl()));
-  sl.registerLazySingleton(() => MapProvider());
-  sl.registerLazySingleton(() => LocationProvider(locationRepo: sl()));
+  sl.registerLazySingleton(() => MapProvider(mapRepo: sl()));
   sl.registerLazySingleton(() => AddressesProvider(repo: sl()));
   sl.registerLazySingleton(() => SettingProvider(repo: sl()));
   sl.registerLazySingleton(() => ContactProvider(contactRepo: sl()));

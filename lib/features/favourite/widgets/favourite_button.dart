@@ -14,7 +14,7 @@ class FavouriteButton extends StatelessWidget {
     return Consumer<FavouriteProvider>(
       builder: (_, provider, child) {
         bool isFav = false;
-        isFav = provider.favouriteId.indexWhere((e) => e == id) != -1;
+        isFav = provider.favouritesId.indexWhere((e) => e == id) != -1;
         return InkWell(
             splashColor: Colors.transparent,
             focusColor: Colors.transparent,

@@ -18,9 +18,9 @@ class HomeRepo {
     return sharedPreferences.containsKey(AppStorageKey.isLogin);
   }
 
-  Future<Either<ServerFailure, Response>> getHomeBanner() async {
+  Future<Either<ServerFailure, Response>> getHomeCategory() async {
     try {
-      Response response = await dioClient.get(uri: EndPoints.banners);
+      Response response = await dioClient.get(uri: EndPoints.category);
       if (response.statusCode == 200) {
         return Right(response);
       } else {
@@ -31,9 +31,23 @@ class HomeRepo {
     }
   }
 
-  Future<Either<ServerFailure, Response>> getHomeProducts() async {
+  Future<Either<ServerFailure, Response>> getHomeBanner(id) async {
     try {
-      Response response = await dioClient.get(uri: EndPoints.place);
+      Response response = await dioClient.get(uri: EndPoints.banners(id));
+      if (response.statusCode == 200) {
+        return Right(response);
+      } else {
+        return left(ServerFailure(response.data['message']));
+      }
+    } catch (error) {
+      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    }
+  }
+
+  Future<Either<ServerFailure, Response>> getHomeProducts(id) async {
+    try {
+      Response response = await dioClient.get(
+          uri: id == 0 ? EndPoints.products : EndPoints.categoryProducts(id));
       if (response.statusCode == 200) {
         return Right(response);
       } else {

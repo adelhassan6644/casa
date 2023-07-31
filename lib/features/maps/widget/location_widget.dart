@@ -11,14 +11,14 @@ import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_button.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../address/provider/addresses_provider.dart';
-import '../provider/location_provider.dart';
+import '../provider/map_provider.dart';
 
 class LocationCard extends StatelessWidget {
   const LocationCard({Key? key, this.valueChanged}) : super(key: key);
   final Function(dynamic)? valueChanged;
   @override
   Widget build(BuildContext context) {
-    return Consumer<LocationProvider>(builder: (c, locationController, _) {
+    return Consumer<MapProvider>(builder: (c, locationController, _) {
       return Container(
           height: 280.h,
           padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),

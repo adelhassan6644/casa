@@ -1,8 +1,8 @@
+import 'package:casa/main_models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/features/favourite/widgets/favourite_button.dart';
-import 'package:casa/features/home/models/places_model.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_button.dart';
@@ -15,15 +15,15 @@ class ProductCard extends StatelessWidget {
     Key? key,
     required this.product,
   }) : super(key: key);
-  final ProductItem product;
+  final ItemModel product;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         InkWell(
-           onTap: () =>
-               CustomNavigator.push(Routes.PRODUCT_DETAILS, arguments: product.id),
+          onTap: () => CustomNavigator.push(Routes.PRODUCT_DETAILS,
+              arguments: product.id),
           child: Container(
             width: 210.w,
             decoration: BoxDecoration(
@@ -42,12 +42,13 @@ class ProductCard extends StatelessWidget {
                   radius: 12.w,
                 ),
                 Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 12.w, vertical: 12.h),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      Text("${product.category}",
+                      Text("${product.service}",
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
                           style: AppTextStyles.semiBold.copyWith(
@@ -58,25 +59,29 @@ class ProductCard extends StatelessWidget {
                             maxLines: 2,
                             overflow: TextOverflow.ellipsis,
                             style: AppTextStyles.regular.copyWith(
-                              height: 1,
-                                fontSize: 14, color: Styles.DETAILS_COLOR)),
+                                height: 1,
+                                fontSize: 14,
+                                color: Styles.DETAILS_COLOR)),
                       ),
-                      Row(children: [
-                        Expanded(
-                          child: Text("${100} ريال",
-                              maxLines: 1,
-                              textAlign: TextAlign.start,
-                              overflow: TextOverflow.ellipsis,
-                              style: AppTextStyles.medium.copyWith(
-                                  fontSize: 14, color: Styles.PRIMARY_COLOR)),
-                        ),
-                        CustomButton(
-                          width: 60.w,
-                          height: 25.h,
-                          text: "حجز",
-                        ),
-                      ],)
-                    ],),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: Text("${product.price ?? 0} ريال",
+                                maxLines: 1,
+                                textAlign: TextAlign.start,
+                                overflow: TextOverflow.ellipsis,
+                                style: AppTextStyles.medium.copyWith(
+                                    fontSize: 14, color: Styles.PRIMARY_COLOR)),
+                          ),
+                          CustomButton(
+                            width: 65.w,
+                            height: 25.h,
+                            text: "حجز",
+                          ),
+                        ],
+                      )
+                    ],
+                  ),
                 ),
               ],
             ),

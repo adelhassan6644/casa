@@ -5,7 +5,7 @@ import 'package:casa/features/product_details/repo/product_details_repo.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
-import '../../home/models/places_model.dart';
+import '../../../main_models/item_model.dart';
 
 class ProductDetailsProvider extends ChangeNotifier {
   ProductDetailsRepo repo;
@@ -17,7 +17,7 @@ class ProductDetailsProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  ProductItem? model;
+  ItemModel? model;
   bool isLoading = false;
   geDetails(id) async {
     try {
@@ -35,7 +35,7 @@ class ProductDetailsProvider extends ChangeNotifier {
         notifyListeners();
       }, (success) {
         if (success.data["data"] != null) {
-          model = ProductItem.fromJson(success.data["data"]);
+          model = ItemModel.fromJson(success.data["data"]);
         } else {
           model = null;
         }

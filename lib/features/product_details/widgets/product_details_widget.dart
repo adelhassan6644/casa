@@ -1,13 +1,13 @@
+import 'package:casa/main_models/item_model.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:casa/features/home/models/places_model.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_network_image.dart';
 
 class ProductDetailsWidget extends StatelessWidget {
-  final ProductItem productItem;
-  const ProductDetailsWidget({Key? key, required this.productItem})
+  final ItemModel item;
+  const ProductDetailsWidget({Key? key, required this.item})
       : super(key: key);
 
   @override
@@ -24,7 +24,7 @@ class ProductDetailsWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  productItem.category ?? "",
+                  item.service ?? "",
                   style: AppTextStyles.bold.copyWith(
                       fontSize: 18,
                       overflow: TextOverflow.ellipsis,
@@ -34,7 +34,7 @@ class ProductDetailsWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 6.h),
                   child: Text(
-                    "${100} ريال",
+                    "${item.price ?? 0} ريال",
                     style: AppTextStyles.medium.copyWith(
                         fontSize: 16,
                         overflow: TextOverflow.ellipsis,
@@ -43,7 +43,7 @@ class ProductDetailsWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  productItem.description ?? " kfnnrigigiegio",
+                  item.description ?? " ",
                   style: AppTextStyles.regular
                       .copyWith(fontSize: 16, color: Styles.DETAILS_COLOR),
                 ),
@@ -56,12 +56,12 @@ class ProductDetailsWidget extends StatelessWidget {
               child: ListView.builder(
                 physics: const BouncingScrollPhysics(),
                 scrollDirection: Axis.horizontal,
-                itemCount: productItem.images?.length ?? 0,
+                itemCount: item.images?.length ?? 0,
                 itemBuilder: (c, index) => Padding(
                   padding:
                       EdgeInsets.only(right: index == 0 ? 24.w : 0, left: 12.w),
                   child: CustomNetworkImage.containerNewWorkImage(
-                      image: productItem.image ?? "",
+                      image: item.images?[index] ?? "",
                       width: 100.w,
                       fit: BoxFit.cover,
                       height: 150.h,

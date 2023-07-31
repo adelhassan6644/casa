@@ -14,11 +14,7 @@ import '../repo/profile_repo.dart';
 
 class ProfileProvider extends ChangeNotifier {
   final ProfileRepo profileRepo;
-  ProfileProvider({required this.profileRepo}) {
-    if (isLogin) {
-      getProfile();
-    }
-  }
+  ProfileProvider({required this.profileRepo});
 
   bool get isLogin => profileRepo.isLoggedIn();
 
@@ -182,6 +178,6 @@ class ProfileProvider extends ChangeNotifier {
     nameTEC.text = profileModel?.name ?? "";
     emailTEC.text = profileModel?.email ?? "";
     phoneTEC.text = profileModel?.phone ?? "";
-    userType=profileModel?.gender??0;
+    userType = profileModel?.gender ?? 0;
   }
 }

@@ -1,4 +1,4 @@
-import 'package:casa/features/maps/provider/location_provider.dart';
+import 'package:casa/features/maps/provider/map_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -81,7 +81,7 @@ class SearchLocationWidget extends StatelessWidget {
         ),
       ),
       suggestionsCallback: (pattern) async {
-        return await Provider.of<LocationProvider>(context, listen: false)
+        return await Provider.of<MapProvider>(context, listen: false)
             .searchLocation(context, pattern);
       },
       itemBuilder: (context, PredictionModel suggestion) {

@@ -69,7 +69,7 @@ class HomeDates extends StatelessWidget {
                                     fontSize: 16, color: Styles.PRIMARY_COLOR)),
                           ),
                           CustomButton(
-                            width: 85.w,
+                            width: 95.w,
                             height: 30.h,
                             text: getTranslated("cancel", context),
                             svgIcon: SvgImages.cancel,

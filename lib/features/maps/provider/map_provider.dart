@@ -9,16 +9,15 @@ import '../../../app/localization/localization/language_constant.dart';
 import '../../../data/error/api_error_handler.dart';
 import '../../../data/error/failures.dart';
 import '../../../navigation/custom_navigation.dart';
-import '../../home/models/places_model.dart';
 import '../models/location_model.dart';
 import '../models/prediction_model.dart';
-import '../repo/maps_repo.dart';
+import '../repo/map_repo.dart';
 import 'package:geolocator/geolocator.dart';
 
-class LocationProvider extends ChangeNotifier {
-  final MapsRepo locationRepo;
-  LocationProvider({
-    required this.locationRepo,
+class MapProvider extends ChangeNotifier {
+  final MapRepo mapRepo;
+  MapProvider({
+    required this.mapRepo,
   });
 
   List<PredictionModel> _predictionList = [];
@@ -48,7 +47,7 @@ class LocationProvider extends ChangeNotifier {
       BuildContext context, String text) async {
     if (text.isNotEmpty) {
       Either<ServerFailure, Response> response =
-          await locationRepo.searchLocation(text);
+          await mapRepo.searchLocation(text);
       response.fold((error) {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
@@ -73,7 +72,7 @@ class LocationProvider extends ChangeNotifier {
         desiredAccuracy: LocationAccuracy.high);
 
     Either<ServerFailure, Response> response =
-    await locationRepo.getAddressFromGeocode(
+    await mapRepo.getAddressFromGeocode(
         LatLng(newLocalData.latitude, newLocalData.longitude));
     response.fold((l) => null, (response) {
       pickAddress = response.data['results'][0]['formatted_address'].toString();
@@ -120,7 +119,7 @@ class LocationProvider extends ChangeNotifier {
     required longitude,
   }) async {
     Either<ServerFailure, Response> response =
-        await locationRepo.getAddressFromGeocode(LatLng(latitude, longitude));
+        await mapRepo.getAddressFromGeocode(LatLng(latitude, longitude));
 
     response.fold((l) => null, (response) {
       pickAddress = response.data['results'][0]['formatted_address'].toString();

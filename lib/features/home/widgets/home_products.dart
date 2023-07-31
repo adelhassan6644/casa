@@ -16,16 +16,16 @@ class HomeProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<HomeProvider>(
-      builder: (_,provider,child) {
-        return provider.isGetProducts
-            ? Padding(
+    return Consumer<HomeProvider>(builder: (_, provider, child) {
+      return provider.isGetProducts
+          ? Padding(
               padding: EdgeInsets.symmetric(
                   horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
               child: GridListAnimatorWidget(
+                physics: const NeverScrollableScrollPhysics(),
                 items: List.generate(
                   8,
-                      (int index) {
+                  (int index) {
                     return AnimationConfiguration.staggeredGrid(
                       columnCount: 2,
                       position: index,
@@ -40,57 +40,51 @@ class HomeProducts extends StatelessWidget {
                 ),
               ),
             )
-            : provider.productsModel != null &&
-            provider.productsModel!.data != null &&
-            provider.productsModel!.data!.isNotEmpty
-            ? Padding(
-              padding: EdgeInsets.symmetric(
-                  horizontal:
-                  Dimensions.PADDING_SIZE_DEFAULT.w),
-              child: GridListAnimatorWidget(
-                items: List.generate(
-                  provider.productsModel!.data!.length,
+          : provider.products.isNotEmpty
+              ? Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+                  child: GridListAnimatorWidget(
+                    items: List.generate(
+                      provider.products.length,
                       (int index) {
-                    return AnimationConfiguration.staggeredGrid(
-                      columnCount: 2,
-                      position: index,
-                      duration:
-                      const Duration(milliseconds: 375),
-                      child: ScaleAnimation(
-                        child: FadeInAnimation(
-                          child: ProductCard(
-                            product: provider.productsModel!.data![index],
+                        return AnimationConfiguration.staggeredGrid(
+                          columnCount: 2,
+                          position: index,
+                          duration: const Duration(milliseconds: 375),
+                          child: ScaleAnimation(
+                            child: FadeInAnimation(
+                              child: ProductCard(
+                                product: provider.products[index],
+                              ),
+                            ),
                           ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            )
-            : RefreshIndicator(
-              color: Styles.PRIMARY_COLOR,
-              onRefresh: () async {
-                provider.getProducts();
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal:
-                    Dimensions.PADDING_SIZE_DEFAULT.w),
-                child: ListAnimator(
-                  data: [
-                    EmptyState(
-                      imgWidth: 215.w,
-                      imgHeight: 220.h,
-                      spaceBtw: 12,
-                      txt: "لا يوجد خدمات الان",
-                      subText: "تابعنا حتي تستفاد بخدمتنا الجديدة",
+                        );
+                      },
                     ),
-                  ],
-                ),
-              ),
-            );
-      }
-    );
+                  ),
+                )
+              : RefreshIndicator(
+                  color: Styles.PRIMARY_COLOR,
+                  onRefresh: () async {
+                    provider.getProducts();
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+                    child: ListAnimator(
+                      data: [
+                        EmptyState(
+                          imgWidth: 215.w,
+                          imgHeight: 220.h,
+                          spaceBtw: 12,
+                          txt: "لا يوجد خدمات الان",
+                          subText: "تابعنا حتي تستفاد بخدمتنا الجديدة",
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+    });
   }
 }
