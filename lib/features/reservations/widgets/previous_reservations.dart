@@ -37,27 +37,25 @@ class _PreviousAppointmentsState extends State<PreviousAppointments> {
   Widget build(BuildContext context) {
     return Consumer<ReservationsProvider>(builder: (_, provider, child) {
       return provider.isLoading
-          ? Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                    horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                child: ListAnimator(
-                  controller: controller,
-                  data: List.generate(
-                    10,
-                    (index) => Padding(
-                      padding: EdgeInsets.only(
-                          bottom: Dimensions.PADDING_SIZE_SMALL.h),
-                      child: CustomShimmerContainer(
-                        height: 100,
-                        width: context.width,
-                        radius: 15,
-                      ),
-                    ),
+          ? Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+            child: ListAnimator(
+              controller: controller,
+              data: List.generate(
+                10,
+                (index) => Padding(
+                  padding: EdgeInsets.only(
+                      bottom: Dimensions.PADDING_SIZE_SMALL.h),
+                  child: CustomShimmerContainer(
+                    height: 100,
+                    width: context.width,
+                    radius: 15,
                   ),
                 ),
               ),
-            )
+            ),
+          )
           : provider.previousReservations != null &&
                   provider.previousReservations!.isNotEmpty
               ? RefreshIndicator(
