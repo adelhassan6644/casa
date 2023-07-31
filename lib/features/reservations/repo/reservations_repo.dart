@@ -8,21 +8,21 @@ import '../../../data/dio/dio_client.dart';
 import '../../../data/error/api_error_handler.dart';
 import '../../../data/error/failures.dart';
 
-class MyAppointmentsRepo {
+class ReservationsRepo {
   final DioClient dioClient;
   final SharedPreferences sharedPreferences;
 
-  MyAppointmentsRepo(
+  ReservationsRepo(
       {required this.dioClient, required this.sharedPreferences});
 
   bool isLoggedIn() {
     return sharedPreferences.containsKey(AppStorageKey.isLogin);
   }
 
-  Future<Either<ServerFailure, Response>> getNextMyAppointments() async {
+  Future<Either<ServerFailure, Response>> getNextReservations() async {
     try {
       Response response = await dioClient.get(
-          uri: EndPoints.myNextAppointments(
+          uri: EndPoints.nextReservations(
               sharedPreferences.getString(AppStorageKey.userId)));
       if (response.statusCode == 200) {
         return Right(response);
@@ -34,10 +34,10 @@ class MyAppointmentsRepo {
     }
   }
 
-  Future<Either<ServerFailure, Response>> getPreviousMyAppointments() async {
+  Future<Either<ServerFailure, Response>> getPreviousReservations() async {
     try {
       Response response = await dioClient.get(
-          uri: EndPoints.myPreviousAppointments(
+          uri: EndPoints.previousReservations(
               sharedPreferences.getString(AppStorageKey.userId)));
       if (response.statusCode == 200) {
         return Right(response);

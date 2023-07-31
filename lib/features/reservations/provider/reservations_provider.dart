@@ -7,11 +7,12 @@ import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
 import 'package:flutter/rendering.dart';
 
-import '../repo/my_appointments_repo.dart';
+import '../../../main_models/item_model.dart';
+import '../repo/reservations_repo.dart';
 
-class MyAppointmentsProvider extends ChangeNotifier {
-  MyAppointmentsRepo repo;
-  MyAppointmentsProvider({required this.repo});
+class ReservationsProvider extends ChangeNotifier {
+  ReservationsRepo repo;
+  ReservationsProvider({required this.repo});
 
   bool goingDown = false;
   nextScroll(controller) {
@@ -47,13 +48,15 @@ class MyAppointmentsProvider extends ChangeNotifier {
 
   bool get isLogin => repo.isLoggedIn();
 
+  List<ItemModel>? nextReservations;
   bool isGetting = false;
-  getNextAppointments() async {
+  getNextReservations() async {
     try {
       isGetting = true;
+      nextReservations?.clear();
       notifyListeners();
       Either<ServerFailure, Response> response =
-          await repo.getNextMyAppointments();
+          await repo.getNextReservations();
       response.fold((fail) {
         isGetting = false;
         CustomSnackBar.showSnackBar(
@@ -64,6 +67,10 @@ class MyAppointmentsProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
+        if( success.data["data"] != null) {
+          nextReservations = List<ItemModel>.from(
+            success.data["data"].map((x) => ItemModel.fromJson(x)));
+        }
         isGetting = false;
         notifyListeners();
       });
@@ -79,13 +86,15 @@ class MyAppointmentsProvider extends ChangeNotifier {
     }
   }
 
+  List<ItemModel>? previousReservations;
   bool isLoading = false;
-  getPreviousAppointments() async {
+  getPreviousReservations() async {
     try {
       isLoading = true;
+      previousReservations?.clear();
       notifyListeners();
       Either<ServerFailure, Response> response =
-          await repo.getPreviousMyAppointments();
+          await repo.getPreviousReservations();
       response.fold((fail) {
         isLoading = false;
         CustomSnackBar.showSnackBar(
@@ -96,6 +105,10 @@ class MyAppointmentsProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
+        if( success.data["data"] != null) {
+          previousReservations = List<ItemModel>.from(
+            success.data["data"].map((x) => ItemModel.fromJson(x)));
+        }
         isLoading = false;
         notifyListeners();
       });

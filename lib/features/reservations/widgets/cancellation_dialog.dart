@@ -13,8 +13,8 @@ import '../../../app/core/utils/svg_images.dart';
 import '../../../components/custom_images.dart';
 import '../../../components/custom_simple_dialog.dart';
 
-class CancelDialog extends StatelessWidget {
-  const CancelDialog({Key? key}) : super(key: key);
+class CancellationDialog extends StatelessWidget {
+  const CancellationDialog({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

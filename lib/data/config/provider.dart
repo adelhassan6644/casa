@@ -10,7 +10,7 @@ import '../../features/auth/provider/auth_provider.dart';
 import '../../features/contact_with_us/provider/contact_provider.dart';
 import '../../features/favourite/provider/favourite_provider.dart';
 import '../../features/home/provider/home_provider.dart';
-import '../../features/my_appointments/provider/my_appointments_provider.dart';
+import '../../features/reservations/provider/reservations_provider.dart';
 import '../../features/notifications/provider/notifications_provider.dart';
 import '../../features/product_details/provider/product_details_provider.dart';
 import '../../features/profile/provider/profile_provider.dart';
@@ -29,7 +29,7 @@ abstract class ProviderList {
     ChangeNotifierProvider(create: (_) => di.sl<FavouriteProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ProfileProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<HomeProvider>()),
-    ChangeNotifierProvider(create: (_) => di.sl<MyAppointmentsProvider>()),
+    ChangeNotifierProvider(create: (_) => di.sl<ReservationsProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<NotificationsProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ProductDetailsProvider>()),

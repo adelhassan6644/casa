@@ -60,7 +60,7 @@ class EmptyState extends StatelessWidget {
                 style: const TextStyle(
                     fontSize: 14,
                     color: Styles.PRIMARY_COLOR,
-                    fontWeight: FontWeight.w400))
+                    fontWeight: FontWeight.w400)),
           ],
         ),
       ),

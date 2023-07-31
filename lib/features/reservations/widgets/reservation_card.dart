@@ -9,10 +9,13 @@ import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_network_image.dart';
+import '../../../main_models/item_model.dart';
 
 class AppointmentCard extends StatelessWidget {
-  const AppointmentCard({Key? key, this.isNext = true}) : super(key: key);
+  const AppointmentCard({Key? key, this.isNext = true, required this.product})
+      : super(key: key);
   final bool isNext;
+  final ItemModel product;
 
   @override
   Widget build(BuildContext context) {

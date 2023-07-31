@@ -116,5 +116,10 @@
   "session_cancelled": "Your session has been cancelled",
   "select_address": "Select Address",
   "please_wait": "Please Wait",
-  "there_is_no_addresses": "There is no addresses"
+  "there_is_no_addresses": "There is no addresses",
+  "empty_next_reservations_title": "You don't have upcoming sessions",
+  "empty_previous_reservations_title": "You don't have previous sessions",
+  "empty_next_reservations_description": "Continue browsing and book a new session to find it here",
+  "empty_previous_reservations_description": "Continue browsing and book a new session",
+  "continue_browsing": "Continue browsing"
 }

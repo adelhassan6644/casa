@@ -21,8 +21,8 @@ class EndPoints {
   static String addAddress = 'address';
   static readNotification(id) => 'notification/read/$id';
   static deleteNotification(id) => 'notification/delete/$id';
-  static myNextAppointments(id) => 'notification/delete/$id';
-  static myPreviousAppointments(id) => 'notification/delete/$id';
+  static nextReservations(id) => 'next/reservation/$id';
+  static previousReservations(id) => 'past/reservation/$id';
   static const String postFavourite = 'favorite';
   static const String category = 'service';
   static const products = 'subService';

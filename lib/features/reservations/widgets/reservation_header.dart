@@ -1,5 +1,5 @@
 import 'package:casa/app/localization/localization/language_constant.dart';
-import 'package:casa/features/my_appointments/provider/my_appointments_provider.dart';
+import 'package:casa/features/reservations/provider/reservations_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
@@ -26,7 +26,7 @@ class MyAppointmentHeader extends StatelessWidget {
                 .copyWith(fontSize: 18, color: Styles.PRIMARY_COLOR),
           ),
         ),
-        Consumer<MyAppointmentsProvider>(builder: (_, provider, child) {
+        Consumer<ReservationsProvider>(builder: (_, provider, child) {
           return Row(
               children: List.generate(
                   provider.tabs.length,
