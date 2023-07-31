@@ -121,5 +121,6 @@
   "empty_previous_reservations_title": "You don't have previous sessions",
   "empty_next_reservations_description": "Continue browsing and book a new session to find it here",
   "empty_previous_reservations_description": "Continue browsing and book a new session",
-  "continue_browsing": "Continue browsing"
+  "continue_browsing": "Continue browsing",
+  "reservation_cancel_successfully": "Reservation cancel successfully"
 }

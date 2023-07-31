@@ -114,6 +114,8 @@ class ProfileBody extends StatelessWidget {
                     text: getTranslated("save_changes", context),
                     onTap: () => provider.updateProfile(),
                     isLoading: provider.isUpdate,
+                    isActive: !provider.isUpdate,
+
                   )
                 ],
               ),

@@ -42,24 +42,24 @@ class _NextAppointmentsState extends State<NextAppointments> {
     return Consumer<ReservationsProvider>(builder: (_, provider, child) {
       return provider.isGetting
           ? Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-            child: ListAnimator(
-              controller: controller,
-              data: List.generate(
-                10,
-                (index) => Padding(
-                  padding: EdgeInsets.only(
-                      bottom: Dimensions.PADDING_SIZE_SMALL.h),
-                  child: CustomShimmerContainer(
-                    height: 100,
-                    width: context.width,
-                    radius: 15,
+              padding: EdgeInsets.symmetric(
+                  horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+              child: ListAnimator(
+                controller: controller,
+                data: List.generate(
+                  10,
+                  (index) => Padding(
+                    padding: EdgeInsets.only(
+                        bottom: Dimensions.PADDING_SIZE_SMALL.h),
+                    child: CustomShimmerContainer(
+                      height: 100,
+                      width: context.width,
+                      radius: 15,
+                    ),
                   ),
                 ),
               ),
-            ),
-          )
+            )
           : provider.nextReservations != null &&
                   provider.nextReservations!.isNotEmpty
               ? RefreshIndicator(
@@ -99,14 +99,14 @@ class _NextAppointmentsState extends State<NextAppointments> {
                                     (DismissDirection direction) async {
                                   CustomSimpleDialog.parentSimpleDialog(
                                     customListWidget: [
-                                      const CancellationDialog()
+                                      CancellationDialog(
+                                          id: provider.nextReservations?[index].id)
                                     ],
                                   );
                                   return false;
                                 },
                                 child: AppointmentCard(
-                                  reservation:
-                                      provider.nextReservations![index],
+                                  reservation: provider.nextReservations![index],
                                 ),
                               ),
                             ),

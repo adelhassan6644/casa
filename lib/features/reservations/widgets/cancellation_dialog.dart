@@ -4,17 +4,19 @@ import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/custom_button.dart';
+import 'package:casa/features/reservations/provider/reservations_provider.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:substring_highlight/substring_highlight.dart';
 import 'dart:ui' as ui;
 
 import '../../../app/core/utils/svg_images.dart';
 import '../../../components/custom_images.dart';
-import '../../../components/custom_simple_dialog.dart';
 
 class CancellationDialog extends StatelessWidget {
-  const CancellationDialog({Key? key}) : super(key: key);
+  const CancellationDialog({Key? key, this.id}) : super(key: key);
+  final int? id;
 
   @override
   Widget build(BuildContext context) {
@@ -44,15 +46,14 @@ class CancellationDialog extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_DEFAULT.h),
-          child: CustomButton(
-            text: getTranslated("yes_accept", context),
-            onTap: () {
-              CustomNavigator.pop();
-              CustomSimpleDialog.parentSimpleDialog(
-                customListWidget: [const CancelledDialog()],
-              );
-            },
-          ),
+          child: Consumer<ReservationsProvider>(builder: (_, provider, child) {
+            return CustomButton(
+              text: getTranslated("yes_accept", context),
+              onTap: () => provider.cancelReservation(id),
+              isLoading: provider.isCancelling,
+              isActive: id != null && !provider.isCancelling,
+            );
+          }),
         ),
         CustomButton(
           text: getTranslated("no_back_off", context),

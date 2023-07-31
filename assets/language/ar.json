@@ -122,6 +122,7 @@
   "empty_next_reservations_description": "تابع التصفح وقم بحجز جلسة جديدة لتجدها هنا" ,
   "empty_previous_reservations_title": "ليس لديك جلسات سابقة",
   "empty_previous_reservations_description": "تابع التصفح وقم بحجز جلسة جديدة",
-  "continue_browsing": "متابعة التصفح"
+  "continue_browsing": "متابعة التصفح",
+  "reservation_cancel_successfully": "تم إلغاء الحجز بنجاح"
 
 }

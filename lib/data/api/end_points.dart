@@ -21,6 +21,7 @@ class EndPoints {
   static String addAddress = 'address';
   static readNotification(id) => 'notification/read/$id';
   static deleteNotification(id) => 'notification/delete/$id';
+  static cancelReservation(id) => 'reservation/$id';
   static nextReservations(id) => 'next/reservation/$id';
   static previousReservations(id) => 'past/reservation/$id';
   static const String postFavourite = 'favorite';

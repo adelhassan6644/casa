@@ -25,6 +25,7 @@ class CustomButton extends StatelessWidget {
   final bool isError;
   final bool withBorderColor;
   final bool withShadow;
+  final bool isActive;
 
   const CustomButton(
       {Key? key,
@@ -36,6 +37,7 @@ class CustomButton extends StatelessWidget {
       this.svgIcon,
       this.assetIcon,
       this.isLoading = false,
+      this.isActive = true,
       this.textColor,
       this.borderColor,
       this.width,
@@ -54,7 +56,7 @@ class CustomButton extends StatelessWidget {
     return GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());
-          if (onTap != null) {
+          if (onTap != null && isActive) {
             onTap!();
           }
         },

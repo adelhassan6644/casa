@@ -12,11 +12,24 @@ class ReservationsRepo {
   final DioClient dioClient;
   final SharedPreferences sharedPreferences;
 
-  ReservationsRepo(
-      {required this.dioClient, required this.sharedPreferences});
+  ReservationsRepo({required this.dioClient, required this.sharedPreferences});
 
   bool isLoggedIn() {
     return sharedPreferences.containsKey(AppStorageKey.isLogin);
+  }
+
+  Future<Either<ServerFailure, Response>> cancelReservations(id) async {
+    try {
+      Response response =
+          await dioClient.delete(uri: EndPoints.cancelReservation(id));
+      if (response.statusCode == 200) {
+        return Right(response);
+      } else {
+        return left(ServerFailure(response.data['message']));
+      }
+    } catch (error) {
+      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    }
   }
 
   Future<Either<ServerFailure, Response>> getNextReservations() async {

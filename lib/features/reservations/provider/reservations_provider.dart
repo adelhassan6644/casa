@@ -1,14 +1,19 @@
+import 'package:casa/app/localization/localization/language_constant.dart';
+import 'package:casa/components/loading_dialog.dart';
+import 'package:casa/navigation/custom_navigation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/data/error/api_error_handler.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/styles.dart';
+import '../../../components/custom_simple_dialog.dart';
 import '../../../data/error/failures.dart';
 import 'package:flutter/rendering.dart';
 
 import '../model/reservation_model.dart';
 import '../repo/reservations_repo.dart';
+import '../widgets/cancellation_dialog.dart';
 
 class ReservationsProvider extends ChangeNotifier {
   ReservationsRepo repo;
@@ -67,9 +72,9 @@ class ReservationsProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
-        if( success.data["data"] != null) {
+        if (success.data["data"] != null) {
           nextReservations = List<ReservationModel>.from(
-            success.data["data"].map((x) => ReservationModel.fromJson(x)));
+              success.data["data"].map((x) => ReservationModel.fromJson(x)));
         }
         isGetting = false;
         notifyListeners();
@@ -105,15 +110,53 @@ class ReservationsProvider extends ChangeNotifier {
                 borderColor: Colors.transparent));
         notifyListeners();
       }, (success) {
-        if( success.data["data"] != null) {
+        if (success.data["data"] != null) {
           previousReservations = List<ReservationModel>.from(
-            success.data["data"].map((x) => ReservationModel.fromJson(x)));
+              success.data["data"].map((x) => ReservationModel.fromJson(x)));
         }
         isLoading = false;
         notifyListeners();
       });
     } catch (e) {
       isLoading = false;
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: e.toString(),
+              isFloating: true,
+              backgroundColor: Styles.IN_ACTIVE,
+              borderColor: Colors.transparent));
+      notifyListeners();
+    }
+  }
+
+  bool isCancelling = false;
+  bool cancelled = false;
+  cancelReservation(id) async {
+    try {
+      isCancelling = true;
+      notifyListeners();
+      Either<ServerFailure, Response> response =
+          await repo.cancelReservations(id);
+      response.fold((fail) {
+        CustomSnackBar.showSnackBar(
+            notification: AppNotification(
+                message: ApiErrorHandler.getMessage(fail),
+                isFloating: true,
+                backgroundColor: Styles.IN_ACTIVE,
+                borderColor: Colors.transparent));
+      }, (success) {
+        CustomNavigator.pop();
+        CustomSimpleDialog.parentSimpleDialog(
+          customListWidget: [const CancelledDialog()],
+        );
+        showToast(getTranslated("reservation_cancel_successfully",
+            CustomNavigator.navigatorState.currentContext!));
+        nextReservations?.removeWhere((e) => e.id == id);
+      });
+      isCancelling = false;
+      notifyListeners();
+    } catch (e) {
+      isCancelling = false;
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: e.toString(),
