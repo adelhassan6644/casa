@@ -14,6 +14,7 @@ import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_simple_dialog.dart';
 import '../../../data/config/di.dart';
+import '../../../main_page/provider/main_page_provider.dart';
 import '../provider/reservations_provider.dart';
 import 'reservation_card.dart';
 
@@ -48,10 +49,14 @@ class _NextAppointmentsState extends State<NextAppointments> {
                   controller: controller,
                   data: List.generate(
                     10,
-                    (index) => CustomShimmerContainer(
-                      height: 100,
-                      width: context.width,
-                      radius: 15,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(
+                          bottom: Dimensions.PADDING_SIZE_SMALL.h),
+                      child: CustomShimmerContainer(
+                        height: 100,
+                        width: context.width,
+                        radius: 15,
+                      ),
                     ),
                   ),
                 ),
@@ -102,7 +107,8 @@ class _NextAppointmentsState extends State<NextAppointments> {
                                   return false;
                                 },
                                 child: AppointmentCard(
-                                  product: provider.nextReservations![index],
+                                  reservation:
+                                      provider.nextReservations![index],
                                 ),
                               ),
                             ),
@@ -123,13 +129,25 @@ class _NextAppointmentsState extends State<NextAppointments> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                          child: EmptyState(
-                            img: Images.emptyReservations,
-                            isSvg: false,
-                            txt: getTranslated(
-                                "empty_next_reservations_title", context),
-                            subText: getTranslated(
-                                "empty_next_reservations_description", context),
+                          child: ListAnimator(
+                            data: [
+                              EmptyState(
+                                img: Images.emptyReservations,
+                                imgHeight: 215.h,
+                                imgWidth: 215.w,
+                                isSvg: false,
+                                txt: getTranslated(
+                                    "empty_next_reservations_title", context),
+                                subText: getTranslated(
+                                    "empty_next_reservations_description",
+                                    context),
+                                btnText:
+                                    getTranslated("continue_browsing", context),
+                                onTap: () => sl<MainPageProvider>()
+                                    .updateDashboardIndex(0),
+                                originalButton: false,
+                              )
+                            ],
                           ),
                         ),
                       ),

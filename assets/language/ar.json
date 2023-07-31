@@ -118,9 +118,9 @@
   "select_address":"اختر العنوان",
   "please_wait": "برجاء الإنتظار",
   "there_is_no_addresses": "لا يوجد عنواين",
-  "empty_next_reservations_title": "لليس لديك جلسات قادمة",
+  "empty_next_reservations_title": "ليس لديك جلسات قادمة",
   "empty_next_reservations_description": "تابع التصفح وقم بحجز جلسة جديدة لتجدها هنا" ,
-  "empty_previous_reservations_title": "لليس لديك جلسات سابقة",
+  "empty_previous_reservations_title": "ليس لديك جلسات سابقة",
   "empty_previous_reservations_description": "تابع التصفح وقم بحجز جلسة جديدة",
   "continue_browsing": "متابعة التصفح"
 

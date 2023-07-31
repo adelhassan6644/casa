@@ -9,13 +9,14 @@ import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_network_image.dart';
-import '../../../main_models/item_model.dart';
+import '../model/reservation_model.dart';
 
 class AppointmentCard extends StatelessWidget {
-  const AppointmentCard({Key? key, this.isNext = true, required this.product})
+  const AppointmentCard(
+      {Key? key, this.isNext = true, required this.reservation})
       : super(key: key);
   final bool isNext;
-  final ItemModel product;
+  final ReservationModel reservation;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class AppointmentCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             CustomNetworkImage.containerNewWorkImage(
-              image: "",
+              image: reservation.image ?? "",
               height: 95.h,
               width: 100.w,
               fit: BoxFit.cover,
@@ -50,7 +51,7 @@ class AppointmentCard extends StatelessWidget {
                         Row(
                           children: [
                             Expanded(
-                              child: Text("مساج",
+                              child: Text(reservation.subService ?? "",
                                   style: AppTextStyles.semiBold.copyWith(
                                       fontSize: 16,
                                       color: Styles.PRIMARY_COLOR)),
@@ -78,8 +79,8 @@ class AppointmentCard extends StatelessWidget {
                                     color: Styles.DETAILS_COLOR)),
                             Expanded(
                               child: Text(
-                                  DateTime.now()
-                                      .dateFormat(format: "EEEE dd,MM"),
+                                  reservation.date!
+                                      .dateFormat(format: "EEEE dd/MM"),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppTextStyles.medium.copyWith(
@@ -101,7 +102,8 @@ class AppointmentCard extends StatelessWidget {
                                     color: Styles.DETAILS_COLOR)),
                             Expanded(
                               child: Text(
-                                  DateTime.now().dateFormat(format: "hh:mm aa"),
+                                  reservation.date!
+                                      .dateFormat(format: "hh:mm aa"),
                                   maxLines: 1,
                                   overflow: TextOverflow.ellipsis,
                                   style: AppTextStyles.medium.copyWith(
@@ -130,7 +132,7 @@ class AppointmentCard extends StatelessWidget {
                                   ),
                                   Expanded(
                                     child: Text(
-                                      "حي العزيزية",
+                                      reservation.address ?? "",
                                       style: AppTextStyles.medium.copyWith(
                                           fontSize: 14, color: Colors.black),
                                     ),
@@ -138,7 +140,7 @@ class AppointmentCard extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            Text("${100} ريال",
+                            Text("${reservation.price ?? 0} ريال",
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: AppTextStyles.medium.copyWith(

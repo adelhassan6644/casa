@@ -5,23 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="updates">
-      <change afterPath="$PROJECT_DIR$/assets/images/empty_reservations.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/features/reservations/model/reservation_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/api/end_points.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/config/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/config/provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/page/my_appointments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/page/reservations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/provider/my_appointments_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/provider/reservations_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/repo/my_appointments_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/repo/reservations_repo.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/widgets/appointment_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/reservation_card.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/widgets/cancelation_dailog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/cancellation_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/widgets/my_appointment_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/reservation_header.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/widgets/next_appointments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/next_reservations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/my_appointments/widgets/previous_appointments.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/previous_reservations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/empty_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/empty_widget.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/reservations/provider/reservations_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/provider/reservations_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/reservations/widgets/next_reservations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/next_reservations.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/reservations/widgets/previous_reservations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/previous_reservations.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/reservations/widgets/reservation_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/reservation_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -374,7 +366,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690833966496</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="updates">
+      <created>1690836356244</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1690836356244</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

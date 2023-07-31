@@ -10,6 +10,7 @@ import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/empty_widget.dart';
 import '../../../components/shimmer/custom_shimmer.dart';
 import '../../../data/config/di.dart';
+import '../../../main_page/provider/main_page_provider.dart';
 import '../provider/reservations_provider.dart';
 import 'reservation_card.dart';
 
@@ -35,7 +36,7 @@ class _PreviousAppointmentsState extends State<PreviousAppointments> {
   @override
   Widget build(BuildContext context) {
     return Consumer<ReservationsProvider>(builder: (_, provider, child) {
-      return provider.isGetting
+      return provider.isLoading
           ? Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(
@@ -44,10 +45,14 @@ class _PreviousAppointmentsState extends State<PreviousAppointments> {
                   controller: controller,
                   data: List.generate(
                     10,
-                    (index) => CustomShimmerContainer(
-                      height: 100,
-                      width: context.width,
-                      radius: 15,
+                    (index) => Padding(
+                      padding: EdgeInsets.only(
+                          bottom: Dimensions.PADDING_SIZE_SMALL.h),
+                      child: CustomShimmerContainer(
+                        height: 100,
+                        width: context.width,
+                        radius: 15,
+                      ),
                     ),
                   ),
                 ),
@@ -71,7 +76,8 @@ class _PreviousAppointmentsState extends State<PreviousAppointments> {
                             data: List.generate(
                               provider.previousReservations?.length ?? 0,
                               (index) => AppointmentCard(
-                                product: provider.previousReservations![index],
+                                reservation:
+                                    provider.previousReservations![index],
                                 isNext: false,
                               ),
                             ),
@@ -84,7 +90,7 @@ class _PreviousAppointmentsState extends State<PreviousAppointments> {
               : RefreshIndicator(
                   color: Styles.PRIMARY_COLOR,
                   onRefresh: () async {
-                    sl<ReservationsProvider>().getNextReservations();
+                    sl<ReservationsProvider>().getPreviousReservations();
                   },
                   child: Column(
                     children: [
@@ -92,14 +98,26 @@ class _PreviousAppointmentsState extends State<PreviousAppointments> {
                         child: Padding(
                           padding: EdgeInsets.symmetric(
                               horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                          child: EmptyState(
-                            img: Images.emptyReservations,
-                            isSvg: false,
-                            txt: getTranslated(
-                                "empty_previous_reservations_title", context),
-                            subText: getTranslated(
-                                "empty_previous_reservations_description",
-                                context),
+                          child: ListAnimator(
+                            data: [
+                              EmptyState(
+                                img: Images.emptyReservations,
+                                imgHeight: 215.h,
+                                imgWidth: 215.w,
+                                isSvg: false,
+                                txt: getTranslated(
+                                    "empty_previous_reservations_title",
+                                    context),
+                                subText: getTranslated(
+                                    "empty_previous_reservations_description",
+                                    context),
+                                btnText:
+                                    getTranslated("continue_browsing", context),
+                                onTap: () => sl<MainPageProvider>()
+                                    .updateDashboardIndex(0),
+                                originalButton: false,
+                              )
+                            ],
                           ),
                         ),
                       ),

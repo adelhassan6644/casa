@@ -1,5 +1,6 @@
 import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
+import 'package:casa/components/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import '../app/core/utils/images.dart';
 import '../app/core/utils/svg_images.dart';
@@ -14,16 +15,22 @@ class EmptyState extends StatelessWidget {
   final double? spaceBtw;
   final String? txt;
   final String? subText;
+  final String? btnText;
+  final Function()? onTap;
+  final bool originalButton;
 
   const EmptyState({
     Key? key,
     this.emptyHeight,
     this.spaceBtw,
     this.isSvg = true,
+    this.originalButton = true,
     this.img,
     this.imgHeight,
+    this.onTap,
     this.imgWidth,
     this.txt,
+    this.btnText,
     this.subText,
   }) : super(key: key);
   @override
@@ -59,8 +66,22 @@ class EmptyState extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: const TextStyle(
                     fontSize: 14,
-                    color: Styles.PRIMARY_COLOR,
+                    color: Styles.DETAILS_COLOR,
                     fontWeight: FontWeight.w400)),
+            Visibility(
+                visible: btnText != null,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
+                      horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+                  child: CustomButton(
+                    text: btnText ?? "",
+                    onTap: onTap,
+                    backgroundColor: originalButton? Styles.PRIMARY_COLOR:Styles.WHITE_COLOR,
+                    textColor: originalButton? Styles.WHITE_COLOR:Styles.PRIMARY_COLOR,
+                    withShadow: !originalButton,
+                  ),
+                ))
           ],
         ),
       ),

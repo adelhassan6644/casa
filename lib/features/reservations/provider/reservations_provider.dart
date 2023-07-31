@@ -7,7 +7,7 @@ import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
 import 'package:flutter/rendering.dart';
 
-import '../../../main_models/item_model.dart';
+import '../model/reservation_model.dart';
 import '../repo/reservations_repo.dart';
 
 class ReservationsProvider extends ChangeNotifier {
@@ -48,7 +48,7 @@ class ReservationsProvider extends ChangeNotifier {
 
   bool get isLogin => repo.isLoggedIn();
 
-  List<ItemModel>? nextReservations;
+  List<ReservationModel>? nextReservations;
   bool isGetting = false;
   getNextReservations() async {
     try {
@@ -68,8 +68,8 @@ class ReservationsProvider extends ChangeNotifier {
         notifyListeners();
       }, (success) {
         if( success.data["data"] != null) {
-          nextReservations = List<ItemModel>.from(
-            success.data["data"].map((x) => ItemModel.fromJson(x)));
+          nextReservations = List<ReservationModel>.from(
+            success.data["data"].map((x) => ReservationModel.fromJson(x)));
         }
         isGetting = false;
         notifyListeners();
@@ -86,7 +86,7 @@ class ReservationsProvider extends ChangeNotifier {
     }
   }
 
-  List<ItemModel>? previousReservations;
+  List<ReservationModel>? previousReservations;
   bool isLoading = false;
   getPreviousReservations() async {
     try {
@@ -106,8 +106,8 @@ class ReservationsProvider extends ChangeNotifier {
         notifyListeners();
       }, (success) {
         if( success.data["data"] != null) {
-          previousReservations = List<ItemModel>.from(
-            success.data["data"].map((x) => ItemModel.fromJson(x)));
+          previousReservations = List<ReservationModel>.from(
+            success.data["data"].map((x) => ReservationModel.fromJson(x)));
         }
         isLoading = false;
         notifyListeners();
