@@ -32,7 +32,8 @@ class MyAppointmentHeader extends StatelessWidget {
                   provider.tabs.length,
                   (index) => Expanded(
                         child: TabWidget(
-                          title: provider.tabs[index],
+                          expand: true,
+                          title: getTranslated(provider.tabs[index], context),
                           isSelected: provider.currentTab == index,
                           onTab: () => provider.selectTab(index),
                         ),

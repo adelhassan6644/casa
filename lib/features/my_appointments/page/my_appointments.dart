@@ -1,9 +1,7 @@
 import 'package:casa/app/core/utils/dimensions.dart';
-import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/features/my_appointments/widgets/next_appointments.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../../../data/config/di.dart';
 import '../provider/my_appointments_provider.dart';
 import '../widgets/my_appointment_header.dart';
 import '../widgets/previous_appointments.dart';

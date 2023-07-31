@@ -169,6 +169,8 @@ class _HomeHeaderState extends State<HomeHeader> {
                 scrollDirection: Axis.horizontal,
                 physics: const BouncingScrollPhysics(),
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: provider.isGetCategories
                       ? List.generate(
                           5,

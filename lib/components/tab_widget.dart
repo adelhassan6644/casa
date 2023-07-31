@@ -6,6 +6,7 @@ import 'custom_images.dart';
 class TabWidget extends StatelessWidget {
   const TabWidget({
     this.withBorder = true,
+    this.expand = false,
     required this.title,
     required this.isSelected,
     required this.onTab,
@@ -30,6 +31,7 @@ class TabWidget extends StatelessWidget {
   final double innerHPadding;
   final double? innerVPadding;
   final bool withBorder;
+  final bool expand;
 
   @override
   Widget build(BuildContext context) {
@@ -86,10 +88,10 @@ class TabWidget extends StatelessWidget {
                 ],
               ),
             ),
-            LayoutBuilder(builder: (context, _) {
+            LayoutBuilder(builder: (context, constr) {
               return Container(
                 padding: EdgeInsets.zero,
-                width: (width ?? 50 + (2 * innerHPadding)),
+                width: expand? constr.maxWidth: (width ?? 50 + (2 * innerHPadding)),
                 height: 4,
                 margin: const EdgeInsets.only(top: 10),
                 decoration: BoxDecoration(
