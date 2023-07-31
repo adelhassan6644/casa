@@ -4,6 +4,7 @@ import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import '../../../data/config/di.dart';
 import '../../maps/provider/map_provider.dart';
+import '../../reservations/provider/reservations_provider.dart';
 import '../widgets/home_dates.dart';
 import '../widgets/home_header.dart';
 import '../widgets/home_banners.dart';
@@ -45,6 +46,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
               color: Styles.PRIMARY_COLOR,
               onRefresh: () async {
                 sl<HomeProvider>().getProducts();
+                sl<ReservationsProvider>().getNextReservations();
               },
               child: Column(
                 children: [
