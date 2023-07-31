@@ -228,7 +228,6 @@ class AuthProvider extends ChangeNotifier {
         }
         authRepo.saveUserId(success.data['data']["id"]);
         CustomNavigator.push(Routes.VERIFICATION, arguments: true);
-        // authRepo.saveUserToken(success.data['data']["api_token"]);
       });
       _isRegister = false;
       notifyListeners();
@@ -289,7 +288,6 @@ class AuthProvider extends ChangeNotifier {
 
   bool _isVerify = false;
   bool get isVerify => _isVerify;
-
   verify(fromRegister) async {
     try {
       _isVerify = true;

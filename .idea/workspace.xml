@@ -5,7 +5,88 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="updates">
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/DKImagePickerController-DKImagePickerController.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/DKImagePickerController.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/DKPhotoGallery-DKPhotoGallery.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/DKPhotoGallery.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/FirebaseAppCheckInterop.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/SDWebImage.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/SwiftyGif.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/audio_session.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/file_picker.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/just_audio.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/package_info_plus.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/permission_handler_apple.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/user.xcuserdatad/xcschemes/wakelock_plus.xcscheme" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/DKImagePickerController-DKImagePickerController.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/DKImagePickerController.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/DKPhotoGallery-DKPhotoGallery.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/DKPhotoGallery.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/FirebaseAppCheckInterop.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/OrderedSet.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/SDWebImage.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/SwiftyGif.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/Toast.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/app_settings.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/audio_session.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/file_picker.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/flutter_inappwebview.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/fluttertoast.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/just_audio.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/map_launcher.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/package_info_plus.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/permission_handler_apple.build/dgph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ios/build/ios/Pods.build/Release-iphonesimulator/wakelock_plus.build/dgph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/local.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/app_settings" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/app_settings" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/audio_session" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/audio_session" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/connectivity" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/connectivity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/file_picker" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/file_picker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_analytics" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_analytics" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_auth" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_auth" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_dynamic_links" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_dynamic_links" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_messaging" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_messaging" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_inappwebview" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_inappwebview" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_keyboard_visibility" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_keyboard_visibility" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_local_notifications" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_local_notifications" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_native_splash" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_native_splash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/fluttertoast" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/fluttertoast" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/geolocator_apple" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/geolocator_apple" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter_ios" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/image_picker_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/image_picker_ios" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/just_audio" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/just_audio" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/map_launcher" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/map_launcher" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/package_info_plus" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/package_info_plus" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/path_provider_foundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/path_provider_foundation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/permission_handler_apple" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/permission_handler_apple" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/shared_preferences_foundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/shared_preferences_foundation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/sqflite" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/sqflite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/url_launcher_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/url_launcher_ios" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/video_player_avfoundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/video_player_avfoundation" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/wakelock_plus" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/wakelock_plus" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/webview_flutter_wkwebview" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/webview_flutter_wkwebview" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/data/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/api/end_points.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/auth/provider/auth_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/file_selector_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/file_selector_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/flutter_keyboard_visibility_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/image_picker_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/image_picker_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/package_info_plus" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/package_info_plus" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/path_provider_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/shared_preferences_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/url_launcher_linux" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/wakelock_plus" beforeDir="false" afterPath="$PROJECT_DIR$/linux/flutter/ephemeral/.plugin_symlinks/wakelock_plus" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/Flutter-Generated.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/ephemeral/flutter_export_environment.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,7 +418,14 @@
       <option name="project" value="LOCAL" />
       <updated>1690757212708</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="updates">
+      <created>1690832533551</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1690832533551</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
