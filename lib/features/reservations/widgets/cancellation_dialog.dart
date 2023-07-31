@@ -49,9 +49,12 @@ class CancellationDialog extends StatelessWidget {
           child: Consumer<ReservationsProvider>(builder: (_, provider, child) {
             return CustomButton(
               text: getTranslated("yes_accept", context),
-              onTap: () => provider.cancelReservation(id),
+              onTap: () {
+                if (id != null) {
+                  provider.cancelReservation(id);
+                }
+              },
               isLoading: provider.isCancelling,
-              isActive: id != null && !provider.isCancelling,
             );
           }),
         ),

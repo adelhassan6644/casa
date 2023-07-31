@@ -38,10 +38,12 @@ class HomeDates extends StatelessWidget {
                   onTap: () {})
             ],
           ),
-          SizedBox(height: 16.h,),
+          SizedBox(
+            height: 16.h,
+          ),
           Container(
             width: context.width,
-            padding: EdgeInsets.symmetric(horizontal: 12.w,vertical: 6.h),
+            padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 6.h),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
               color: Styles.WHITE_COLOR,
@@ -74,47 +76,59 @@ class HomeDates extends StatelessWidget {
                             text: getTranslated("cancel", context),
                             svgIcon: SvgImages.cancel,
                             iconSize: 12,
-                            iconColor:  Styles.IN_ACTIVE,
+                            iconColor: Styles.IN_ACTIVE,
                             textColor: Styles.IN_ACTIVE,
                             backgroundColor: Styles.IN_ACTIVE.withOpacity(0.12),
                           ),
                         ],
                       ),
-                      SizedBox(height: 6.h,),
+                      SizedBox(
+                        height: 6.h,
+                      ),
                       Row(
                         children: [
-                          Text( "اليوم  ",
+                          Text("اليوم  ",
                               style: AppTextStyles.regular.copyWith(
                                   height: 1,
-                                  fontSize: 12, color: Styles.DETAILS_COLOR)),
+                                  fontSize: 12,
+                                  color: Styles.DETAILS_COLOR)),
                           Expanded(
-                            child: Text(DateTime.now().dateFormat(format:"EEEE dd,MM"),
+                            child: Text(
+                                DateTime.now().dateFormat(format: "EEEE dd,MM"),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: AppTextStyles.medium.copyWith(
                                     height: 1,
-                                    fontSize: 14, color: Colors.black)),
+                                    fontSize: 14,
+                                    color: Colors.black)),
                           ),
                         ],
                       ),
-                      SizedBox(height: 6.h,),
+                      SizedBox(
+                        height: 6.h,
+                      ),
                       Row(
                         children: [
-                          Text( "الساعة  ",
+                          Text("الساعة  ",
                               style: AppTextStyles.regular.copyWith(
                                   height: 1,
-                                  fontSize: 12, color: Styles.DETAILS_COLOR)),
+                                  fontSize: 12,
+                                  color: Styles.DETAILS_COLOR)),
                           Expanded(
-                            child: Text(DateTime.now().dateFormat(format:"hh:mm aa"),
+                            child: Text(
+                                DateTime.now().dateFormat(format: "hh:mm aa"),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: AppTextStyles.medium.copyWith(
                                     height: 1,
-                                    fontSize: 14, color: Colors.black)),
+                                    fontSize: 14,
+                                    color: Colors.black)),
                           ),
                         ],
                       ),
-                      SizedBox(height: 6.h,),
+                      SizedBox(
+                        height: 6.h,
+                      ),
                       Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
@@ -140,7 +154,8 @@ class HomeDates extends StatelessWidget {
                                   fontSize: 14, color: Styles.PRIMARY_COLOR)),
                         ],
                       ),
-                    ],),
+                    ],
+                  ),
                 )
               ],
             ),
