@@ -42,7 +42,7 @@ class AddressesRepo {
         "client_id": sharedPreferences.getString(AppStorageKey.userId),
         "lat": address.latitude,
         "long": address.longitude,
-        "adress": address.address,
+        "address": address.address,
         "type": type,
       });
       if (response.statusCode == 200) {
