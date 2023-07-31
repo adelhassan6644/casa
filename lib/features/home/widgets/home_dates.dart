@@ -105,7 +105,9 @@ class HomeDates extends StatelessWidget {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                            provider.nextReservations?[0].subService ?? "",
+                                            provider.nextReservations?[0]
+                                                    .subService ??
+                                                "",
                                             style: AppTextStyles.semiBold
                                                 .copyWith(
                                                     fontSize: 16,
@@ -120,10 +122,15 @@ class HomeDates extends StatelessWidget {
                                         iconSize: 12,
                                         iconColor: Styles.IN_ACTIVE,
                                         textColor: Styles.IN_ACTIVE,
-                                        backgroundColor: Styles.IN_ACTIVE.withOpacity(0.12),
-                                        onTap: ()=>CustomSimpleDialog.parentSimpleDialog(customListWidget: [
-                                            CancellationDialog(id: provider.nextReservations?[0].id)
-                                          ]),
+                                        backgroundColor:
+                                            Styles.IN_ACTIVE.withOpacity(0.12),
+                                        onTap: () => CustomSimpleDialog
+                                            .parentSimpleDialog(
+                                                customListWidget: [
+                                              CancellationDialog(
+                                                  id: provider
+                                                      .nextReservations?[0].id)
+                                            ]),
                                       ),
                                     ],
                                   ),
