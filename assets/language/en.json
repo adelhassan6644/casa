@@ -109,6 +109,8 @@
   "again": "Again",
   "are_you_want_to_cancel_your_appointment": "Are you want to cancel your appointment ?",
   "confirm_cancel": "By clicking on “Yes, I accept”, you agree to our session cancellation terms.",
+  "confirm_delete": "By clicking \"Yes, I accept\" you agree to the deletion of your address",
+  "delete_address": "the deletion of your address",
   "cancellation_terms": "cancellation terms",
   "yes_accept": "Yes, I accept",
   "no_back_off": "No, Back off",
@@ -122,5 +124,8 @@
   "empty_next_reservations_description": "Continue browsing and book a new session to find it here",
   "empty_previous_reservations_description": "Continue browsing and book a new session",
   "continue_browsing": "Continue browsing",
-  "reservation_cancel_successfully": "Reservation cancel successfully"
+  "reservation_cancel_successfully": "Reservation cancel successfully",
+  "delete": "Delete",
+  "are_you_want_to_delete_your_address": "Are you want to delete your address ?",
+  "address_deleted_successfully": "Address deleted successfully"
 }

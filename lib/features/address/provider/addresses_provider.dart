@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:casa/data/error/api_error_handler.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/styles.dart';
+import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/loading_dialog.dart';
 import '../../../data/error/failures.dart';
 import 'package:flutter/rendering.dart';
@@ -31,7 +32,7 @@ class AddressesProvider extends ChangeNotifier {
 
   bool get isLogin => repo.isLoggedIn();
 
-  AddressItem? selectedAddress;
+  LocationModel? selectedAddress;
   void selectAddress(v) {
     selectedAddress = v;
     notifyListeners();
@@ -86,7 +87,6 @@ class AddressesProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  bool isAdding = false;
   addAddress() async {
     try {
       loadingDialog();
@@ -116,10 +116,43 @@ class AddressesProvider extends ChangeNotifier {
                 backgroundColor: Styles.ACTIVE,
                 borderColor: Colors.transparent));
       });
-      isAdding = false;
       notifyListeners();
     } catch (e) {
-      isAdding = false;
+      CustomNavigator.pop();
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: e.toString(),
+              isFloating: true,
+              backgroundColor: Styles.IN_ACTIVE,
+              borderColor: Colors.transparent));
+      notifyListeners();
+    }
+  }
+
+  bool isDelete = false;
+  deleteAddress(id) async {
+    try {
+      isDelete = true;
+      notifyListeners();
+      Either<ServerFailure, Response> response = await repo.deleteAddress(id);
+      response.fold((fail) {
+        CustomNavigator.pop();
+        CustomSnackBar.showSnackBar(
+            notification: AppNotification(
+                message: ApiErrorHandler.getMessage(fail),
+                isFloating: true,
+                backgroundColor: Styles.IN_ACTIVE,
+                borderColor: Colors.transparent));
+      }, (success) {
+        model?.data?.removeWhere((e) => e.id == id);
+        CustomNavigator.pop();
+        showToast(getTranslated("address_deleted_successfully",
+            CustomNavigator.navigatorState.currentContext!));
+      });
+      isDelete = false;
+      notifyListeners();
+    } catch (e) {
+      isDelete = false;
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: e.toString(),

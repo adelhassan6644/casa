@@ -18,6 +18,7 @@ class EndPoints {
   static getFavourites(id) => 'favorites/$id';
   static getNotifications(id) => 'notification/$id';
   static getAddresses(id) => 'address/$id';
+  static deleteAddress(id) => 'address/$id';
   static String addAddress = 'address';
   static readNotification(id) => 'notification/read/$id';
   static deleteNotification(id) => 'notification/delete/$id';

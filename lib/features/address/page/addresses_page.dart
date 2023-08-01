@@ -11,10 +11,13 @@ import 'package:casa/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../app/core/utils/svg_images.dart';
 import '../../../app/localization/localization/language_constant.dart';
+import '../../../components/custom_simple_dialog.dart';
 import '../../../components/empty_widget.dart';
 import '../../../components/shimmer/custom_shimmer.dart';
 import '../widgets/address_card.dart';
+import '../widgets/delete_confirmation_dialog.dart';
 
 class AddressPage extends StatelessWidget {
   const AddressPage({Key? key}) : super(key: key);
@@ -50,10 +53,41 @@ class AddressPage extends StatelessWidget {
                                 provider.model!.data!.isNotEmpty)
                               ...List.generate(
                                   provider.model!.data!.length,
-                                  (index) => AddressCard(
-                                    onTap: ()=>provider.selectAddress(provider.model!.data![index]),
-                                        addressItem: provider.model!.data![index],
-                                    // isSelect: provider.selectedAddress?.id ==provider.model!.data![index].id ,
+                                  (index) => Dismissible(
+                                        background: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          children: [
+                                            CustomButton(
+                                              width: 85.w,
+                                              height: 30.h,
+                                              text: getTranslated("delete", context),
+                                              svgIcon: SvgImages.cancel,
+                                              iconSize: 12,
+                                              iconColor: Styles.IN_ACTIVE,
+                                              textColor: Styles.IN_ACTIVE,
+                                              backgroundColor: Styles.IN_ACTIVE
+                                                  .withOpacity(0.12),
+                                            ),
+                                          ],
+                                        ),
+                                        key: ValueKey(index),
+                                        confirmDismiss: (DismissDirection direction) async {
+                                          CustomSimpleDialog.parentSimpleDialog(
+                                            customListWidget: [
+                                              DeleteConfirmationDialog(
+                                                  id: provider
+                                                      .model!.data![index].id)
+                                            ],
+                                          );
+                                          return false;
+                                        },
+                                        child: AddressCard(
+                                          onTap: () => provider.selectAddress(
+                                              provider.model!.data![index]),
+                                          addressItem:
+                                              provider.model!.data![index],
+                                          // isSelect: provider.selectedAddress?.id ==provider.model!.data![index].id ,
+                                        ),
                                       )),
                             if (provider.model == null ||
                                 provider.model!.data!.isEmpty)

@@ -110,6 +110,8 @@
   "again": "تكرار",
   "are_you_want_to_cancel_your_appointment": "هل تريد إلغاء موعدك؟",
   "confirm_cancel": "عند الضغط على \"أجل, أوافق\" فأنت توافق على شروط إلغاء الجلسات الخاصة بنا",
+  "confirm_delete": "عند الضغط على \"أجل, أوافق\" فأنت توافق على حذف العنوان الخاصة بك",
+  "delete_address": "حذف العنوان",
   "cancellation_terms": "شروط إلغاء",
   "yes_accept": "أجل, أوافق",
   "no_back_off": "لا, العودة",
@@ -123,6 +125,9 @@
   "empty_previous_reservations_title": "ليس لديك جلسات سابقة",
   "empty_previous_reservations_description": "تابع التصفح وقم بحجز جلسة جديدة",
   "continue_browsing": "متابعة التصفح",
-  "reservation_cancel_successfully": "تم إلغاء الحجز بنجاح"
+  "reservation_cancel_successfully": "تم إلغاء الحجز بنجاح",
+  "delete": "حذف",
+  "are_you_want_to_delete_your_address": "هل تريد حذف عنوانك ؟",
+  "address_deleted_successfully": "تم حذف العنوان بنجاح"
 
 }

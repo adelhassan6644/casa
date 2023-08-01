@@ -21,7 +21,8 @@ class LocationCard extends StatelessWidget {
     return Consumer<MapProvider>(builder: (c, locationController, _) {
       return Container(
           height: 280.h,
-          padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+          padding: EdgeInsets.symmetric(
+              horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24),
             color: Styles.WHITE_COLOR,
@@ -116,7 +117,6 @@ class LocationCard extends StatelessWidget {
                       return Padding(
                         padding: EdgeInsets.symmetric(vertical: 24.h),
                         child: CustomButton(
-                          isLoading: provider.isAdding,
                           text: getTranslated("confirm_location", context),
                           onTap: () {
                             if (valueChanged != null) {

@@ -54,4 +54,18 @@ class AddressesRepo {
       return left(ServerFailure(ApiErrorHandler.getMessage(error)));
     }
   }
+
+  Future<Either<ServerFailure, Response>> deleteAddress(id) async {
+    try {
+      Response response =
+      await dioClient.delete(uri: EndPoints.deleteAddress(id));
+      if (response.statusCode == 200) {
+        return Right(response);
+      } else {
+        return left(ServerFailure(response.data['message']));
+      }
+    } catch (error) {
+      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    }
+  }
 }

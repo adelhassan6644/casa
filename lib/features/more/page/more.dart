@@ -10,8 +10,11 @@ import 'package:casa/navigation/routes.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/svg_images.dart';
 import '../../../app/localization/localization/language_constant.dart';
+import '../../../components/custom_simple_dialog.dart';
 import '../../../data/config/di.dart';
 import '../../../main_page/provider/main_page_provider.dart';
+import '../../address/widgets/delete_confirmation_dialog.dart';
+import '../../reservations/widgets/cancellation_dialog.dart';
 import '../widgets/more_button.dart';
 import '../widgets/profile_card.dart';
 
