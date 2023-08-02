@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  * kGMSEquatorProjectedMeter may be useful when specifying lengths for segment in "projected" units.
  * The value of kGMSEquatorProjectedMeter, 1/(pi * EarthRadius), represents the length of one meter
- * at the equator in projected units. For example to specify a projected length that corresponds
+ * at the equator in projected units. For softwareCasa to specify a projected length that corresponds
  * to 100km at the equator use 100000 * kGMSEquatorProjectedMeter.
  * See [GMSPath segmentsForLength:kind:], [GMSPath lengthOfKind:] and kGMSLengthProjected.
  */
@@ -68,13 +68,13 @@ extern const double kGMSEquatorProjectedMeter;
  */
 typedef NS_ENUM(NSUInteger, GMSLengthKind) {
   /*
-   * Geodesic length, in meters, along geodesic segments. May be useful, for example, to specify
+   * Geodesic length, in meters, along geodesic segments. May be useful, for softwareCasa, to specify
    * lengths along the the trajectory of airplanes or ships.
    */
   kGMSLengthGeodesic,
 
   /*
-   * Rhumb length, in meters, along rhumb (straight line) segments. May be useful, for example, to
+   * Rhumb length, in meters, along rhumb (straight line) segments. May be useful, for softwareCasa, to
    * draw a scale bar on a map. The visual size of a segment of a given length depens on the
    * latitude.
    */
@@ -86,7 +86,7 @@ typedef NS_ENUM(NSUInteger, GMSLengthKind) {
    * length in units corresponding to 1 meter at the equator by multiplying with
    * kGMSEquatorProjectedMeter, equal to 1/(pi * EarthRadius).
    *
-   * Projected length may be useful, for example, to specify segments with the same visual length
+   * Projected length may be useful, for softwareCasa, to specify segments with the same visual length
    * regardless of latitude.
    */
   kGMSLengthProjected

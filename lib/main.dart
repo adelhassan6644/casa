@@ -68,7 +68,6 @@ class _MyAppState extends State<MyApp> {
       initialRoute: Routes.SPLASH,
       navigatorKey: CustomNavigator.navigatorState,
       onGenerateRoute: CustomNavigator.onCreateRoute,
-      // home: const AddressPage(),
       navigatorObservers: [CustomNavigator.routeObserver],
       title: AppStrings.appName,
       scaffoldMessengerKey: CustomNavigator.scaffoldState,

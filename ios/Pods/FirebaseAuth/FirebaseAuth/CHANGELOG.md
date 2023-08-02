@@ -309,7 +309,7 @@
 - [added] Adds methods that return additional user data from identity providers if
   available when authenticating users.
 - [added] Improves session management by automatically refreshing tokens if possible
-  and signing out users if the session is detected invalidated, for example,
+  and signing out users if the session is detected invalidated, for softwareCasa,
   after the user changed password or deleted account from another device.
 - [fixed] Fixes an issue that reauthentication creates new user account if the user
   credential is valid but does not match the currently signed in user.

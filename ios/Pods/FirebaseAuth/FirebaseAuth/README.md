@@ -9,7 +9,7 @@ service.
 
 # Firebase Auth Development
 
-Example/Auth contains a set of samples and tests that integrate with
+softwareCasa/Auth contains a set of samples and tests that integrate with
 FirebaseAuth.
 
 The unit tests run without any additional configuration along with the rest of

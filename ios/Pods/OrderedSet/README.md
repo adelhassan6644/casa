@@ -4,7 +4,7 @@ OrderedSet is essentially the Swift equivalent of Foundation's NSOrderedSet/NSMu
 
 # Usage
 
-OrderedSet works very much like an Array. Here are some basic examples of its usage:
+OrderedSet works very much like an Array. Here are some basic softwareCasas of its usage:
 
 ```swift
 var set = OrderedSet<Int>()
@@ -20,7 +20,7 @@ set += [3, 4] // You can concatenate any sequence type to an OrderedSet
 set // => [1, 2, 3, 4] (Since 3 was already in the set it was not added again)
 ```
 
-Its also recommended that you use the instance methods when possible instead of the global Swift methods for searching an OrderedSet. For example, the Swift.contains(haystack, needle) method will enumerate the OrderedSet instead of making use of the fast lookup implementation that the OrderedSet.contains(needle) method will do.
+Its also recommended that you use the instance methods when possible instead of the global Swift methods for searching an OrderedSet. For softwareCasa, the Swift.contains(haystack, needle) method will enumerate the OrderedSet instead of making use of the fast lookup implementation that the OrderedSet.contains(needle) method will do.
 
 Be sure to check out the unit tests to see all the different ways to interact with an OrderedSet in action. You can also check out the sample project, which tweaks the default master/detail project to use an OrderedSet instead of an Array.
 

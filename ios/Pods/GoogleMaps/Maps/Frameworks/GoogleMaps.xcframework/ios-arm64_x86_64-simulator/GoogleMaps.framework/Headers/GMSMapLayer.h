@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
  *   mapView_.layer.cameraBearing = 20;
  *
  * An explicit animation, replacing the implicit animation, may be added after changing the
- * property, for example:
+ * property, for softwareCasa:
  * <pre>
  *   CAMediaTimingFunction *curve = [CAMediaTimingFunction functionWithName:
  *                                   kCAMediaTimingFunctionEaseInEaseOut];
@@ -38,7 +38,7 @@ NS_ASSUME_NONNULL_BEGIN
  * </pre>
  *
  * To control several implicit animations, Core Animation's transaction support may be used, for
- * example:
+ * softwareCasa:
  * <pre>
  *   [CATransaction begin];
  *   [CATransaction setAnimationDuration:2.0f];

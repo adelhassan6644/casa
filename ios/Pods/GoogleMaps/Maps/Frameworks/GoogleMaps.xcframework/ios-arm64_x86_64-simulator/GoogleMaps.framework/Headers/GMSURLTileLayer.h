@@ -24,11 +24,11 @@ typedef NSURL *_Nullable (^GMSTileURLConstructor)(NSUInteger x, NSUInteger y, NS
 
 /**
  * GMSURLTileProvider fetches tiles based on the URLs returned from a GMSTileURLConstructor. For
- * example:
+ * softwareCasa:
  * <pre>
  *   GMSTileURLConstructor constructor = ^(NSUInteger x, NSUInteger y, NSUInteger zoom) {
  *     NSString *URLStr =
- *         [NSString stringWithFormat:@"https://example.com/%d/%d/%d.png", x, y, zoom];
+ *         [NSString stringWithFormat:@"https://softwareCasa.com/%d/%d/%d.png", x, y, zoom];
  *     return [NSURL URLWithString:URLStr];
  *   };
  *   GMSTileLayer *layer =

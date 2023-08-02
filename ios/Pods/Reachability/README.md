@@ -20,9 +20,9 @@ Once you have added the `.h/m` files to your project, simply:
 
 Boom, you're done.
 
-## Examples
+## softwareCasas
 
-### Block Example
+### Block softwareCasa
 
 This sample uses blocks to notify when the interface state has changed. The blocks will be called on a **BACKGROUND THREAD**, so you need to dispatch UI updates onto the main thread.
 
@@ -49,11 +49,11 @@ This sample uses blocks to notify when the interface state has changed. The bloc
 	// Start the notifier, which will cause the reachability object to retain itself!
 	[reach startNotifier];
 
-### `NSNotification` Example
+### `NSNotification` softwareCasa
 
 This sample will use `NSNotification`s to notify when the interface has changed. They will be delivered on the **MAIN THREAD**, so you *can* do UI updates from within the function.
 
-In addition, it asks the `Reachability` object to consider the WWAN (3G/EDGE/CDMA) as a non-reachable connection (you might use this if you are writing a video streaming app, for example, to save the user's data plan).
+In addition, it asks the `Reachability` object to consider the WWAN (3G/EDGE/CDMA) as a non-reachable connection (you might use this if you are writing a video streaming app, for softwareCasa, to save the user's data plan).
 
 	// Allocate a reachability object
 	Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];

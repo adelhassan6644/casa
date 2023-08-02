@@ -9,7 +9,7 @@ High performance & easy to use Gif engine
 
 <p align="center">
     </br>
-    <img src="https://github.com/kirualex/SwiftyGif/blob/master/example.gif" align="center" />
+    <img src="https://github.com/kirualex/SwiftyGif/blob/master/softwareCasa.gif" align="center" />
 </p>
 
 ## Features

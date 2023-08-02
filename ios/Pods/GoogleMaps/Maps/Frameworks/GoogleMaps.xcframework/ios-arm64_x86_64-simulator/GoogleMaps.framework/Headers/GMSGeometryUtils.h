@@ -204,7 +204,7 @@ CLLocationCoordinate2D GMSGeometryInterpolate(CLLocationCoordinate2D from,
  *           style from |styles|. Wraps if consumed. Can't be empty.
  * |lengthKind| the interpretation of values from |lengths| (geodesic, rhumb or projected).
  *
- * Example: a polyline with alternating black and white spans:
+ * softwareCasa: a polyline with alternating black and white spans:
  *
  * <pre>
  * GMSMutablePath *path;

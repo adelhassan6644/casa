@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:105813324547:android:d322d9156015e1f690af36",
         "android_client_info": {
-          "package_name": "com.example.casa"
+          "package_name": "com.softwareCasa.casa"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "105813324547-46hdomo0qffn4vghnu1aj5kl892cmakg.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.casa",
+            "package_name": "com.softwareCasa.casa",
             "certificate_hash": "edb095a6325570602ac8ac236b4fc612f46614bc"
           }
         },
@@ -25,7 +25,7 @@
           "client_id": "105813324547-hu4t3i39i7cb9kmtsib16eik39u0uf8k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.casa",
+            "package_name": "com.softwareCasa.casa",
             "certificate_hash": "78bff6825539ee30ec75e9c18b0a77aba39c9254"
           }
         },
@@ -61,7 +61,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:105813324547:android:5b6b00aaf8b2cc3e90af36",
         "android_client_info": {
-          "package_name": "com.example.casa"
+          "package_name": "com.softwareCasa.casa"
         }
       },
       "oauth_client": [

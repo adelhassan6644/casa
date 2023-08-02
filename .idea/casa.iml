@@ -4,35 +4,35 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/android/app/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/android/app/src/main/kotlin/com/example/fitariki" isTestSource="false" packagePrefix="com.example.casa" />
+      <sourceFolder url="file://$MODULE_DIR$/android/app/src/main/kotlin/com/softwareCasa/fitariki" isTestSource="false" packagePrefix="com.softwareCasa.casa" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/app_settings/android/src/main/kotlin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/app_settings/example/android/app/src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/app_settings/softwareCasa/android/app/src/main/kotlin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/connectivity/android/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/connectivity/example/android/app/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/connectivity/example/android/app/src/test/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/connectivity/softwareCasa/android/app/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/connectivity/softwareCasa/android/app/src/test/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_analytics/android/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_auth/android/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_auth/example/android/app/src/main/kotlin/io/flutter/plugins/firebase/example" isTestSource="false" packagePrefix="io.flutter.plugins.firebaseauthexample" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_auth/softwareCasa/android/app/src/main/kotlin/io/flutter/plugins/firebase/softwareCasa" isTestSource="false" packagePrefix="io.flutter.plugins.firebaseauthsoftwareCasa" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_core/android/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_dynamic_links/android/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/firebase_messaging/android/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/android/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/example/android/app/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_inappwebview/softwareCasa/android/app/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_keyboard_visibility/android/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_keyboard_visibility/example/android/app/src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_keyboard_visibility/softwareCasa/android/app/src/main/kotlin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_local_notifications/android/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_local_notifications/example/android/app/src/androidTest/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_local_notifications/example/android/app/src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_local_notifications/softwareCasa/android/app/src/androidTest/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_local_notifications/softwareCasa/android/app/src/main/kotlin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_native_splash/android/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_native_splash/example/android/app/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/flutter_native_splash/softwareCasa/android/app/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/fluttertoast/android/src/main/kotlin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/fluttertoast/example/android/app/src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/fluttertoast/softwareCasa/android/app/src/main/kotlin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/map_launcher/android/src/main/kotlin" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/map_launcher/example/android/app/src/main/kotlin" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/map_launcher/softwareCasa/android/app/src/main/kotlin" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/sqflite/android/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/sqflite/android/src/test/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/sqflite/example/android/app/src/androidTest/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/sqflite/example/android/app/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/sqflite/softwareCasa/android/app/src/androidTest/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/sqflite/softwareCasa/android/app/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/wakelock/android/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/ios/.symlinks/plugins/wakelock/android/src/main/kotlin" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/build" />

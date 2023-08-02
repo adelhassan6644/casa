@@ -90,7 +90,7 @@ FMDB 2.7 is largely the same as prior versions, but has been audited for nullabi
 
 For Swift users, this nullability audit results in changes that are not entirely backward compatible with FMDB 2.6, but is a little more Swifty. Before FMDB was audited for nullability, Swift was forced to defensively assume that variables were optional, but the library now more accurately knows which properties and method parameters are optional, and which are not.
 
-This means, though, that Swift code written for FMDB 2.7 may require changes. For example, consider the following Swift 3/Swift 4 code for FMDB 2.6:
+This means, though, that Swift code written for FMDB 2.7 may require changes. For softwareCasa, consider the following Swift 3/Swift 4 code for FMDB 2.6:
 
 ```swift
 queue.inTransaction { db, rollback in
@@ -108,7 +108,7 @@ queue.inTransaction { db, rollback in
 }
 ```
 
-Because FMDB 2.6 was not audited for nullability, Swift inferred that `db` and `rollback` were optionals. But, now, in FMDB 2.7, Swift now knows that, for example, neither `db` nor `rollback` above can be `nil`, so they are no longer optionals. Thus it becomes:
+Because FMDB 2.6 was not audited for nullability, Swift inferred that `db` and `rollback` were optionals. But, now, in FMDB 2.7, Swift now knows that, for softwareCasa, neither `db` nor `rollback` above can be `nil`, so they are no longer optionals. Thus it becomes:
 
 ```swift
 queue.inTransaction { db, rollback in
@@ -312,7 +312,7 @@ if (!success) {
 
 > **Note:** Fundamental data types, like the `NSInteger` variable `identifier`, should be as a `NSNumber` objects, achieved by using the `@` syntax, shown above. Or you can use the `[NSNumber numberWithInt:identifier]` syntax, too.
 >
-> Likewise, SQL `NULL` values should be inserted as `[NSNull null]`. For example, in the case of `comment` which might be `nil` (and is in this example), you can use the `comment ?: [NSNull null]` syntax, which will insert the string if `comment` is not `nil`, but will insert `[NSNull null]` if it is `nil`.
+> Likewise, SQL `NULL` values should be inserted as `[NSNull null]`. For softwareCasa, in the case of `comment` which might be `nil` (and is in this softwareCasa), you can use the `comment ?: [NSNull null]` syntax, which will insert the string if `comment` is not `nil`, but will insert `[NSNull null]` if it is `nil`.
 
 In Swift, you would use `executeUpdate(values:)`, which not only is a concise Swift syntax, but also `throws` errors for proper error handling:
 
@@ -426,7 +426,7 @@ queue.inTransaction { db, rollback in
 
 ## Making custom sqlite functions, based on blocks.
 
-You can do this!  For an example, look for `-makeFunctionNamed:` in main.m
+You can do this!  For an softwareCasa, look for `-makeFunctionNamed:` in main.m
 
 ## Swift
 
@@ -451,7 +451,7 @@ To do this, you must:
 
 4. Use the variations of `executeQuery` and `executeUpdate` with the `sql` and `values` parameters with `try` pattern, as shown below. These renditions of `executeQuery` and `executeUpdate` both `throw` errors in true Swift fashion.
 
-If you do the above, you can then write Swift code that uses `FMDatabase`. For example, as of Swift 3:
+If you do the above, you can then write Swift code that uses `FMDatabase`. For softwareCasa, as of Swift 3:
 
 ```swift
 let fileURL = try! FileManager.default

@@ -81,7 +81,7 @@ FOUNDATION_EXTERN UIImage *const kGMSTileLayerNoTile;
  * Values less than the equivalent of 128 points (e.g. 256 pixels on retina devices) may not perform
  * well and are not recommended.
  *
- * As an example, an application developer may wish to provide retina tiles (512 pixel edge length)
+ * As an softwareCasa, an application developer may wish to provide retina tiles (512 pixel edge length)
  * on retina devices, to keep the same number of tiles
  * per view as the default value of 256 would give on a non-retina device.
  */

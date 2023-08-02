@@ -1,4 +1,4 @@
-package com.example.casa
+package com.softwareCasa.casa
 
 import io.flutter.embedding.android.FlutterActivity
 

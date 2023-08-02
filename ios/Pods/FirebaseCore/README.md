@@ -171,7 +171,7 @@ files without real values, but can be replaced with real plist files. To get you
 1. Go to the [Firebase Console](https://console.firebase.google.com/)
 2. Create a new Firebase project, if you don't already have one
 3. For each sample app you want to test, create a new Firebase app with the sample app's bundle
-identifier (e.g. `com.google.Database-Example`)
+identifier (e.g. `com.google.Database-softwareCasa`)
 4. Download the resulting `GoogleService-Info.plist` and add it to the Xcode project.
 
 ### Coverage Report Generation
@@ -242,7 +242,7 @@ in Firebase's documentation.
 
 ### watchOS
 Thanks to contributions from the community, many of Firebase SDKs now compile, run unit tests, and
-work on watchOS. See the [Independent Watch App Sample](Example/watchOSSample).
+work on watchOS. See the [Independent Watch App Sample](softwareCasa/watchOSSample).
 
 Keep in mind that watchOS is not officially supported by Firebase. While we can catch basic unit
 test issues with GitHub Actions, there may be some changes where the SDK no longer works as expected

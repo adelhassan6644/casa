@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart'
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
-/// Example:
+/// softwareCasa:
 /// ```dart
 /// import 'firebase_options.dart';
 /// // ...
@@ -71,7 +71,7 @@ class DefaultFirebaseOptions {
         '105813324547-46hdomo0qffn4vghnu1aj5kl892cmakg.apps.googleusercontent.com',
     iosClientId:
         '105813324547-upk6427rl6n04c8b10eol3l3g77ektki.apps.googleusercontent.com',
-    iosBundleId: 'com.example.casa',
+    iosBundleId: 'com.softwareCasa.casa',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -84,6 +84,6 @@ class DefaultFirebaseOptions {
         '105813324547-46hdomo0qffn4vghnu1aj5kl892cmakg.apps.googleusercontent.com',
     iosClientId:
         '105813324547-upk6427rl6n04c8b10eol3l3g77ektki.apps.googleusercontent.com',
-    iosBundleId: 'com.example.casa',
+    iosBundleId: 'com.softwareCasa.casa',
   );
 }
