@@ -11,7 +11,6 @@ import 'dart:ui' as ui;
 import '../../../app/core/utils/text_styles.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_button.dart';
-import '../../../components/custom_images.dart';
 import '../../../components/custom_text_form_field.dart';
 import '../provider/auth_provider.dart';
 
@@ -31,8 +30,9 @@ class _ForgetPasswordState extends State<ForgetPassword> {
         width: context.width,
         height: context.height,
         decoration: const BoxDecoration(
+            color: Colors.transparent,
             image: DecorationImage(
-          image: AssetImage(
+              image: AssetImage(
             Images.authImage,
           ),
           fit: BoxFit.fitHeight,

@@ -91,8 +91,7 @@ class HomeProvider extends ChangeNotifier {
     try {
       isGetBanners = true;
       notifyListeners();
-      Either<ServerFailure, Response> response =
-          await homeRepo.getHomeBanner(currentTab);
+      Either<ServerFailure, Response> response = await homeRepo.getHomeBanner();
       response.fold((fail) {
         isGetBanners = false;
         CustomSnackBar.showSnackBar(

@@ -29,7 +29,9 @@ class _VerificationState extends State<Verification> {
       body: Container(
         width: context.width,
         height: context.height,
-        decoration: const BoxDecoration(image: DecorationImage(
+        decoration: const BoxDecoration(
+            color: Colors.transparent,
+            image: DecorationImage(
               image: AssetImage(
                 Images.authImage,
               ),
@@ -58,86 +60,74 @@ class _VerificationState extends State<Verification> {
                                 borderRadius: const BorderRadius.only(
                                     topRight: Radius.circular(30),
                                     topLeft: Radius.circular(30))),
-                            child:Consumer<AuthProvider>(
+                            child: Consumer<AuthProvider>(
                                 builder: (_, provider, child) {
-                                  return Column(
-                                    crossAxisAlignment:
-                                    CrossAxisAlignment.center,
-                                    mainAxisAlignment:
-                                    MainAxisAlignment.center,
-                                    mainAxisSize: MainAxisSize.min,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.only(
-                                          bottom: 24.h,
-                                        ),
-                                        child: Text(
-                                          getTranslated(
-                                              "verify_header", context),
-                                          textAlign: TextAlign.center,
-                                          style: AppTextStyles.bold.copyWith(
-                                              fontSize: 22,
-                                              color: Styles.WHITE_COLOR),
-                                        ),
-                                      ),
-                                      Form(
-                                          key: _formKey,
-                                          child: Column(
-                                            children: [
-                                              Padding(
-                                                padding:
-                                                EdgeInsets.symmetric(
-                                                  vertical: 12.h,
-                                                ),
-                                                child: Directionality(
-                                                    textDirection:
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.only(
+                                      bottom: 24.h,
+                                    ),
+                                    child: Text(
+                                      getTranslated("verify_header", context),
+                                      textAlign: TextAlign.center,
+                                      style: AppTextStyles.bold.copyWith(
+                                          fontSize: 22,
+                                          color: Styles.WHITE_COLOR),
+                                    ),
+                                  ),
+                                  Form(
+                                      key: _formKey,
+                                      child: Column(
+                                        children: [
+                                          Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              vertical: 12.h,
+                                            ),
+                                            child: Directionality(
+                                                textDirection:
                                                     TextDirection.ltr,
-                                                    child:
-                                                    CustomPinCodeField(
-                                                        validation:
-                                                        Validations
-                                                            .code,
-                                                        controller:
-                                                        provider
-                                                            .codeTEC,
-                                                        onChanged:
-                                                            (v) {})),
-                                              ),
-                                              Row(
-                                                mainAxisAlignment:
-                                                MainAxisAlignment
-                                                    .center,
-                                                children: [
-                                                  CountDown(
-                                                    onCount: () => provider
-                                                        .resend(widget
-                                                        .fromRegister),
-                                                  ),
-                                                ],
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsets.only(
-                                                  top: 24.h,
-                                                ),
-                                                child: CustomButton(
-                                                    text: getTranslated(
-                                                        "confirm", context),
-                                                    onTap: () {
-                                                      if (_formKey
-                                                          .currentState!
-                                                          .validate()) {
-                                                        provider.verify(widget
-                                                            .fromRegister);
-                                                      }
-                                                    },
-                                                    isLoading:
-                                                    provider.isVerify),
+                                                child: CustomPinCodeField(
+                                                    validation:
+                                                        Validations.code,
+                                                    controller:
+                                                        provider.codeTEC,
+                                                    onChanged: (v) {})),
+                                          ),
+                                          Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              CountDown(
+                                                onCount: () => provider.resend(
+                                                    widget.fromRegister),
                                               ),
                                             ],
-                                          )),
-                                    ],
-                                  );
-                                }),
+                                          ),
+                                          Padding(
+                                            padding: EdgeInsets.only(
+                                              top: 24.h,
+                                            ),
+                                            child: CustomButton(
+                                                text: getTranslated(
+                                                    "confirm", context),
+                                                onTap: () {
+                                                  if (_formKey.currentState!
+                                                      .validate()) {
+                                                    provider.verify(
+                                                        widget.fromRegister);
+                                                  }
+                                                },
+                                                isLoading: provider.isVerify),
+                                          ),
+                                        ],
+                                      )),
+                                ],
+                              );
+                            }),
                           ),
                         ),
                       ),

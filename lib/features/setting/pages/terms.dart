@@ -53,7 +53,9 @@ class Terms extends StatelessWidget {
                                   style: AppTextStyles.medium.copyWith(
                                       fontSize: 22,
                                       color: Styles.PRIMARY_COLOR)),
-                              SizedBox(height: 24.h,),
+                              SizedBox(
+                                height: 24.h,
+                              ),
                               provider.model != null
                                   ? HtmlWidget(
                                       provider.model?.data?.terms ?? "")

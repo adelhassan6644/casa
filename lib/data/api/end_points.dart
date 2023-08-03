@@ -29,11 +29,9 @@ class EndPoints {
   static const String category = 'service';
   static const products = 'subService';
   static categoryProducts(id) => 'service/$id';
-  static banners(id) => 'banners/$id';
+  static const String banners = 'banner';
   static productDetails(id) => 'subService/$id';
-
-  static const String aboutUs = 'about_us';
-  static const String setting = 'contact';
+  static const String setting = 'setting';
 
   /// maps
   static const String GEOCODE_URI = '/maps/api/geocode/';

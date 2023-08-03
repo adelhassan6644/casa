@@ -32,6 +32,7 @@ class _RegisterState extends State<Register> {
         width: context.width,
         height: context.height,
         decoration: const BoxDecoration(
+            color: Colors.transparent,
             image: DecorationImage(
           image: AssetImage(
             Images.authImage,

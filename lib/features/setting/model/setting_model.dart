@@ -32,8 +32,6 @@ class Data {
   String? image;
   String? phone;
   String? aboutUs;
-  String? createdAt;
-  String? updatedAt;
 
   Data(
       {this.id,
@@ -47,9 +45,7 @@ class Data {
       this.tiktok,
       this.image,
       this.phone,
-      this.aboutUs,
-      this.createdAt,
-      this.updatedAt});
+      this.aboutUs});
 
   Data.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -64,8 +60,6 @@ class Data {
     image = json['image'];
     phone = json['phone'];
     aboutUs = json['aboutUs'];
-    createdAt = json['created_at'];
-    updatedAt = json['updated_at'];
   }
 
   Map<String, dynamic> toJson() {
@@ -82,8 +76,6 @@ class Data {
     data['image'] = this.image;
     data['phone'] = this.phone;
     data['aboutUs'] = this.aboutUs;
-    data['created_at'] = this.createdAt;
-    data['updated_at'] = this.updatedAt;
     return data;
   }
 }

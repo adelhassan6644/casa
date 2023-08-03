@@ -31,9 +31,9 @@ class HomeRepo {
     }
   }
 
-  Future<Either<ServerFailure, Response>> getHomeBanner(id) async {
+  Future<Either<ServerFailure, Response>> getHomeBanner() async {
     try {
-      Response response = await dioClient.get(uri: EndPoints.banners(id));
+      Response response = await dioClient.get(uri: EndPoints.banners);
       if (response.statusCode == 200) {
         return Right(response);
       } else {

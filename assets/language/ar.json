@@ -105,6 +105,8 @@
   "customer_service_number": "رقم خدمة العملاء",
   "pleased_to_contact_with_us": "يسعدنا تواصلك معانا وقتما تحب",
   "available_for_reservation": "متاح للحجز",
+  "unavailable_for_reservation": "غير متاح للحجز",
+  "book_an_appointment": "حجز موعد",
   "next": "القادمة",
   "cancel": "إلغاء",
   "again": "تكرار",

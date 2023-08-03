@@ -64,24 +64,30 @@ class _ProductDetailsState extends State<ProductDetails> {
                               radius: 0),
                         ),
                   CustomAppBar(
-                    actionChild: ClipRRect(
-                      clipBehavior: Clip.antiAlias,
-                      borderRadius: BorderRadius.circular(100),
-                      child: BackdropFilter(
-                        filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-                        child: Container(
-                            padding: EdgeInsets.symmetric(
-                                horizontal: 12.w, vertical: 8.h),
-                            decoration: BoxDecoration(
-                                border: Border.all(color: Styles.WHITE_COLOR),
-                                color: Colors.black.withOpacity(0.06),
-                                borderRadius: BorderRadius.circular(8)),
-                            child: Text(
-                              getTranslated(
-                                  "available_for_reservation", context),
-                              style: AppTextStyles.regular.copyWith(
-                                  color: Styles.PRIMARY_COLOR, fontSize: 12),
-                            )),
+                    actionChild: Visibility(
+                      visible: !provider.isLoading,
+                      child: ClipRRect(
+                        clipBehavior: Clip.antiAlias,
+                        borderRadius: BorderRadius.circular(100),
+                        child: BackdropFilter(
+                          filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                          child: Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 12.w, vertical: 8.h),
+                              decoration: BoxDecoration(
+                                  border: Border.all(color: Styles.WHITE_COLOR),
+                                  color: Colors.black.withOpacity(0.06),
+                                  borderRadius: BorderRadius.circular(8)),
+                              child: Text(
+                                provider.model?.status == 1
+                                    ? getTranslated(
+                                        "available_for_reservation", context)
+                                    : getTranslated(
+                                        "unavailable_for_reservation", context),
+                                style: AppTextStyles.regular.copyWith(
+                                    color: Styles.PRIMARY_COLOR, fontSize: 12),
+                              )),
+                        ),
                       ),
                     ),
                   ),
@@ -90,9 +96,7 @@ class _ProductDetailsState extends State<ProductDetails> {
               provider.isLoading
                   ? const _ProductDetailsWidgetShimmer()
                   : provider.model != null
-                      ? ProductDetailsWidget(
-                          item: provider.model!,
-                        )
+                      ? ProductDetailsWidget(item: provider.model!)
                       : const EmptyState(),
               Visibility(
                 visible: !provider.isLoading && provider.model != null,
@@ -101,7 +105,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
                       horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                   child: CustomButton(
-                    text: "حجز موعد",
+                    text: getTranslated("book_an_appointment", context),
                     svgIcon: SvgImages.arrowLeft,
                     iconColor: Styles.WHITE_COLOR,
                     onTap: () {},

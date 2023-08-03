@@ -13,29 +13,26 @@ import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_images.dart';
 import '../../../components/custom_network_image.dart';
-import '../../../components/empty_widget.dart';
 
 class HomeBanner extends StatelessWidget {
-  const HomeBanner({
-    Key? key,
-  }) : super(key: key);
+  const HomeBanner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Consumer<HomeProvider>(builder: (context, provider, child) {
-      return Padding(
-        padding: EdgeInsets.symmetric(
-            horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
-            vertical: Dimensions.PADDING_SIZE_SMALL.h),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            provider.isGetBanners
-                ? const _BannerShimmer()
-                : provider.bannerModel != null &&
-                        provider.bannerModel?.data != null &&
-                        provider.bannerModel!.data!.isNotEmpty
-                    ? Column(
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          provider.isGetBanners
+              ? const _BannerShimmer()
+              : provider.bannerModel != null &&
+                      provider.bannerModel?.data != null &&
+                      provider.bannerModel!.data!.isNotEmpty
+                  ? Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                          vertical: Dimensions.PADDING_SIZE_SMALL.h),
+                      child: Column(
                         children: [
                           CarouselSlider.builder(
                             options: CarouselOptions(
@@ -72,38 +69,43 @@ class HomeBanner extends StatelessWidget {
                                         radius: 18),
                                     Padding(
                                       padding: EdgeInsets.symmetric(
-                                          horizontal: Dimensions.PADDING_SIZE_SMALL.w,
-                                          vertical: Dimensions.PADDING_SIZE_SMALL.h),
+                                          horizontal:
+                                              Dimensions.PADDING_SIZE_SMALL.w,
+                                          vertical:
+                                              Dimensions.PADDING_SIZE_SMALL.h),
                                       child: Column(
                                         crossAxisAlignment:
-                                        CrossAxisAlignment.start,
+                                            CrossAxisAlignment.start,
                                         mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
-                                          customImageIcon(imageName: Images.logo,height: 50,width: 75),
-                                          Text("العناية بالبشرة",
-                                            style:
-                                            AppTextStyles.bold.copyWith(
+                                          customImageIcon(
+                                              imageName: Images.logo,
+                                              height: 50,
+                                              width: 75),
+                                          Text(
+                                            "العناية بالبشرة",
+                                            style: AppTextStyles.bold.copyWith(
                                               fontSize: 25,
                                               color: Styles.WHITE_COLOR,
                                             ),
                                           ),
-                                          Text("عندنا غير",
+                                          Text(
+                                            "عندنا غير",
                                             style:
-                                            AppTextStyles.regular.copyWith(
+                                                AppTextStyles.regular.copyWith(
                                               fontSize: 18,
                                               color: Styles.WHITE_COLOR,
                                             ),
                                           ),
                                           Visibility(
-                                            visible: index ==
-                                                provider.bannerIndex,
+                                            visible:
+                                                index == provider.bannerIndex,
                                             child: CustomButton(
                                               width: 100.w,
                                               height: 35.h,
                                               text: "المزيد",
-                                              svgIcon:
-                                              SvgImages.arrowLeft,
+                                              svgIcon: SvgImages.arrowLeft,
                                               iconColor: Styles.WHITE_COLOR,
                                               onTap: () {
                                                 provider.bannerController
@@ -114,7 +116,6 @@ class HomeBanner extends StatelessWidget {
                                         ],
                                       ),
                                     ),
-
                                   ],
                                 ),
                               );
@@ -145,13 +146,10 @@ class HomeBanner extends StatelessWidget {
                             }).toList(),
                           ),
                         ],
-                      )
-                    : const EmptyState(
-                        emptyHeight: 200,
-                        imgHeight: 110,
                       ),
-          ],
-        ),
+                    )
+                  : const SizedBox(),
+        ],
       );
     });
   }
@@ -163,8 +161,9 @@ class _BannerShimmer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+      padding: EdgeInsets.symmetric(
+          horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+          vertical: Dimensions.PADDING_SIZE_SMALL.h),
       child: Shimmer.fromColors(
         baseColor: Colors.grey[300]!,
         highlightColor: Colors.grey[100]!,

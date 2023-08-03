@@ -24,8 +24,7 @@ class SettingProvider extends ChangeNotifier {
 
       Either<ServerFailure, Response> response = await repo.getSetting();
       response.fold((l) {
-        CustomSnackBar.showSnackBar(
-            notification: AppNotification(
+        CustomSnackBar.showSnackBar(notification: AppNotification(
                 message: ApiErrorHandler.getMessage(l),
                 isFloating: true,
                 backgroundColor: Styles.IN_ACTIVE,
@@ -33,6 +32,7 @@ class SettingProvider extends ChangeNotifier {
         isLoading = false;
         notifyListeners();
       }, (response) {
+
         model = SettingModel.fromJson(response.data);
         isLoading = false;
         notifyListeners();

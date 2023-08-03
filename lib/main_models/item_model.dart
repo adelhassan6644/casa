@@ -6,6 +6,7 @@ class ItemModel {
   String? image;
   List<String>? images;
   int? price;
+  int? status;
   String? service;
   String? subService;
 
@@ -14,6 +15,7 @@ class ItemModel {
       this.description,
       this.name,
       this.title,
+      this.status,
       this.image,
       this.images,
       this.price,
@@ -26,6 +28,7 @@ class ItemModel {
     name = json['name'];
     title = json['title'];
     image = json['image'];
+    status = json['status'];
     images =json['images'] != null?  json['images'].cast<String>() : null;
     price = json['price'];
     service = json['service'];
@@ -38,6 +41,7 @@ class ItemModel {
     data['description'] = description;
     data['name'] = name;
     data['title'] = title;
+    data['status'] = status;
     data['image'] = image;
     data['images'] = images;
     data['price'] = price;

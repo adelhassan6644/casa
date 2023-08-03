@@ -103,6 +103,8 @@
   "customer_service_number": "Customer service number",
   "pleased_to_contact_with_us": "We are pleased to contact you whenever you like",
   "available_for_reservation": "Available for reservation",
+  "unavailable_for_reservation": "Unavailable for reservation",
+  "book_an_appointment": "Book an appointment",
   "previous": "Previous",
   "next": "Next",
   "cancel": "Cancel",
