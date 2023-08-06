@@ -78,9 +78,11 @@ class FavouriteProvider extends ChangeNotifier {
         showToast(l.error);
       }, (response) {
         if (isExist) {
-          showToast("تم الازالة من الاماكن المفضلة");
+          showToast(getTranslated("removed_from_favourites",
+              CustomNavigator.navigatorState.currentContext!));
         } else {
-          showToast("تم الاضافة الي الاماكن المفضلة");
+          showToast(getTranslated("added_to_favourites",
+              CustomNavigator.navigatorState.currentContext!));
         }
       });
       getFavourites();

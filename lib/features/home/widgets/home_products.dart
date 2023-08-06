@@ -1,4 +1,3 @@
-import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
@@ -10,8 +9,7 @@ import '../../../components/animated_widget.dart';
 import '../../../components/empty_widget.dart';
 import '../../../components/grid_list_animator.dart';
 import '../../../components/shimmer/custom_shimmer.dart';
-import '../../../components/tab_widget.dart';
-import 'product_card.dart';
+import '../../../mian_widgets/product_card.dart';
 
 class HomeProducts extends StatelessWidget {
   const HomeProducts({Key? key}) : super(key: key);

@@ -1,3 +1,4 @@
+import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/features/profile/provider/profile_provider.dart';
 import 'package:provider/provider.dart';
@@ -42,7 +43,8 @@ class ProfileBody extends StatelessWidget {
                   borderRadius: BorderRadius.circular(18),
                   color: Styles.WHITE_COLOR,
                   border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
-              child: Column(
+              child: provider.isLoading? const _ProfileBodyShimmer():
+              Column(
                 children: [
                   ///Name
                   CustomTextFormField(
@@ -125,3 +127,82 @@ class ProfileBody extends StatelessWidget {
     });
   }
 }
+
+
+
+
+class _ProfileBodyShimmer extends StatelessWidget {
+  const _ProfileBodyShimmer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 6.h),
+          child: const CustomShimmerContainer(
+            height: 60,
+            radius: 30,
+          ),
+        ),
+
+        Padding(
+          padding:
+          EdgeInsets.symmetric(vertical: 6.h, horizontal: 12.w),
+          child: Row(
+            children: [
+              const CustomShimmerContainer(
+                width: 100,
+                height: 15,
+                radius: 30,
+              ),
+              SizedBox(
+                width: 24.w,
+              ),
+              const Expanded(
+                child: CustomShimmerContainer(
+                  height: 15,
+                  radius: 30,
+                ),
+              ),
+              SizedBox(
+                width: 24.w,
+              ),
+              const Expanded(
+                child: CustomShimmerContainer(
+                  height: 15,
+                  radius: 30,
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 6.h),
+          child: const CustomShimmerContainer(
+            height: 60,
+            radius: 30,
+          ),
+        ),
+
+        Padding(
+          padding: EdgeInsets.symmetric(vertical: 6.h),
+          child: const CustomShimmerContainer(
+            height: 60,
+            radius: 30,
+          ),
+        ),
+
+        SizedBox(
+          height: 22.h,
+        ),
+        const CustomShimmerContainer(
+          height: 60,
+          radius: 30,
+        ),
+      ],
+    );
+  }
+}
+

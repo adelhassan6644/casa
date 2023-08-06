@@ -71,6 +71,7 @@ class ProfileProvider extends ChangeNotifier {
   bool isUpdate = false;
   updateProfile() async {
     isUpdate = true;
+    notifyListeners();
     Map<String, dynamic> body = {
       "name": profileModel?.name,
       "phone": profileModel?.phone,
@@ -91,7 +92,7 @@ class ProfileProvider extends ChangeNotifier {
         body["name"] = nameTEC.text.trim();
       }
       if (_boolCheckString(userType, "gender", body)) {
-        body["gender"] = nameTEC.text.trim();
+        body["gender"] = userType;
       }
 
       try {
@@ -105,12 +106,10 @@ class ProfileProvider extends ChangeNotifier {
                   isFloating: true,
                   backgroundColor: Styles.IN_ACTIVE,
                   borderColor: Colors.red));
-
-          // showToast(ApiErrorHandler.getMessage(fail));
           isUpdate = false;
           notifyListeners();
         }, (response) {
-          getProfile();
+          getProfile(withLoading: false);
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
                   message: getTranslated("your_profile_successfully_updated",
@@ -145,25 +144,29 @@ class ProfileProvider extends ChangeNotifier {
   }
 
   bool isLoading = false;
-  getProfile() async {
+  getProfile({bool withLoading = true}) async {
     try {
-      isLoading = true;
+      if (withLoading) {
+        isLoading = true;
+      }
       notifyListeners();
 
       Either<ServerFailure, Response> response = await profileRepo.getProfile();
 
       response.fold((fail) {
         showToast(ApiErrorHandler.getMessage(fail));
-        isLoading = false;
-        notifyListeners();
       }, (response) {
         profileModel = ProfileModel.fromJson(response.data['data']);
         initProfileData();
-        isLoading = false;
-        notifyListeners();
       });
+      if (withLoading) {
+        isLoading = false;
+      }
+      notifyListeners();
     } catch (e) {
-      isLoading = false;
+      if (withLoading) {
+        isLoading = false;
+      }
       CustomSnackBar.showSnackBar(
           notification: AppNotification(
               message: e.toString(),

@@ -55,12 +55,14 @@ class AddressPage extends StatelessWidget {
                                   provider.model!.data!.length,
                                   (index) => Dismissible(
                                         background: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
                                           children: [
                                             CustomButton(
-                                              width: 85.w,
+                                              width: 100.w,
                                               height: 30.h,
-                                              text: getTranslated("delete", context),
+                                              text: getTranslated(
+                                                  "delete", context),
                                               svgIcon: SvgImages.cancel,
                                               iconSize: 12,
                                               iconColor: Styles.IN_ACTIVE,
@@ -71,7 +73,8 @@ class AddressPage extends StatelessWidget {
                                           ],
                                         ),
                                         key: ValueKey(index),
-                                        confirmDismiss: (DismissDirection direction) async {
+                                        confirmDismiss:
+                                            (DismissDirection direction) async {
                                           CustomSimpleDialog.parentSimpleDialog(
                                             customListWidget: [
                                               DeleteConfirmationDialog(
