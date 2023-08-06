@@ -11,19 +11,14 @@ class ProductDetailsProvider extends ChangeNotifier {
   ProductDetailsRepo repo;
   ProductDetailsProvider({required this.repo});
 
-  late int placesIndex = 0;
-  void setPlacesIndex(int index) {
-    placesIndex = index;
-    notifyListeners();
-  }
-
   ItemModel? model;
   bool isLoading = false;
-  geDetails(id) async {
+  getDetails(id) async {
     try {
       isLoading = true;
       notifyListeners();
-      Either<ServerFailure, Response> response = await repo.getPlaceDetails(id);
+      Either<ServerFailure, Response> response =
+          await repo.getProductDetails(id);
       response.fold((fail) {
         isLoading = false;
         CustomSnackBar.showSnackBar(

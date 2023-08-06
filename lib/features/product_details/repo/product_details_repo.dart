@@ -12,7 +12,7 @@ class ProductDetailsRepo {
 
   ProductDetailsRepo({required this.dioClient, required this.sharedPreferences});
 
-  Future<Either<ServerFailure, Response>> getPlaceDetails(id) async {
+  Future<Either<ServerFailure, Response>> getProductDetails(id) async {
     try {
       Response response = await dioClient.get(uri: EndPoints.productDetails(id));
       if (response.statusCode == 200) {

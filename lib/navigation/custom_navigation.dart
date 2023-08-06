@@ -15,6 +15,7 @@ import '../features/auth/pages/verification.dart';
 import '../features/contact_with_us/page/contact_with_us.dart';
 import '../features/maps/page/map_page.dart';
 import '../features/on_boarding/pages/on_boarding.dart';
+import '../features/product_schedule/page/product_schedule.dart';
 import '../features/setting/pages/about_us.dart';
 import '../features/splash/page/splash.dart';
 import '../main.dart';
@@ -67,6 +68,9 @@ abstract class CustomNavigator {
 
       case Routes.PRODUCT_DETAILS:
         return _pageRoute(ProductDetails(id: settings.arguments as int));
+
+        case Routes.PRODUCT_SCHEDULE:
+        return _pageRoute(ProductSchedule(data: settings.arguments as Map));
 
       case Routes.ADDRESS:
         return _pageRoute(const AddressPage());

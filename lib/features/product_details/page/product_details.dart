@@ -1,6 +1,8 @@
 import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/shimmer/custom_shimmer.dart';
+import 'package:casa/features/product_schedule/provider/product_schedule_provider.dart';
+import 'package:casa/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/components/custom_network_image.dart';
@@ -14,6 +16,8 @@ import '../../../app/core/utils/svg_images.dart';
 import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/empty_widget.dart';
+import '../../../data/config/di.dart';
+import '../../../navigation/routes.dart';
 import '../widgets/product_details_widget.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -31,7 +35,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     Future.delayed(Duration.zero, () {
       Provider.of<ProductDetailsProvider>(context, listen: false).model = null;
       Provider.of<ProductDetailsProvider>(context, listen: false)
-          .geDetails(widget.id);
+          .getDetails(widget.id);
     });
     super.initState();
   }
@@ -108,7 +112,10 @@ class _ProductDetailsState extends State<ProductDetails> {
                     text: getTranslated("book_an_appointment", context),
                     svgIcon: SvgImages.arrowLeft,
                     iconColor: Styles.WHITE_COLOR,
-                    onTap: () {},
+                    onTap: () {
+                      sl<ProductScheduleProvider>().getProductSchedule(provider.model?.id);
+                      CustomNavigator.push(Routes.PRODUCT_SCHEDULE,arguments: {"title": provider.model?.service, "id" : provider.model?.id});
+                    },
                   ),
                 ),
               ),

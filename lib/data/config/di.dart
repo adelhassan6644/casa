@@ -16,6 +16,8 @@ import '../../features/favourite/provider/favourite_provider.dart';
 import '../../features/favourite/repo/favourite_repo.dart';
 import '../../features/home/provider/home_provider.dart';
 import '../../features/maps/repo/map_repo.dart';
+import '../../features/product_schedule/provider/product_schedule_provider.dart';
+import '../../features/product_schedule/repo/product_schedule_repo.dart';
 import '../../features/reservations/provider/reservations_provider.dart';
 import '../../features/reservations/repo/reservations_repo.dart';
 import '../../features/notifications/provider/notifications_provider.dart';
@@ -72,6 +74,8 @@ Future<void> init() async {
       () => ContactRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => AddressesRepo(sharedPreferences: sl(), dioClient: sl()));
+  sl.registerLazySingleton(
+      () => ProductScheduleRepo(sharedPreferences: sl(), dioClient: sl()));
 
   //provider
   sl.registerLazySingleton(() => LocalizationProvider(sharedPreferences: sl()));
@@ -91,6 +95,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => AddressesProvider(repo: sl()));
   sl.registerLazySingleton(() => SettingProvider(repo: sl()));
   sl.registerLazySingleton(() => ContactProvider(contactRepo: sl()));
+  sl.registerLazySingleton(() => ProductScheduleProvider(repo: sl()));
 
   // External
   final sharedPreferences = await SharedPreferences.getInstance();

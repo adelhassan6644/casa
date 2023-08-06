@@ -31,6 +31,8 @@ class EndPoints {
   static categoryProducts(id) => 'service/$id';
   static const String banners = 'banner';
   static productDetails(id) => 'subService/$id';
+  static productSchedule(id) => 'subService/schedule/$id';
+  static daySchedule(id) => 'subService/daySchedule/$id';
   static const String setting = 'setting';
 
   /// maps
