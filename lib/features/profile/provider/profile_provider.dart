@@ -178,6 +178,7 @@ class ProfileProvider extends ChangeNotifier {
   }
 
   initProfileData() {
+    profileImage = null;
     nameTEC.text = profileModel?.name ?? "";
     emailTEC.text = profileModel?.email ?? "";
     phoneTEC.text = profileModel?.phone ?? "";
