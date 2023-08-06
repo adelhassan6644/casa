@@ -1,4 +1,5 @@
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
@@ -36,6 +37,7 @@ class HomeBanner extends StatelessWidget {
                           CarouselSlider.builder(
                             options: CarouselOptions(
                               viewportFraction: 1,
+                              aspectRatio: 0.7,
                               autoPlay: false,
                               height: 210.h,
                               enlargeCenterPage: false,
@@ -54,11 +56,12 @@ class HomeBanner extends StatelessWidget {
                                 highlightColor: Colors.transparent,
                                 hoverColor: Colors.transparent,
                                 onTap: () {
-                                  if (provider.bannerModel?.data?[index].id !=
+                                  if (provider.bannerModel?.data?[index]
+                                          .subServiceId !=
                                       null) {
                                     CustomNavigator.push(Routes.PRODUCT_DETAILS,
-                                        arguments: provider
-                                            .bannerModel?.data?[index].id);
+                                        arguments: provider.bannerModel
+                                            ?.data?[index].subServiceId);
                                   }
                                 },
                                 child: Stack(
@@ -82,9 +85,10 @@ class HomeBanner extends StatelessWidget {
                                           visible:
                                               index == provider.bannerIndex,
                                           child: CustomButton(
-                                            width: 100.w,
+                                            width: 100,
                                             height: 35.h,
-                                            text: "المزيد",
+                                            text:
+                                                getTranslated("more", context),
                                             svgIcon: SvgImages.arrowLeft,
                                             iconColor: Styles.WHITE_COLOR,
                                             onTap: () {
