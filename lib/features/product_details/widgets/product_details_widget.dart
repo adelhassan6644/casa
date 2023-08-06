@@ -7,8 +7,7 @@ import '../../../components/custom_network_image.dart';
 
 class ProductDetailsWidget extends StatelessWidget {
   final ItemModel item;
-  const ProductDetailsWidget({Key? key, required this.item})
-      : super(key: key);
+  const ProductDetailsWidget({Key? key, required this.item}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +30,17 @@ class ProductDetailsWidget extends StatelessWidget {
                       color: Styles.PRIMARY_COLOR),
                   maxLines: 1,
                 ),
+                SizedBox(
+                  height: 6.h,
+                ),
+                Text(
+                  item.subService ?? "",
+                  style: AppTextStyles.medium.copyWith(
+                      fontSize: 14,
+                      overflow: TextOverflow.ellipsis,
+                      color: Styles.PRIMARY_COLOR),
+                  maxLines: 1,
+                ),
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 6.h),
                   child: Text(
@@ -42,8 +52,7 @@ class ProductDetailsWidget extends StatelessWidget {
                     maxLines: 1,
                   ),
                 ),
-                Text(
-                  item.description ?? " ",
+                Text(item.description ?? "",
                   style: AppTextStyles.regular
                       .copyWith(fontSize: 16, color: Styles.DETAILS_COLOR),
                 ),
