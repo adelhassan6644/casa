@@ -23,6 +23,6 @@
 static NSString *const kFIRUserPropertyAllowAdPersonalizationSignals
     NS_SWIFT_NAME(AnalyticsUserPropertyAllowAdPersonalizationSignals) = @"allow_personalized_ads";
 
-/// The method used to sign in. For softwareCasa, "google", "facebook" or "twitter".
+/// The method used to sign in. For example, "google", "facebook" or "twitter".
 static NSString *const kFIRUserPropertySignUpMethod
     NS_SWIFT_NAME(AnalyticsUserPropertySignUpMethod) = @"sign_up_method";

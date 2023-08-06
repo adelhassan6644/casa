@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  * Note that this image will be compressed into a square - so for best results have a square image.
  * The rendered stamps will be the width of the line that the GMSStrokeStyle is set on. The image
  * will be oriented with the top of the image towards the start point, and the bottom of the image
- * towards the end point. For softwareCasa, if the underlying line has two points and the start point is
+ * towards the end point. For example, if the underlying line has two points and the start point is
  * directly above the endpoint, the stamp will appear in an upright orientation.
  */
 @property(nonatomic, readonly) UIImage *stampImage;

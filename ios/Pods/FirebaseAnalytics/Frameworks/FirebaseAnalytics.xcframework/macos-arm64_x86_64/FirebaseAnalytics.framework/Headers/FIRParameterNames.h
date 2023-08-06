@@ -435,7 +435,7 @@ static NSString *const kFIRParameterLocationID NS_SWIFT_NAME(AnalyticsParameterL
 static NSString *const kFIRParameterMarketingTactic
     NS_SWIFT_NAME(AnalyticsParameterMarketingTactic) = @"marketing_tactic";
 
-/// The advertising or marketing medium, for softwareCasa: cpc, banner, email, push. Highly recommended
+/// The advertising or marketing medium, for example: cpc, banner, email, push. Highly recommended
 /// (String).
 /// <pre>
 ///     let params = [
@@ -445,7 +445,7 @@ static NSString *const kFIRParameterMarketingTactic
 /// </pre>
 static NSString *const kFIRParameterMedium NS_SWIFT_NAME(AnalyticsParameterMedium) = @"medium";
 
-/// A particular approach used in an operation; for softwareCasa, "facebook" or "email" in the context
+/// A particular approach used in an operation; for example, "facebook" or "email" in the context
 /// of a sign_up or login event. (String).
 /// <pre>
 ///     let params = [
@@ -607,7 +607,7 @@ static NSString *const kFIRParameterShipping NS_SWIFT_NAME(AnalyticsParameterShi
 static NSString *const kFIRParameterShippingTier NS_SWIFT_NAME(AnalyticsParameterShippingTier) =
     @"shipping_tier";
 
-/// The origin of your traffic, such as an Ad network (for softwareCasa, google) or partner (urban
+/// The origin of your traffic, such as an Ad network (for example, google) or partner (urban
 /// airship). Identify the advertiser, site, publication, etc. that is sending traffic to your
 /// property. Highly recommended (String).
 /// <pre>
@@ -692,7 +692,7 @@ static NSString *const kFIRParameterTravelClass NS_SWIFT_NAME(AnalyticsParameter
 
 /// A context-specific numeric value which is accumulated automatically for each event type. This is
 /// a general purpose parameter that is useful for accumulating a key metric that pertains to an
-/// event. softwareCasas include revenue, distance, time and points. Value should be specified as Int or
+/// event. Examples include revenue, distance, time and points. Value should be specified as Int or
 /// Double.
 /// Notes: Values for pre-defined currency-related events (such as @c AnalyticsEventAddToCart)
 /// should be supplied using Double and must be accompanied by a @c AnalyticsParameterCurrency
