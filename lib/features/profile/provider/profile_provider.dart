@@ -45,7 +45,8 @@ class ProfileProvider extends ChangeNotifier {
   }
 
   hasImage() {
-    if (profileImage != null || profileModel?.image != null) {
+    if (profileImage != null){
+        // || profileModel?.image != null) {
       return true;
     } else {
       // showToast(getTranslated("please_select_profile_image",
@@ -75,14 +76,13 @@ class ProfileProvider extends ChangeNotifier {
     Map<String, dynamic> body = {
       "name": profileModel?.name,
       "phone": profileModel?.phone,
-      "email": profileModel?.email,
       "gender": profileModel?.gender,
     };
 
     if (checkData(body) || hasImage()) {
       if (profileImage != null) {
         body.addAll({
-          "photo": await MultipartFile.fromFile(profileImage!.path),
+          "photo":  MultipartFile.fromFileSync(profileImage!.path),
         });
       }
       if (_boolCheckString(phoneTEC.text.trim(), "phone", body)) {
@@ -179,9 +179,9 @@ class ProfileProvider extends ChangeNotifier {
 
   initProfileData() {
     profileImage = null;
-    nameTEC.text = profileModel?.name ?? "";
-    emailTEC.text = profileModel?.email ?? "";
-    phoneTEC.text = profileModel?.phone ?? "";
+    nameTEC.text = profileModel?.name?.trim() ?? "";
+    emailTEC.text = profileModel?.email?.trim() ?? "";
+    phoneTEC.text = profileModel?.phone?.trim() ?? "";
     userType = profileModel?.gender ?? 0;
   }
 }
