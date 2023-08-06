@@ -24,7 +24,7 @@ class AuthProvider extends ChangeNotifier {
 
   bool get isLogin => authRepo.isLoggedIn();
 
-  late  TextEditingController _mailTEC;
+  late TextEditingController _mailTEC;
   TextEditingController get mailTEC => _mailTEC;
 
   final TextEditingController nameTEC = TextEditingController();
@@ -96,7 +96,7 @@ class AuthProvider extends ChangeNotifier {
             clean: true,
           );
         } else {
-          _mailTEC=TextEditingController(text:success.data['data']["email"] );
+          _mailTEC = TextEditingController(text: success.data['data']["email"]);
           CustomNavigator.push(Routes.VERIFICATION, arguments: true);
         }
       });
@@ -162,8 +162,9 @@ class AuthProvider extends ChangeNotifier {
     try {
       _isChange = true;
       notifyListeners();
-      Either<ServerFailure, Response> response =
-          await authRepo.change(password: passwordTEC.text.trim());
+      Either<ServerFailure, Response> response = await authRepo.change(
+          oldPassword: currentPasswordTEC.text.trim(),
+          password: passwordTEC.text.trim());
       response.fold((fail) {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(

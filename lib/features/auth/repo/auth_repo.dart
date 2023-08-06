@@ -132,12 +132,12 @@ class AuthRepo {
   Future<Either<ServerFailure, Response>> change(
       {required String oldPassword, required String password}) async {
     try {
-      Response response = await dioClient.patch(
+      Response response = await dioClient.post(
           uri: EndPoints.changePassword(
               sharedPreferences.getString(AppStorageKey.userId)),
           data: {
-            "old_password": oldPassword,
-            "password": password,
+            "oldPassword": oldPassword,
+            "newPassword": password,
             // "fcm_token": await saveDeviceToken()
           });
 

@@ -10,7 +10,7 @@ class EndPoints {
   static const String forgetPassword = 'resetPassword/email';
   static const String checkMailForResetPassword = 'resetPassword/checkCode';
   static const String resetPassword = 'resetPassword/newPassword';
-  static changePassword(id) => 'client/$id';
+  static changePassword(id) => 'changePassword/$id';
   static const String resend = 'email/verification';
   static const String verifyEmail = 'check/verificationCode';
   static getProfile(id) => 'client/$id';
