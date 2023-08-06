@@ -77,8 +77,8 @@ Future<void> init() async {
   sl.registerLazySingleton(() => LocalizationProvider(sharedPreferences: sl()));
   sl.registerLazySingleton(() => LanguageProvider());
   sl.registerLazySingleton(() => ThemeProvider(sharedPreferences: sl()));
-  sl.registerLazySingleton(() => MainPageProvider());
   sl.registerLazySingleton(() => SplashProvider(splashRepo: sl()));
+  sl.registerLazySingleton(() => MainPageProvider());
   sl.registerLazySingleton(() => AuthProvider(authRepo: sl()));
   sl.registerLazySingleton(() => FavouriteProvider(favouriteRepo: sl()));
   sl.registerLazySingleton(() => ProductDetailsProvider(repo: sl()));

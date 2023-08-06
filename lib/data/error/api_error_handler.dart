@@ -26,6 +26,7 @@ class ApiErrorHandler {
             case DioErrorType.badResponse:
               switch (error.response!.statusCode) {
                 case 404:
+                  return errorDescription = error.response!.data["message"];
                 case 500:
                 case 503:
                   errorDescription = error.response!.statusMessage;
@@ -33,12 +34,11 @@ class ApiErrorHandler {
                 default:
                   log(error.response!.data.toString());
 
-                 try{
-                   errorDescription = error.response!.data["message"];
-
-                 }catch(e){
-                   errorDescription = error.response!.data['data']["message"];
-                 }
+                  try {
+                    errorDescription = error.response!.data["message"];
+                  } catch (e) {
+                    errorDescription = error.response!.data['data']["message"];
+                  }
               }
               break;
             case DioErrorType.sendTimeout:

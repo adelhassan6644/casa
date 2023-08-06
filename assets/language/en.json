@@ -132,5 +132,7 @@
   "are_you_want_to_delete_your_address": "Are you want to delete your address ?",
   "address_deleted_successfully": "Address deleted successfully",
   "added_to_favourites": "Added to Favourites",
-  "removed_from_favourites": "Removed from Favourites"
+  "removed_from_favourites": "Removed from Favourites",
+  "connected": "Connected",
+  "no_connection": "No Connection"
 }

@@ -133,6 +133,8 @@
   "are_you_want_to_delete_your_address": "هل تريد حذف عنوانك ؟",
   "address_deleted_successfully": "تم حذف العنوان بنجاح",
   "added_to_favourites": "تم الاضافة الي المفضلة",
-  "removed_from_favourites": "تم الازالة من المفضلة"
+  "removed_from_favourites": "تم الازالة من المفضلة",
+  "connected": "متصل",
+  "no_connection": "غير متصل"
 
 }

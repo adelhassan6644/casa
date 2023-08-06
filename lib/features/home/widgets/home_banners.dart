@@ -85,7 +85,7 @@ class HomeBanner extends StatelessWidget {
                                           visible:
                                               index == provider.bannerIndex,
                                           child: CustomButton(
-                                            width: 100,
+                                            width: 115,
                                             height: 35.h,
                                             text:
                                                 getTranslated("more", context),

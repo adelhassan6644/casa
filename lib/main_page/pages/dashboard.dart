@@ -29,7 +29,7 @@ class _DashBoardState extends State<DashBoard> {
     sl<AddressesProvider>().getAddresses();
     sl<ProfileProvider>().getProfile();
     sl<MainPageProvider>().updateDashboardIndex(0);
-    
+
     super.initState();
   }
 
