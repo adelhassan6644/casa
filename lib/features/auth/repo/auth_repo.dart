@@ -51,17 +51,17 @@ class AuthRepo {
   }
 
   Future<String?> saveDeviceToken() async {
-    String? _deviceToken;
+    String? deviceToken;
     if (Platform.isIOS) {
-      _deviceToken = await FirebaseMessaging.instance.getAPNSToken();
+      deviceToken = await FirebaseMessaging.instance.getAPNSToken();
     } else {
-      _deviceToken = await FirebaseMessaging.instance.getToken();
+      deviceToken = await FirebaseMessaging.instance.getToken();
     }
 
-    if (_deviceToken != null) {
-      log('--------Device Token---------- $_deviceToken');
+    if (deviceToken != null) {
+      log('--------Device Token---------- $deviceToken');
     }
-    return _deviceToken;
+    return deviceToken;
   }
 
   // Future<Either<ServerFailure, Response>> subscribeToTopic() async {
@@ -130,12 +130,13 @@ class AuthRepo {
   }
 
   Future<Either<ServerFailure, Response>> change(
-      {required String password}) async {
+      {required String oldPassword, required String password}) async {
     try {
       Response response = await dioClient.patch(
           uri: EndPoints.changePassword(
               sharedPreferences.getString(AppStorageKey.userId)),
           data: {
+            "old_password": oldPassword,
             "password": password,
             // "fcm_token": await saveDeviceToken()
           });

@@ -98,7 +98,7 @@ class ProfileProvider extends ChangeNotifier {
       try {
         log(body.entries.toString());
         Either<ServerFailure, Response> response =
-            await profileRepo.updateProfile(body:FormData.fromMap(body) );
+            await profileRepo.updateProfile(body: FormData.fromMap(body));
         response.fold((fail) {
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
