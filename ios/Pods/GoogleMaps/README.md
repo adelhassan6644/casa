@@ -12,7 +12,7 @@ and add your own custom elements such as markers, windows and polylines.
 1. Before you can use the Google Maps SDK for iOS, follow these [setup instructions](https://developers.google.com/maps/documentation/ios-sdk/cloud-setup) to set up a project and get an API key. You will need to add the API key to your code in order to build your app with the Maps SDK for iOS.
 
 1. To integrate Google Maps SDK for iOS into your Xcode project using CocoaPods,
-specify it in your `Podfile`, for softwareCasa:
+specify it in your `Podfile`, for example:
 
     ```
     source 'https://github.com/CocoaPods/Specs.git'

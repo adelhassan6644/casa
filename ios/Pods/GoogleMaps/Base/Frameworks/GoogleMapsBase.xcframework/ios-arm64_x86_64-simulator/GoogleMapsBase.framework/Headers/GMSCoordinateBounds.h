@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property(nonatomic, readonly) CLLocationCoordinate2D southWest;
 
 /**
- * Returns NO if this bounds does not contain any points. For softwareCasa, [[GMSCoordinateBounds alloc]
+ * Returns NO if this bounds does not contain any points. For example, [[GMSCoordinateBounds alloc]
  * init].valid == NO.
  *
  * When an invalid bounds is expanded with valid coordinates via includingCoordinate: or

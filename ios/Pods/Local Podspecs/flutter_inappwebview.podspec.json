@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "summary": "A new Flutter plugin.",
   "description": "A new Flutter plugin.",
-  "homepage": "http://softwareCasa.com",
+  "homepage": "http://example.com",
   "license": {
     "file": "../LICENSE"
   },
   "authors": {
-    "Your Company": "email@softwareCasa.com"
+    "Your Company": "email@example.com"
   },
   "source": {
     "path": "."
