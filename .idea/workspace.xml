@@ -5,64 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="first sprint">
-      <change afterPath="$PROJECT_DIR$/ios/Flutter/Flutter.podspec" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ios/Pods/Manifest.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/images/success.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/7.5/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/app_settings" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/app_settings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/audio_session" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/audio_session" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/connectivity" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/connectivity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/file_picker" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/file_picker" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_analytics" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_analytics" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_auth" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_auth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_core" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_dynamic_links" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_dynamic_links" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_messaging" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/firebase_messaging" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_inappwebview" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_inappwebview" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_keyboard_visibility" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_keyboard_visibility" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_local_notifications" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_local_notifications" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_native_splash" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/flutter_native_splash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/fluttertoast" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/fluttertoast" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/geolocator_apple" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/geolocator_apple" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/google_maps_flutter_ios" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/image_picker_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/image_picker_ios" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/just_audio" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/just_audio" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/map_launcher" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/map_launcher" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/package_info_plus" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/package_info_plus" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/path_provider_foundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/path_provider_foundation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/permission_handler_apple" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/permission_handler_apple" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/shared_preferences_foundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/shared_preferences_foundation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/sqflite" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/sqflite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/url_launcher_ios" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/url_launcher_ios" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/video_player_avfoundation" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/video_player_avfoundation" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/wakelock_plus" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/wakelock_plus" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/.symlinks/plugins/webview_flutter_wkwebview" beforeDir="false" afterPath="$PROJECT_DIR$/ios/.symlinks/plugins/webview_flutter_wkwebview" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/Generated.xcconfig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/flutter_export_environment.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Local Podspecs/audio_session.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/audio_session.podspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Local Podspecs/flutter_inappwebview.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/flutter_inappwebview.podspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Local Podspecs/flutter_native_splash.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/flutter_native_splash.podspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Local Podspecs/fluttertoast.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/fluttertoast.podspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Local Podspecs/just_audio.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/just_audio.podspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Local Podspecs/map_launcher.podspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Local Podspecs/map_launcher.podspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.markdown" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/config/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/error/api_error_handler.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/error/api_error_handler.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_banners.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_banners.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main_page/pages/dashboard.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/core/utils/images.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/core/utils/images.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,11 +78,11 @@
       <recent name="$PROJECT_DIR$/android/app/src/main/res/drawable" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/lib/features/home/widgets" />
       <recent name="$PROJECT_DIR$/assets" />
       <recent name="$PROJECT_DIR$/assets/svgs" />
       <recent name="$PROJECT_DIR$/lib/app/core" />
-      <recent name="$PROJECT_DIR$/assets/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -407,7 +352,21 @@
       <option name="project" value="LOCAL" />
       <updated>1691337229564</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="first sprint">
+      <created>1691339364882</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1691339364882</updated>
+    </task>
+    <task id="LOCAL-00037" summary="first sprint">
+      <created>1691339435535</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1691339435535</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
