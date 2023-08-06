@@ -107,6 +107,7 @@
   "available_for_reservation": "متاح للحجز",
   "unavailable_for_reservation": "غير متاح للحجز",
   "book_an_appointment": "حجز موعد",
+  "book": "حجز",
   "next": "القادمة",
   "cancel": "إلغاء",
   "again": "تكرار",
@@ -130,6 +131,8 @@
   "reservation_cancel_successfully": "تم إلغاء الحجز بنجاح",
   "delete": "حذف",
   "are_you_want_to_delete_your_address": "هل تريد حذف عنوانك ؟",
-  "address_deleted_successfully": "تم حذف العنوان بنجاح"
+  "address_deleted_successfully": "تم حذف العنوان بنجاح",
+  "added_to_favourites": "تم الاضافة الي المفضلة",
+  "removed_from_favourites": "تم الازالة من المفضلة"
 
 }

@@ -7,12 +7,11 @@ import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
-import '../../../app/core/utils/images.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/svg_images.dart';
-import '../../../app/core/utils/text_styles.dart';
-import '../../../components/custom_images.dart';
 import '../../../components/custom_network_image.dart';
+import '../../../navigation/custom_navigation.dart';
+import '../../../navigation/routes.dart';
 
 class HomeBanner extends StatelessWidget {
   const HomeBanner({Key? key}) : super(key: key);
@@ -50,14 +49,20 @@ class HomeBanner extends StatelessWidget {
                             itemCount: provider.bannerModel?.data?.length ?? 0,
                             itemBuilder: (context, index, _) {
                               return InkWell(
+                                focusColor: Colors.transparent,
+                                splashColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
                                 onTap: () {
-                                  // CustomNavigator.push(Routes.PLACE_DETAILS,
-                                  //     arguments: provider.bannerModel
-                                  //             ?.data?[index].place?.id ??
-                                  //         0);
+                                  if (provider.bannerModel?.data?[index].id !=
+                                      null) {
+                                    CustomNavigator.push(Routes.PRODUCT_DETAILS,
+                                        arguments: provider
+                                            .bannerModel?.data?[index].id);
+                                  }
                                 },
                                 child: Stack(
-                                  alignment: Alignment.centerRight,
+                                  alignment: Alignment.bottomRight,
                                   children: [
                                     CustomNetworkImage.containerNewWorkImage(
                                         image: provider.bannerModel
@@ -68,54 +73,26 @@ class HomeBanner extends StatelessWidget {
                                         fit: BoxFit.cover,
                                         radius: 18),
                                     Padding(
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal:
-                                              Dimensions.PADDING_SIZE_SMALL.w,
-                                          vertical:
-                                              Dimensions.PADDING_SIZE_SMALL.h),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          customImageIcon(
-                                              imageName: Images.logo,
-                                              height: 50,
-                                              width: 75),
-                                          Text(
-                                            "العناية بالبشرة",
-                                            style: AppTextStyles.bold.copyWith(
-                                              fontSize: 25,
-                                              color: Styles.WHITE_COLOR,
-                                            ),
+                                        padding: EdgeInsets.symmetric(
+                                            horizontal:
+                                                Dimensions.PADDING_SIZE_SMALL.w,
+                                            vertical: Dimensions
+                                                .PADDING_SIZE_SMALL.h),
+                                        child: Visibility(
+                                          visible:
+                                              index == provider.bannerIndex,
+                                          child: CustomButton(
+                                            width: 100.w,
+                                            height: 35.h,
+                                            text: "المزيد",
+                                            svgIcon: SvgImages.arrowLeft,
+                                            iconColor: Styles.WHITE_COLOR,
+                                            onTap: () {
+                                              provider.bannerController
+                                                  .nextPage();
+                                            },
                                           ),
-                                          Text(
-                                            "عندنا غير",
-                                            style:
-                                                AppTextStyles.regular.copyWith(
-                                              fontSize: 18,
-                                              color: Styles.WHITE_COLOR,
-                                            ),
-                                          ),
-                                          Visibility(
-                                            visible:
-                                                index == provider.bannerIndex,
-                                            child: CustomButton(
-                                              width: 100.w,
-                                              height: 35.h,
-                                              text: "المزيد",
-                                              svgIcon: SvgImages.arrowLeft,
-                                              iconColor: Styles.WHITE_COLOR,
-                                              onTap: () {
-                                                provider.bannerController
-                                                    .nextPage();
-                                              },
-                                            ),
-                                          )
-                                        ],
-                                      ),
-                                    ),
+                                        )),
                                   ],
                                 ),
                               );

@@ -11,7 +11,7 @@ import 'package:casa/features/favourite/provider/favourite_provider.dart';
 import 'package:casa/features/guest/guest_mode.dart';
 import 'package:provider/provider.dart';
 import '../../../components/grid_list_animator.dart';
-import '../../home/widgets/product_card.dart';
+import '../../../mian_widgets/product_card.dart';
 
 class FavouritePage extends StatefulWidget {
   const FavouritePage({Key? key}) : super(key: key);

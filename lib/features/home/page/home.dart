@@ -1,5 +1,4 @@
 import 'package:casa/app/core/utils/styles.dart';
-import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
 import '../../../data/config/di.dart';
@@ -25,8 +24,9 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
     Future.delayed(Duration.zero, () {
       sl<MapProvider>().getCurrentLocation();
       sl<HomeProvider>().scroll(controller);
+      sl<HomeProvider>().getBanners();
+      sl<ReservationsProvider>().getNextReservations();
       sl<HomeProvider>().getProducts();
-      // sl<HomeProvider>().getBanners();
     });
 
     super.initState();
@@ -45,8 +45,9 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
             child: RefreshIndicator(
               color: Styles.PRIMARY_COLOR,
               onRefresh: () async {
-                sl<HomeProvider>().getProducts();
+                sl<HomeProvider>().getBanners();
                 sl<ReservationsProvider>().getNextReservations();
+                sl<HomeProvider>().getProducts();
               },
               child: Column(
                 children: [
@@ -55,7 +56,11 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
                       controller: controller,
                       physics: const BouncingScrollPhysics(),
                       padding: EdgeInsets.zero,
-                      children: const [HomeBanner(), HomeDates(), HomeProducts()],
+                      children: const [
+                        HomeBanner(),
+                        HomeDates(),
+                        HomeProducts()
+                      ],
                     ),
                   ),
                 ],

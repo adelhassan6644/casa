@@ -1,3 +1,4 @@
+import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/main_models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
@@ -76,7 +77,7 @@ class ProductCard extends StatelessWidget {
                           CustomButton(
                             width: 65.w,
                             height: 25.h,
-                            text: "حجز",
+                            text: getTranslated("book", context),
                           ),
                         ],
                       )

@@ -1,6 +1,7 @@
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import '../../app/core/utils/styles.dart';
 import '../app/core/utils/text_styles.dart';
 import 'custom_images.dart';
@@ -25,10 +26,12 @@ class CustomButton extends StatelessWidget {
   final bool isError;
   final bool withBorderColor;
   final bool withShadow;
+  final Color? loadingColor;
 
   const CustomButton(
       {Key? key,
       this.onTap,
+      this.loadingColor,
       this.fIconWidget,
       this.lIconWidget,
       this.radius,
@@ -58,8 +61,8 @@ class CustomButton extends StatelessWidget {
             onTap!();
           }
         },
-        child: AnimatedContainer(
-          width: isLoading ? 90.w : width ?? context.width,
+        child: Container(
+          width:  width ?? context.width,
           height: height ?? 50.h,
           padding: EdgeInsets.symmetric(horizontal: 16.w),
           decoration: BoxDecoration(
@@ -79,17 +82,11 @@ class CustomButton extends StatelessWidget {
                     : Colors.transparent),
             borderRadius: BorderRadius.circular(radius ?? 30),
           ),
-          duration: const Duration(
-            milliseconds: 600,
-          ),
-          curve: Curves.easeInOutSine,
           child: Center(
             child: isLoading
-                ? Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: CircularProgressIndicator(
-                      color: textColor ?? Styles.WHITE_COLOR,
-                    ),
+                ? SpinKitThreeBounce(
+                    color: loadingColor ?? Styles.WHITE_COLOR,
+                    size: 25,
                   )
                 : Row(
                     mainAxisSize: MainAxisSize.min,
