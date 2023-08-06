@@ -95,7 +95,7 @@ class AuthRepo {
         // "email": mail,
         "phone": phone,
         "password": password,
-        // "fcm_token": await saveDeviceToken()
+        "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {
@@ -116,7 +116,6 @@ class AuthRepo {
           await dioClient.post(uri: EndPoints.resetPassword, data: {
         "email": email,
         "newPassword": password,
-        // "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {
@@ -138,7 +137,6 @@ class AuthRepo {
           data: {
             "oldPassword": oldPassword,
             "newPassword": password,
-            // "fcm_token": await saveDeviceToken()
           });
 
       if (response.statusCode == 200) {
@@ -157,7 +155,6 @@ class AuthRepo {
       Response response =
           await dioClient.post(uri: EndPoints.forgetPassword, data: {
         "email": mail,
-        // "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {
@@ -183,7 +180,7 @@ class AuthRepo {
         "email": mail,
         "gender": gender,
         "password": password,
-        // "fcm_token": await saveDeviceToken()
+        "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {
