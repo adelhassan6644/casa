@@ -34,6 +34,7 @@ class CustomNetworkImage {
       errorWidget: (a, b, c) => Container(
         width: width ?? 40.w,
         height: height ?? 40.h,
+        padding:padding?? const EdgeInsets.all(12) ,
         decoration: BoxDecoration(
           borderRadius: edges
               ? BorderRadius.only(
@@ -48,7 +49,6 @@ class CustomNetworkImage {
             ).image,
           ),
         ),
-        padding: padding,
         child: imageWidget,
       ),
       placeholder: (context, url) {
