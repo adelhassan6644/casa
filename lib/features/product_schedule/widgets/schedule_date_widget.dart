@@ -77,11 +77,11 @@ class _ScheduleDateShimmer extends StatelessWidget {
               color: Styles.WHITE_COLOR,
               border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomShimmerContainer(
-                width: context.width,
+                width: 150,
                 height: 16.h,
-                radius: 100,
               ),
               Padding(
                 padding: EdgeInsets.symmetric(vertical: 16.h),
@@ -143,9 +143,8 @@ class _ScheduleDateShimmer extends StatelessWidget {
                 ]),
               ),
               CustomShimmerContainer(
-                width: context.width,
+                width: 250,
                 height: 12.h,
-                radius: 100,
               ),
             ],
           )),

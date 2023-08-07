@@ -32,35 +32,35 @@ class _ProductScheduleState extends State<ProductSchedule> {
       return Scaffold(
         backgroundColor: Styles.SCAFFOLD_BG,
         body: SafeArea(
-          child: Column(
-            children: [
-              CustomAppBar(
-                title: "حجز جلسة ${widget.data["title"]}",
-              ),
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                  child: ListAnimator(data: [
-                    CalenderWidget(
-                      id: widget.data["id"],
-                    ),
-                    SizedBox(
-                      height: 24.h,
-                    ),
-                    const ScheduleDateWidget(),
-                  ]),
+          child: Padding(
+            padding: EdgeInsets.symmetric(
+                horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+            child: Column(
+              children: [
+                CustomAppBar(
+                  title: "حجز جلسة ${widget.data["title"]}",
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
-                    horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                child: CustomButton(
+                Expanded(
+                  child: ListAnimator(
+                    data: [
+                      CalenderWidget(
+                        id: widget.data["id"],
+                      ),
+                      SizedBox(
+                        height: Dimensions.PADDING_SIZE_DEFAULT.h,
+                      ),
+                      const ScheduleDateWidget(),
+                    ],
+                  ),
+                ),
+                CustomButton(
                   text: getTranslated("follow_and_payment", context),
                 ),
-              ),
-            ],
+                SizedBox(
+                  height: Dimensions.PADDING_SIZE_DEFAULT.h,
+                ),
+              ],
+            ),
           ),
         ),
       );

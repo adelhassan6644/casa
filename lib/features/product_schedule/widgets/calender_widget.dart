@@ -14,7 +14,7 @@ class CalenderWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer<ProductScheduleProvider>(builder: (_, provider, child) {
-      return !provider.isGetting
+      return !provider.isLoading
           ? TableCalendar(
               firstDay: provider.kFirstDay,
               lastDay: provider.kLastDay,
