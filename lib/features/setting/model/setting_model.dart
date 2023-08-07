@@ -1,81 +1,44 @@
 class SettingModel {
-  String? message;
-  Data? data;
+  String? logo;
+  String? title;
+  String? description;
+  String? serviceFee;
+  String? tax;
+  String? terms;
+  String? serverKey;
+  String? conditions;
 
-  SettingModel({this.message, this.data});
+  SettingModel(
+      {this.logo,
+      this.title,
+      this.description,
+      this.serviceFee,
+      this.tax,
+      this.terms,
+      this.serverKey,
+      this.conditions});
 
   SettingModel.fromJson(Map<String, dynamic> json) {
-    message = json['message'];
-    data = json['data'] != null ? Data.fromJson(json['data']) : null;
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['message'] = message;
-    if (this.data != null) {
-      data['data'] = this.data!.toJson();
-    }
-    return data;
-  }
-}
-
-class Data {
-  int? id;
-  String? terms;
-  String? name;
-  String? email;
-  String? twitter;
-  String? website;
-  String? instagram;
-  String? facebook;
-  String? tiktok;
-  String? image;
-  String? phone;
-  String? aboutUs;
-
-  Data(
-      {this.id,
-      this.terms,
-      this.name,
-      this.email,
-      this.twitter,
-      this.website,
-      this.instagram,
-      this.facebook,
-      this.tiktok,
-      this.image,
-      this.phone,
-      this.aboutUs});
-
-  Data.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
+    logo = json['logo'];
+    title = json['title'];
+    description = json['description'];
+    serviceFee = json['service_fee'];
+    tax = json['tax'];
     terms = json['terms'];
-    email = json['email'];
-    twitter = json['twitter'];
-    website = json['website'];
-    instagram = json['instagram'];
-    facebook = json['facebook'];
-    tiktok = json['tiktok'];
-    image = json['image'];
-    phone = json['phone'];
-    aboutUs = json['aboutUs'];
+    serverKey = json['server_key'];
+    conditions = json['conditions'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
+    data['logo'] = logo;
+    data['title'] = title;
+    data['description'] = description;
+    data['service_fee'] = serviceFee;
+    data['tax'] = tax;
     data['terms'] = terms;
-    data['name'] = this.name;
-    data['email'] = this.email;
-    data['twitter'] = this.twitter;
-    data['website'] = this.website;
-    data['instagram'] = this.instagram;
-    data['facebook'] = this.facebook;
-    data['tiktok'] = this.tiktok;
-    data['image'] = this.image;
-    data['phone'] = this.phone;
-    data['aboutUs'] = this.aboutUs;
+    data['server_key'] = serverKey;
+    data['conditions'] = conditions;
     return data;
   }
 }

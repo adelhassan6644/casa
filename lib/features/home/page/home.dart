@@ -28,7 +28,6 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
       sl<ReservationsProvider>().getNextReservations();
       sl<HomeProvider>().getProducts();
     });
-
     super.initState();
   }
 

@@ -36,6 +36,7 @@ class EndPoints {
   static payment(id) => '/$id';
   static const String checkOut = 'setting';
   static const String setting = 'setting';
+  static const String contact = 'contact';
 
   /// maps
   static const String GEOCODE_URI = '/maps/api/geocode/';

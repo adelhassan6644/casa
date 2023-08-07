@@ -1,6 +1,5 @@
 import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/address/provider/addresses_provider.dart';
-import 'package:casa/features/auth/provider/auth_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
@@ -10,11 +9,8 @@ import 'package:casa/navigation/routes.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/svg_images.dart';
 import '../../../app/localization/localization/language_constant.dart';
-import '../../../components/custom_simple_dialog.dart';
 import '../../../data/config/di.dart';
 import '../../../main_page/provider/main_page_provider.dart';
-import '../../address/widgets/delete_confirmation_dialog.dart';
-import '../../reservations/widgets/cancellation_dialog.dart';
 import '../widgets/more_button.dart';
 import '../widgets/profile_card.dart';
 
@@ -62,7 +58,7 @@ class More extends StatelessWidget {
                   MoreButton(
                     title: getTranslated("contact_with_us", context),
                     icon: SvgImages.outlineMailIcon,
-                    onTap: () => CustomNavigator.push(Routes.ABOUT_US),
+                    onTap: () => CustomNavigator.push(Routes.CONTACT_WITH_US),
                   ),
                   MoreButton(
                     title: getTranslated("terms_conditions", context),

@@ -10,11 +10,13 @@ class ProductDetailsRepo {
   final DioClient dioClient;
   final SharedPreferences sharedPreferences;
 
-  ProductDetailsRepo({required this.dioClient, required this.sharedPreferences});
+  ProductDetailsRepo(
+      {required this.dioClient, required this.sharedPreferences});
 
   Future<Either<ServerFailure, Response>> getProductDetails(id) async {
     try {
-      Response response = await dioClient.get(uri: EndPoints.productDetails(id));
+      Response response =
+          await dioClient.get(uri: EndPoints.productDetails(id));
       if (response.statusCode == 200) {
         return Right(response);
       } else {

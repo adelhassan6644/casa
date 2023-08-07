@@ -22,12 +22,11 @@ import '../../features/product_schedule/repo/product_schedule_repo.dart';
 import '../../features/reservations/provider/reservations_provider.dart';
 import '../../features/reservations/repo/reservations_repo.dart';
 import '../../features/notifications/provider/notifications_provider.dart';
-import '../../features/product_details/provider/product_details_provider.dart';
 import '../../features/product_details/repo/product_details_repo.dart';
 import '../../features/profile/provider/profile_provider.dart';
 import '../../features/profile/repo/profile_repo.dart';
-import '../../features/setting/provider/setting_provider.dart';
-import '../../features/setting/repo/setting_repo.dart';
+import '../../features/setting/provider/config_provider.dart';
+import '../../features/setting/repo/config_repo.dart';
 import '../../main_page/provider/main_page_provider.dart';
 import '../api/end_points.dart';
 import '../network/network_info.dart';
@@ -70,7 +69,7 @@ Future<void> init() async {
   sl.registerLazySingleton(
       () => ProductDetailsRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
-      () => SettingRepo(sharedPreferences: sl(), dioClient: sl()));
+      () => ConfigRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => ContactRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
@@ -88,7 +87,6 @@ Future<void> init() async {
   sl.registerLazySingleton(() => MainPageProvider());
   sl.registerLazySingleton(() => AuthProvider(authRepo: sl()));
   sl.registerLazySingleton(() => FavouriteProvider(favouriteRepo: sl()));
-  sl.registerLazySingleton(() => ProductDetailsProvider(repo: sl()));
   sl.registerLazySingleton(() => HomeProvider(homeRepo: sl()));
   sl.registerLazySingleton(() => ReservationsProvider(repo: sl()));
   sl.registerLazySingleton(
@@ -96,7 +94,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ProfileProvider(profileRepo: sl()));
   sl.registerLazySingleton(() => MapProvider(mapRepo: sl()));
   sl.registerLazySingleton(() => AddressesProvider(repo: sl()));
-  sl.registerLazySingleton(() => SettingProvider(repo: sl()));
+  sl.registerLazySingleton(() => ConfigProvider(repo: sl()));
   sl.registerLazySingleton(() => ContactProvider(contactRepo: sl()));
   sl.registerLazySingleton(() => ProductScheduleProvider(repo: sl()));
 

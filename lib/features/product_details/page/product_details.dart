@@ -1,6 +1,7 @@
 import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/shimmer/custom_shimmer.dart';
+import 'package:casa/features/product_details/repo/product_details_repo.dart';
 import 'package:casa/features/product_schedule/provider/product_schedule_provider.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
@@ -20,108 +21,106 @@ import '../../../data/config/di.dart';
 import '../../../navigation/routes.dart';
 import '../widgets/product_details_widget.dart';
 
-class ProductDetails extends StatefulWidget {
+class ProductDetails extends StatelessWidget {
   final int id;
 
   const ProductDetails({Key? key, required this.id}) : super(key: key);
 
   @override
-  State<ProductDetails> createState() => _ProductDetailsState();
-}
-
-class _ProductDetailsState extends State<ProductDetails> {
-  @override
-  void initState() {
-    Future.delayed(Duration.zero, () {
-      Provider.of<ProductDetailsProvider>(context, listen: false).model = null;
-      Provider.of<ProductDetailsProvider>(context, listen: false)
-          .getDetails(widget.id);
-    });
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        top: false,
-        child: Consumer<ProductDetailsProvider>(
-            builder: (context, provider, child) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Stack(
-                children: [
-                  provider.isLoading
-                      ? CustomShimmerContainer(
-                          height: 300.h,
-                          width: context.width,
-                        )
-                      : Visibility(
-                          visible:
-                              !provider.isLoading && provider.model != null,
-                          child: CustomNetworkImage.containerNewWorkImage(
-                              image: provider.model?.image ?? "",
-                              width: context.width,
-                              fit: BoxFit.fitWidth,
-                              height: 300.h,
-                              radius: 0),
-                        ),
-                  CustomAppBar(
-                    actionChild: Visibility(
-                      visible: !provider.isLoading,
-                      child: ClipRRect(
-                        clipBehavior: Clip.antiAlias,
-                        borderRadius: BorderRadius.circular(100),
-                        child: BackdropFilter(
-                          filter: ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
-                          child: Container(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 12.w, vertical: 8.h),
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Styles.WHITE_COLOR),
-                                  color: Colors.black.withOpacity(0.06),
-                                  borderRadius: BorderRadius.circular(8)),
-                              child: Text(
-                                provider.model?.status == 1
-                                    ? getTranslated(
-                                        "available_for_reservation", context)
-                                    : getTranslated(
-                                        "unavailable_for_reservation", context),
-                                style: AppTextStyles.regular.copyWith(
-                                    color: Styles.PRIMARY_COLOR, fontSize: 12),
-                              )),
+      body: ChangeNotifierProvider(
+        create: (_) => ProductDetailsProvider(repo: sl<ProductDetailsRepo>())..getDetails(id),
+        child: SafeArea(
+          top: false,
+          child: Consumer<ProductDetailsProvider>(
+              builder: (context, provider, child) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Stack(
+                  children: [
+                    provider.isLoading
+                        ? CustomShimmerContainer(
+                            height: 300.h,
+                            width: context.width,
+                          )
+                        : Visibility(
+                            visible:
+                                !provider.isLoading && provider.model != null,
+                            child: CustomNetworkImage.containerNewWorkImage(
+                                image: provider.model?.image ?? "",
+                                width: context.width,
+                                fit: BoxFit.fitWidth,
+                                height: 300.h,
+                                radius: 0),
+                          ),
+                    CustomAppBar(
+                      actionChild: Visibility(
+                        visible: !provider.isLoading,
+                        child: ClipRRect(
+                          clipBehavior: Clip.antiAlias,
+                          borderRadius: BorderRadius.circular(100),
+                          child: BackdropFilter(
+                            filter:
+                                ui.ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+                            child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal: 12.w, vertical: 8.h),
+                                decoration: BoxDecoration(
+                                    border:
+                                        Border.all(color: Styles.WHITE_COLOR),
+                                    color: Colors.black.withOpacity(0.06),
+                                    borderRadius: BorderRadius.circular(8)),
+                                child: Text(
+                                  provider.model?.status == 1
+                                      ? getTranslated(
+                                          "available_for_reservation", context)
+                                      : getTranslated(
+                                          "unavailable_for_reservation",
+                                          context),
+                                  style: AppTextStyles.regular.copyWith(
+                                      color: Styles.PRIMARY_COLOR,
+                                      fontSize: 12),
+                                )),
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              provider.isLoading
-                  ? const _ProductDetailsWidgetShimmer()
-                  : provider.model != null
-                      ? ProductDetailsWidget(item: provider.model!)
-                      : const EmptyState(),
-              Visibility(
-                visible: !provider.isLoading && provider.model != null,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(
-                      vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
-                      horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                  child: CustomButton(
-                    text: getTranslated("book_an_appointment", context),
-                    svgIcon: SvgImages.arrowLeft,
-                    iconColor: Styles.WHITE_COLOR,
-                    onTap: () {
-                      sl<ProductScheduleProvider>().getProductSchedule(provider.model?.id);
-                      CustomNavigator.push(Routes.PRODUCT_SCHEDULE,arguments: {"title": provider.model?.service, "id" : provider.model?.id});
-                    },
+                  ],
+                ),
+                provider.isLoading
+                    ? const _ProductDetailsWidgetShimmer()
+                    : provider.model != null
+                        ? ProductDetailsWidget(item: provider.model!)
+                        : const EmptyState(),
+                Visibility(
+                  visible: !provider.isLoading && provider.model != null,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
+                        horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+                    child: CustomButton(
+                      text: getTranslated("book_an_appointment", context),
+                      svgIcon: SvgImages.arrowLeft,
+                      iconColor: Styles.WHITE_COLOR,
+                      onTap: () {
+                        sl<ProductScheduleProvider>()
+                            .getProductSchedule(provider.model?.id);
+                        CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
+                            arguments: {
+                              "title": provider.model?.service,
+                              "id": provider.model?.id
+                            });
+                      },
+                    ),
                   ),
                 ),
-              ),
-            ],
-          );
-        }),
+              ],
+            );
+          }),
+        ),
       ),
     );
   }
