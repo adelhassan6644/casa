@@ -58,7 +58,7 @@ class More extends StatelessWidget {
                   MoreButton(
                     title: getTranslated("contact_with_us", context),
                     icon: SvgImages.outlineMailIcon,
-                    onTap: () => CustomNavigator.push(Routes.CONTACT_WITH_US),
+                    onTap: () => CustomNavigator.push(Routes.ABOUT_US),
                   ),
                   MoreButton(
                     title: getTranslated("terms_conditions", context),

@@ -19,6 +19,7 @@ import '../features/maps/page/map_page.dart';
 import '../features/on_boarding/pages/on_boarding.dart';
 import '../features/payment/pages/payment_web_view.dart';
 import '../features/product_schedule/page/product_schedule.dart';
+import '../features/setting/pages/about_us.dart';
 import '../features/splash/page/splash.dart';
 import '../main.dart';
 import 'routes.dart';
@@ -91,8 +92,8 @@ abstract class CustomNavigator {
       case Routes.CONTACT_WITH_US:
         return _pageRoute(const ContactWithUs());
 
-      // case Routes.ABOUT_US:
-      //   return _pageRoute(const ContactWithUs());
+      case Routes.ABOUT_US:
+        return _pageRoute(const AboutUs());
 
       case Routes.TERMS:
         return _pageRoute(const Terms());

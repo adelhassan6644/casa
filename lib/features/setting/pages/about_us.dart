@@ -13,8 +13,8 @@ import '../../../components/custom_images.dart';
 import '../../../components/custom_text_form_field.dart';
 import '../provider/config_provider.dart';
 
-class ContactWithUs extends StatelessWidget {
-  const ContactWithUs({Key? key}) : super(key: key);
+class AboutUs extends StatelessWidget {
+  const AboutUs({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
