@@ -41,6 +41,7 @@ extension DateExtention on DateTime {
   String dateFormat({required String format, String? lang}) {
     return DateFormat(
       format,
+        lang
     ).format(this);
   }
 

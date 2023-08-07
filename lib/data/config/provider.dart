@@ -18,7 +18,6 @@ import '../../features/profile/provider/profile_provider.dart';
 import '../../features/splash/provider/splash_provider.dart';
 import '../../features/setting/provider/setting_provider.dart';
 import '../../main_page/provider/main_page_provider.dart';
-import '../../main_providers/calender_provider.dart';
 
 abstract class ProviderList {
   static List<SingleChildWidget> providers = [
@@ -34,7 +33,6 @@ abstract class ProviderList {
     ChangeNotifierProvider(create: (_) => di.sl<NotificationsProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ProductDetailsProvider>()),
-    ChangeNotifierProvider(create: (_) => di.sl<CalenderProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<AddressesProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ProductScheduleProvider>()),

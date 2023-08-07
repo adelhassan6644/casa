@@ -78,6 +78,8 @@ class ProductCard extends StatelessWidget {
                             width: 65.w,
                             height: 25.h,
                             text: getTranslated("book", context),
+                            onTap: () => CustomNavigator.push(Routes.PRODUCT_DETAILS,
+                                arguments: product.id),
                           ),
                         ],
                       )

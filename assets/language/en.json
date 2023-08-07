@@ -135,5 +135,8 @@
   "added_to_favourites": "Added to Favourites",
   "removed_from_favourites": "Removed from Favourites",
   "connected": "Connected",
-  "no_connection": "No Connection"
+  "no_connection": "No Connection",
+  "please_try_again": "Please, Try again",
+  "check_out": "Check out",
+  "payment": "Payment"
 }

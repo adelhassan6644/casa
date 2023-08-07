@@ -2,6 +2,7 @@ import 'package:casa/features/product_schedule/repo/product_schedule_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
@@ -11,10 +12,31 @@ class ProductScheduleProvider extends ChangeNotifier {
   ProductScheduleRepo repo;
   ProductScheduleProvider({required this.repo});
 
-  DateTime? day;
-  onSelectDay(v) {
-    day = v;
+  CalendarFormat calendarFormat = CalendarFormat.twoWeeks;
+  onChangeFormat(v) {
+    calendarFormat = v;
     notifyListeners();
+  }
+
+  final kFirstDay = DateTime(
+      DateTime.now().year, DateTime.now().month - 3, DateTime.now().day);
+  final kLastDay = DateTime(
+      DateTime.now().year, DateTime.now().month + 3, DateTime.now().day);
+
+  List<dynamic> loadSchedule(DateTime? v) {
+    print(productScheduleModel?.map((e) => e.startTime).toList());
+    return productScheduleModel?.map((e) => e.startTime).toList()??[];
+  }
+
+  DateTime? day;
+  DateTime focusedDay = DateTime.now();
+  void onDaySelected(DateTime selectedDay, DateTime fDay,int id) {
+    if (!isSameDay(day, selectedDay)) {
+      day = selectedDay;
+      focusedDay = fDay;
+      notifyListeners();
+      getDaySchedule(id);
+    }
   }
 
   List<ScheduleModel>? productScheduleModel;

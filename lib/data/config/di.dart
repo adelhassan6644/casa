@@ -16,6 +16,7 @@ import '../../features/favourite/provider/favourite_provider.dart';
 import '../../features/favourite/repo/favourite_repo.dart';
 import '../../features/home/provider/home_provider.dart';
 import '../../features/maps/repo/map_repo.dart';
+import '../../features/payment/repo/payment_repo.dart';
 import '../../features/product_schedule/provider/product_schedule_provider.dart';
 import '../../features/product_schedule/repo/product_schedule_repo.dart';
 import '../../features/reservations/provider/reservations_provider.dart';
@@ -76,6 +77,8 @@ Future<void> init() async {
       () => AddressesRepo(sharedPreferences: sl(), dioClient: sl()));
   sl.registerLazySingleton(
       () => ProductScheduleRepo(sharedPreferences: sl(), dioClient: sl()));
+  sl.registerLazySingleton(
+      () => PaymentRepo(sharedPreferences: sl(), dioClient: sl()));
 
   //provider
   sl.registerLazySingleton(() => LocalizationProvider(sharedPreferences: sl()));

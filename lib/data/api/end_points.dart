@@ -33,6 +33,8 @@ class EndPoints {
   static productDetails(id) => 'subService/$id';
   static productSchedule(id) => 'subService/schedule/$id';
   static daySchedule(id) => 'subService/daySchedule/$id';
+  static payment(id) => '/$id';
+  static const String checkOut = 'setting';
   static const String setting = 'setting';
 
   /// maps

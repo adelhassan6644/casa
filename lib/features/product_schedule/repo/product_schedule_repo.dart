@@ -31,7 +31,8 @@ class ProductScheduleRepo {
       {required int id, required DateTime day}) async {
     try {
       Response response = await dioClient
-          .post(uri: EndPoints.daySchedule(id), data: {"day": day});
+          .post(uri: EndPoints.daySchedule(id),
+          data: {"day": day.toString()});
       if (response.statusCode == 200) {
         return Right(response);
       } else {

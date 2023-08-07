@@ -21,5 +21,8 @@ class Routes {
   static const ABOUT_US = "ABOUT_US";
   static const ADDRESS = "ADDRESS";
   static const TERMS = "TERMS";
+  static const CHECK_OUT = "PAYMENT";
+  static const PAYMENT_WEB_VIEW = "PAYMENT_WEB_VIEW";
+  static const SUCCESS = "SUCCESS";
 
 }

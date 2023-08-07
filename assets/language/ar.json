@@ -136,6 +136,9 @@
   "added_to_favourites": "تم الاضافة الي المفضلة",
   "removed_from_favourites": "تم الازالة من المفضلة",
   "connected": "متصل",
-  "no_connection": "غير متصل"
+  "no_connection": "غير متصل",
+  "please_try_again": "برجاء المحاولة مرة اخري",
+  "check_out": "الدفع",
+  "payment": "الدفع"
 
 }
