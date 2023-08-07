@@ -15,14 +15,9 @@ import '../../../components/tab_widget.dart';
 import '../../../navigation/routes.dart';
 import '../../maps/provider/map_provider.dart';
 
-class HomeHeader extends StatefulWidget {
+class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
 
-  @override
-  State<HomeHeader> createState() => _HomeHeaderState();
-}
-
-class _HomeHeaderState extends State<HomeHeader> {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -154,6 +149,7 @@ class _HomeHeaderState extends State<HomeHeader> {
             ],
           ),
         ),
+
         Consumer<HomeProvider>(builder: (_, provider, child) {
           return AnimatedCrossFade(
             crossFadeState: CrossFadeState.showFirst,
@@ -172,7 +168,7 @@ class _HomeHeaderState extends State<HomeHeader> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: provider.isGetCategories
-                      ? List.generate(
+                      ?[... List.generate(
                           5,
                           (index) {
                             return Padding(
@@ -184,25 +180,23 @@ class _HomeHeaderState extends State<HomeHeader> {
                               ),
                             );
                           },
-                        )
-                      : List.generate(
+                        )]
+                      : [...List.generate(
                           provider.categories?.length ?? 0,
                           (index) {
                             return TabWidget(
                               title: provider.categories?[index].title ?? "",
                               width: 100,
-                              isSelected: provider.currentTab ==
-                                  provider.categories?[index].id,
+                              isSelected: provider.currentTab == provider.categories?[index].id,
                               withBorder: false,
                               onTab: () {
-                                if (provider.currentTab !=
-                                    provider.categories?[index].id) {
+                                if (provider.currentTab != provider.categories?[index].id) {
                                   provider.selectTab(index);
                                 }
                               },
                             );
                           },
-                        ),
+                        )],
                 ),
               ),
             ),
