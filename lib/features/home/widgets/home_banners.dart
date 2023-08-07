@@ -37,68 +37,60 @@ class HomeBanner extends StatelessWidget {
                           CarouselSlider.builder(
                             options: CarouselOptions(
                               viewportFraction: 1,
-                              aspectRatio: 0.7,
-                              autoPlay: false,
-                              height: 210.h,
-                              enlargeCenterPage: false,
+                              autoPlay: true,
+                              enlargeCenterPage: true,
                               disableCenter: true,
-                              pageSnapping: true,
+                              height: 210.h,
                               onPageChanged: (index, reason) {
                                 provider.setBannerIndex(index);
                               },
                             ),
-                            disableGesture: true,
                             itemCount: provider.bannerModel?.data?.length ?? 0,
                             itemBuilder: (context, index, _) {
-                              return InkWell(
-                                focusColor: Colors.transparent,
-                                splashColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                hoverColor: Colors.transparent,
-                                onTap: () {
-                                  if (provider.bannerModel?.data?[index]
-                                          .subServiceId !=
-                                      null) {
-                                    CustomNavigator.push(Routes.PRODUCT_DETAILS,
-                                        arguments: provider.bannerModel
-                                            ?.data?[index].subServiceId);
-                                  }
-                                },
-                                child: Stack(
-                                  alignment: Alignment.bottomRight,
-                                  children: [
-                                    CustomNetworkImage.containerNewWorkImage(
-                                        image: provider.bannerModel
-                                                ?.data?[index].image ??
-                                            "",
-                                        width: context.width,
-                                        height: 210.h,
-                                        fit: BoxFit.cover,
-                                        radius: 18),
-                                    Padding(
-                                        padding: EdgeInsets.symmetric(
-                                            horizontal:
-                                                Dimensions.PADDING_SIZE_SMALL.w,
-                                            vertical: Dimensions
-                                                .PADDING_SIZE_SMALL.h),
-                                        child: Visibility(
-                                          visible:
-                                              index == provider.bannerIndex,
-                                          child: CustomButton(
-                                            width: 115,
-                                            height: 35.h,
-                                            text:
-                                                getTranslated("more", context),
-                                            svgIcon: SvgImages.arrowLeft,
-                                            iconColor: Styles.WHITE_COLOR,
-                                            onTap: () {
-                                              provider.bannerController
-                                                  .nextPage();
-                                            },
-                                          ),
-                                        )),
-                                  ],
-                                ),
+                              return Stack(
+                                alignment: Alignment.bottomRight,
+                                children: [
+                                  CustomNetworkImage.containerNewWorkImage(
+                                      image: provider.bannerModel?.data?[index]
+                                              .image ??
+                                          "",
+                                      width: context.width,
+                                      height: 210.h,
+                                      fit: BoxFit.cover,
+                                      radius: 18),
+                                  Padding(
+                                      padding: EdgeInsets.symmetric(
+                                          horizontal:
+                                              Dimensions.PADDING_SIZE_SMALL.w,
+                                          vertical:
+                                              Dimensions.PADDING_SIZE_SMALL.h),
+                                      child: Visibility(
+                                        visible: index == provider.bannerIndex,
+                                        child: CustomButton(
+                                          width: 115,
+                                          height: 35.h,
+                                          text: getTranslated("more", context),
+                                          svgIcon: SvgImages.arrowLeft,
+                                          iconColor: Styles.WHITE_COLOR,
+                                          onTap: () {
+                                            if (provider
+                                                    .bannerModel
+                                                    ?.data?[index]
+                                                    .subServiceId !=
+                                                null) {
+                                              CustomNavigator.push(
+                                                  Routes.PRODUCT_DETAILS,
+                                                  arguments: provider
+                                                      .bannerModel
+                                                      ?.data?[index]
+                                                      .subServiceId);
+                                            }
+                                            // provider.bannerController
+                                            //     .nextPage();
+                                          },
+                                        ),
+                                      )),
+                                ],
                               );
                             },
                             carouselController: provider.bannerController,
