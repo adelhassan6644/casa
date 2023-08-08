@@ -238,7 +238,7 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
               .copyWith(color: Styles.TITLE, fontSize: 12),
           filled: true,
           errorStyle: AppTextStyles.regular.copyWith(
-            color: Styles.RED_COLOR,
+            color: Styles.ERORR_COLOR,
             fontSize: 11,
           ),
           errorMaxLines: 2,

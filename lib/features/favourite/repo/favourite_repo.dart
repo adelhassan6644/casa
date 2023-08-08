@@ -24,7 +24,7 @@ class FavouriteRepo {
           uri: EndPoints.postFavourite,
           data: {
             "client_id": sharedPreferences.getString(AppStorageKey.userId),
-            "service_id": id
+            "sub_service_id": id
           });
 
       if (response.statusCode == 200) {

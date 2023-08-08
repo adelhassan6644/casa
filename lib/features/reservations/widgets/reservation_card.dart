@@ -3,12 +3,14 @@ import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/app/core/utils/svg_images.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/custom_images.dart';
+import 'package:casa/features/ratting/view/ratting_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_network_image.dart';
+import '../../../components/custom_simple_dialog.dart';
 import '../model/reservation_model.dart';
 
 class AppointmentCard extends StatelessWidget {
@@ -57,13 +59,20 @@ class AppointmentCard extends StatelessWidget {
                                       color: Styles.PRIMARY_COLOR)),
                             ),
                             CustomButton(
-                              width: 100.w,
+                              width: 100,
                               height: 30.h,
                               text: getTranslated(
-                                  isNext ? "edit" : "again", context),
+                                  isNext ? "again" : "rate", context),
                               svgIcon: SvgImages.arrowLeft,
                               iconSize: 16,
                               iconColor: Styles.WHITE_COLOR,
+                              onTap: () {
+                                CustomSimpleDialog.parentSimpleDialog(
+                                  customListWidget: [
+                                    RattingView(reservation: reservation)
+                                  ],
+                                );
+                              },
                             ),
                           ],
                         ),
