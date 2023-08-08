@@ -1,56 +1,81 @@
-
 class NotificationsModel {
-  String? message;
-  List<NotificationItem>? data;
+  List<NotificationItem>? notifications;
 
-  NotificationsModel({this.message, this.data});
+  NotificationsModel({
+    this.notifications,
+  });
 
-  NotificationsModel.fromJson(Map<String, dynamic> json) {
-    message = json['message'];
-    if (json['data'] != null) {
-      data = <NotificationItem>[];
-      json['data'].forEach((v) {
-        data!.add(NotificationItem.fromJson(v));
-      });
-    }
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['message'] = message;
-    if (this.data != null) {
-      data['data'] = this.data!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
+  factory NotificationsModel.fromJson(Map<String, dynamic> json) =>
+      NotificationsModel(
+        notifications:
+        json["data"] == null || json["data"]["notifications"] == null
+            ? []
+            : List<NotificationItem>.from(json["data"]["notifications"]!
+            .map((x) => NotificationItem.fromJson(x))),
+      );
 }
 
 class NotificationItem {
-  int? id;
-  int? reservationId;
-  String? image;
+  NotificationData? notificationData;
+  bool? isRead;
+  String? id;
+  int? notifiableId;
+
+  NotificationItem({
+    this.id,
+    this.notifiableId,
+    this.notificationData,
+    this.isRead,
+  });
+
+  factory NotificationItem.fromJson(Map<String, dynamic> json) =>
+      NotificationItem(
+          id: (json["id"]) ?? "'",
+          notifiableId: json["notifiable_id"],
+          notificationData: json["data"] == null
+              ? null
+              : NotificationData.fromJson(json["data"]),
+          isRead: json["read_at"] == null ? false : true);
+
+  Map<String, dynamic> toJson() =>
+      {"id": id, "data": notificationData?.toJson(), "read_at": isRead};
+}
+
+class NotificationData {
   String? title;
-  DateTime? createdAt;
+  String? routName;
+  bool? isMyOffer;
+  String? message;
+  int? status;
+  int? id;
+  String? url;
 
-  NotificationItem({this.id,this.reservationId, this.image, this.title, this.createdAt});
+  NotificationData({
+    this.message,
+    this.routName,
+    this.isMyOffer,
+    this.title,
+    this.status,
+    this.id,
+    this.url,
+  });
 
-  NotificationItem.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    reservationId = json['reservation_id'];
-    image = json['image'];
-    title = json['title'];
-    createdAt = json['created_at'] != null ?DateTime.parse(json['created_at']) : DateTime.now();
-  }
+  factory NotificationData.fromJson(Map<String, dynamic> json) =>
+      NotificationData(
+        message: json["message"],
+        status: json["status"],
+        title: json["title"],
+        isMyOffer: json["is_my_offer"] ?? false,
+        id: json["id"] != null ? int.tryParse(json["id"].toString()) : 0,
+        routName: json["url"],
+      );
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['reservation_id'] = reservationId;
-    data['image'] = image;
-    data['title'] = title;
-    if (createdAt != null) {
-      data['created_at'] = createdAt ;
-    }
-    return data;
-  }
+  Map<String, dynamic> toJson() => {
+    "message": message,
+    "is_my_offer": isMyOffer,
+    "status": status,
+    "routName": url,
+    "id": id,
+    "title": title,
+  };
 }
