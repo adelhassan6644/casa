@@ -11,7 +11,6 @@ import '../../data/network/network_info.dart';
 import '../../features/address/provider/addresses_provider.dart';
 import '../../features/home/page/home.dart';
 import '../../features/more/page/more.dart';
-import '../../features/reservations/page/reservations.dart';
 import '../widget/nav_bar.dart';
 
 class DashBoard extends StatefulWidget {
@@ -38,7 +37,7 @@ class _DashBoardState extends State<DashBoard> {
       case 0:
         return const Home();
       case 1:
-        return const Reservations();
+        return  Container();
       case 2:
         return const Profile();
       case 3:

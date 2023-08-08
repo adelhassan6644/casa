@@ -49,12 +49,12 @@ class More extends StatelessWidget {
                   MoreButton(
                     title: getTranslated("addresses", context),
                     icon: SvgImages.location,
-                    onTap: () => CustomNavigator.push(Routes.ADDRESS),
+                    // onTap: () => CustomNavigator.push(Routes.ADDRESS),
                   ),
                   MoreButton(
                     title: getTranslated("change_password", context),
                     icon: SvgImages.outlineLockIcon,
-                    onTap: () => CustomNavigator.push(Routes.CHANGE_PASSWORD),
+                    // onTap: () => CustomNavigator.push(Routes.CHANGE_PASSWORD),
                   ),
                   MoreButton(
                     title: getTranslated("contact_with_us", context),
