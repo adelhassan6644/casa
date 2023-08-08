@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="update notification">
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/address/page/addresses_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/address/page/addresses_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/address/provider/addresses_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/address/provider/addresses_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/more/page/more.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/page/more.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/product_schedule/page/product_schedule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_schedule/page/product_schedule.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/reservations/widgets/next_reservations.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/next_reservations.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/navigation/custom_navigation.dart" afterDir="false" />
-    </list>
+    <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="update notification" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="reservation" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -495,7 +484,8 @@
     <MESSAGE value="add rate view and logic" />
     <MESSAGE value="add notification" />
     <MESSAGE value="update notification" />
-    <option name="LAST_COMMIT_MESSAGE" value="update notification" />
+    <MESSAGE value="sprint 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="sprint 2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
