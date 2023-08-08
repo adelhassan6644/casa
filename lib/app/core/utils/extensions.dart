@@ -4,7 +4,9 @@ import 'package:provider/provider.dart';
 
 import '../../../navigation/custom_navigation.dart';
 import '../../localization/provider/localization_provider.dart';
-
+int getHashCode(DateTime key) {
+  return key.day * 1000000 + key.month * 10000 + key.year;
+}
 extension StringExtension on String {
   String capitalize() {
     return "${this[0].toUpperCase()}${substring(1).toLowerCase()}";
@@ -56,7 +58,7 @@ extension DefaultFormat on DateTime {
   }
 
   String defaultFormat2() {
-    return DateFormat("d-MM-yyyy").format(this);
+    return DateFormat("yyyy-MM-d").format(this);
   }
 }
 
