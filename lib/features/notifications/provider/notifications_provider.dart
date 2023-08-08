@@ -10,7 +10,6 @@ import '../../../app/localization/localization/language_constant.dart';
 import '../../../data/error/failures.dart';
 import 'package:flutter/rendering.dart';
 import '../../../navigation/custom_navigation.dart';
-import '../../../navigation/routes.dart';
 import '../repo/notifications_repo.dart';
 
 class NotificationsProvider extends ChangeNotifier {
@@ -66,10 +65,8 @@ class NotificationsProvider extends ChangeNotifier {
     }
   }
 
-  readNotification(id, {bool isReservation = false}) async {
+  readNotification(id) async {
     try {
-      CustomNavigator.push(Routes.DASHBOARD,
-          clean: true, arguments: isReservation ? 1 : 0);
       await notificationsRepo.readNotification(id);
       notifyListeners();
     } catch (e) {
