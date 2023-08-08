@@ -95,7 +95,7 @@ class AuthRepo {
         // "email": mail,
         "phone": phone,
         "password": password,
-        "fcm_token": await saveDeviceToken()
+        // "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {
@@ -180,7 +180,7 @@ class AuthRepo {
         "email": mail,
         "gender": gender,
         "password": password,
-        "fcm_token": await saveDeviceToken()
+        // "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {
