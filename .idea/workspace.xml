@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="add payment">
-      <change afterPath="$PROJECT_DIR$/lib/components/back_icon.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/ratting/provider/ratting_provider.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/ratting/repo/ratting_repo.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/features/ratting/view/ratting_view.dart" afterDir="false" />
+    <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="add rate view and logic">
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/components/empty_widget.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/components/empty_widget.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/data/api/end_points.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/api/end_points.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/config/di.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/di.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/data/config/provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/data/config/provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/address/widgets/delete_confirmation_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/address/widgets/delete_confirmation_dialog.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/payment/pages/success_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/pages/success_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/reservations/widgets/cancellation_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/reservations/widgets/cancellation_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_products.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_products.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/more/page/more.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/more/page/more.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/notifications/page/notifications_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/notifications/page/notifications_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/notifications/provider/notifications_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/notifications/provider/notifications_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/notifications/repo/notifications_repo.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/notifications/repo/notifications_repo.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/notifications/widgets/notification_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/notifications/widgets/notification_card.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -426,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691434821274</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add rate view and logic">
+      <created>1691487122415</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1691487122415</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,7 +465,8 @@
     <MESSAGE value="first sprint" />
     <MESSAGE value="update home banners" />
     <MESSAGE value="add payment" />
-    <option name="LAST_COMMIT_MESSAGE" value="add payment" />
+    <MESSAGE value="add rate view and logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="add rate view and logic" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

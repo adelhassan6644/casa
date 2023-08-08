@@ -17,11 +17,11 @@ class EndPoints {
   static updateProfile(id) => 'client/$id';
   static getFavourites(id) => 'favorites/$id';
   static getNotifications(id) => 'notification/$id';
+  static readNotification(userId,id) => 'notification/read/$userId/$id';
+  static deleteNotification(userId,id) => 'notification/delete/$userId/$id';
   static getAddresses(id) => 'address/$id';
   static deleteAddress(id) => 'address/$id';
   static String addAddress = 'address';
-  static readNotification(id) => 'notification/read/$id';
-  static deleteNotification(id) => 'notification/delete/$id';
   static cancelReservation(id) => 'reservation/$id';
   static nextReservations(id) => 'next/reservation/$id';
   static previousReservations(id) => 'past/reservation/$id';

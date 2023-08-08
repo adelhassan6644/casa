@@ -131,12 +131,9 @@ class HomeProducts extends StatelessWidget {
                       child: Padding(
                         padding: EdgeInsets.symmetric(
                             horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                        child: ListAnimator(
+                        child: const ListAnimator(
                           data: [
                             EmptyState(
-                              imgWidth: 215.w,
-                              imgHeight: 220.h,
-                              spaceBtw: 12,
                               txt: "لا يوجد خدمات الان",
                               subText: "تابعنا حتي تستفاد بخدمتنا الجديدة",
                             ),

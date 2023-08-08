@@ -32,4 +32,32 @@ class NotificationsRepo {
       return left(ServerFailure(ApiErrorHandler.getMessage(error)));
     }
   }
+
+  Future<Either<ServerFailure, Response>> readNotification(id) async {
+    try {
+      Response response = await dioClient.post(
+          uri: EndPoints.readNotification(sharedPreferences.getString(AppStorageKey.userId),id));
+      if (response.statusCode == 200) {
+        return Right(response);
+      } else {
+        return left(ServerFailure(response.data['message']));
+      }
+    } catch (error) {
+      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    }
+  }
+
+  Future<Either<ServerFailure, Response>> deleteNotification(id) async {
+    try {
+      Response response = await dioClient.post(
+          uri: EndPoints.deleteNotification(sharedPreferences.getString(AppStorageKey.userId),id));
+      if (response.statusCode == 200) {
+        return Right(response);
+      } else {
+        return left(ServerFailure(response.data['message']));
+      }
+    } catch (error) {
+      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    }
+  }
 }

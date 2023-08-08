@@ -27,14 +27,16 @@ class NotificationsModel {
 
 class NotificationItem {
   int? id;
+  int? reservationId;
   String? image;
   String? title;
   DateTime? createdAt;
 
-  NotificationItem({this.id, this.image, this.title, this.createdAt});
+  NotificationItem({this.id,this.reservationId, this.image, this.title, this.createdAt});
 
   NotificationItem.fromJson(Map<String, dynamic> json) {
     id = json['id'];
+    reservationId = json['reservation_id'];
     image = json['image'];
     title = json['title'];
     createdAt = json['created_at'] != null ?DateTime.parse(json['created_at']) : DateTime.now();
@@ -43,6 +45,7 @@ class NotificationItem {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['id'] = id;
+    data['reservation_id'] = reservationId;
     data['image'] = image;
     data['title'] = title;
     if (createdAt != null) {

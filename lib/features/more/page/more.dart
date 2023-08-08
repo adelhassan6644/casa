@@ -1,5 +1,6 @@
 import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/address/provider/addresses_provider.dart';
+import 'package:casa/features/notifications/provider/notifications_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/extensions.dart';
@@ -35,7 +36,9 @@ class More extends StatelessWidget {
                   MoreButton(
                     title: getTranslated("notifications", context),
                     icon: SvgImages.notifications,
-                    onTap: () => CustomNavigator.push(Routes.NOTIFICATIONS),
+                    onTap: () {
+                      sl<NotificationsProvider>().getNotifications();
+                      CustomNavigator.push(Routes.NOTIFICATIONS);},
                   ),
                   MoreButton(
                     title: getTranslated("favourite", context),

@@ -12,8 +12,10 @@ import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:provider/provider.dart';
 import '../../../components/marquee_widget.dart';
 import '../../../components/tab_widget.dart';
+import '../../../data/config/di.dart';
 import '../../../navigation/routes.dart';
 import '../../maps/provider/map_provider.dart';
+import '../../notifications/provider/notifications_provider.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -54,7 +56,10 @@ class HomeHeader extends StatelessWidget {
                       radius: 100,
                       height: 45,
                       width: 45,
-                      onTap: () => CustomNavigator.push(Routes.NOTIFICATIONS))
+                    onTap: () {
+                      sl<NotificationsProvider>().getNotifications();
+                      CustomNavigator.push(Routes.NOTIFICATIONS);},
+                  )
                 ],
               ),
               Padding(
