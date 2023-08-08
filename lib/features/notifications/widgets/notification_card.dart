@@ -1,3 +1,4 @@
+import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/features/notifications/model/notifications_model.dart';
 import 'package:casa/features/notifications/provider/notifications_provider.dart';
 import 'package:flutter/material.dart';
@@ -53,13 +54,32 @@ class NotificationCard extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
-                    child: Text(notification?.title ?? "",
-                        maxLines: 5,
-                        textAlign: TextAlign.start,
-                        overflow: TextOverflow.ellipsis,
-                        style: AppTextStyles.medium
-                            .copyWith(fontSize: 16, color: Styles.SUBTITLE)),
+                    child: RichText(
+                      text: TextSpan(
+                          text: notification?.title ?? "",
+                          style: AppTextStyles.medium
+                              .copyWith(fontSize: 16, color: Styles.SUBTITLE),
+                          children: [
+                            TextSpan(
+                              text: " ${getTranslated(
+                                  notification?.reservationId != null
+                                      ? "details"
+                                      : "know_more_bout_it",
+                                  context)}",
+                              style: AppTextStyles.regular.copyWith(
+                                  color: Colors.blueAccent, fontSize: 16),
+                            )
+                          ]),
+                    ),
                   ),
+                  // Expanded(
+                  //   child: Text(notification?.title ?? "",
+                  //       maxLines: 5,
+                  //       textAlign: TextAlign.start,
+                  //       overflow: TextOverflow.ellipsis,
+                  //       style: AppTextStyles.medium
+                  //           .copyWith(fontSize: 16, color: Styles.SUBTITLE)),
+                  // ),
                   SizedBox(
                     width: 8.w,
                   ),
