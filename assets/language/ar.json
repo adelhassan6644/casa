@@ -140,6 +140,10 @@
   "please_try_again": "برجاء المحاولة مرة اخري",
   "check_out": "الدفع",
   "payment": "الدفع",
-  "follow_and_payment": "المتابعه و الدفع"
+  "follow_and_payment": "المتابعه و الدفع",
+  "tell_us_your_opinion": "أخبرنا رأيك",
+  "please_enter_ratting": "الرجاء إختيار التقييم",
+  "send_my_rate": "إرسال تقيمي",
+  "rate_late": "التقييم لاحقا"
 
 }

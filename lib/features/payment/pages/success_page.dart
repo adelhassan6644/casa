@@ -38,9 +38,7 @@ class SuccessPage extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: Dimensions.PADDING_SIZE_DEFAULT,
-                    horizontal: Dimensions.PADDING_SIZE_SMALL),
+                padding: const EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_DEFAULT),
                 child: Text(
                   data["isDone"] == true
                       ? "تم تأكيد الموعد"

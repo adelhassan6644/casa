@@ -139,5 +139,9 @@
   "please_try_again": "Please, Try again",
   "check_out": "Check out",
   "payment": "Payment",
-  "follow_and_payment": "Follow-up and payment"
+  "follow_and_payment": "Follow-up and payment",
+  "tell_us_your_opinion": "tell us your opinion",
+  "please_enter_ratting": "Please, Enter ratting",
+  "send_my_rate": "Send my rate",
+  "rate_late": "Rate late"
 }

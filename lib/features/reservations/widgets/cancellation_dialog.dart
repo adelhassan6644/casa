@@ -9,9 +9,7 @@ import 'package:casa/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:substring_highlight/substring_highlight.dart';
-import 'dart:ui' as ui;
-
-import '../../../app/core/utils/svg_images.dart';
+import '../../../components/back_icon.dart';
 import '../../../components/custom_images.dart';
 
 class CancellationDialog extends StatelessWidget {
@@ -60,21 +58,7 @@ class CancellationDialog extends StatelessWidget {
         ),
         CustomButton(
           text: getTranslated("no_back_off", context),
-          fIconWidget: ClipRRect(
-            clipBehavior: Clip.antiAlias,
-            borderRadius: BorderRadius.circular(100),
-            child: BackdropFilter(
-              filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(100)),
-                child: customImageIconSVG(
-                    imageName: SvgImages.arrowRight, color: Styles.WHITE_COLOR),
-              ),
-            ),
-          ),
+          fIconWidget: const FilteredBackIcon(),
           iconSize: 12,
           iconColor: Styles.PRIMARY_COLOR,
           textColor: Styles.PRIMARY_COLOR,
@@ -105,21 +89,7 @@ class CancelledDialog extends StatelessWidget {
         ),
         CustomButton(
           text: getTranslated("back", context),
-          fIconWidget: ClipRRect(
-            clipBehavior: Clip.antiAlias,
-            borderRadius: BorderRadius.circular(100),
-            child: BackdropFilter(
-              filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
-              child: Container(
-                padding: const EdgeInsets.all(6),
-                decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(0.2),
-                    borderRadius: BorderRadius.circular(100)),
-                child: customImageIconSVG(
-                    imageName: SvgImages.arrowRight, color: Styles.WHITE_COLOR),
-              ),
-            ),
-          ),
+          fIconWidget: const FilteredBackIcon(),
           iconSize: 12,
           iconColor: Styles.PRIMARY_COLOR,
           textColor: Styles.PRIMARY_COLOR,

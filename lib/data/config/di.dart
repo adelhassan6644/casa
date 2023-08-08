@@ -19,6 +19,8 @@ import '../../features/maps/repo/map_repo.dart';
 import '../../features/payment/repo/payment_repo.dart';
 import '../../features/product_schedule/provider/product_schedule_provider.dart';
 import '../../features/product_schedule/repo/product_schedule_repo.dart';
+import '../../features/ratting/provider/ratting_provider.dart';
+import '../../features/ratting/repo/ratting_repo.dart';
 import '../../features/reservations/provider/reservations_provider.dart';
 import '../../features/reservations/repo/reservations_repo.dart';
 import '../../features/notifications/provider/notifications_provider.dart';
@@ -79,6 +81,9 @@ Future<void> init() async {
   sl.registerLazySingleton(
       () => PaymentRepo(sharedPreferences: sl(), dioClient: sl()));
 
+  sl.registerLazySingleton(
+      () => RattingRepo(sharedPreferences: sl(), dioClient: sl()));
+
   //provider
   sl.registerLazySingleton(() => LocalizationProvider(sharedPreferences: sl()));
   sl.registerLazySingleton(() => LanguageProvider());
@@ -97,6 +102,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => ConfigProvider(repo: sl()));
   sl.registerLazySingleton(() => ContactProvider(contactRepo: sl()));
   sl.registerLazySingleton(() => ProductScheduleProvider(repo: sl()));
+  sl.registerLazySingleton(() => RattingProvider(rattingRepo: sl()));
 
   // External
   final sharedPreferences = await SharedPreferences.getInstance();
