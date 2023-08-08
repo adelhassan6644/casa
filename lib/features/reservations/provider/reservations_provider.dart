@@ -1,5 +1,4 @@
 import 'package:casa/app/localization/localization/language_constant.dart';
-import 'package:casa/components/loading_dialog.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
