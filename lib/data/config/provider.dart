@@ -33,7 +33,6 @@ abstract class ProviderList {
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<AddressesProvider>()),
-    ChangeNotifierProvider(create: (_) => di.sl<ProductScheduleProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ContactProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ConfigProvider>()),
   ];

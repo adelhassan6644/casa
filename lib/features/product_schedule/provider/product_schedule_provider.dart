@@ -15,7 +15,7 @@ class ProductScheduleProvider extends ChangeNotifier {
   ProductScheduleRepo repo;
   ProductScheduleProvider({required this.repo});
 
-  CalendarFormat calendarFormat = CalendarFormat.twoWeeks;
+  CalendarFormat calendarFormat = CalendarFormat.month;
   onChangeFormat(v) {
     calendarFormat = v;
     notifyListeners();
@@ -39,7 +39,7 @@ class ProductScheduleProvider extends ChangeNotifier {
     return kEvents[day] ?? [];
   }
 
-  DateTime? day;
+  DateTime day = DateTime.now();
   DateTime focusedDay = DateTime.now();
   void onDaySelected(DateTime selectedDay, DateTime fDay, int id) {
     if (!isSameDay(day, selectedDay)) {
@@ -95,7 +95,7 @@ class ProductScheduleProvider extends ChangeNotifier {
       dayScheduleModel?.clear();
       notifyListeners();
       Either<ServerFailure, Response> response =
-          await repo.getDaySchedule(id: id, day: day ?? DateTime.now());
+          await repo.getDaySchedule(id: id, day: day);
       response.fold((fail) {
         CustomSnackBar.showSnackBar(
             notification: AppNotification(
@@ -122,5 +122,12 @@ class ProductScheduleProvider extends ChangeNotifier {
               borderColor: Colors.transparent));
       notifyListeners();
     }
+  }
+
+
+  ScheduleModel? selectedSchedule;
+  onSelectSchedule(v){
+    selectedSchedule = v;
+    notifyListeners();
   }
 }

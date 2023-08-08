@@ -24,6 +24,7 @@ class CheckOut extends StatelessWidget {
                 CustomAppBar(
                   title: getTranslated("check_out", context),
                 ),
+
                 Visibility(
                   visible: true,
                   child: Padding(
@@ -40,7 +41,7 @@ class CheckOut extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 24.h,
+                  height: 12.h,
                 )
               ],
             )),

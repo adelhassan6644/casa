@@ -19,7 +19,7 @@ class FilteredBackIcon extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.2),
+              color: Colors.black.withOpacity(0.3),
               borderRadius: BorderRadius.circular(100)),
           child: customImageIconSVG(
               imageName: SvgImages.arrowRight, color: Styles.WHITE_COLOR),

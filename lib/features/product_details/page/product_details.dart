@@ -2,7 +2,6 @@ import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:casa/features/product_details/repo/product_details_repo.dart';
-import 'package:casa/features/product_schedule/provider/product_schedule_provider.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/extensions.dart';
@@ -99,15 +98,13 @@ class ProductDetails extends StatelessWidget {
                   visible: !provider.isLoading && provider.model != null,
                   child: Padding(
                     padding: EdgeInsets.symmetric(
-                        vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
+                        vertical: Dimensions.PADDING_SIZE_SMALL.h,
                         horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
                     child: CustomButton(
                       text: getTranslated("book_an_appointment", context),
                       svgIcon: SvgImages.arrowLeft,
                       iconColor: Styles.WHITE_COLOR,
                       onTap: () {
-                        sl<ProductScheduleProvider>()
-                            .getProductSchedule(provider.model?.id);
                         CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
                             arguments: {
                               "title": provider.model?.service,

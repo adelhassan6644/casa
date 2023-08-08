@@ -15,46 +15,52 @@ class CalenderWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ProductScheduleProvider>(builder: (_, provider, child) {
       return !provider.isLoading
-          ? TableCalendar(
-              firstDay: provider.kFirstDay,
-              lastDay: provider.kLastDay,
-              headerStyle: const HeaderStyle(
-                leftChevronVisible: false,
-                rightChevronVisible: false,
-                headerPadding:
-                    EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
-                formatButtonVisible: false,
+          ? Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(24),
+                  color: Styles.WHITE_COLOR,
+                  border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
+              child: TableCalendar(
+                firstDay: provider.kFirstDay,
+                lastDay: provider.kLastDay,
+                headerStyle: const HeaderStyle(
+                  leftChevronVisible: false,
+                  rightChevronVisible: false,
+                  headerPadding:
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 10.0),
+                  formatButtonVisible: false,
+                ),
+                focusedDay: provider.focusedDay,
+                selectedDayPredicate: (day) => isSameDay(provider.day, day),
+                calendarFormat: provider.calendarFormat,
+                eventLoader: provider.loadSchedule,
+                startingDayOfWeek: StartingDayOfWeek.sunday,
+                calendarBuilders: CalendarBuilders(
+                    markerBuilder: (context, date, dynamic event) {
+                  if (event.isNotEmpty) {
+                    return Container(
+                      width: 35,
+                      decoration: BoxDecoration(
+                          color: Styles.PRIMARY_COLOR.withOpacity(0.2),
+                          shape: BoxShape.circle),
+                    );
+                  }
+                  return null;
+                }),
+                calendarStyle: CalendarStyle(
+                    outsideDaysVisible: true,
+                    selectedDecoration: const BoxDecoration(
+                        color: Styles.PRIMARY_COLOR, shape: BoxShape.circle),
+                    markerDecoration: const BoxDecoration(
+                        color: Styles.PRIMARY_COLOR, shape: BoxShape.circle),
+                    rangeHighlightColor: Theme.of(context).primaryColor),
+                onDaySelected: (v1, v2) => provider.onDaySelected(v1, v2, id),
+                onFormatChanged: provider.onChangeFormat,
+                onPageChanged: (v) {
+                  provider.focusedDay = v;
+                },
+                onCalendarCreated: (v) {},
               ),
-              focusedDay: provider.focusedDay,
-              selectedDayPredicate: (day) => isSameDay(provider.day, day),
-              calendarFormat: provider.calendarFormat,
-              eventLoader: provider.loadSchedule,
-              startingDayOfWeek: StartingDayOfWeek.sunday,
-              calendarBuilders: CalendarBuilders(
-                  markerBuilder: (context, date, dynamic event) {
-                if (event.isNotEmpty) {
-                  return Container(
-                    width: 35,
-                    decoration: BoxDecoration(
-                        color: Styles.PRIMARY_COLOR.withOpacity(0.2),
-                        shape: BoxShape.circle),
-                  );
-                }
-                return null;
-              }),
-              calendarStyle: CalendarStyle(
-                  outsideDaysVisible: true,
-                  selectedDecoration: const BoxDecoration(
-                      color: Styles.PRIMARY_COLOR, shape: BoxShape.circle),
-                  markerDecoration: const BoxDecoration(
-                      color: Styles.PRIMARY_COLOR, shape: BoxShape.circle),
-                  rangeHighlightColor: Theme.of(context).primaryColor),
-              onDaySelected: (v1, v2) => provider.onDaySelected(v1, v2, id),
-              onFormatChanged: provider.onChangeFormat,
-              onPageChanged: (v) {
-                provider.focusedDay = v;
-              },
-              onCalendarCreated: (v) {},
             )
           : const _CalenderShimmer();
     });

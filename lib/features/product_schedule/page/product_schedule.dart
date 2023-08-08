@@ -1,4 +1,5 @@
 import 'package:casa/features/product_schedule/provider/product_schedule_provider.dart';
+import 'package:casa/features/product_schedule/repo/product_schedule_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/dimensions.dart';
@@ -11,59 +12,54 @@ import '../../../data/config/di.dart';
 import '../widgets/calender_widget.dart';
 import '../widgets/schedule_date_widget.dart';
 
-class ProductSchedule extends StatefulWidget {
+class ProductSchedule extends StatelessWidget {
   const ProductSchedule({Key? key, required this.data}) : super(key: key);
   final Map data;
 
   @override
-  State<ProductSchedule> createState() => _ProductScheduleState();
-}
-
-class _ProductScheduleState extends State<ProductSchedule> {
-  @override
-  void initState() {
-    sl<ProductScheduleProvider>().day = DateTime.now();
-    super.initState();
-  }
-
-  @override
   Widget build(BuildContext context) {
-    return Consumer<ProductScheduleProvider>(builder: (_, provider, child) {
-      return Scaffold(
-        backgroundColor: Styles.SCAFFOLD_BG,
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-                horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+    return ChangeNotifierProvider(
+      create: (_) => ProductScheduleProvider(repo: sl<ProductScheduleRepo>())
+        ..getProductSchedule(data["id"]),
+      child: Consumer<ProductScheduleProvider>(builder: (_, provider, child) {
+        return Scaffold(
+          backgroundColor: Styles.SCAFFOLD_BG,
+          body: SafeArea(
             child: Column(
               children: [
                 CustomAppBar(
-                  title: "حجز جلسة ${widget.data["title"]}",
+                  title: "حجز جلسة ${data["title"]}",
                 ),
                 Expanded(
-                  child: ListAnimator(
-                    data: [
-                      CalenderWidget(
-                        id: widget.data["id"],
-                      ),
-                      SizedBox(
-                        height: Dimensions.PADDING_SIZE_DEFAULT.h,
-                      ),
-                      const ScheduleDateWidget(),
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(
+                        horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+                    child: ListAnimator(
+                      data: [
+                        CalenderWidget(
+                          id: data["id"],
+                        ),
+                        SizedBox(
+                          height: Dimensions.PADDING_SIZE_DEFAULT.h,
+                        ),
+                        const ScheduleDateWidget(),
+                      ],
+                    ),
                   ),
                 ),
-                CustomButton(
-                  text: getTranslated("follow_and_payment", context),
-                ),
-                SizedBox(
-                  height: Dimensions.PADDING_SIZE_DEFAULT.h,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
+                      vertical: Dimensions.PADDING_SIZE_SMALL.h),
+                  child: CustomButton(
+                    text: getTranslated("follow_and_payment", context),
+                  ),
                 ),
               ],
             ),
           ),
-        ),
-      );
-    });
+        );
+      }),
+    );
   }
 }

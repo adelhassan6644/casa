@@ -38,8 +38,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return Container(
       width: context.width,
-      padding:
-          EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+      padding: EdgeInsets.symmetric(horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
       decoration: BoxDecoration(color: colorBG),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
