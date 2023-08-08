@@ -29,6 +29,7 @@ class ScheduleDateWidget extends StatelessWidget {
                       color: Styles.WHITE_COLOR,
                       border: Border.all(color: Styles.LIGHT_BORDER_COLOR)),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
                           "${provider.day?.dateFormat(format: "EEEE", lang: "ar")} ${provider.day?.dateFormat(format: "dd/MM")}",

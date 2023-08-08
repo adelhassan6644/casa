@@ -40,6 +40,7 @@ class CalenderWidget extends StatelessWidget {
                         shape: BoxShape.circle),
                   );
                 }
+                return null;
               }),
               calendarStyle: CalendarStyle(
                   outsideDaysVisible: true,
