@@ -125,6 +125,7 @@ class _LoginState extends State<Login> {
                                                 onTap: () {
                                                   CustomNavigator.push(
                                                       Routes.FORGET_PASSWORD);
+                                                  provider.clear();
                                                 },
                                                 child: Text(
                                                   getTranslated(

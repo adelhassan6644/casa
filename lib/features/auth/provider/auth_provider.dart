@@ -99,6 +99,7 @@ class AuthProvider extends ChangeNotifier {
           _mailTEC = TextEditingController(text: success.data['data']["email"]);
           CustomNavigator.push(Routes.VERIFICATION, arguments: true);
         }
+        clear();
       });
       _isLoading = false;
       notifyListeners();
@@ -138,7 +139,7 @@ class AuthProvider extends ChangeNotifier {
                 message: getTranslated("your_password_reset_successfully",
                     CustomNavigator.navigatorState.currentContext!),
                 isFloating: true,
-                backgroundColor: Styles.IN_ACTIVE,
+                backgroundColor: Styles.ACTIVE,
                 borderColor: Colors.transparent));
         clear();
       });
@@ -182,7 +183,6 @@ class AuthProvider extends ChangeNotifier {
                 backgroundColor: Styles.ACTIVE,
                 borderColor: Colors.transparent));
         clear();
-        CustomNavigator.pop();
         notifyListeners();
       });
       _isChange = false;
@@ -313,6 +313,7 @@ class AuthProvider extends ChangeNotifier {
             Routes.DASHBOARD,
             clean: true,
           );
+          clear();
           CustomSnackBar.showSnackBar(
               notification: AppNotification(
                   message: getTranslated("register_successfully",
@@ -326,7 +327,6 @@ class AuthProvider extends ChangeNotifier {
             replace: true,
           );
         }
-        clear();
       });
       _isVerify = false;
       notifyListeners();
