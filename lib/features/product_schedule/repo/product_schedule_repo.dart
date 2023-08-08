@@ -1,3 +1,4 @@
+import 'package:casa/app/core/utils/extensions.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -32,7 +33,7 @@ class ProductScheduleRepo {
     try {
       Response response = await dioClient
           .post(uri: EndPoints.daySchedule(id),
-          data: {"day": day.toString()});
+          data: {"day": day.defaultFormat2()});
       if (response.statusCode == 200) {
         return Right(response);
       } else {

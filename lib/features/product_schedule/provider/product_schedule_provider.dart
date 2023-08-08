@@ -1,9 +1,12 @@
+import 'dart:collection';
+
 import 'package:casa/features/product_schedule/repo/product_schedule_repo.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
+import '../../../app/core/utils/extensions.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../data/error/failures.dart';
 import '../model/schedule_model.dart';
@@ -23,14 +26,22 @@ class ProductScheduleProvider extends ChangeNotifier {
   final kLastDay = DateTime(
       DateTime.now().year, DateTime.now().month + 3, DateTime.now().day);
 
-  List<dynamic> loadSchedule(DateTime? v) {
-    print(productScheduleModel?.map((e) => e.startTime).toList());
-    return productScheduleModel?.map((e) => e.startTime).toList()??[];
+  List loadSchedule(DateTime day) {
+    final kEventSource = {
+      for (var item in productScheduleModel!)
+        item.startTime!: List.generate(
+            item.startTime!.day, (index) => ('Event $item | ${index + 1}'))
+    };
+    final kEvents = LinkedHashMap<DateTime, List>(
+      equals: isSameDay,
+      hashCode: getHashCode,
+    )..addAll(kEventSource);
+    return kEvents[day] ?? [];
   }
 
   DateTime? day;
   DateTime focusedDay = DateTime.now();
-  void onDaySelected(DateTime selectedDay, DateTime fDay,int id) {
+  void onDaySelected(DateTime selectedDay, DateTime fDay, int id) {
     if (!isSameDay(day, selectedDay)) {
       day = selectedDay;
       focusedDay = fDay;
