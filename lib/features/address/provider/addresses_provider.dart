@@ -32,7 +32,7 @@ class AddressesProvider extends ChangeNotifier {
 
   bool get isLogin => repo.isLoggedIn();
 
-  LocationModel? selectedAddress;
+  AddressItem? selectedAddress;
   void selectAddress(v) {
     selectedAddress = v;
     notifyListeners();
@@ -144,6 +144,9 @@ class AddressesProvider extends ChangeNotifier {
                 backgroundColor: Styles.IN_ACTIVE,
                 borderColor: Colors.transparent));
       }, (success) {
+        if(id == selectedAddress?.id) {
+          selectedAddress = null;
+        }
         model?.data?.removeWhere((e) => e.id == id);
         CustomNavigator.pop();
         showToast(getTranslated("address_deleted_successfully",

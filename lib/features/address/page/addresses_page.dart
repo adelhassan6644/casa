@@ -5,12 +5,14 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:casa/components/custom_app_bar.dart';
 import 'package:casa/components/custom_button.dart';
 import 'package:casa/features/address/provider/addresses_provider.dart';
+import 'package:casa/features/product_schedule/model/schedule_model.dart';
 import 'package:casa/main_models/base_model.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:casa/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/svg_images.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_simple_dialog.dart';
@@ -20,19 +22,20 @@ import '../widgets/address_card.dart';
 import '../widgets/delete_confirmation_dialog.dart';
 
 class AddressPage extends StatelessWidget {
-  const AddressPage({Key? key}) : super(key: key);
+  const AddressPage({Key? key, this.model}) : super(key: key);
+  final ScheduleModel? model;
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      bottom: false,
       child: Consumer<AddressesProvider>(builder: (_, provider, child) {
         return Scaffold(
           backgroundColor: Styles.SCAFFOLD_BG,
           body: Column(
             children: [
               CustomAppBar(
-                title: getTranslated("addresses", context),
+                title: getTranslated(
+                    model != null ? "address_selection" : "addresses", context),
               ),
               !provider.isLoading
                   ? Expanded(
@@ -85,18 +88,39 @@ class AddressPage extends StatelessWidget {
                                           return false;
                                         },
                                         child: AddressCard(
-                                          onTap: () => provider.selectAddress(
-                                              provider.model!.data![index]),
+                                          onTap: () {
+                                            if (provider.selectedAddress?.id !=
+                                                provider
+                                                    .model!.data![index].id) {
+                                              provider.selectAddress(
+                                                  provider.model!.data![index]);
+                                            } else {
+                                              provider.selectAddress(null);
+                                            }
+                                          },
                                           addressItem:
                                               provider.model!.data![index],
-                                          // isSelect: provider.selectedAddress?.id ==provider.model!.data![index].id ,
+                                          isSelect: model != null
+                                              ? provider.selectedAddress?.id ==
+                                                  provider
+                                                      .model!.data![index].id
+                                              : false,
                                         ),
                                       )),
                             if (provider.model == null ||
                                 provider.model!.data!.isEmpty)
                               EmptyState(
-                                  txt: getTranslated(
-                                      "there_is_no_addresses", context)),
+                                txt: getTranslated(
+                                    "there_is_no_addresses", context),
+                                btnText: getTranslated("add_address", context),
+                                onTap: () =>
+                                    CustomNavigator.push(Routes.PICK_LOCATION,
+                                        arguments: BaseModel(
+                                          valueChanged:
+                                              provider.onSelectStartLocation,
+                                        )),
+                                originalButton: false,
+                              ),
                           ],
                         ),
                       ),
@@ -133,18 +157,61 @@ class AddressPage extends StatelessWidget {
                         ),
                       ),
                     ),
-              Padding(
-                padding: EdgeInsets.symmetric(
-                    vertical: Dimensions.PADDING_SIZE_DEFAULT.h,
-                    horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                child: CustomButton(
-                  text: getTranslated("add_address", context),
-                  onTap: () => CustomNavigator.push(Routes.PICK_LOCATION,
-                      arguments: BaseModel(
-                        valueChanged: provider.onSelectStartLocation,
-                      )),
+
+              /// To Add Address
+              Visibility(
+                visible: !provider.isLoading &&
+                    provider.model != null &&
+                    provider.model!.data!.isNotEmpty,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(
+                      vertical: Dimensions.PADDING_SIZE_SMALL.h,
+                      horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+                  child: CustomButton(
+                    text: getTranslated("add_address", context),
+                    onTap: () {
+                      CustomNavigator.push(Routes.PICK_LOCATION,
+                          arguments: BaseModel(
+                            valueChanged: provider.onSelectStartLocation,
+                          ));
+                    },
+                  ),
                 ),
-              )
+              ),
+
+              /// To Check Out
+              Visibility(
+                visible: model != null &&
+                    !provider.isLoading &&
+                    provider.model != null &&
+                    provider.model!.data!.isNotEmpty,
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
+                      child: CustomButton(
+                        text: getTranslated("follow_and_payment", context),
+                        onTap: () {
+                          if (provider.selectedAddress != null) {
+                            CustomNavigator.push(Routes.CHECK_OUT);
+                          } else {
+                            showToast(getTranslated(
+                                "oops_you_must_select_address", context));
+                          }
+                        },
+                        backgroundColor: Styles.WHITE_COLOR,
+                        withShadow: true,
+                        withBorderColor: true,
+                        textColor: Styles.PRIMARY_COLOR,
+                      ),
+                    ),
+                    SizedBox(
+                      height: Dimensions.PADDING_SIZE_SMALL.h,
+                    )
+                  ],
+                ),
+              ),
             ],
           ),
         );

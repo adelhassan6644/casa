@@ -5,6 +5,7 @@ import 'package:casa/features/notifications/page/notifications_page.dart';
 import 'package:casa/features/payment/pages/check_out.dart';
 import 'package:casa/features/payment/pages/success_page.dart';
 import 'package:casa/features/product_details/page/product_details.dart';
+import 'package:casa/features/product_schedule/model/schedule_model.dart';
 import 'package:casa/features/setting/pages/terms.dart';
 import 'package:casa/main_models/base_model.dart';
 import 'package:casa/main_page/pages/dashboard.dart';
@@ -84,7 +85,11 @@ abstract class CustomNavigator {
         return _pageRoute(SuccessPage(data: settings.arguments as Map));
 
       case Routes.ADDRESS:
-        return _pageRoute(const AddressPage());
+        return _pageRoute(AddressPage(
+          model: settings.arguments != null
+              ? settings.arguments as ScheduleModel
+              : null,
+        ));
 
       case Routes.FAVOURITE:
         return _pageRoute(const FavouritePage());

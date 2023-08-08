@@ -146,5 +146,8 @@
   "rate_late": "Rate late",
   "details": "Details",
   "know_more_bout_it": "Know about it now",
-  "rate": "Rate"
+  "rate": "Rate",
+  "address_selection": "Address Selection",
+  "oops_you_must_select_schedule_first": "Oops, You must select schedule first",
+  "oops_you_must_select_address": "Oops, You must select address"
 }

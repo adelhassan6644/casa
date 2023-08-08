@@ -133,7 +133,6 @@ class _NextAppointmentsState extends State<NextAppointments> {
                                 img: Images.emptyReservations,
                                 imgHeight: 215.h,
                                 imgWidth: 215.w,
-                                isSvg: false,
                                 txt: getTranslated(
                                     "empty_next_reservations_title", context),
                                 subText: getTranslated(

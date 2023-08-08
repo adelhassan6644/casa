@@ -38,7 +38,8 @@ class More extends StatelessWidget {
                     icon: SvgImages.notifications,
                     onTap: () {
                       sl<NotificationsProvider>().getNotifications();
-                      CustomNavigator.push(Routes.NOTIFICATIONS);},
+                      CustomNavigator.push(Routes.NOTIFICATIONS);
+                    },
                   ),
                   MoreButton(
                     title: getTranslated("favourite", context),
@@ -48,10 +49,7 @@ class More extends StatelessWidget {
                   MoreButton(
                     title: getTranslated("addresses", context),
                     icon: SvgImages.location,
-                    onTap: () {
-                      sl<AddressesProvider>().getAddresses();
-                      CustomNavigator.push(Routes.ADDRESS);
-                    },
+                    onTap: () => CustomNavigator.push(Routes.ADDRESS),
                   ),
                   MoreButton(
                     title: getTranslated("change_password", context),

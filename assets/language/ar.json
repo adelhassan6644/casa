@@ -147,6 +147,9 @@
   "rate_late": "التقييم لاحقا",
   "details": "التفاصيل",
   "know_more_bout_it": "تعرف عليها الآن",
-  "rate": "تقييم"
+  "rate": "تقييم",
+  "address_selection": "تحديد العنوان",
+  "oops_you_must_select_schedule_first": "عفوًا، يجب تحديد الموعد أولاً",
+  "oops_you_must_select_address": "عفوًا، يجب تحديد عنوان"
 
 }
