@@ -1,3 +1,4 @@
+import 'package:casa/components/animated_widget.dart';
 import 'package:casa/features/payment/repo/payment_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -6,11 +7,13 @@ import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_button.dart';
 import '../../../data/config/di.dart';
+import '../model/payment_body_model.dart';
 import '../provider/payment_provider.dart';
+import '../widgets/payment_summery.dart';
 
 class CheckOut extends StatelessWidget {
-  const CheckOut({Key? key}) : super(key: key);
-
+  const CheckOut({Key? key, required this.paymentBodyModel}) : super(key: key);
+  final PaymentBodyModel paymentBodyModel;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +27,12 @@ class CheckOut extends StatelessWidget {
                 CustomAppBar(
                   title: getTranslated("check_out", context),
                 ),
-
+                const Expanded(
+                    child: ListAnimator(
+                  data: [
+                    PaymentSummary(),
+                  ],
+                )),
                 Visibility(
                   visible: true,
                   child: Padding(

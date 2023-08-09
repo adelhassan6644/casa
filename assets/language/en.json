@@ -149,5 +149,10 @@
   "rate": "Rate",
   "address_selection": "Address Selection",
   "oops_you_must_select_schedule_first": "Oops, You must select schedule first",
-  "oops_you_must_select_address": "Oops, You must select address"
+  "oops_you_must_select_address": "Oops, You must select address",
+  "payment_summery": "Payment Summary",
+  "cost": "Cost",
+  "fees": "Fees",
+  "tax": "Tax",
+  "total_amount": "Total Amount"
 }

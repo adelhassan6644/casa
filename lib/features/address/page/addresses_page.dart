@@ -5,7 +5,7 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:casa/components/custom_app_bar.dart';
 import 'package:casa/components/custom_button.dart';
 import 'package:casa/features/address/provider/addresses_provider.dart';
-import 'package:casa/features/product_schedule/model/schedule_model.dart';
+import 'package:casa/features/payment/model/payment_body_model.dart';
 import 'package:casa/main_models/base_model.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:casa/navigation/routes.dart';
@@ -22,8 +22,8 @@ import '../widgets/address_card.dart';
 import '../widgets/delete_confirmation_dialog.dart';
 
 class AddressPage extends StatelessWidget {
-  const AddressPage({Key? key, this.model}) : super(key: key);
-  final ScheduleModel? model;
+  const AddressPage({Key? key, this.data}) : super(key: key);
+  final PaymentBodyModel? data;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class AddressPage extends StatelessWidget {
             children: [
               CustomAppBar(
                 title: getTranslated(
-                    model != null ? "address_selection" : "addresses", context),
+                    data != null ? "address_selection" : "addresses", context),
               ),
               !provider.isLoading
                   ? Expanded(
@@ -100,7 +100,7 @@ class AddressPage extends StatelessWidget {
                                           },
                                           addressItem:
                                               provider.model!.data![index],
-                                          isSelect: model != null
+                                          isSelect: data != null
                                               ? provider.selectedAddress?.id ==
                                                   provider
                                                       .model!.data![index].id
@@ -181,7 +181,7 @@ class AddressPage extends StatelessWidget {
 
               /// To Check Out
               Visibility(
-                visible: model != null &&
+                visible: data != null &&
                     !provider.isLoading &&
                     provider.model != null &&
                     provider.model!.data!.isNotEmpty,
@@ -194,10 +194,10 @@ class AddressPage extends StatelessWidget {
                         text: getTranslated("follow_and_payment", context),
                         onTap: () {
                           if (provider.selectedAddress != null) {
-                            CustomNavigator.push(Routes.CHECK_OUT);
+                            CustomNavigator.push(Routes.CHECK_OUT,
+                                arguments: data?.copyWith(addressItem: provider.selectedAddress));
                           } else {
-                            showToast(getTranslated(
-                                "oops_you_must_select_address", context));
+                            showToast(getTranslated("oops_you_must_select_address", context));
                           }
                         },
                         backgroundColor: Styles.WHITE_COLOR,

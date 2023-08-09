@@ -2,10 +2,10 @@ import 'package:casa/features/auth/pages/change_password.dart';
 import 'package:casa/features/auth/pages/reset_password.dart';
 import 'package:casa/features/favourite/page/favourite_page.dart';
 import 'package:casa/features/notifications/page/notifications_page.dart';
+import 'package:casa/features/payment/model/payment_body_model.dart';
 import 'package:casa/features/payment/pages/check_out.dart';
 import 'package:casa/features/payment/pages/success_page.dart';
 import 'package:casa/features/product_details/page/product_details.dart';
-import 'package:casa/features/product_schedule/model/schedule_model.dart';
 import 'package:casa/features/setting/pages/terms.dart';
 import 'package:casa/main_models/base_model.dart';
 import 'package:casa/main_page/pages/dashboard.dart';
@@ -73,21 +73,24 @@ abstract class CustomNavigator {
         return _pageRoute(ProductDetails(id: settings.arguments as int));
 
       case Routes.PRODUCT_SCHEDULE:
-        return _pageRoute(ProductSchedule(data: settings.arguments as Map));
+        return _pageRoute(
+            ProductSchedule(data: settings.arguments as PaymentBodyModel));
 
       case Routes.PAYMENT_WEB_VIEW:
         return _pageRoute(PaymentWebView(id: settings.arguments as int));
 
       case Routes.CHECK_OUT:
-        return _pageRoute(const CheckOut());
+        return _pageRoute(CheckOut(
+          paymentBodyModel: settings.arguments as PaymentBodyModel,
+        ));
 
       case Routes.SUCCESS:
         return _pageRoute(SuccessPage(data: settings.arguments as Map));
 
       case Routes.ADDRESS:
         return _pageRoute(AddressPage(
-          model: settings.arguments != null
-              ? settings.arguments as ScheduleModel
+          data: settings.arguments != null
+              ? settings.arguments as PaymentBodyModel
               : null,
         ));
 

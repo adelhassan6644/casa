@@ -13,18 +13,19 @@ import '../../../components/custom_button.dart';
 import '../../../data/config/di.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
+import '../../payment/model/payment_body_model.dart';
 import '../widgets/calender_widget.dart';
 import '../widgets/schedule_date_widget.dart';
 
 class ProductSchedule extends StatelessWidget {
   const ProductSchedule({Key? key, required this.data}) : super(key: key);
-  final Map data;
+  final PaymentBodyModel data;
 
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => ProductScheduleProvider(repo: sl<ProductScheduleRepo>())
-        ..getProductSchedule(data["id"]),
+        ..getProductSchedule(data.model?.id),
       child: Consumer<ProductScheduleProvider>(builder: (_, provider, child) {
         return Scaffold(
           backgroundColor: Styles.SCAFFOLD_BG,
@@ -32,7 +33,7 @@ class ProductSchedule extends StatelessWidget {
             child: Column(
               children: [
                 CustomAppBar(
-                  title: "حجز جلسة ${data["title"]}",
+                  title: "حجز جلسة ${data.model?.service}",
                 ),
                 Expanded(
                   child: Padding(
@@ -41,7 +42,7 @@ class ProductSchedule extends StatelessWidget {
                     child: ListAnimator(
                       data: [
                         CalenderWidget(
-                          id: data["id"],
+                          id: data.model?.id ?? 0,
                         ),
                         SizedBox(
                           height: Dimensions.PADDING_SIZE_DEFAULT.h,
@@ -59,10 +60,10 @@ class ProductSchedule extends StatelessWidget {
                     onTap: () {
                       if (provider.selectedSchedule != null) {
                         CustomNavigator.push(Routes.ADDRESS,
-                            arguments: provider.selectedSchedule);
+                            arguments: data.copyWith(
+                                scheduleModel: provider.selectedSchedule));
                       } else {
-                        showToast(getTranslated(
-                            "oops_you_must_select_schedule_first", context));
+                        showToast(getTranslated("oops_you_must_select_schedule_first", context));
                       }
                     },
                     text: getTranslated("book_the_appointment", context),

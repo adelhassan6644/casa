@@ -18,6 +18,7 @@ import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/empty_widget.dart';
 import '../../../data/config/di.dart';
+import '../../payment/model/payment_body_model.dart';
 import '../widgets/product_details_widget.dart';
 
 class ProductDetails extends StatelessWidget {
@@ -105,10 +106,7 @@ class ProductDetails extends StatelessWidget {
                       svgIcon: SvgImages.arrowLeft,
                       iconColor: Styles.WHITE_COLOR,
                       onTap: () => CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
-                          arguments: {
-                            "id": provider.model?.id,
-                            "title": provider.model?.service
-                          }),
+                          arguments: PaymentBodyModel(model: provider.model)),
                     ),
                   ),
                 ),

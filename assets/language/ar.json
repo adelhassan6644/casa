@@ -150,6 +150,11 @@
   "rate": "تقييم",
   "address_selection": "تحديد العنوان",
   "oops_you_must_select_schedule_first": "عفوًا، يجب تحديد الموعد أولاً",
-  "oops_you_must_select_address": "عفوًا، يجب تحديد عنوان"
+  "oops_you_must_select_address": "عفوًا، يجب تحديد عنوان",
+  "payment_summery": "ملخص الدفع",
+  "cost": "التكلفة",
+  "fees": "رسوم",
+  "tax": "ضريبة",
+  "total_amount": "الإجمالي"
 
 }
