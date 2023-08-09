@@ -150,6 +150,7 @@
   "address_selection": "Address Selection",
   "oops_you_must_select_schedule_first": "Oops, You must select schedule first",
   "oops_you_must_select_address": "Oops, You must select address",
+  "session_address": "Session Address",
   "payment_summery": "Payment Summary",
   "cost": "Cost",
   "fees": "Fees",

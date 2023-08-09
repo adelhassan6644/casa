@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="update notification">
-      <change afterPath="$PROJECT_DIR$/lib/features/payment/widgets/product_summery.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
+    <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="update check out">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/payment/model/payment_body_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/model/payment_body_model.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/payment/pages/check_out.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/pages/check_out.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/payment/provider/payment_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/provider/payment_provider.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/features/payment/widgets/payment_summery.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/widgets/payment_summery.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/product_details/page/product_details.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_details/page/product_details.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/product_schedule/page/product_schedule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_schedule/page/product_schedule.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/setting/model/setting_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/model/setting_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,13 +109,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688516389160</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add file picker">
-      <created>1689252897124</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1689252897124</updated>
     </task>
     <task id="LOCAL-00009" summary="add file picker">
       <created>1689252960287</created>
@@ -459,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691613327221</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="update check out">
+      <created>1691619952228</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1691619952228</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -498,7 +492,8 @@
     <MESSAGE value="sprint 2" />
     <MESSAGE value="update" />
     <MESSAGE value="update notification" />
-    <option name="LAST_COMMIT_MESSAGE" value="update notification" />
+    <MESSAGE value="update check out" />
+    <option name="LAST_COMMIT_MESSAGE" value="update check out" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

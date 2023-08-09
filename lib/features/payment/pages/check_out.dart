@@ -4,6 +4,7 @@ import 'package:casa/features/payment/repo/payment_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../app/core/utils/dimensions.dart';
+import '../../../app/core/utils/text_styles.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_button.dart';
@@ -39,8 +40,22 @@ class CheckOut extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                      child: AddressCard(
-                          addressItem: paymentBodyModel.addressItem!),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.symmetric(
+                                vertical: Dimensions.PADDING_SIZE_SMALL,
+                                horizontal: Dimensions.PADDING_SIZE_DEFAULT),
+                            child: Text(
+                                getTranslated("session_address", context),
+                                style: AppTextStyles.semiBold
+                                    .copyWith(fontSize: 16)),
+                          ),
+                          AddressCard(
+                              addressItem: paymentBodyModel.addressItem!),
+                        ],
+                      ),
                     ),
                     const PaymentSummary(),
                   ],

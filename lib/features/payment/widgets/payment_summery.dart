@@ -11,26 +11,35 @@ class PaymentSummary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(
+              vertical: Dimensions.PADDING_SIZE_SMALL,
+              horizontal: Dimensions.PADDING_SIZE_DEFAULT),
+          child: Text(getTranslated("payment_summery", context),
+              style: AppTextStyles.semiBold.copyWith(fontSize: 16)),
+        ),
         _SummeryInfoView(
           title: getTranslated("cost", context),
-          value: '',
+          value: '42',
         ),
         _SummeryInfoView(
           title: getTranslated("tax", context),
-          value: '',
+          value: '44',
         ),
         _SummeryInfoView(
           title: getTranslated("fees", context),
-          value: '',
+          value: '34',
         ),
         Container(
           decoration: BoxDecoration(
             color: Styles.PRIMARY_COLOR.withOpacity(0.2),
           ),
+          padding: const EdgeInsets.symmetric(vertical: 6),
           child: _SummeryInfoView(
-            title: getTranslated("fees", context),
-            value: '',
+            title: getTranslated("total_amount", context),
+            value: '234',
           ),
         ),
       ],
@@ -48,13 +57,15 @@ class _SummeryInfoView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8.0,horizontal: Dimensions.PADDING_SIZE_DEFAULT),
+      padding: const EdgeInsets.symmetric(
+          vertical: Dimensions.PADDING_SIZE_EXTRA_SMALL,
+          horizontal: Dimensions.PADDING_SIZE_DEFAULT),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text(title, style: AppTextStyles.medium.copyWith(fontSize: 12)),
-          Text("$value ريال",
-              style: AppTextStyles.semiBold.copyWith(fontSize: 12)),
+          Text(title, style: AppTextStyles.medium.copyWith(fontSize: 14)),
+          Text("$value  ريال",
+              style: AppTextStyles.semiBold.copyWith(fontSize: 14)),
         ],
       ),
     );
