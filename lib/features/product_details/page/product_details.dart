@@ -105,7 +105,10 @@ class ProductDetails extends StatelessWidget {
                       svgIcon: SvgImages.arrowLeft,
                       iconColor: Styles.WHITE_COLOR,
                       onTap: () => CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
-                          arguments: provider.model?.id),
+                          arguments: {
+                            "id": provider.model?.id,
+                            "title": provider.model?.service
+                          }),
                     ),
                   ),
                 ),
