@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +16,27 @@ class PaymentProvider extends ChangeNotifier {
 
   PaymentProvider({required this.paymentRepo});
 
+  int? taxPercentage;
+  int? feesPercentage;
+  double? tax;
+  double fees = 0;
   double total = 0.0;
+
+  calcTotal(price) {
+    tax = 0;
+
+    total = 0;
+
+    tax = double.parse(((price ?? 0) * taxPercentage / 100).toStringAsFixed(2));
+
+    fees =
+        double.parse(((price ?? 0) * feesPercentage / 100).toStringAsFixed(2));
+
+    total = (price ?? 0) + tax! + fees;
+
+    log("$total");
+    notifyListeners();
+  }
 
   ///checkout & payment
   bool isCheckOut = false;

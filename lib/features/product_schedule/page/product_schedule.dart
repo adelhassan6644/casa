@@ -25,7 +25,7 @@ class ProductSchedule extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (_) => ProductScheduleProvider(repo: sl<ProductScheduleRepo>())
-        ..getProductSchedule(data.model?.id),
+        ..getProductSchedule(data.itemData?.id),
       child: Consumer<ProductScheduleProvider>(builder: (_, provider, child) {
         return Scaffold(
           backgroundColor: Styles.SCAFFOLD_BG,
@@ -33,7 +33,7 @@ class ProductSchedule extends StatelessWidget {
             child: Column(
               children: [
                 CustomAppBar(
-                  title: "حجز جلسة ${data.model?.service}",
+                  title: "حجز جلسة ${data.itemData?.service}",
                 ),
                 Expanded(
                   child: Padding(
@@ -42,7 +42,7 @@ class ProductSchedule extends StatelessWidget {
                     child: ListAnimator(
                       data: [
                         CalenderWidget(
-                          id: data.model?.id ?? 0,
+                          id: data.itemData?.id ?? 0,
                         ),
                         SizedBox(
                           height: Dimensions.PADDING_SIZE_DEFAULT.h,

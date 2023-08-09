@@ -5,9 +5,9 @@ import '../../../main_models/item_model.dart';
 class PaymentBodyModel {
   ScheduleModel? scheduleModel;
   AddressItem? addressItem;
-  ItemModel? model;
+  ItemModel? itemData;
 
-  PaymentBodyModel({this.scheduleModel, this.addressItem, this.model});
+  PaymentBodyModel({this.scheduleModel, this.addressItem, this.itemData});
 
   PaymentBodyModel copyWith(
       {ScheduleModel? scheduleModel,
@@ -15,7 +15,7 @@ class PaymentBodyModel {
       ItemModel? model}) {
     this.scheduleModel = scheduleModel ?? this.scheduleModel;
     this.addressItem = addressItem ?? this.addressItem;
-    this.model = model ?? this.model;
+    this.itemData = model ?? this.itemData;
     return this;
   }
 }

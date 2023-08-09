@@ -106,7 +106,7 @@ class ProductDetails extends StatelessWidget {
                       svgIcon: SvgImages.arrowLeft,
                       iconColor: Styles.WHITE_COLOR,
                       onTap: () => CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
-                          arguments: PaymentBodyModel(model: provider.model)),
+                          arguments: PaymentBodyModel(itemData: provider.model)),
                     ),
                   ),
                 ),

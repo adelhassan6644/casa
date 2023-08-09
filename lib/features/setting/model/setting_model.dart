@@ -22,8 +22,8 @@ class SettingModel {
     logo = json['logo'];
     title = json['title'];
     description = json['description'];
-    serviceFee = int.tryParse(json['service_fee'].toString())??00;
-    tax = json['tax'];
+    serviceFee = int.tryParse(json['service_fee'].toString()) ?? 00;
+    tax = int.tryParse(json['tax'].toString()) ?? 00;
     terms = json['terms'];
     serverKey = json['server_key'];
     conditions = json['conditions'];
