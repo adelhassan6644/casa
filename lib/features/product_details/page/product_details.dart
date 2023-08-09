@@ -24,11 +24,11 @@ class ProductDetails extends StatelessWidget {
   const ProductDetails({Key? key, required this.id}) : super(key: key);
 
   @override
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ChangeNotifierProvider(
-        create: (_) => ProductDetailsProvider(repo: sl<ProductDetailsRepo>())..getDetails(id),
+        create: (_) => ProductDetailsProvider(repo: sl<ProductDetailsRepo>())
+          ..getDetails(id),
         child: SafeArea(
           top: false,
           child: Consumer<ProductDetailsProvider>(

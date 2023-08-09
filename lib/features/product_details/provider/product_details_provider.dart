@@ -14,7 +14,7 @@ class ProductDetailsProvider extends ChangeNotifier {
   ItemModel? model;
   bool isLoading = false;
   getDetails(id) async {
-    try {
+    // try {
       isLoading = true;
       notifyListeners();
       Either<ServerFailure, Response> response =
@@ -37,15 +37,15 @@ class ProductDetailsProvider extends ChangeNotifier {
         isLoading = false;
         notifyListeners();
       });
-    } catch (e) {
-      isLoading = false;
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
-              message: e.toString(),
-              isFloating: true,
-              backgroundColor: Styles.IN_ACTIVE,
-              borderColor: Colors.transparent));
-      notifyListeners();
-    }
+    // } catch (e) {
+    //   isLoading = false;
+    //   CustomSnackBar.showSnackBar(
+    //       notification: AppNotification(
+    //           message: e.toString(),
+    //           isFloating: true,
+    //           backgroundColor: Styles.IN_ACTIVE,
+    //           borderColor: Colors.transparent));
+    //   notifyListeners();
+    // }
   }
 }

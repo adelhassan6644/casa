@@ -2,8 +2,8 @@ class SettingModel {
   String? logo;
   String? title;
   String? description;
-  String? serviceFee;
-  String? tax;
+  int? serviceFee;
+  int? tax;
   String? terms;
   String? serverKey;
   String? conditions;
@@ -22,7 +22,7 @@ class SettingModel {
     logo = json['logo'];
     title = json['title'];
     description = json['description'];
-    serviceFee = json['service_fee'];
+    serviceFee = int.tryParse(json['service_fee'].toString())??00;
     tax = json['tax'];
     terms = json['terms'];
     serverKey = json['server_key'];
