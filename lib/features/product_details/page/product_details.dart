@@ -2,6 +2,8 @@ import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:casa/features/product_details/repo/product_details_repo.dart';
+import 'package:casa/navigation/custom_navigation.dart';
+import 'package:casa/navigation/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/extensions.dart';
 import 'package:casa/components/custom_network_image.dart';
@@ -102,6 +104,8 @@ class ProductDetails extends StatelessWidget {
                       text: getTranslated("book_an_appointment", context),
                       svgIcon: SvgImages.arrowLeft,
                       iconColor: Styles.WHITE_COLOR,
+                      onTap: () => CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
+                          arguments: provider.model?.id),
                     ),
                   ),
                 ),
