@@ -1,6 +1,7 @@
 import 'package:casa/features/favourite/provider/favourite_provider.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:casa/features/profile/provider/profile_provider.dart';
+import 'package:casa/features/reservations/page/reservations.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/features/profile/page/profile.dart';
 import 'package:casa/main_page/provider/main_page_provider.dart';
@@ -37,7 +38,7 @@ class _DashBoardState extends State<DashBoard> {
       case 0:
         return const Home();
       case 1:
-        return  Container();
+        return  const Reservations();
       case 2:
         return const Profile();
       case 3:

@@ -1,5 +1,4 @@
 import 'package:casa/components/animated_widget.dart';
-import 'package:casa/features/address/provider/addresses_provider.dart';
 import 'package:casa/features/notifications/provider/notifications_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
@@ -49,12 +48,12 @@ class More extends StatelessWidget {
                   MoreButton(
                     title: getTranslated("addresses", context),
                     icon: SvgImages.location,
-                    // onTap: () => CustomNavigator.push(Routes.ADDRESS),
+                    onTap: () => CustomNavigator.push(Routes.ADDRESS),
                   ),
                   MoreButton(
                     title: getTranslated("change_password", context),
                     icon: SvgImages.outlineLockIcon,
-                    // onTap: () => CustomNavigator.push(Routes.CHANGE_PASSWORD),
+                    onTap: () => CustomNavigator.push(Routes.CHANGE_PASSWORD),
                   ),
                   MoreButton(
                     title: getTranslated("contact_with_us", context),
