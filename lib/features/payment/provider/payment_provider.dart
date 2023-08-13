@@ -1,11 +1,13 @@
 import 'dart:developer';
 
+import 'package:casa/features/setting/provider/config_provider.dart';
 import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/localization/localization/language_constant.dart';
+import '../../../data/config/di.dart';
 import '../../../data/error/failures.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
@@ -19,23 +21,18 @@ class PaymentProvider extends ChangeNotifier {
   int? taxPercentage;
   int? feesPercentage;
   double? tax;
-  double fees = 0;
+  double? fees;
   double total = 0.0;
 
   calcTotal(price) {
-    tax = 0;
-
-    total = 0;
-
-    tax = double.parse(((price ?? "0") * taxPercentage / 100).toStringAsFixed(2));
-
-    fees =
-        double.parse(((price ?? "0") * feesPercentage / 100).toStringAsFixed(2));
-
-    total = (price ?? 0) + tax! + fees;
-
-    log("$total");
-    notifyListeners();
+    // taxPercentage = sl<ConfigProvider>().setting?.tax??0;
+    // feesPercentage = sl<ConfigProvider>().setting?.serviceFee??0;
+    //
+    // tax = double.parse(((price ?? "0") * taxPercentage / 100).toStringAsFixed(2));
+    // fees = double.parse(((price ?? "0") * feesPercentage / 100).toStringAsFixed(2));
+    // total = price ?? 0.0 + tax! + fees!;
+    //
+    // notifyListeners();
   }
 
   ///checkout & payment

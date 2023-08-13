@@ -5,6 +5,7 @@ class ScheduleModel {
   DateTime? endTime;
   String? service;
   String? subService;
+  bool? isReserved;
 
   ScheduleModel({
     this.id,
@@ -13,10 +14,10 @@ class ScheduleModel {
     this.endTime,
     this.service,
     this.subService,
+    this.isReserved,
   });
 
-  factory ScheduleModel.fromJson(Map<String, dynamic> json) =>
-      ScheduleModel(
+  factory ScheduleModel.fromJson(Map<String, dynamic> json) => ScheduleModel(
         id: json["id"],
         duration: json["duration"],
         startTime: json["start_time"] == null
@@ -26,6 +27,7 @@ class ScheduleModel {
             json["end_time"] == null ? null : DateTime.parse(json["end_time"]),
         service: json["service"],
         subService: json["subService"],
+        isReserved: json["is_reserved"] == 1 ? true : false,
       );
 
   Map<String, dynamic> toJson() => {
@@ -35,5 +37,6 @@ class ScheduleModel {
         "end_time": endTime?.toIso8601String(),
         "service": service,
         "subService": subService,
+        "is_reserved": isReserved,
       };
 }

@@ -150,12 +150,14 @@
   "rate": "تقييم",
   "address_selection": "تحديد العنوان",
   "oops_you_must_select_schedule_first": "عفوًا، يجب تحديد الموعد أولاً",
+  "oops_schedule_not_available": "عفوًا، هذا الموعد غير متاح حاليا",
   "oops_you_must_select_address": "عفوًا، يجب تحديد عنوان",
   "session_address": "مكان الجلسة",
   "payment_summery": "ملخص الدفع",
   "cost": "تكلفة الخدمة",
   "fees": "رسوم",
   "tax": "ضريبة",
-  "total_amount": "الإجمالي"
+  "total_amount": "الإجمالي",
+  "session_summery": "ملخص الجلسة"
 
 }

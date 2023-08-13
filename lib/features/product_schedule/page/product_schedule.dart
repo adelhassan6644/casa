@@ -59,11 +59,17 @@ class ProductSchedule extends StatelessWidget {
                   child: CustomButton(
                     onTap: () {
                       if (provider.selectedSchedule != null) {
-                        CustomNavigator.push(Routes.ADDRESS,
-                            arguments: data.copyWith(
-                                scheduleModel: provider.selectedSchedule));
+                        if (provider.selectedSchedule?.isReserved == true) {
+                          showToast(getTranslated(
+                              "oops_schedule_not_available", context));
+                        } else {
+                          CustomNavigator.push(Routes.ADDRESS,
+                              arguments: data.copyWith(
+                                  scheduleModel: provider.selectedSchedule));
+                        }
                       } else {
-                        showToast(getTranslated("oops_you_must_select_schedule_first", context));
+                        showToast(getTranslated(
+                            "oops_you_must_select_schedule_first", context));
                       }
                     },
                     text: getTranslated("book_the_appointment", context),

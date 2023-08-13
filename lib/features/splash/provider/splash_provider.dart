@@ -1,6 +1,8 @@
+import 'package:casa/features/setting/provider/config_provider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:casa/navigation/routes.dart';
+import '../../../data/config/di.dart';
 import '../repo/splash_repo.dart';
 
 class SplashProvider extends ChangeNotifier {
@@ -16,6 +18,9 @@ class SplashProvider extends ChangeNotifier {
       } else {
         CustomNavigator.push(Routes.DASHBOARD, clean: true, arguments: 0);
       }
+      sl<ConfigProvider>()
+        ..getContact()
+        ..getSetting();
       splashRepo.setFirstTime();
     });
   }

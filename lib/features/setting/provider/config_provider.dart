@@ -12,10 +12,7 @@ import '../repo/config_repo.dart';
 class ConfigProvider extends ChangeNotifier {
   final ConfigRepo repo;
 
-  ConfigProvider({required this.repo}) {
-    getSetting();
-    getContact();
-  }
+  ConfigProvider({required this.repo});
 
   bool isLoading = false;
   SettingModel? setting;
