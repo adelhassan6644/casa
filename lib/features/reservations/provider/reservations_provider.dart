@@ -7,6 +7,7 @@ import 'package:casa/data/error/api_error_handler.dart';
 import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../components/custom_simple_dialog.dart';
+import '../../../data/config/di.dart';
 import '../../../data/error/failures.dart';
 import 'package:flutter/rendering.dart';
 
@@ -148,8 +149,9 @@ class ReservationsProvider extends ChangeNotifier {
         CustomSimpleDialog.parentSimpleDialog(
           customListWidget: [const CancelledDialog()],
         );
-        showToast(getTranslated("reservation_cancel_successfully",
-            CustomNavigator.navigatorState.currentContext!));
+        sl<ReservationsProvider>().getNextReservations();
+        // showToast(getTranslated("reservation_cancel_successfully",
+        //     CustomNavigator.navigatorState.currentContext!));
         nextReservations?.removeWhere((e) => e.id == id);
       });
       isCancelling = false;

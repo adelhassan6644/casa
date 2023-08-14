@@ -71,7 +71,7 @@ class HomeDates extends StatelessWidget {
                                 imageName: SvgImages.arrowLeft,
                                 color: Styles.PRIMARY_COLOR,
                                 onTap: () =>
-                                    mainProvider.updateDashboardIndex(1));
+                                    mainProvider.updateDashboardIndex(0));
                           }),
                         ],
                       ),

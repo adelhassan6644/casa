@@ -11,6 +11,8 @@ import '../../../app/core/utils/text_styles.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_network_image.dart';
 import '../../../components/custom_simple_dialog.dart';
+import '../../../navigation/custom_navigation.dart';
+import '../../../navigation/routes.dart';
 import '../model/reservation_model.dart';
 
 class AppointmentCard extends StatelessWidget {
@@ -67,11 +69,17 @@ class AppointmentCard extends StatelessWidget {
                               iconSize: 16,
                               iconColor: Styles.WHITE_COLOR,
                               onTap: () {
-                                CustomSimpleDialog.parentSimpleDialog(
-                                  customListWidget: [
-                                    RattingView(reservation: reservation)
-                                  ],
-                                );
+                                if(isNext){
+                                  CustomNavigator.push(Routes.PRODUCT_DETAILS,
+                                      arguments: reservation.subService);
+                                }
+                                if( !isNext ) {
+                                  CustomSimpleDialog.parentSimpleDialog(
+                                    customListWidget: [
+                                      RattingView(reservation: reservation)
+                                    ],
+                                  );
+                                }
                               },
                             ),
                           ],
