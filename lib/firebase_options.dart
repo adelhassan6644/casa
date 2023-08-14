@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart'
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
-/// softwareCasa:
+/// Example:
 /// ```dart
 /// import 'firebase_options.dart';
 /// // ...
@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -43,47 +46,31 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyAA6_oQVJoAUiQfGb7aU4MRnkog14w7rPU',
-    appId: '1:105813324547:web:668972909f473f2d90af36',
-    messagingSenderId: '105813324547',
-    projectId: 'casa-46646',
-    authDomain: 'casa-46646.firebaseapp.com',
-    storageBucket: 'casa-46646.appspot.com',
-    measurementId: 'G-QQK112HHXZ',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAOzDx7xIAd_Hdf0GRosngBPeJj3MpUXoI',
-    appId: '1:105813324547:android:5b6b00aaf8b2cc3e90af36',
-    messagingSenderId: '105813324547',
-    projectId: 'casa-46646',
-    storageBucket: 'casa-46646.appspot.com',
+    apiKey: 'AIzaSyAOWmbF37VFk5PSkGMtrIaZUUjLl9oP9vU',
+    appId: '1:709889896038:android:3d711d3e6f14aa04e8c7a7',
+    messagingSenderId: '709889896038',
+    projectId: 'casa-50155',
+    storageBucket: 'casa-50155.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyDuc5q2UyvotvNUmVek3e_o9KhpCt2chdI',
-    appId: '1:105813324547:ios:5e5ceac54f7531cb90af36',
-    messagingSenderId: '105813324547',
-    projectId: 'casa-46646',
-    storageBucket: 'casa-46646.appspot.com',
-    androidClientId:
-        '105813324547-46hdomo0qffn4vghnu1aj5kl892cmakg.apps.googleusercontent.com',
-    iosClientId:
-        '105813324547-upk6427rl6n04c8b10eol3l3g77ektki.apps.googleusercontent.com',
+    apiKey: 'AIzaSyDBAunecIZ7Xtx68YQjX2KBycLob1fxb5s',
+    appId: '1:709889896038:ios:4c0afca66fcdf8d7e8c7a7',
+    messagingSenderId: '709889896038',
+    projectId: 'casa-50155',
+    storageBucket: 'casa-50155.appspot.com',
+    iosClientId: '709889896038-9fg69ave8j4449800bk2stms69a0r9fe.apps.googleusercontent.com',
     iosBundleId: 'com.softwareCasa.casa',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyDuc5q2UyvotvNUmVek3e_o9KhpCt2chdI',
-    appId: '1:105813324547:ios:5e5ceac54f7531cb90af36',
-    messagingSenderId: '105813324547',
-    projectId: 'casa-46646',
-    storageBucket: 'casa-46646.appspot.com',
-    androidClientId:
-        '105813324547-46hdomo0qffn4vghnu1aj5kl892cmakg.apps.googleusercontent.com',
-    iosClientId:
-        '105813324547-upk6427rl6n04c8b10eol3l3g77ektki.apps.googleusercontent.com',
-    iosBundleId: 'com.softwareCasa.casa',
+    apiKey: 'AIzaSyDBAunecIZ7Xtx68YQjX2KBycLob1fxb5s',
+    appId: '1:709889896038:ios:cdc7a65f6fc9642fe8c7a7',
+    messagingSenderId: '709889896038',
+    projectId: 'casa-50155',
+    storageBucket: 'casa-50155.appspot.com',
+    iosClientId: '709889896038-nkarp2qe4glgl58fq5um25umfmqlq806.apps.googleusercontent.com',
+    iosBundleId: 'n',
   );
 }

@@ -21,7 +21,7 @@ class ScheduleDateCard extends StatelessWidget {
         highlightColor: Colors.transparent,
         splashColor: Colors.transparent,
         onTap: () {
-          if (provider.selectedSchedule?.id != scheduleModel?.id) {
+          if ( provider.selectedSchedule?.id != scheduleModel?.id) {
             provider.onSelectSchedule(scheduleModel);
           } else {
             provider.onSelectSchedule(null);
@@ -45,6 +45,12 @@ class ScheduleDateCard extends StatelessWidget {
                   )),
               child: Column(
                 children: [
+                  if(scheduleModel!.isReserved!)
+                  Text(
+
+                          "غير متاح للحجز",
+                      style: AppTextStyles.regular
+                          .copyWith(fontSize: 12, color: Styles.IN_ACTIVE)),
                   Text("من",
                       style: AppTextStyles.regular
                           .copyWith(fontSize: 16, color: Styles.PRIMARY_COLOR)),

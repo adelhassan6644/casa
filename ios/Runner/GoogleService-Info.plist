@@ -3,23 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>105813324547-upk6427rl6n04c8b10eol3l3g77ektki.apps.googleusercontent.com</string>
+	<string>709889896038-9fg69ave8j4449800bk2stms69a0r9fe.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.105813324547-upk6427rl6n04c8b10eol3l3g77ektki</string>
-	<key>ANDROID_CLIENT_ID</key>
-	<string>105813324547-0aoht8sr5u052out4efl2pnb5tid0idc.apps.googleusercontent.com</string>
+	<string>com.googleusercontent.apps.709889896038-9fg69ave8j4449800bk2stms69a0r9fe</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDuc5q2UyvotvNUmVek3e_o9KhpCt2chdI</string>
+	<string>AIzaSyDBAunecIZ7Xtx68YQjX2KBycLob1fxb5s</string>
 	<key>GCM_SENDER_ID</key>
-	<string>105813324547</string>
+	<string>709889896038</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.softwareCasa.casa</string>
 	<key>PROJECT_ID</key>
-	<string>casa-46646</string>
+	<string>casa-50155</string>
 	<key>STORAGE_BUCKET</key>
-	<string>casa-46646.appspot.com</string>
+	<string>casa-50155.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -31,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:105813324547:ios:5e5ceac54f7531cb90af36</string>
+	<string>1:709889896038:ios:4c0afca66fcdf8d7e8c7a7</string>
 </dict>
 </plist>

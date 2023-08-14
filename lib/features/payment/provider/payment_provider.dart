@@ -21,18 +21,21 @@ class PaymentProvider extends ChangeNotifier {
   int? taxPercentage;
   int? feesPercentage;
   double? tax;
-  double? fees;
+  double? fees=0.0;
   double total = 0.0;
 
   calcTotal(price) {
-    // taxPercentage = sl<ConfigProvider>().setting?.tax??0;
-    // feesPercentage = sl<ConfigProvider>().setting?.serviceFee??0;
+
+    taxPercentage = sl<ConfigProvider>().setting?.tax??0;
+    feesPercentage = sl<ConfigProvider>().setting?.serviceFee??0;
+    print(taxPercentage);
     //
-    // tax = double.parse(((price ?? "0") * taxPercentage / 100).toStringAsFixed(2));
+    tax = double.parse(((price ?? "0") * taxPercentage / 100).toStringAsFixed(2));
     // fees = double.parse(((price ?? "0") * feesPercentage / 100).toStringAsFixed(2));
-    // total = price ?? 0.0 + tax! + fees!;
+    total = (price + tax!  );
+    print(total);
     //
-    // notifyListeners();
+    notifyListeners();
   }
 
   ///checkout & payment

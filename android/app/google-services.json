@@ -1,128 +1,40 @@
 {
   "project_info": {
-    "project_number": "105813324547",
-    "project_id": "casa-46646",
-    "storage_bucket": "casa-46646.appspot.com"
+    "project_number": "709889896038",
+    "project_id": "casa-50155",
+    "storage_bucket": "casa-50155.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:105813324547:android:d322d9156015e1f690af36",
+        "mobilesdk_app_id": "1:709889896038:android:3d711d3e6f14aa04e8c7a7",
         "android_client_info": {
           "package_name": "com.softwareCasa.casa"
         }
       },
       "oauth_client": [
         {
-          "client_id": "105813324547-46hdomo0qffn4vghnu1aj5kl892cmakg.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.softwareCasa.casa",
-            "certificate_hash": "edb095a6325570602ac8ac236b4fc612f46614bc"
-          }
-        },
-        {
-          "client_id": "105813324547-hu4t3i39i7cb9kmtsib16eik39u0uf8k.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.softwareCasa.casa",
-            "certificate_hash": "78bff6825539ee30ec75e9c18b0a77aba39c9254"
-          }
-        },
-        {
-          "client_id": "105813324547-1nbn1cagb12t59q8njgtnhor47col4j0.apps.googleusercontent.com",
+          "client_id": "709889896038-h2vs851jscp32c1t6f6c6ogbnbefe2je.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAOzDx7xIAd_Hdf0GRosngBPeJj3MpUXoI"
+          "current_key": "AIzaSyAOWmbF37VFk5PSkGMtrIaZUUjLl9oP9vU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "105813324547-1nbn1cagb12t59q8njgtnhor47col4j0.apps.googleusercontent.com",
+              "client_id": "709889896038-h2vs851jscp32c1t6f6c6ogbnbefe2je.apps.googleusercontent.com",
               "client_type": 3
             },
             {
-              "client_id": "105813324547-d847ijofjhme0fbg87l2jcfjq6202s9a.apps.googleusercontent.com",
+              "client_id": "709889896038-9fg69ave8j4449800bk2stms69a0r9fe.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.softwarecloud.casa"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:105813324547:android:5b6b00aaf8b2cc3e90af36",
-        "android_client_info": {
-          "package_name": "com.softwareCasa.casa"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "105813324547-1nbn1cagb12t59q8njgtnhor47col4j0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAOzDx7xIAd_Hdf0GRosngBPeJj3MpUXoI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "105813324547-1nbn1cagb12t59q8njgtnhor47col4j0.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "105813324547-d847ijofjhme0fbg87l2jcfjq6202s9a.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.softwarecloud.casa"
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:105813324547:android:d8c6b83d4b00cf6d90af36",
-        "android_client_info": {
-          "package_name": "com.softwarecloud.casa"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "105813324547-1nbn1cagb12t59q8njgtnhor47col4j0.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAOzDx7xIAd_Hdf0GRosngBPeJj3MpUXoI"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "105813324547-1nbn1cagb12t59q8njgtnhor47col4j0.apps.googleusercontent.com",
-              "client_type": 3
-            },
-            {
-              "client_id": "105813324547-d847ijofjhme0fbg87l2jcfjq6202s9a.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "com.softwarecloud.casa"
+                "bundle_id": "com.softwareCasa.casa"
               }
             }
           ]
