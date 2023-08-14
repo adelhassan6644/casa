@@ -12,7 +12,7 @@ import '../../../data/config/di.dart';
 import '../model/payment_body_model.dart';
 import '../provider/payment_provider.dart';
 import '../widgets/payment_summery.dart';
-import '../widgets/product_summery.dart';
+import '../widgets/session_summery.dart';
 
 class CheckOut extends StatelessWidget {
   const CheckOut({Key? key, required this.paymentBodyModel}) : super(key: key);
@@ -32,11 +32,10 @@ class CheckOut extends StatelessWidget {
                 Expanded(
                     child: ListAnimator(
                   data: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
-                      child: ProductSummary(model: paymentBodyModel),
-                    ),
+                    ///Session Summery
+                    SessionSummary(model: paymentBodyModel),
+
+                    ///Session Address
                     Padding(
                       padding: EdgeInsets.symmetric(
                           horizontal: Dimensions.PADDING_SIZE_DEFAULT.w),
@@ -45,8 +44,7 @@ class CheckOut extends StatelessWidget {
                         children: [
                           Padding(
                             padding: const EdgeInsets.symmetric(
-                                vertical: Dimensions.PADDING_SIZE_SMALL,
-                                horizontal: Dimensions.PADDING_SIZE_DEFAULT),
+                                vertical: Dimensions.PADDING_SIZE_SMALL),
                             child: Text(
                                 getTranslated("session_address", context),
                                 style: AppTextStyles.semiBold
@@ -57,9 +55,15 @@ class CheckOut extends StatelessWidget {
                         ],
                       ),
                     ),
-                    const PaymentSummary(),
+
+                    ///Session check out summary
+                    PaymentSummary(
+                      price: paymentBodyModel.itemData?.price ?? 0,
+                    ),
                   ],
                 )),
+
+                ///Session check out
                 Visibility(
                   visible: true,
                   child: Padding(

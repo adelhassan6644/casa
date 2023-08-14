@@ -6,7 +6,8 @@ import 'package:flutter/material.dart';
 import '../../../app/core/utils/text_styles.dart';
 
 class PaymentSummary extends StatelessWidget {
-  const PaymentSummary({Key? key}) : super(key: key);
+  const PaymentSummary({Key? key, required this.price}) : super(key: key);
+  final num price;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,7 @@ class PaymentSummary extends StatelessWidget {
         ),
         _SummeryInfoView(
           title: getTranslated("cost", context),
-          value: '42',
+          value: "$price",
         ),
         _SummeryInfoView(
           title: getTranslated("tax", context),
@@ -39,7 +40,7 @@ class PaymentSummary extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 6),
           child: _SummeryInfoView(
             title: getTranslated("total_amount", context),
-            value: '234',
+            value: "200",
           ),
         ),
       ],
