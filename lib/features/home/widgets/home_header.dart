@@ -16,6 +16,7 @@ import '../../../data/config/di.dart';
 import '../../../navigation/routes.dart';
 import '../../maps/provider/map_provider.dart';
 import '../../notifications/provider/notifications_provider.dart';
+import '../../profile/provider/profile_provider.dart';
 
 class HomeHeader extends StatelessWidget {
   const HomeHeader({Key? key}) : super(key: key);
@@ -41,12 +42,16 @@ class HomeHeader extends StatelessWidget {
                         style: AppTextStyles.medium.copyWith(
                             fontSize: 18, color: Styles.PRIMARY_COLOR),
                       ),
-                      Text(
-                        "Mohamed",
-                        style: AppTextStyles.semiBold.copyWith(
-                            fontSize: 18,
-                            color: Styles.PRIMARY_COLOR,
-                            height: 1),
+                      Consumer<ProfileProvider>(
+                        builder: (context,provider,_) {
+                          return Text(
+                            provider.nameTEC.text.trim(),
+                            style: AppTextStyles.semiBold.copyWith(
+                                fontSize: 18,
+                                color: Styles.PRIMARY_COLOR,
+                                height: 1),
+                          );
+                        }
                       ),
                     ],
                   ),

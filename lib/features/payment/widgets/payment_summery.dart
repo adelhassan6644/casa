@@ -1,7 +1,9 @@
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
+import 'package:casa/features/payment/provider/payment_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../app/core/utils/text_styles.dart';
 
@@ -11,39 +13,43 @@ class PaymentSummary extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Padding(
-          padding: const EdgeInsets.symmetric(
-              vertical: Dimensions.PADDING_SIZE_SMALL,
-              horizontal: Dimensions.PADDING_SIZE_DEFAULT),
-          child: Text(getTranslated("payment_summery", context),
-              style: AppTextStyles.semiBold.copyWith(fontSize: 16)),
-        ),
-        _SummeryInfoView(
-          title: getTranslated("cost", context),
-          value: "$price",
-        ),
-        _SummeryInfoView(
-          title: getTranslated("tax", context),
-          value: '44',
-        ),
-        _SummeryInfoView(
-          title: getTranslated("fees", context),
-          value: '34',
-        ),
-        Container(
-          decoration: BoxDecoration(
-            color: Styles.PRIMARY_COLOR.withOpacity(0.2),
-          ),
-          padding: const EdgeInsets.symmetric(vertical: 6),
-          child: _SummeryInfoView(
-            title: getTranslated("total_amount", context),
-            value: "200",
-          ),
-        ),
-      ],
+    return Consumer<PaymentProvider>(
+      builder: (context,provider,_) {
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                  vertical: Dimensions.PADDING_SIZE_SMALL,
+                  horizontal: Dimensions.PADDING_SIZE_DEFAULT),
+              child: Text(getTranslated("payment_summery", context),
+                  style: AppTextStyles.semiBold.copyWith(fontSize: 16)),
+            ),
+            _SummeryInfoView(
+              title: getTranslated("cost", context),
+              value: price.toStringAsFixed(2),
+            ),
+            _SummeryInfoView(
+              title: getTranslated("tax", context),
+              value: provider.tax?.toStringAsFixed(2)??"0",
+            ),
+            // _SummeryInfoView(
+            //   title: getTranslated("fees", context),
+            //   value:  provider.tax?.toStringAsFixed(2)??"",
+            // ),
+            Container(
+              decoration: BoxDecoration(
+                color: Styles.PRIMARY_COLOR.withOpacity(0.2),
+              ),
+              padding: const EdgeInsets.symmetric(vertical: 6),
+              child: _SummeryInfoView(
+                title: getTranslated("total_amount", context),
+                value:  provider.total.toStringAsFixed(2)??"",
+              ),
+            ),
+          ],
+        );
+      }
     );
   }
 }

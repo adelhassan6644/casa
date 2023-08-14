@@ -59,7 +59,9 @@ class CalenderWidget extends StatelessWidget {
                 onPageChanged: (v) {
                   provider.focusedDay = v;
                 },
-                onCalendarCreated: (v) {},
+                onCalendarCreated: (v) =>
+                  provider.onDaySelected(DateTime.now(), DateTime.now(), id),
+
               ),
             )
           : const _CalenderShimmer();

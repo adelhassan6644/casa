@@ -42,12 +42,12 @@ class ProductScheduleProvider extends ChangeNotifier {
   DateTime day = DateTime.now();
   DateTime focusedDay = DateTime.now();
   void onDaySelected(DateTime selectedDay, DateTime fDay, int id) {
-    if (!isSameDay(day, selectedDay)) {
+    // if (!isSameDay(day, selectedDay)) {
       day = selectedDay;
       focusedDay = fDay;
       notifyListeners();
       getDaySchedule(id);
-    }
+    // }
   }
 
   List<ScheduleModel>? productScheduleModel;
