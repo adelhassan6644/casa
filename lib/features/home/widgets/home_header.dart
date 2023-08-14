@@ -4,6 +4,7 @@ import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/components/custom_images.dart';
 import 'package:casa/components/shimmer/custom_shimmer.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
+import 'package:casa/features/profile/provider/profile_provider.dart';
 import 'package:casa/navigation/custom_navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:casa/app/core/utils/styles.dart';
@@ -33,32 +34,44 @@ class HomeHeader extends StatelessWidget {
               Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        getTranslated("welcome_description", context),
-                        style: AppTextStyles.medium.copyWith(
-                            fontSize: 18, color: Styles.PRIMARY_COLOR),
-                      ),
-                      Text(
-                        "Mohamed",
-                        style: AppTextStyles.semiBold.copyWith(
-                            fontSize: 18,
-                            color: Styles.PRIMARY_COLOR,
-                            height: 1),
-                      ),
-                    ],
+                  Expanded(
+                    child: Wrap(
+                      direction: Axis.horizontal,
+                      children: [
+                        Text(
+                          getTranslated("welcome_description", context),
+                          style: AppTextStyles.medium.copyWith(
+                              height: 2,
+                              fontSize: 18,
+                              color: Styles.PRIMARY_COLOR),
+                        ),
+                        Consumer<ProfileProvider>(
+                            builder: (_, provider, child) {
+                          return provider.isLoading
+                              ? const CustomShimmerContainer(
+                                  width: 100,
+                                  height: 16,
+                                )
+                              : Text(
+                                  provider.nameTEC.text.trim() ?? "",
+                                  style: AppTextStyles.semiBold.copyWith(
+                                      fontSize: 18,
+                                      height: 2,
+                                      color: Styles.PRIMARY_COLOR),
+                                );
+                        }),
+                      ],
+                    ),
                   ),
-                  const Expanded(child: SizedBox()),
                   customContainerSvgIcon(
-                      imageName: SvgImages.notifications,
-                      radius: 100,
-                      height: 45,
-                      width: 45,
+                    imageName: SvgImages.notifications,
+                    radius: 100,
+                    height: 45,
+                    width: 45,
                     onTap: () {
                       sl<NotificationsProvider>().getNotifications();
-                      CustomNavigator.push(Routes.NOTIFICATIONS);},
+                      CustomNavigator.push(Routes.NOTIFICATIONS);
+                    },
                   )
                 ],
               ),
@@ -154,7 +167,6 @@ class HomeHeader extends StatelessWidget {
             ],
           ),
         ),
-
         Consumer<HomeProvider>(builder: (_, provider, child) {
           return AnimatedCrossFade(
             crossFadeState: CrossFadeState.showFirst,
@@ -173,35 +185,42 @@ class HomeHeader extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: provider.isGetCategories
-                      ?[... List.generate(
-                          5,
-                          (index) {
-                            return Padding(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: Dimensions.PADDING_SIZE_SMALL.w),
-                              child: const CustomShimmerContainer(
-                                width: 80,
-                                height: 35,
-                              ),
-                            );
-                          },
-                        )]
-                      : [...List.generate(
-                          provider.categories?.length ?? 0,
-                          (index) {
-                            return TabWidget(
-                              title: provider.categories?[index].title ?? "",
-                              width: 100,
-                              isSelected: provider.currentTab == provider.categories?[index].id,
-                              withBorder: false,
-                              onTab: () {
-                                if (provider.currentTab != provider.categories?[index].id) {
-                                  provider.selectTab(index);
-                                }
-                              },
-                            );
-                          },
-                        )],
+                      ? [
+                          ...List.generate(
+                            5,
+                            (index) {
+                              return Padding(
+                                padding: EdgeInsets.symmetric(
+                                    horizontal:
+                                        Dimensions.PADDING_SIZE_SMALL.w),
+                                child: const CustomShimmerContainer(
+                                  width: 80,
+                                  height: 35,
+                                ),
+                              );
+                            },
+                          )
+                        ]
+                      : [
+                          ...List.generate(
+                            provider.categories?.length ?? 0,
+                            (index) {
+                              return TabWidget(
+                                title: provider.categories?[index].title ?? "",
+                                width: 100,
+                                isSelected: provider.currentTab ==
+                                    provider.categories?[index].id,
+                                withBorder: false,
+                                onTab: () {
+                                  if (provider.currentTab !=
+                                      provider.categories?[index].id) {
+                                    provider.selectTab(index);
+                                  }
+                                },
+                              );
+                            },
+                          )
+                        ],
                 ),
               ),
             ),

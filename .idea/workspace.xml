@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6626a0fc-6ed8-40b3-91bb-fe1e68f7c3b0" name="Changes" comment="update check out">
-      <change afterPath="$PROJECT_DIR$/lib/features/payment/widgets/session_summery.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.flutter-plugins-dependencies" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins-dependencies" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/ar.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/ar.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/language/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/assets/language/en.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/payment/pages/check_out.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/pages/check_out.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/payment/provider/payment_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/provider/payment_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/payment/widgets/payment_summery.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/payment/widgets/payment_summery.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/payment/widgets/product_summery.dart" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/product_schedule/model/schedule_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_schedule/model/schedule_model.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/product_schedule/page/product_schedule.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/product_schedule/page/product_schedule.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/setting/provider/config_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/setting/provider/config_provider.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/features/splash/provider/splash_provider.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/splash/provider/splash_provider.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/features/home/widgets/home_header.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,13 +107,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1688516389160</updated>
-    </task>
-    <task id="LOCAL-00009" summary="add file picker">
-      <created>1689252960287</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1689252960287</updated>
     </task>
     <task id="LOCAL-00010" summary="add file picker">
       <created>1689252971981</created>
@@ -461,7 +444,14 @@
       <option name="project" value="LOCAL" />
       <updated>1691619952228</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="update check out">
+      <created>1691965914528</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1691965914528</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
