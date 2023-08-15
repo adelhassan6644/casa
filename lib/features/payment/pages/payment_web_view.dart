@@ -6,8 +6,10 @@ import '../../../app/core/utils/styles.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_app_bar.dart';
 import '../../../data/api/end_points.dart';
+import '../../../data/config/di.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
+import '../provider/payment_provider.dart';
 
 class PaymentWebView extends StatefulWidget {
   final int id;
@@ -89,7 +91,7 @@ class _PaymentWebViewState extends State<PaymentWebView> {
                   if (isSuccess) {
                     CustomNavigator.push(Routes.SUCCESS,
                         replace: true,
-                        arguments: {"isDone": true, "date": DateTime.now()});
+                        arguments: {"isDone": true, "date":DateTime.now()});
                   } else if (isFailed || isCancel) {
                     CustomNavigator.push(Routes.SUCCESS,
                         replace: true,

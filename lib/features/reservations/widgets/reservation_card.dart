@@ -61,7 +61,7 @@ class AppointmentCard extends StatelessWidget {
                                       color: Styles.PRIMARY_COLOR)),
                             ),
                             CustomButton(
-                              width: 100,
+                              width: 110,
                               height: 30.h,
                               text: getTranslated(
                                   isNext ? "again" : "rate", context),
@@ -71,7 +71,7 @@ class AppointmentCard extends StatelessWidget {
                               onTap: () {
                                 if(isNext){
                                   CustomNavigator.push(Routes.PRODUCT_DETAILS,
-                                      arguments: reservation.subService);
+                                      arguments: reservation.subServiceID);
                                 }
                                 if( !isNext ) {
                                   CustomSimpleDialog.parentSimpleDialog(

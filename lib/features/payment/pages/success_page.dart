@@ -55,6 +55,7 @@ class SuccessPage extends StatelessWidget {
                     bottom: Dimensions.PADDING_SIZE_DEFAULT,
                   ),
                   child: Text(
+                    // "تم حجز موعد الجلسة",
                     "تم حجز موعد جلسة ماساج \n يوم ${date.dateFormat(format: "EEEE", lang: "ar")} ${date.dateFormat(format: "dd/MM")} الساعه ${date.dateFormat(format: "hh:mm a")}",
                     textAlign: TextAlign.center,
                     style: AppTextStyles.regular

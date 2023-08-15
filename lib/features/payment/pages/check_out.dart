@@ -22,7 +22,7 @@ class CheckOut extends StatelessWidget {
     return Scaffold(
       body: ChangeNotifierProvider(
         create: (_) => PaymentProvider(paymentRepo: sl<PaymentRepo>())
-          ..calcTotal(paymentBodyModel.itemData?.price),
+          ..calcTotal(paymentBodyModel),
         child: SafeArea(
             bottom: true,
             top: false,

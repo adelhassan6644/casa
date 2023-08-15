@@ -3,6 +3,7 @@ class ReservationModel {
   String? image;
   String? service;
   String? subService;
+  int? subServiceID;
   int? price;
   DateTime? date;
   DateTime? startTime;
@@ -16,6 +17,7 @@ class ReservationModel {
       this.price,
       this.date,
       this.startTime,
+        this.subServiceID,
       this.endTime,
       this.address});
 
@@ -24,6 +26,7 @@ class ReservationModel {
     service = json['service'];
     image = json['image'];
     subService = json['subService'];
+    subServiceID = json['subService_id'];
     price = json['price'];
     date = json['date'] != null ? DateTime.parse(json['date']) : DateTime.now();
     startTime = json['start_time'] != null

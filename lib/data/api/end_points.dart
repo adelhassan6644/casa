@@ -35,7 +35,7 @@ class EndPoints {
   static daySchedule(id) => 'subService/daySchedule/$id';
   static payment(id) => '/$id';
   static const String ratting = 'feedback';
-  static const String checkOut = 'setting';
+  static const String checkOut = 'reservation';
   static const String setting = 'setting';
   static const String contact = 'contact';
 
