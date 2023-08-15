@@ -59,8 +59,12 @@ class CalenderWidget extends StatelessWidget {
                 onPageChanged: (v) {
                   provider.focusedDay = v;
                 },
-                onCalendarCreated: (v) =>
-                  provider.onDaySelected(DateTime.now(), DateTime.now(), id),
+                onCalendarCreated: (v) {
+                  Future.delayed(Duration(milliseconds: 10),(){
+                    provider.onDaySelected(DateTime.now(), DateTime.now(), id);
+                  });
+                }
+
 
               ),
             )
