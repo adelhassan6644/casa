@@ -24,5 +24,6 @@ class Routes {
   static const CHECK_OUT = "PAYMENT";
   static const PAYMENT_WEB_VIEW = "PAYMENT_WEB_VIEW";
   static const SUCCESS = "SUCCESS";
+  static const ChooseLanguageScreen = "ChooseLanguageScreen";
 
 }

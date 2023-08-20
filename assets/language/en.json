@@ -157,5 +157,6 @@
   "cost": "Cost",
   "fees": "Fees",
   "tax": "Tax",
-  "total_amount": "Total Amount"
+  "total_amount": "Total Amount",
+  "language": "language"
 }

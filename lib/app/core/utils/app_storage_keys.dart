@@ -1,4 +1,4 @@
-import '../../localization/provider/language_provider.dart';
+import '../../../features/language/provider/language_provider.dart';
 class AppStorageKey {
   static const String userId = "user_id";
   static const String apiToken = "api_token";

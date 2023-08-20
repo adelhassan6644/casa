@@ -90,6 +90,7 @@ class ProductScheduleProvider extends ChangeNotifier {
   List<ScheduleModel>? dayScheduleModel;
   bool isGetting = false;
   getDaySchedule(id) async {
+
     try {
       isGetting = true;
       dayScheduleModel?.clear();

@@ -16,6 +16,7 @@ import '../features/auth/pages/login.dart';
 import '../features/auth/pages/register.dart';
 import '../features/auth/pages/verification.dart';
 import '../features/contact_with_us/page/contact_with_us.dart';
+import '../features/language/choose_language_screen.dart';
 import '../features/maps/page/map_page.dart';
 import '../features/on_boarding/pages/on_boarding.dart';
 import '../features/payment/pages/payment_web_view.dart';
@@ -105,6 +106,8 @@ abstract class CustomNavigator {
 
       case Routes.TERMS:
         return _pageRoute(const Terms());
+      case Routes.ChooseLanguageScreen:
+        return _pageRoute(const ChooseLanguageScreen());
 
       default:
         return MaterialPageRoute(builder: (_) => const MyApp());

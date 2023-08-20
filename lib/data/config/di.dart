@@ -4,7 +4,7 @@ import 'package:casa/features/home/repo/home_repo.dart';
 import 'package:casa/features/maps/provider/map_provider.dart';
 import 'package:get_it/get_it.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../app/localization/provider/language_provider.dart';
+import '../../features/language/provider/language_provider.dart';
 import '../../app/localization/provider/localization_provider.dart';
 import '../../app/theme/theme_provider/theme_provider.dart';
 import '../../features/address/provider/addresses_provider.dart';

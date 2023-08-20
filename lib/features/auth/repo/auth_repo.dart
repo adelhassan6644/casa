@@ -52,11 +52,11 @@ class AuthRepo {
 
   Future<String?> saveDeviceToken() async {
     String? deviceToken;
-    if (Platform.isIOS) {
-      deviceToken = await FirebaseMessaging.instance.getAPNSToken();
-    } else {
+    // if (Platform.isIOS) {
+    //   deviceToken = await FirebaseMessaging.instance.getAPNSToken();
+    // } else {
       deviceToken = await FirebaseMessaging.instance.getToken();
-    }
+    // }
 
     if (deviceToken != null) {
       log('--------Device Token---------- $deviceToken');
@@ -95,7 +95,7 @@ class AuthRepo {
         // "email": mail,
         "phone": phone,
         "password": password,
-        // "fcm_token": await saveDeviceToken()
+        "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {
@@ -180,7 +180,7 @@ class AuthRepo {
         "email": mail,
         "gender": gender,
         "password": password,
-        // "fcm_token": await saveDeviceToken()
+        "fcm_token": await saveDeviceToken()
       });
 
       if (response.statusCode == 200) {

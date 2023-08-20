@@ -158,6 +158,8 @@
   "fees": "رسوم",
   "tax": "ضريبة",
   "total_amount": "الإجمالي",
-  "session_summery": "ملخص الجلسة"
+  "session_summery": "ملخص الجلسة",
+
+  "language": "اللغة"
 
 }

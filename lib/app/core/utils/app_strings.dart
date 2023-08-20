@@ -1,3 +1,4 @@
+import '../../../features/language/provider/language_provider.dart';
 import '../../../features/maps/models/location_model.dart';
 import '../../../main_models/weak_model.dart';
 
@@ -23,6 +24,18 @@ class AppStrings {
   static const String englishCode = 'en';
   static const String arabicCode = 'ar';
   static const String locale = 'locale';
+  static List<LanguageModel> languages = [
+    LanguageModel(
+        imageUrl: 'Images.united_kindom',
+        languageName: 'English',
+        countryCode: 'US',
+        languageCode: 'en'),
+    LanguageModel(
+        imageUrl: 'Images.arabic',
+        languageName: 'Arabic',
+        countryCode: 'SA',
+        languageCode: 'ar'),
+  ];
   static List<WeekModel> days = [
     WeekModel(
       id: 1,
