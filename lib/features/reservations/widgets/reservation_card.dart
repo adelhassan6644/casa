@@ -89,7 +89,7 @@ class AppointmentCard extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text("اليوم  ",
+                            Text(getTranslated("day", context)+" ",
                                 style: AppTextStyles.regular.copyWith(
                                     height: 1,
                                     fontSize: 12,
@@ -112,7 +112,7 @@ class AppointmentCard extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text("الساعة  ",
+                            Text(getTranslated("time", context)+" ",
                                 style: AppTextStyles.regular.copyWith(
                                     height: 1,
                                     fontSize: 12,
@@ -157,7 +157,7 @@ class AppointmentCard extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            Text("${reservation.price ?? 0} ريال",
+                            Text("${reservation.price ?? 0} "+getTranslated("sar", context),
                                 maxLines: 1,
                                 overflow: TextOverflow.ellipsis,
                                 style: AppTextStyles.medium.copyWith(
