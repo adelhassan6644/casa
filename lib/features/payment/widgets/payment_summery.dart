@@ -71,7 +71,7 @@ class _SummeryInfoView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(title, style: AppTextStyles.medium.copyWith(fontSize: 14)),
-          Text("$value  ريال",
+          Text("$value  "+ getTranslated("sar", context),
               style: AppTextStyles.semiBold.copyWith(fontSize: 14)),
         ],
       ),

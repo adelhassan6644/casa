@@ -10,6 +10,7 @@ import 'package:provider/provider.dart';
 
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/text_styles.dart';
+import '../../../app/localization/provider/localization_provider.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_network_image.dart';
 import '../../../components/custom_simple_dialog.dart';
@@ -67,11 +68,14 @@ class HomeDates extends StatelessWidget {
                           ),
                           Consumer<MainPageProvider>(
                               builder: (_, mainProvider, child) {
-                            return customImageIconSVG(
-                                imageName: SvgImages.arrowLeft,
-                                color: Styles.PRIMARY_COLOR,
-                                onTap: () =>
-                                    mainProvider.updateDashboardIndex(0));
+                            return Transform.scale(
+                              scaleX:Provider.of<LocalizationProvider>(context,listen: false).locale.languageCode=="en"?-1: 1,
+                              child: customImageIconSVG(
+                                  imageName: SvgImages.arrowLeft,
+                                  color: Styles.PRIMARY_COLOR,
+                                  onTap: () =>
+                                      mainProvider.updateDashboardIndex(1)),
+                            );
                           }),
                         ],
                       ),
@@ -139,7 +143,7 @@ class HomeDates extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      Text("اليوم  ",
+                                      Text(getTranslated("time", context)+'  ',
                                           style: AppTextStyles.regular.copyWith(
                                               height: 1,
                                               fontSize: 12,
@@ -164,7 +168,7 @@ class HomeDates extends StatelessWidget {
                                   ),
                                   Row(
                                     children: [
-                                      Text("الساعة  ",
+                                      Text(getTranslated("time", context)+'  ',
                                           style: AppTextStyles.regular.copyWith(
                                               height: 1,
                                               fontSize: 12,
@@ -209,7 +213,7 @@ class HomeDates extends StatelessWidget {
                                         ),
                                       ),
                                       Text(
-                                          "${provider.nextReservations?[0].price ?? 0} ريال",
+                                          "${provider.nextReservations?[0].price ?? 0}"+ getTranslated("sar", context),
                                           maxLines: 1,
                                           overflow: TextOverflow.ellipsis,
                                           style: AppTextStyles.medium.copyWith(

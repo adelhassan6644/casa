@@ -1,4 +1,5 @@
 import 'package:casa/app/core/utils/extensions.dart';
+import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:casa/features/product_schedule/provider/product_schedule_provider.dart';
 import 'package:casa/features/product_schedule/widgets/schedule_date_card.dart';
 import 'package:flutter/cupertino.dart';
@@ -49,7 +50,7 @@ class ScheduleDateWidget extends StatelessWidget {
                                     ))),
                       ),
                       Text(
-                          "مدة الجلسة ${provider.dayScheduleModel?.length != 0 ? provider.dayScheduleModel?.first.duration ?? "" : 0}",
+                          getTranslated("session_duration", context)+"${provider.dayScheduleModel?.length != 0 ? provider.dayScheduleModel?.first.duration ?? "" : 0}",
                           style: AppTextStyles.regular.copyWith(
                               fontSize: 14, color: Styles.DETAILS_COLOR)),
                     ],

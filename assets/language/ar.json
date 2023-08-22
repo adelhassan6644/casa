@@ -90,6 +90,7 @@
   "massage": "مساج",
   "your_upcoming_dates": "مواعيدك القادمة",
   "notifications": "الأشعارات",
+  "no_notifications": "لا يوجد اشعارات حاليا",
   "save_changes": "حفظ التغيرات",
   "addresses": "العناوين",
   "add_address": "أضف عنوان",
@@ -97,6 +98,8 @@
   "confirm_location": "تأكيد الموقع",
   "address": "العنوان",
   "house": "منزل",
+  "day": "اليوم",
+  "time": "الساعة",
   "other_address": "عنوان آخر",
   "address_type": "نوع العنوان",
   "something_went_wrong": "عفوًا! حدث خطأ ما",
@@ -159,7 +162,7 @@
   "tax": "ضريبة",
   "total_amount": "الإجمالي",
   "session_summery": "ملخص الجلسة",
-
-  "language": "اللغة"
-
+  "session_duration": "مدة الجلسة",
+  "language": "اللغة",
+  "sar": "ريال"
 }

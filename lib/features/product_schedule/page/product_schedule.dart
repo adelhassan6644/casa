@@ -33,7 +33,7 @@ class ProductSchedule extends StatelessWidget {
             child: Column(
               children: [
                 CustomAppBar(
-                  title: "حجز جلسة ${data.itemData?.service}",
+                  title: getTranslated("book_the_appointment", context)+" ${data.itemData?.service}",
                 ),
                 Expanded(
                   child: Padding(

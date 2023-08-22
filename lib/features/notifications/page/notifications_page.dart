@@ -117,12 +117,12 @@ class NotificationsPage extends StatelessWidget {
                               onRefresh: () async {
                                 sl<NotificationsProvider>().getNotifications();
                               },
-                              child: const Column(
+                              child:  Column(
                                 children: [
                                   Expanded(
                                     child: ListAnimator(data: [
                                       EmptyState(
-                                        txt: "لا يوجد اشعارات حاليا",
+                                        txt: getTranslated("no_notifications", context),
                                         spaceBtw: 50,
                                       )
                                     ]),

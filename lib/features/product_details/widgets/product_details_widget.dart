@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/text_styles.dart';
+import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_network_image.dart';
 
 class ProductDetailsWidget extends StatelessWidget {
@@ -44,7 +45,7 @@ class ProductDetailsWidget extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.symmetric(vertical: 6.h),
                   child: Text(
-                    "${item.price ?? 0} ريال",
+                    "${item.price ?? 0} "+ getTranslated("sar", context),
                     style: AppTextStyles.medium.copyWith(
                         fontSize: 16,
                         overflow: TextOverflow.ellipsis,

@@ -67,7 +67,7 @@ class ProductCard extends StatelessWidget {
                       Row(
                         children: [
                           Expanded(
-                            child: Text("${product.price ?? 0} ريال",
+                            child: Text("${product.price ?? 0} "+ getTranslated("sar", context),
                                 maxLines: 1,
                                 textAlign: TextAlign.start,
                                 overflow: TextOverflow.ellipsis,

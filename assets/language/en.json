@@ -31,6 +31,8 @@
   "confirm_password": "confirm password",
   "personal_information": "Personal Information",
   "edit": "Edit",
+  "day": "Day",
+  "time": "Time",
   "save": "Save",
   "name": "Name",
   "phone_number": "phone number",
@@ -88,6 +90,7 @@
   "massage": "Massage",
   "your_upcoming_dates": "your upcoming dates",
   "notifications": "Notifications",
+  "no_notifications": "No notifications",
   "save_changes": "Save Changes",
   "addresses": "Addresses",
   "add_address": "Add Address",
@@ -158,5 +161,7 @@
   "fees": "Fees",
   "tax": "Tax",
   "total_amount": "Total Amount",
-  "language": "language"
+  "language": "language",
+  "session_duration": "Session duration",
+  "sar": "SAR"
 }
