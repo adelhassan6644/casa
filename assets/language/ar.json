@@ -11,6 +11,10 @@
   "signup_header" : "مرحبا بك في كاسا",
   "welcome_description": "مرحبا, تسعدنا عودتك ",
   "mail": "البريد الإلكتروني",
+  "Theـsessionـhasـbeen": "تم حجز موعد الجلسة \\n يوم",
+  "appointment_confirmed": "تم تأكيد الموعد",
+  "We_regret_that_the_payment_was_not_completed": "نأسف لعدم اتمام عملية الدفع",
+
   "change_password": "تغير كلمة المرور",
   "you_must_change_something": "عفوًا! يجب عليك تغيير شيء",
   "your_profile_successfully_updated": "تم تحديث الملف الشخصي بنجاح",

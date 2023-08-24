@@ -41,8 +41,8 @@ class SuccessPage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: Dimensions.PADDING_SIZE_DEFAULT),
                 child: Text(
                   data["isDone"] == true
-                      ? "تم تأكيد الموعد"
-                      : "نأسف لعدم اتمام عملية الدفع",
+                      ? getTranslated("appointment_confirmed", context)
+                      : getTranslated("We_regret_that_the_payment_was_not_completed", context),
                   textAlign: TextAlign.center,
                   style: AppTextStyles.medium
                       .copyWith(fontSize: 24, color: Styles.PRIMARY_COLOR),
@@ -56,7 +56,7 @@ class SuccessPage extends StatelessWidget {
                   ),
                   child: Text(
                     // "تم حجز موعد الجلسة",
-                    "تم حجز موعد جلسة ماساج \n يوم ${date.dateFormat(format: "EEEE", lang: "ar")} ${date.dateFormat(format: "dd/MM")} الساعه ${date.dateFormat(format: "hh:mm a")}",
+                    "${getTranslated('Theـsessionـhasـbeen', context)} ${date.dateFormat(format: "EEEE", lang: "ar")} ${date.dateFormat(format: "dd/MM")} ${getTranslated("time", context)} ${date.dateFormat(format: "hh:mm a")}",
                     textAlign: TextAlign.center,
                     style: AppTextStyles.regular
                         .copyWith(fontSize: 18, color: Styles.DETAILS_COLOR),

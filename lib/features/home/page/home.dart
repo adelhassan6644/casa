@@ -56,6 +56,7 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
                       physics: const BouncingScrollPhysics(),
                       padding: EdgeInsets.zero,
                       children: const [
+
                         HomeBanner(),
                         HomeDates(),
                         HomeProducts()

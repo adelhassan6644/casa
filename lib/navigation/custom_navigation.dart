@@ -78,7 +78,7 @@ abstract class CustomNavigator {
             ProductSchedule(data: settings.arguments as PaymentBodyModel));
 
       case Routes.PAYMENT_WEB_VIEW:
-        return _pageRoute(PaymentWebView(id: settings.arguments as int));
+        return _pageRoute(PaymentWebView(map: settings.arguments as Map));
 
       case Routes.CHECK_OUT:
         return _pageRoute(CheckOut(

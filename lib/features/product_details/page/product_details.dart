@@ -11,6 +11,7 @@ import 'package:casa/features/product_details/provider/product_details_provider.
 import 'package:provider/provider.dart';
 import 'dart:ui' as ui;
 
+import '../../../app/core/utils/app_snack_bar.dart';
 import '../../../app/core/utils/dimensions.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/core/utils/svg_images.dart';
@@ -105,8 +106,16 @@ class ProductDetails extends StatelessWidget {
                       text: getTranslated("book_an_appointment", context),
                       svgIcon: SvgImages.arrowLeft,
                       iconColor: Styles.WHITE_COLOR,
-                      onTap: () => CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
-                          arguments: PaymentBodyModel(itemData: provider.model)),
+                      onTap: () {
+                        if ( provider.model?.status == 0) {
+                          showToast(getTranslated(
+                              "unavailable_for_reservation", context));
+                          return;
+                        }
+                        CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
+                            arguments: PaymentBodyModel(
+                                itemData: provider.model));
+                      },
                     ),
                   ),
                 ),

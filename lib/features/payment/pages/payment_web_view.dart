@@ -12,9 +12,9 @@ import '../../../navigation/routes.dart';
 import '../provider/payment_provider.dart';
 
 class PaymentWebView extends StatefulWidget {
-  final int id;
+  final Map map;
 
-  const PaymentWebView({super.key, required this.id});
+  const PaymentWebView({super.key, required this.map});
 
   @override
   State<PaymentWebView> createState() => _PaymentWebViewState();
@@ -44,7 +44,7 @@ class _PaymentWebViewState extends State<PaymentWebView> {
               InAppWebView(
                 initialUrlRequest: URLRequest(
                   url: WebUri.uri(
-                    Uri.parse(EndPoints.baseUrl + EndPoints.payment(widget.id)),
+                    Uri.parse(EndPoints.baseUrl + EndPoints.payment(widget.map['id'])),
                   ),
                 ),
                 pullToRefreshController: pullToRefreshController,
@@ -91,12 +91,13 @@ class _PaymentWebViewState extends State<PaymentWebView> {
                   if (isSuccess) {
                     CustomNavigator.push(Routes.SUCCESS,
                         replace: true,
-                        arguments: {"isDone": true, "date":DateTime.now()});
+                        arguments: {"isDone": true, "date":widget.map["date"]});
                   } else if (isFailed || isCancel) {
                     CustomNavigator.push(Routes.SUCCESS,
                         replace: true,
                         arguments: {
                           "isDone": false,
+                          "date":widget.map["date"]
                         });
                   }
                 },

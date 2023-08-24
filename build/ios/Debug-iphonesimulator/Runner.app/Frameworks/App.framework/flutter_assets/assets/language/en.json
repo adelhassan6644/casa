@@ -11,6 +11,9 @@
   "signup_header" : "We are glad to serve you",
   "welcome_description": "Welcome, we're glad you're back",
   "mail": "E-mail",
+  "appointment_confirmed": "Appointment confirmed",
+  "We_regret_that_the_payment_was_not_completed": "We regret that the payment was not completed",
+
   "your_profile_successfully_updated": "Your profile successfully updated",
   "you_must_change_something": "Oops! you must change something",
   "please_select_profile_image":"Oops! please select profile image",
@@ -31,9 +34,12 @@
   "confirm_password": "confirm password",
   "personal_information": "Personal Information",
   "edit": "Edit",
+  "day": "Day",
+  "time": "Time",
   "save": "Save",
   "name": "Name",
   "phone_number": "phone number",
+  "Theـsessionـhasـbeen": "The session has been booked \n on",
   "change_password": "Change Password",
   "remember_me": "Remember me",
   "agree_to_the_terms_and_conditions": "Agree to the terms and conditions",
@@ -88,6 +94,7 @@
   "massage": "Massage",
   "your_upcoming_dates": "your upcoming dates",
   "notifications": "Notifications",
+  "no_notifications": "No notifications",
   "save_changes": "Save Changes",
   "addresses": "Addresses",
   "add_address": "Add Address",
@@ -157,5 +164,8 @@
   "cost": "Cost",
   "fees": "Fees",
   "tax": "Tax",
-  "total_amount": "Total Amount"
+  "total_amount": "Total Amount",
+  "language": "language",
+  "session_duration": "Session duration",
+  "sar": "SAR"
 }
