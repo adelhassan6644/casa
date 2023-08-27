@@ -37,7 +37,7 @@ class RattingProvider extends ChangeNotifier {
         notifyListeners();
         var body = {
           "client_id": rattingRepo.getUserId(),
-          "service_id": reservation.service,
+          "id": reservation.id,
           "sub_service_id":reservation.subService,
           "rating": ratting! + 1,
           // "feedback": feedback.text.trim()
