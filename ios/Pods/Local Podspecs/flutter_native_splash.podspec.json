@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "summary": "A new Flutter project.",
   "description": "A new Flutter project.",
-  "homepage": "http://example.com",
+  "homepage": "http://softwareCasaProvider.com",
   "license": {
     "file": "../LICENSE"
   },
   "authors": {
-    "Your Company": "email@example.com"
+    "Your Company": "email@softwareCasaProvider.com"
   },
   "source": {
     "path": "."
