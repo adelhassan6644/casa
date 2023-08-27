@@ -15,7 +15,7 @@ class ProductScheduleProvider extends ChangeNotifier {
   ProductScheduleRepo repo;
   ProductScheduleProvider({required this.repo});
 
-  CalendarFormat calendarFormat = CalendarFormat.week;
+  CalendarFormat calendarFormat = CalendarFormat.month;
   onChangeFormat(v) {
     calendarFormat = v;
     notifyListeners();
