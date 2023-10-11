@@ -13,7 +13,7 @@
   "mail": "E-mail",
   "appointment_confirmed": "Appointment confirmed",
   "We_regret_that_the_payment_was_not_completed": "We regret that the payment was not completed",
-
+  "support": "Support",
   "your_profile_successfully_updated": "Your profile successfully updated",
   "you_must_change_something": "Oops! you must change something",
   "please_select_profile_image":"Oops! please select profile image",
@@ -95,6 +95,8 @@
   "your_upcoming_dates": "your upcoming dates",
   "notifications": "Notifications",
   "no_notifications": "No notifications",
+  "notification_deleted_successfully":  "Notification deleted successfully",
+
   "save_changes": "Save Changes",
   "addresses": "Addresses",
   "add_address": "Add Address",

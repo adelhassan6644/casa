@@ -16,6 +16,7 @@
   "We_regret_that_the_payment_was_not_completed": "نأسف لعدم اتمام عملية الدفع",
 
   "change_password": "تغير كلمة المرور",
+  "support": "الدعم",
   "you_must_change_something": "عفوًا! يجب عليك تغيير شيء",
   "your_profile_successfully_updated": "تم تحديث الملف الشخصي بنجاح",
   "please_select_profile_image": "عفوًا! الرجاء إختيار صورة ملف شخصية",
@@ -104,6 +105,7 @@
   "house": "منزل",
   "day": "اليوم",
   "time": "الساعة",
+  "notification_deleted_successfully": "تم الحذف ",
   "other_address": "عنوان آخر",
   "address_type": "نوع العنوان",
   "something_went_wrong": "عفوًا! حدث خطأ ما",
