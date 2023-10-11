@@ -1,15 +1,52 @@
 {
   "project_info": {
     "project_number": "709889896038",
+    "firebase_url": "https://casa-50155-default-rtdb.firebaseio.com",
     "project_id": "casa-50155",
     "storage_bucket": "casa-50155.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:709889896038:android:3d711d3e6f14aa04e8c7a7",
+        "mobilesdk_app_id": "1:709889896038:android:37c5f0ea5b732c08e8c7a7",
         "android_client_info": {
           "package_name": "com.softwareCasa.casa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "709889896038-h2vs851jscp32c1t6f6c6ogbnbefe2je.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOWmbF37VFk5PSkGMtrIaZUUjLl9oP9vU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "709889896038-h2vs851jscp32c1t6f6c6ogbnbefe2je.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "709889896038-9fg69ave8j4449800bk2stms69a0r9fe.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.softwareCasa.casa"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:709889896038:android:98c7a48794a52ddae8c7a7",
+        "android_client_info": {
+          "package_name": "com.softwareCasaProvider.casaProvider"
         }
       },
       "oauth_client": [
