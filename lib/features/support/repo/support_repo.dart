@@ -50,10 +50,10 @@ class SupportRepo {
         "conv_id": userId,
         "sender_id": userId,
         "message": message,
-        "receiver_id": 0,
+        "receiver_id": 50500,
         "created_at": DateTime.now().toString(),
       }).then((value)  {
-        debugPrint("finsed ");});
+      });
       log("success");
       return Right("success");
     } catch (e) {
