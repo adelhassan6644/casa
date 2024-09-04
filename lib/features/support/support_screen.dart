@@ -177,30 +177,27 @@ class _SupportScreenState extends State<SupportScreen> {
   Widget _getMessageList() {
 
     return Expanded(
-      child: Align(
-        alignment: Alignment.topCenter,
-        child: FirebaseAnimatedList(
-          controller: listScrollController,
-          // shrinkWrap: true,
+      child: FirebaseAnimatedList(
+        controller: listScrollController,
+        shrinkWrap: true,
 
-          defaultChild: const LoaderView(),
-          query: ref
-              .child("messages")
-              .child(sl.get<SharedPreferences>().getString(AppStorageKey.userId)!)
-              .limitToLast(_limit),
-          itemBuilder: (context, snapshot, animation, index) {
+        defaultChild: const LoaderView(),
+        query: ref
+            .child("messages")
+            .child(sl.get<SharedPreferences>().getString(AppStorageKey.userId)!)
+            .limitToLast(_limit),
+        itemBuilder: (context, snapshot, animation, index) {
 
-            listMessage = [];
-            print(snapshot.value);
-            final json = snapshot.value as Map<dynamic, dynamic>;
-            final message = Message.fromJson(json);
-            listMessage.add(message);
-            return MessageBubble(
-              addDate: true,
-              chat: message,
-            );
-          },
-        ),
+          listMessage = [];
+          print(snapshot.value);
+          final json = snapshot.value as Map<dynamic, dynamic>;
+          final message = Message.fromJson(json);
+          listMessage.add(message);
+          return MessageBubble(
+            addDate: true,
+            chat: message,
+          );
+        },
       ),
     );
   }

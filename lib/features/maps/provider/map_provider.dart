@@ -135,7 +135,7 @@ class MapProvider extends ChangeNotifier {
   updatePosition(
     CameraPosition position,
   ) async {
-    try {
+    // try {
       isLoading = true;
       notifyListeners();
 
@@ -155,16 +155,16 @@ class MapProvider extends ChangeNotifier {
       isLoading = false;
 
       notifyListeners();
-    } catch (e) {
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
-              message: ApiErrorHandler.getMessage(e),
-              isFloating: true,
-              backgroundColor: Styles.IN_ACTIVE,
-              borderColor: Colors.transparent));
-      isLoading = false;
-      notifyListeners();
-    }
+    // } catch (e) {
+    //   CustomSnackBar.showSnackBar(
+    //       notification: AppNotification(
+    //           message: ApiErrorHandler.getMessage(e),
+    //           isFloating: true,
+    //           backgroundColor: Styles.IN_ACTIVE,
+    //           borderColor: Colors.transparent));
+    //   isLoading = false;
+    //   notifyListeners();
+    // }
 
   }
 

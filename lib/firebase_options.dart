@@ -48,17 +48,19 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyAOWmbF37VFk5PSkGMtrIaZUUjLl9oP9vU',
-    appId: '1:709889896038:android:3d711d3e6f14aa04e8c7a7',
+    appId: '1:709889896038:android:37c5f0ea5b732c08e8c7a7',
     messagingSenderId: '709889896038',
     projectId: 'casa-50155',
+    databaseURL: 'https://casa-50155-default-rtdb.firebaseio.com',
     storageBucket: 'casa-50155.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDBAunecIZ7Xtx68YQjX2KBycLob1fxb5s',
-    appId: '1:709889896038:ios:4c0afca66fcdf8d7e8c7a7',
+    appId: '1:709889896038:ios:1685275dda6de331e8c7a7',
     messagingSenderId: '709889896038',
     projectId: 'casa-50155',
+    databaseURL: 'https://casa-50155-default-rtdb.firebaseio.com',
     storageBucket: 'casa-50155.appspot.com',
     iosClientId: '709889896038-9fg69ave8j4449800bk2stms69a0r9fe.apps.googleusercontent.com',
     iosBundleId: 'com.softwareCasa.casa',
@@ -66,11 +68,11 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDBAunecIZ7Xtx68YQjX2KBycLob1fxb5s',
-    appId: '1:709889896038:ios:cdc7a65f6fc9642fe8c7a7',
+    appId: '1:709889896038:ios:f60859f7f8e21740e8c7a7',
     messagingSenderId: '709889896038',
     projectId: 'casa-50155',
+    databaseURL: 'https://casa-50155-default-rtdb.firebaseio.com',
     storageBucket: 'casa-50155.appspot.com',
-    iosClientId: '709889896038-nkarp2qe4glgl58fq5um25umfmqlq806.apps.googleusercontent.com',
-    iosBundleId: 'n',
+    iosBundleId: 'y',
   );
 }

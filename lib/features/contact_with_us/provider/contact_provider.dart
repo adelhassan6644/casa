@@ -21,7 +21,7 @@ class ContactProvider extends ChangeNotifier {
   bool isLoading = false;
   ContactModel? contactModel;
   getContact() async {
-    try {
+    // try {
       isLoading = true;
       notifyListeners();
       Either<ServerFailure, Response> response = await contactRepo.getContact();
@@ -39,16 +39,16 @@ class ContactProvider extends ChangeNotifier {
         isLoading = false;
         notifyListeners();
       });
-    } catch (e) {
-      CustomSnackBar.showSnackBar(
-          notification: AppNotification(
-              message: e.toString(),
-              isFloating: true,
-              backgroundColor: Styles.IN_ACTIVE,
-              borderColor: Colors.transparent));
-      isLoading = false;
-      notifyListeners();
-    }
+    // } catch (e) {
+    //   CustomSnackBar.showSnackBar(
+    //       notification: AppNotification(
+    //           message: e.toString(),
+    //           isFloating: true,
+    //           backgroundColor: Styles.IN_ACTIVE,
+    //           borderColor: Colors.transparent));
+    //   isLoading = false;
+    //   notifyListeners();
+    // }
   }
 
   launchWebsite() {

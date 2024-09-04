@@ -46,10 +46,7 @@ class PaymentProvider extends ChangeNotifier {
     try {
       isCheckOut = true;
       notifyListeners();
-      CustomNavigator.push(Routes.PAYMENT_WEB_VIEW, arguments: {
-        "id":20,
-        "date": paymentBodyModel!.scheduleModel!.startTime,
-      });
+
       Either<ServerFailure, Response> response =
           await paymentRepo.reserveOffer(paymentBodyModel: paymentBodyModel!);
       response.fold((fail) {

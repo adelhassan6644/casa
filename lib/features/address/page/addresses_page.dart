@@ -5,6 +5,7 @@ import 'package:casa/components/animated_widget.dart';
 import 'package:casa/components/custom_app_bar.dart';
 import 'package:casa/components/custom_button.dart';
 import 'package:casa/features/address/provider/addresses_provider.dart';
+import 'package:casa/features/guest/guest_mode.dart';
 import 'package:casa/features/payment/model/payment_body_model.dart';
 import 'package:casa/main_models/base_model.dart';
 import 'package:casa/navigation/custom_navigation.dart';
@@ -37,6 +38,7 @@ class AddressPage extends StatelessWidget {
                 title: getTranslated(
                     data != null ? "address_selection" : "addresses", context),
               ),
+              provider.isLogin?
               !provider.isLoading
                   ? Expanded(
                       child: RefreshIndicator(
@@ -156,7 +158,7 @@ class AddressPage extends StatelessWidget {
                           ],
                         ),
                       ),
-                    ),
+                    ):Expanded(child: GuestMode()),
 
               /// To Add Address
               Visibility(

@@ -5,6 +5,7 @@ class SettingModel {
   int? serviceFee;
   int? tax;
   String? terms;
+  String? usingTerms;
   String? serverKey;
   String? conditions;
 
@@ -15,6 +16,7 @@ class SettingModel {
       this.serviceFee,
       this.tax,
       this.terms,
+      this.usingTerms,
       this.serverKey,
       this.conditions});
 
@@ -25,6 +27,7 @@ class SettingModel {
     serviceFee = int.tryParse(json['service_fee'].toString()) ?? 00;
     tax = int.tryParse(json['tax'].toString()) ?? 00;
     terms = json['terms'];
+    usingTerms = json['using_terms']??"";
     serverKey = json['server_key'];
     conditions = json['conditions'];
   }

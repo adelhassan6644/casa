@@ -13,7 +13,8 @@ import '../../../components/empty_widget.dart';
 import '../provider/config_provider.dart';
 
 class Terms extends StatelessWidget {
-  const Terms({Key? key}) : super(key: key);
+  final bool isUesing;
+  const Terms({Key? key, required this.isUesing}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,10 @@ class Terms extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomAppBar(title: getTranslated("terms_conditions", context)),
+              CustomAppBar(
+                  title: getTranslated(
+                      isUesing ? "uasing_terms_conditions" : "terms_conditions",
+                      context)),
               Consumer<ConfigProvider>(builder: (_, provider, child) {
                 return !provider.isLoading
                     ? Expanded(
@@ -57,7 +61,9 @@ class Terms extends StatelessWidget {
                                 height: 24.h,
                               ),
                               provider.setting != null
-                                  ? HtmlWidget(provider.setting?.terms ?? "")
+                                  ? HtmlWidget(isUesing
+                                      ? provider.setting?.usingTerms ?? ""
+                                      : provider.setting?.terms ?? "")
                                   : EmptyState(
                                       txt: getTranslated(
                                           "something_went_wrong", context),

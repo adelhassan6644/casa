@@ -21,8 +21,10 @@ import '../features/maps/page/map_page.dart';
 import '../features/on_boarding/pages/on_boarding.dart';
 import '../features/payment/pages/payment_web_view.dart';
 import '../features/product_schedule/page/product_schedule.dart';
+import '../features/session_details/page/session_details.dart';
 import '../features/setting/pages/about_us.dart';
 import '../features/splash/page/splash.dart';
+import '../features/support/support_screen.dart';
 import '../main.dart';
 import 'routes.dart';
 
@@ -43,7 +45,7 @@ abstract class CustomNavigator {
       case Routes.ON_BOARDING:
         return _pageRoute(const OnBoarding());
       case Routes.DASHBOARD:
-        return _pageRoute(const DashBoard());
+        return _pageRoute( DashBoard(index: settings.arguments as int,));
       case Routes.LOGIN:
         return _pageRoute(Login(
           fromMain:
@@ -57,6 +59,8 @@ abstract class CustomNavigator {
         return _pageRoute(const Register());
       case Routes.CHANGE_PASSWORD:
         return _pageRoute(const ChangePassword());
+        case Routes.SupportScreen:
+        return _pageRoute(const SupportScreen());
 
       case Routes.NOTIFICATIONS:
         return _pageRoute(const NotificationsPage());
@@ -87,6 +91,8 @@ abstract class CustomNavigator {
 
       case Routes.SUCCESS:
         return _pageRoute(SuccessPage(data: settings.arguments as Map));
+        case Routes.SessionDetails:
+        return _pageRoute(SessionDetails(id: settings.arguments as int));
 
       case Routes.ADDRESS:
         return _pageRoute(AddressPage(
@@ -105,7 +111,7 @@ abstract class CustomNavigator {
         return _pageRoute(const AboutUs());
 
       case Routes.TERMS:
-        return _pageRoute(const Terms());
+        return _pageRoute( Terms(isUesing: settings.arguments as bool,));
       case Routes.ChooseLanguageScreen:
         return _pageRoute(const ChooseLanguageScreen());
 

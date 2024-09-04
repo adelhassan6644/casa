@@ -36,7 +36,7 @@ class ProfileCard extends StatelessWidget {
           Text(
             provider.isLogin
                 ? provider.emailTEC.text.trim()
-                : "elhemdanih@casa.com",
+                : "guest@casa.com",
             style: AppTextStyles.regular.copyWith(
                 color: Styles.PRIMARY_COLOR, fontSize: 14),
           ),

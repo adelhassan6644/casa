@@ -1,8 +1,10 @@
 import 'package:casa/app/core/utils/dimensions.dart';
+import 'package:casa/features/guest/guest_mode.dart';
 import 'package:casa/features/reservations/widgets/next_reservations.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../data/config/di.dart';
+import '../../auth/provider/auth_provider.dart';
 import '../provider/reservations_provider.dart';
 import '../widgets/reservation_header.dart';
 import '../widgets/previous_reservations.dart';
@@ -18,10 +20,12 @@ class _ReservationsState extends State<Reservations>
     with AutomaticKeepAliveClientMixin<Reservations> {
   @override
   void initState() {
-    Future.delayed(Duration.zero, () {
-      sl<ReservationsProvider>().getNextReservations();
-      sl<ReservationsProvider>().getPreviousReservations();
-    });
+    if (sl<AuthProvider>().isLogin) {
+      Future.delayed(Duration.zero, () {
+        sl<ReservationsProvider>().getNextReservations();
+        sl<ReservationsProvider>().getPreviousReservations();
+      });
+    }
 
     super.initState();
   }
@@ -46,7 +50,12 @@ class _ReservationsState extends State<Reservations>
           Expanded(
             child:
                 Consumer<ReservationsProvider>(builder: (_, provider, child) {
-              return content[provider.currentTab];
+                  if(provider.isLogin) {
+                    return content[provider.currentTab];
+                  }
+                  else {
+                    return GuestMode();
+                  }
             }),
           )
         ],

@@ -19,9 +19,10 @@ class Profile extends StatelessWidget {
     return Consumer<ProfileProvider>(builder: (_, provider, child) {
       return SafeArea(
         bottom: true,
-        top: false,
+        top: provider.isLogin ?false:true,
         child: Column(
           children: [
+            (provider.isLogin)?
             Expanded(
                 child: ListAnimator(
                   data: [
@@ -44,7 +45,7 @@ class Profile extends StatelessWidget {
                     const ProfileBody(),
                     // const ChangePasswordButton()
                   ],
-                ))
+                )):const Expanded(child: Center(child: GuestMode()))
           ],
         )
       );

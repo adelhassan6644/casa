@@ -349,9 +349,28 @@ class AuthProvider extends ChangeNotifier {
     Provider.of<ProfileProvider>(CustomNavigator.navigatorState.currentContext!,
             listen: false)
         .clear();
+    if (isLogin) {
+      CustomSnackBar.showSnackBar(
+          notification: AppNotification(
+              message: getTranslated("your_logged_out_successfully",
+                  CustomNavigator.navigatorState.currentContext!),
+              isFloating: true,
+              backgroundColor: Styles.ACTIVE,
+              borderColor: Colors.transparent));
+    }
+    notifyListeners();
+  }
+
+  deleteAccount() async {
+    CustomNavigator.push(Routes.SPLASH, clean: true);
+    await authRepo.clearSharedData();
+    clear();
+    Provider.of<ProfileProvider>(CustomNavigator.navigatorState.currentContext!,
+            listen: false)
+        .clear();
     CustomSnackBar.showSnackBar(
         notification: AppNotification(
-            message: getTranslated("your_logged_out_successfully",
+            message: getTranslated("your_account_deleted_successfully",
                 CustomNavigator.navigatorState.currentContext!),
             isFloating: true,
             backgroundColor: Styles.ACTIVE,

@@ -2,6 +2,7 @@ import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/localization/localization/language_constant.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../app/core/utils/images.dart';
 import '../../../app/core/utils/styles.dart';
@@ -9,6 +10,7 @@ import '../../../app/core/utils/svg_images.dart';
 import '../../../app/core/utils/text_styles.dart';
 import '../../../components/animated_widget.dart';
 import '../../../components/custom_app_bar.dart';
+import '../../../components/custom_button.dart';
 import '../../../components/custom_images.dart';
 import '../../../components/custom_text_form_field.dart';
 import '../provider/config_provider.dart';
@@ -88,6 +90,18 @@ class AboutUs extends StatelessWidget {
                                     style: AppTextStyles.regular.copyWith(
                                         fontSize: 14,
                                         color: Styles.PRIMARY_COLOR)),
+
+                                CustomButton(
+                                  text: getTranslated("snapchat", context),
+                                  fIconWidget: customImageIcon(
+                                      imageName: Images.snapchat,
+                                      color: Colors.white),
+                                  radius: 50,
+                                  onTap: () => launchUrl(Uri.parse(
+                                    provider.contact?.snapchat ??
+                                        'https://www.snapchat.com/',
+                                  )),
+                                ),
                               ],
                             ),
                           ],

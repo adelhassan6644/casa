@@ -19,6 +19,7 @@ import '../../../components/custom_app_bar.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/empty_widget.dart';
 import '../../../data/config/di.dart';
+import '../../auth/provider/auth_provider.dart';
 import '../../payment/model/payment_body_model.dart';
 import '../widgets/product_details_widget.dart';
 
@@ -107,14 +108,19 @@ class ProductDetails extends StatelessWidget {
                       svgIcon: SvgImages.arrowLeft,
                       iconColor: Styles.WHITE_COLOR,
                       onTap: () {
-                        if ( provider.model?.status == 0) {
+                        if (provider.model?.status == 0) {
                           showToast(getTranslated(
                               "unavailable_for_reservation", context));
                           return;
                         }
+                        if (!sl<AuthProvider>().isLogin) {
+                          showToast(getTranslated(
+                              "login_now", context));
+                          return;
+                        }
                         CustomNavigator.push(Routes.PRODUCT_SCHEDULE,
-                            arguments: PaymentBodyModel(
-                                itemData: provider.model));
+                            arguments:
+                                PaymentBodyModel(itemData: provider.model));
                       },
                     ),
                   ),

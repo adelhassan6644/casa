@@ -20,15 +20,24 @@ class SupportRepo {
   SupportRepo({required this.dioClient, required this.sharedPreferences});
   DatabaseReference ref = FirebaseDatabase.instance.ref();
 
-  // final ref = FirebaseDatabase.instanceFor(app: Firebase.app(), databaseURL: 'https://casa-50155-default-rtdb.firebaseio.com/').ref();
-  Future<Either<ServerFailure, Response>> startNewChat(
-     ) async {
+  Future<Either<ServerFailure, Response>> startNewChat() async {
     try {
       Response response = await dioClient.post(
         uri: EndPoints.startNewChat,
-        data: {
-          'client_id': sharedPreferences.getString(AppStorageKey.userId)
-        },
+        data: {'client_id': sharedPreferences.getString(AppStorageKey.userId)},
+      );
+      return Right(response);
+    } catch (e) {
+      return Left(ServerFailure(ApiErrorHandler.getMessage(e)));
+    }
+  }
+  Future<Either<ServerFailure, Response>> sendNotiForInstructor(
+      {required String convId}) async {
+    try {
+
+      Response response = await dioClient.post(
+        uri: "${EndPoints.sendNotif}/$convId",
+
       );
       return Right(response);
     } catch (e) {
@@ -36,24 +45,21 @@ class SupportRepo {
     }
   }
 
+
   Future<Either<ServerFailure, String>> sendMessage({
     required String message,
   }) async {
     try {
-
-
-
       final userId = sharedPreferences.getString(AppStorageKey.userId);
 
-
-     await  ref.child("messages").child("$userId").push().set({
+      await ref.child("messages").child("$userId").push().set({
         "conv_id": userId,
         "sender_id": userId,
         "message": message,
         "receiver_id": 50500,
         "created_at": DateTime.now().toString(),
-      }).then((value)  {
-      });
+      }).then((value) {});
+      sendNotiForInstructor(convId: userId!);
       log("success");
       return Right("success");
     } catch (e) {
@@ -61,6 +67,4 @@ class SupportRepo {
       return Left(ServerFailure(ApiErrorHandler.getMessage(e)));
     }
   }
-
-
 }

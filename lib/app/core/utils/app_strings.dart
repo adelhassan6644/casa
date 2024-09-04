@@ -4,7 +4,7 @@ import '../../../main_models/weak_model.dart';
 
 class AppStrings {
   static const String appName = 'Casa';
-  static const String googleApiKey = 'AIzaSyBxi2NcKA8JE90J07U9M2D90tHgaSg3Xjg';
+  static const String googleApiKey = 'AIzaSyCb1FtVezafyLREu6Hrv5hciMKlqRk6W40';
   static const String defaultAddress = 'المملكة العربية السعودية ، الرياض';
   static const String defaultLat = '24.67401824245781';
   static const String defaultLong = '46.691234707832336';

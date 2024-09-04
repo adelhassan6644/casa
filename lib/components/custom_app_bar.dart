@@ -49,7 +49,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           SizedBox(
             height: context.toPadding,
           ),
-          SizedBox(height: Dimensions.PADDING_SIZE_SMALL.h),
+          // SizedBox(height: Dimensions.PADDING_SIZE_SMALL.h),
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.end,
@@ -104,7 +104,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                   ),
             ],
           ),
-          SizedBox(height: Dimensions.PADDING_SIZE_SMALL.h),
+          SizedBox(height: Dimensions.PADDING_SIZE_SMALL.h/2),
         ],
       ),
     );

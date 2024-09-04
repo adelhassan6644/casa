@@ -13,7 +13,7 @@ class MapRepo {
   final DioClient dioClient;
   MapRepo({required this.sharedPreferences, required this.dioClient});
   Future<Either<ServerFailure, Response>> searchLocation(String text) async {
-    try {
+    // try {
       Response response = await dioClient.get(
           useGoogleUri: true,
           uri:
@@ -24,14 +24,14 @@ class MapRepo {
       } else {
         return left(ServerFailure(response.data['message']));
       }
-    } catch (error) {
-      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
-    }
+    // } catch (error) {
+    //   return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    // }
   }
 
   Future<Either<ServerFailure, Response>> getAddressFromGeocode(
       LatLng latLng) async {
-    try {
+    // try {
       Response response = await dioClient.get(
           useGoogleUri: true,
           uri:
@@ -42,8 +42,8 @@ class MapRepo {
       } else {
         return left(ServerFailure(response.data['message']));
       }
-    } catch (error) {
-      return left(ServerFailure(ApiErrorHandler.getMessage(error)));
-    }
+    // } catch (error) {
+    //   return left(ServerFailure(ApiErrorHandler.getMessage(error)));
+    // }
   }
 }

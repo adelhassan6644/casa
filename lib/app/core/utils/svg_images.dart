@@ -9,6 +9,7 @@ class SvgImages {
   static const String outlineHeartIcon = 'assets/svgs/outline_heart.svg';
   static const String aboutUsIcon = 'assets/svgs/building.svg';
   static const String location = 'assets/svgs/location.svg';
+  static const String language = 'assets/svgs/language.svg';
   static const String moreIcon = 'assets/svgs/more.svg';
   static const String search = 'assets/svgs/search.svg';
   static const String tasks = 'assets/svgs/tasks.svg';
@@ -59,6 +60,7 @@ class SvgImages {
   static const String outlineMailIcon = 'assets/svgs/outline_mail.svg';
   static const String lockIcon = 'assets/svgs/lock.svg';
   static const String outlineLockIcon = 'assets/svgs/outline_lock.svg';
+  static const String support = 'assets/images/suport.png';
   static const String eyeIcon = 'assets/svgs/eye.svg';
   static const String hiddenEyeIcon = 'assets/svgs/hidden_eye.svg';
   static const String phoneIcon = 'assets/svgs/phone.svg';
@@ -68,7 +70,6 @@ class SvgImages {
   static const String homeSearchIcon = 'assets/svgs/home_search.svg';
   static const String deliciousIcon = 'assets/svgs/delicious.svg';
   static const String report = 'assets/svgs/report.svg';
-  static const String support = 'assets/icons/technical-support.png';
   static const String information = 'assets/svgs/information.svg';
   static const String security = 'assets/svgs/security.svg';
   static const String notification = 'assets/svgs/notification.svg';

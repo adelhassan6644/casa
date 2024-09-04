@@ -14,6 +14,7 @@ import '../../../components/custom_radio_button.dart';
 import '../../../components/custom_text_form_field.dart';
 import '../../../navigation/custom_navigation.dart';
 import '../../../navigation/routes.dart';
+import '../../setting/provider/config_provider.dart';
 import '../provider/auth_provider.dart';
 
 class Register extends StatefulWidget {
@@ -34,11 +35,11 @@ class _RegisterState extends State<Register> {
         decoration: const BoxDecoration(
             color: Colors.transparent,
             image: DecorationImage(
-          image: AssetImage(
-            Images.authImage,
-          ),
-          fit: BoxFit.fitHeight,
-        )),
+              image: AssetImage(
+                Images.authImage,
+              ),
+              fit: BoxFit.fitHeight,
+            )),
         child: Column(
           children: [
             Expanded(
@@ -51,7 +52,8 @@ class _RegisterState extends State<Register> {
                         clipBehavior: Clip.antiAlias,
                         borderRadius: BorderRadius.circular(25),
                         child: BackdropFilter(
-                          filter: ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
+                          filter:
+                              ui.ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
                           child: Container(
                             padding: EdgeInsets.symmetric(
                                 horizontal: Dimensions.PADDING_SIZE_DEFAULT.w,
@@ -81,37 +83,71 @@ class _RegisterState extends State<Register> {
                                         children: [
                                           CustomTextFormField(
                                             controller: provider.nameTEC,
-                                            hint: getTranslated("name", context),
+                                            hint:
+                                                getTranslated("name", context),
                                             inputType: TextInputType.name,
                                             valid: Validations.name,
                                             pSvgIcon: SvgImages.userIcon,
                                           ),
-                                          Padding(
-                                            padding:  EdgeInsets.symmetric(vertical: 6.h,horizontal: 12.w),
-                                            child: Row(
-                                              children: [
-                                                Text(
-                                                  getTranslated("gender", context),
-                                                  style: AppTextStyles.medium.copyWith(
-                                                          fontSize: 18,
-                                                          color: Styles
-                                                              .PRIMARY_COLOR),
-                                                ),
-                                                SizedBox(width: 24.w,),
-                                                ...List.generate(2, (index) => Expanded(
-                                                  child: CustomRadioButton(
-                                                    check: provider.userType==index,
-                                                    title: getTranslated(provider.usersTypes[index], context),
-                                                    onChange: (v){
-                                                      if(v){
-                                                        provider.selectedUserType(index);
-                                                      }
-                                                    },
-                                                  ),
-                                                ))
-                                              ],
-                                            ),
-                                          ),
+                                          Consumer<ConfigProvider>(
+                                              builder: (_, providerr, child) {
+                                            return !providerr.isLoading
+                                                ? providerr.contact?.image !=
+                                                        null
+                                                    ? Padding(
+                                                        padding: EdgeInsets
+                                                            .symmetric(
+                                                                vertical: 6.h,
+                                                                horizontal:
+                                                                    12.w),
+                                                        child: Row(
+                                                          children: [
+                                                            Text(
+                                                              getTranslated(
+                                                                  "gender",
+                                                                  context),
+                                                              style: AppTextStyles
+                                                                  .medium
+                                                                  .copyWith(
+                                                                      fontSize:
+                                                                          18,
+                                                                      color: Styles
+                                                                          .PRIMARY_COLOR),
+                                                            ),
+                                                            SizedBox(
+                                                              width: 24.w,
+                                                            ),
+                                                            ...List.generate(
+                                                                2,
+                                                                (index) =>
+                                                                    Expanded(
+                                                                      child:
+                                                                          CustomRadioButton(
+                                                                        check: provider.userType ==
+                                                                            index,
+                                                                        title: getTranslated(
+                                                                            provider.usersTypes[index],
+                                                                            context),
+                                                                        onChange:
+                                                                            (v) {
+                                                                          if (v) {
+                                                                            provider.selectedUserType(index);
+                                                                          }
+                                                                        },
+                                                                      ),
+                                                                    ))
+                                                          ],
+                                                        ),
+                                                      )
+                                                    : SizedBox()
+                                                : const Center(
+                                                    child:
+                                                        CircularProgressIndicator(
+                                                      color:
+                                                          Styles.PRIMARY_COLOR,
+                                                    ),
+                                                  );
+                                          }),
                                           CustomTextFormField(
                                             controller: provider.mailTEC,
                                             hint:

@@ -3,6 +3,7 @@ class ContactModel {
   String? name;
   String? email;
   String? twitter;
+  String? snapchat;
   String? website;
   String? instagram;
   String? facebook;
@@ -23,6 +24,7 @@ class ContactModel {
       this.tiktok,
       this.image,
       this.phone,
+      this.snapchat,
       this.whatsapp,
       this.aboutUs});
 
@@ -37,6 +39,7 @@ class ContactModel {
     tiktok = json['tiktok'];
     image = json['image'];
     phone = json['phone'];
+    snapchat = json['snapchat'];
     aboutUs = json['aboutUs'];
     whatsapp = json['whatsapp'];
   }

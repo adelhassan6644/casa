@@ -11,7 +11,9 @@ import 'package:casa/features/favourite/provider/favourite_provider.dart';
 import 'package:casa/features/guest/guest_mode.dart';
 import 'package:provider/provider.dart';
 import '../../../components/grid_list_animator.dart';
+import '../../../data/config/di.dart';
 import '../../../mian_widgets/product_card.dart';
+import '../../auth/provider/auth_provider.dart';
 
 class FavouritePage extends StatefulWidget {
   const FavouritePage({Key? key}) : super(key: key);
@@ -23,10 +25,12 @@ class FavouritePage extends StatefulWidget {
 class _FavouritePageState extends State<FavouritePage> {
   @override
   void initState() {
-    Future.delayed(
+    if(sl<AuthProvider>().isLogin) {
+      Future.delayed(
         Duration.zero,
         () => Provider.of<FavouriteProvider>(context, listen: false)
             .getFavourites());
+    }
     super.initState();
   }
 

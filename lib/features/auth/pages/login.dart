@@ -162,6 +162,25 @@ class _LoginState extends State<Login> {
                                                 },
                                                 isLoading: provider.isLoading),
                                           ),
+                                          InkWell(
+                                            onTap:(){
+                                              CustomNavigator.push(Routes.DASHBOARD, clean: true, arguments: 0);
+                                            },
+                                            child: Text(
+                                              getTranslated(
+                                                  "login_as_a_guest", context),
+                                              textAlign: TextAlign.end,
+                                              style: AppTextStyles.regular
+                                                  .copyWith(
+                                                  color:
+                                                  Styles.WHITE_COLOR,
+                                                  fontSize: 16,
+                                                  overflow: TextOverflow
+                                                      .ellipsis),
+                                            ),
+                                          ),
+
+                                          const SizedBox(height: 20,),
                                           Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.center,

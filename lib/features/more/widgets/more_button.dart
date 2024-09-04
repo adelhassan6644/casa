@@ -33,7 +33,13 @@ class MoreButton extends StatelessWidget {
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            if(icon.contains("svg"))
             customImageIconSVG(
+                imageName: icon,
+                height: 24,
+                width: 24,
+                color: Styles.PRIMARY_COLOR), if(!icon.contains("svg"))
+            customImageIcon(
                 imageName: icon,
                 height: 24,
                 width: 24,

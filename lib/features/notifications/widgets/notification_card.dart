@@ -81,7 +81,8 @@ class _NotificationCardState extends State<NotificationCard> {
                           highlightColor: Colors.transparent,
                           splashColor: Colors.transparent,
                           onTap: () {
-                            CustomNavigator.push(Routes.DASHBOARD,clean: true,arguments: 0);
+                            // CustomNavigator.push(Routes.DASHBOARD,clean: true,arguments: 1);
+                            CustomNavigator.push(Routes.SessionDetails,arguments: widget.notification?.notificationBody?.reservationId);
                           },
                           child: Text(
                             " ${getTranslated(widget.notification?.notificationBody?.reservationId != null ? "details" : "know_more_bout_it", context)}",

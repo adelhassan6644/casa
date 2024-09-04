@@ -15,8 +15,10 @@ import '../../features/product_schedule/provider/product_schedule_provider.dart'
 import '../../features/reservations/provider/reservations_provider.dart';
 import '../../features/notifications/provider/notifications_provider.dart';
 import '../../features/profile/provider/profile_provider.dart';
+import '../../features/session_details/provider/session_details_provider.dart';
 import '../../features/splash/provider/splash_provider.dart';
 import '../../features/setting/provider/config_provider.dart';
+import '../../features/support/provider/support_provider.dart';
 import '../../main_page/provider/main_page_provider.dart';
 
 abstract class ProviderList {
@@ -31,11 +33,12 @@ abstract class ProviderList {
     ChangeNotifierProvider(create: (_) => di.sl<ProfileProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<HomeProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ReservationsProvider>()),
-    ChangeNotifierProvider(create: (_) => di.sl<NotificationsProvider>()),
+    ChangeNotifierProvider(create: (_) => di.sl<NotificationsProvider>()), ChangeNotifierProvider(create: (_) => di.sl<SessionDetailsProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<MapProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<AddressesProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ContactProvider>()),
     ChangeNotifierProvider(create: (_) => di.sl<ConfigProvider>()),
+    ChangeNotifierProvider(create: (_) => di.sl<SupportProvider>()),
   ];
 }

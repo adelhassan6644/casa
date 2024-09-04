@@ -42,7 +42,7 @@ class GuestMode extends StatelessWidget {
                       context),
                   style: AppTextStyles.medium.copyWith(
                       fontSize: 18,
-                      color: Styles.SECOUND_PRIMARY_COLOR),
+                      color: Styles.PRIMARY_COLOR),
                   textAlign: TextAlign.center,
                 ),
                 Padding(

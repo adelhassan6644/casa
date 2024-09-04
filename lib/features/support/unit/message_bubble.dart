@@ -68,7 +68,7 @@ class MessageBubble extends StatelessWidget {
                                         ?  Colors.white
                                         : Theme.of(context)
                                             .textTheme
-                                            .bodyText1
+                                            .bodyMedium
                                             ?.color)),
                           ),
                         ],

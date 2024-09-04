@@ -10,12 +10,14 @@ import '../../../app/core/utils/styles.dart';
 import '../../data/config/di.dart';
 import '../../data/network/network_info.dart';
 import '../../features/address/provider/addresses_provider.dart';
+import '../../features/auth/provider/auth_provider.dart';
 import '../../features/home/page/home.dart';
 import '../../features/more/page/more.dart';
 import '../widget/nav_bar.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({Key? key}) : super(key: key);
+ final  int ?index;
+   const DashBoard({Key? key,  this.index}) : super(key: key);
   @override
   State<DashBoard> createState() => _DashBoardState();
 }
@@ -25,10 +27,12 @@ class _DashBoardState extends State<DashBoard> {
   void initState() {
     NetworkInfo.checkConnectivity();
     sl<HomeProvider>().getCategories();
-    sl<FavouriteProvider>().getFavourites();
-    sl<AddressesProvider>().getAddresses();
-    sl<ProfileProvider>().getProfile();
-    sl<MainPageProvider>().updateDashboardIndex(0);
+    if(sl<AuthProvider>().isLogin) {
+      sl<FavouriteProvider>().getFavourites();
+      sl<AddressesProvider>().getAddresses();
+      sl<ProfileProvider>().getProfile();
+    }
+    sl<MainPageProvider>().updateDashboardIndex(widget.index??0);
 
     super.initState();
   }

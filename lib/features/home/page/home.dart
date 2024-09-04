@@ -1,7 +1,9 @@
 import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/features/home/provider/home_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:gtm/gtm.dart';
 import '../../../data/config/di.dart';
+import '../../auth/provider/auth_provider.dart';
 import '../../maps/provider/map_provider.dart';
 import '../../reservations/provider/reservations_provider.dart';
 import '../widgets/home_dates.dart';
@@ -18,6 +20,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
   ScrollController controller = ScrollController();
+  final gtm = Gtm.instance;
+
 
   @override
   void initState() {
@@ -25,8 +29,31 @@ class _HomeState extends State<Home> with AutomaticKeepAliveClientMixin<Home> {
       sl<MapProvider>().getCurrentLocation();
       sl<HomeProvider>().scroll(controller);
       sl<HomeProvider>().getBanners();
-      sl<ReservationsProvider>().getNextReservations();
+      if(sl<AuthProvider>().isLogin) {
+        sl<ReservationsProvider>().getNextReservations();
+      }
       sl<HomeProvider>().getProducts();
+      // Set CustomTagType
+      gtm.setCustomTagTypes(
+        [
+          CustomTagType(
+            'amplitude',
+            handler: (eventName, parameters) {
+              print('amplitude!');
+              print(eventName);
+              print(parameters);
+            },
+          ),
+        ],
+      );
+
+// Push event
+      gtm.push(
+        'test',
+        parameters: {
+          'user_no': 912342,
+        },
+      );
     });
     super.initState();
   }

@@ -11,6 +11,7 @@ class Routes {
   static const DASHBOARD = "DASHBOARD";
   static const NEWS = "NEWS";
   static const CHANGE_PASSWORD = "CHANGE_PASSWORD";
+  static const SupportScreen = "SupportScreen";
   static const EDIT_PROFILE = "EDIT_PROFILE";
   static const PICK_LOCATION = "PICK_LOCATION";
   static const PRODUCT_DETAILS = "PRODUCT_DETAILS";
@@ -21,6 +22,7 @@ class Routes {
   static const ABOUT_US = "ABOUT_US";
   static const ADDRESS = "ADDRESS";
   static const TERMS = "TERMS";
+  static const SessionDetails = "SessionDetails";
   static const CHECK_OUT = "PAYMENT";
   static const PAYMENT_WEB_VIEW = "PAYMENT_WEB_VIEW";
   static const SUCCESS = "SUCCESS";

@@ -1,7 +1,9 @@
 import 'dart:collection';
 import 'dart:developer';
+import 'package:casa/app/core/utils/app_storage_keys.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../../../app/core/utils/styles.dart';
 import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_app_bar.dart';
@@ -43,8 +45,9 @@ class _PaymentWebViewState extends State<PaymentWebView> {
             children: [
               InAppWebView(
                 initialUrlRequest: URLRequest(
+          // https://massage-app.softwarecloud2.com/api/payment/form/{resID}/{CouponID}
                   url: WebUri.uri(
-                    Uri.parse(EndPoints.baseUrl + EndPoints.payment(widget.map['id'])),
+                    Uri.parse(EndPoints.baseUrl.replaceAll("/v1", "") + EndPoints.payment(widget.map['id'])),
                   ),
                 ),
                 pullToRefreshController: pullToRefreshController,

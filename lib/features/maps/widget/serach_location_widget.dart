@@ -61,7 +61,7 @@ class SearchLocationWidget extends StatelessWidget {
           ),
           prefixIconConstraints: BoxConstraints(maxHeight: 30),
           suffixIcon: Icon(Icons.search,
-              size: 25, color: Theme.of(context).textTheme.bodyText1?.color),
+              size: 25, color: Theme.of(context).textTheme.bodyMedium?.color),
           isDense: true,
           filled: true,
           hintText: "search location",
@@ -76,7 +76,7 @@ class SearchLocationWidget extends StatelessWidget {
           ),
         ),
         style: AppTextStyles.regular.copyWith(
-          color: Theme.of(context).textTheme.bodyText1?.color,
+          color: Theme.of(context).textTheme.bodyMedium?.color,
           fontSize: Dimensions.FONT_SIZE_LARGE,
         ),
       ),
@@ -109,8 +109,8 @@ class SearchLocationWidget extends StatelessWidget {
                 child: Text(suggestion.description ?? "",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: Theme.of(context).textTheme.headline2?.copyWith(
-                          color: Theme.of(context).textTheme.bodyText1?.color,
+                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                          color: Theme.of(context).textTheme.bodyLarge?.color,
                           fontSize: Dimensions.FONT_SIZE_LARGE,
                         )),
               ),
