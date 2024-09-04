@@ -4,7 +4,7 @@ description: A new Flutter project.
 
 publish_to: 'none'
 
-version: 1.0.0+5
+version: 1.0.7+19
 
 environment:
   sdk: '>=2.19.3 <3.0.0'
@@ -14,8 +14,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_clean_architecture:
-  flutter_calendar_carousel:
+  flutter_calendar_carousel: ^2.4.3
   dio:
+
+  firebase_database: 10.2.5
+  gtm: ^0.1.2
+  cloud_firestore:
   internet_connection_checker:
   fluttertoast: ^8.2.1
   dartz:
@@ -23,14 +27,15 @@ dependencies:
   shared_preferences:
   get_it:
   http:
-  firebase_core:
+  firebase_core: 2.15.1
+  firebase_app_check:
   provider:
   flutter_staggered_animations:
   connectivity:
   image_picker:
-  cached_network_image:
+  cached_network_image: ^3.3.1
   flutter_styled_toast:
-  flutter_animated_dialog:
+#  flutter_animated_dialog:
   flutter_animate:
   url_launcher: ^6.1.11
 
@@ -49,7 +54,7 @@ dependencies:
   firebase_dynamic_links: ^5.1.0
   firebase_analytics: ^10.2.1
   flutter_native_splash: ^2.2.0+1
-  syncfusion_flutter_charts: ^22.1.39
+  syncfusion_flutter_charts: ^26.1.40
   flutter_typeahead:
   geolocator_platform_interface:
   geolocator: ^9.0.2
@@ -62,7 +67,10 @@ dependencies:
   app_settings: ^5.0.0
   substring_highlight: ^1.0.33
   motion_toast: ^2.6.8
-  flutter_inappwebview: ^6.0.0-beta.24+1
+  flutter_inappwebview:
+    git:
+      url: https://github.com/Estrelio/flutter_inappwebview.git
+      ref: fix-xcode-17
   flutter_zoom_drawer: ^3.1.1
   flutter_widget_from_html: ^0.10.3
   file_picker: ^5.2.9
@@ -73,7 +81,8 @@ dependencies:
   table_calendar: ^3.0.9
 
 
-
+dependency_overrides:
+  intl: ^0.18.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
