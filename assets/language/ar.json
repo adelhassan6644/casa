@@ -80,6 +80,7 @@
   "contact_with_us_any_time": "تواصل معنا وقتما تريد",
   "about_us": "نبذة عنا",
   "terms_conditions": "الشروط والاحكام",
+  "uasing_terms_conditions": " سياسة الاستخدام",
   "share": "مشاركة",
   "location": "الموقع",
   "register_with_us": "سجل معنا",
@@ -170,5 +171,9 @@
   "session_summery": "ملخص الجلسة",
   "session_duration": "مدة الجلسة",
   "language": "اللغة",
-  "sar": "ريال"
+  "sar": "ريال",
+  "delete_account": "حذف الحساب",
+  "your_account_deleted_successfully": "تم حذف حسابك بنجاح",
+  "snapchat": "سناب"
+
 }

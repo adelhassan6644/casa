@@ -79,6 +79,8 @@
   "contact_with_us_any_time": "Contact with us anytime",
   "about_us": "About us",
   "terms_conditions": "Terms & Conditions",
+  "uasing_terms_conditions": "Using terms",
+
   "share": "Share",
   "location": "Location",
   "register_with_us": "Register with us",
@@ -169,5 +171,9 @@
   "total_amount": "Total Amount",
   "language": "language",
   "session_duration": "Session duration",
-  "sar": "SAR"
+  "sar": "SAR",
+  "delete_account": "Delete account",
+  "your_account_deleted_successfully": "Your account deleted successfully",
+  "snapchat": "snapchat"
+
 }
