@@ -15,6 +15,7 @@ import '../../app/core/utils/app_storage_keys.dart';
 import '../../app/core/utils/dimensions.dart';
 import '../../app/core/utils/images.dart';
 import '../../app/localization/localization/language_constant.dart';
+import '../../components/custom_app_bar.dart';
 import '../../components/loader_view.dart';
 import '../../data/api/end_points.dart';
 import '../../data/config/di.dart';
@@ -66,13 +67,17 @@ class _SupportScreenState extends State<SupportScreen> {
     );
     return Scaffold(
         resizeToAvoidBottomInset: true,
-        appBar: AppBar(
-          title: Text(getTranslated("support", context),
-              style: const TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              )),
+        appBar:     CustomAppBar(
+          title: getTranslated("support", context),
         ),
+
+        // AppBar(
+        //   title: Text(getTranslated("support", context),
+        //       style: const TextStyle(
+        //         fontSize: 24,
+        //         fontWeight: FontWeight.bold,
+        //       )),
+        // ),
         body: SafeArea(
           bottom: true,
           child: Padding(
@@ -80,6 +85,7 @@ class _SupportScreenState extends State<SupportScreen> {
             child: Consumer<SupportProvider>(
               builder: (context, chat, child) {
                 return Column(children: [
+
                   _getMessageList(),
 
                   // Bottom TextField

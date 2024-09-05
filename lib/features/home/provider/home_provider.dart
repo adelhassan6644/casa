@@ -126,7 +126,7 @@ class HomeProvider extends ChangeNotifier {
       products = [];
       notifyListeners();
       Either<ServerFailure, Response> response =
-          await homeRepo.getHomeProducts(currentTab);
+          await homeRepo.getHomeProducts(categories?[currentTab].id??0);
       response.fold((fail) {
         isGetProducts = false;
         CustomSnackBar.showSnackBar(

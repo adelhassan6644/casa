@@ -93,6 +93,7 @@ class AuthProvider extends ChangeNotifier {
           authRepo.setLoggedIn();
           CustomNavigator.push(
             Routes.DASHBOARD,
+            arguments: 0,
             clean: true,
           );
         } else {
@@ -311,6 +312,7 @@ class AuthProvider extends ChangeNotifier {
           authRepo.setLoggedIn();
           CustomNavigator.push(
             Routes.DASHBOARD,
+            arguments: 0,
             clean: true,
           );
           clear();
@@ -362,6 +364,7 @@ class AuthProvider extends ChangeNotifier {
   }
 
   deleteAccount() async {
+
     CustomNavigator.push(Routes.SPLASH, clean: true);
     await authRepo.clearSharedData();
     clear();

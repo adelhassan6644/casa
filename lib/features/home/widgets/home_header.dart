@@ -11,6 +11,7 @@ import 'package:casa/app/core/utils/styles.dart';
 import 'package:casa/app/core/utils/dimensions.dart';
 import 'package:casa/app/core/utils/text_styles.dart';
 import 'package:provider/provider.dart';
+import '../../../app/localization/provider/localization_provider.dart';
 import '../../../components/marquee_widget.dart';
 import '../../../components/tab_widget.dart';
 import '../../../data/config/di.dart';
@@ -167,6 +168,18 @@ class HomeHeader extends StatelessWidget {
             ],
           ),
         ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Transform.scale(
+              scaleX:Provider.of<LocalizationProvider>(context,listen: false).locale.languageCode=="en"?-1: 1,
+              child: customImageIconSVG(
+                  imageName: SvgImages.arrowLeft,
+                  color: Styles.PRIMARY_COLOR,
+             ),
+            ),
+          ],
+        ),
         Consumer<HomeProvider>(builder: (_, provider, child) {
           return AnimatedCrossFade(
             crossFadeState: CrossFadeState.showFirst,
@@ -208,7 +221,7 @@ class HomeHeader extends StatelessWidget {
                               return TabWidget(
                                 title: provider.categories?[index].title ?? "",
                                 width: 100,
-                                isSelected: provider.currentTab ==
+                                isSelected: provider.categories?[provider.currentTab].id ==
                                     provider.categories?[index].id,
                                 withBorder: false,
                                 onTab: () {

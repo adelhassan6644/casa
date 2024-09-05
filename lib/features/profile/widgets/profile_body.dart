@@ -12,8 +12,10 @@ import '../../../app/localization/localization/language_constant.dart';
 import '../../../components/custom_button.dart';
 import '../../../components/custom_images.dart';
 import '../../../components/custom_radio_button.dart';
+import '../../../components/custom_simple_dialog.dart';
 import '../../../components/custom_text_form_field.dart';
 import '../../auth/provider/auth_provider.dart';
+import 'DeleteAccountDialog.dart';
 
 class ProfileBody extends StatelessWidget {
   const ProfileBody({Key? key}) : super(key: key);
@@ -126,7 +128,12 @@ class ProfileBody extends StatelessWidget {
                             padding: EdgeInsets.symmetric(
                                 vertical: Dimensions.PADDING_SIZE_SMALL.h),
                             child: InkWell(
-                              onTap: () => provider.deleteAccount(),
+                              onTap: () =>  CustomSimpleDialog
+                                  .parentSimpleDialog(
+                                  customListWidget: [
+                                    DeleteAccountDialog(
+                                    )
+                                  ]),
                               child: Row(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 mainAxisAlignment: MainAxisAlignment.center,
